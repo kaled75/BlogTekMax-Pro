@@ -1,0 +1,853 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>مراجعة شاملة لقالب TekMax 2026: تجربة عملية لأقوى قوالب بلوجر التقنية وسرعة Core Web Vitals</title>
+  <meta name="description" content="مراجعة تقنية شاملة لقالب TekMax Pro لمنصة Blogger: استعراض تفصيلي للتصميم العصري، واجهة Hero Bento، الوضع الليلي، نظام الأكواد بنمط GitHub، نتائج PageSpeed الحقيقية، وإعدادات السيو المتقدمة."/>
+  <meta name="keywords" content="قالب TekMax, قالب بلوجر تقني, مراجعة قالب TekMax, قوالب بلوجر سريعة, Core Web Vitals, قالب بلوجر 2026, سيو بلوجر, قالب متجاوب"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* Scoped Styles for TekMax Article */
+    .tekmax-article {
+      --tm-primary: #dc1f43;
+      --tm-primary-hover: #b81635;
+      --tm-secondary: #1e2229;
+      --tm-accent: #2563eb;
+      --tm-accent-hover: #1d4ed8;
+      --tm-bg: #ffffff;
+      --tm-surface: #f8fafc;
+      --tm-surface-2: #f1f5f9;
+      --tm-border: #e2e8f0;
+      --tm-text: #0f172a;
+      --tm-text-muted: #64748b;
+      --tm-radius-lg: 16px;
+      --tm-radius-md: 10px;
+      --tm-radius-sm: 6px;
+      --tm-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+      --tm-shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.08), 0 4px 10px -2px rgba(0, 0, 0, 0.04);
+      
+      font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+      color: var(--tm-text);
+      line-height: 1.85;
+      font-size: 1.05rem;
+      direction: rtl;
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 20px 15px;
+      box-sizing: border-box;
+      background-color: var(--tm-bg);
+    }
+
+    .tekmax-article * {
+      box-sizing: border-box;
+    }
+
+    /* Typography & Hierarchy */
+    .tekmax-article h1.tm-title {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--tm-text);
+      line-height: 1.35;
+      margin: 0 0 18px 0;
+      letter-spacing: -0.02em;
+    }
+
+    .tekmax-article h2.tm-sec-title {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--tm-secondary);
+      margin: 45px 0 20px 0;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--tm-border);
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .tekmax-article h2.tm-sec-title::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      right: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--tm-primary), var(--tm-accent));
+      border-radius: 3px;
+    }
+
+    .tekmax-article h3.tm-sub-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--tm-text);
+      margin: 30px 0 14px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tekmax-article p {
+      margin-bottom: 20px;
+      color: #334155;
+    }
+
+    .tekmax-article strong {
+      color: var(--tm-text);
+      font-weight: 700;
+    }
+
+    .tekmax-article a {
+      color: var(--tm-primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .tekmax-article a:hover {
+      color: var(--tm-primary-hover);
+      text-decoration: underline;
+    }
+
+    /* Meta Badges */
+    .tekmax-article .tm-meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--tm-border);
+      font-size: 0.9rem;
+      color: var(--tm-text-muted);
+    }
+
+    .tekmax-article .tm-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .tekmax-article .tm-badge-primary {
+      background: #fef2f2;
+      color: var(--tm-primary);
+      border: 1px solid #fee2e2;
+    }
+
+    .tekmax-article .tm-badge-accent {
+      background: #eff6ff;
+      color: var(--tm-accent);
+      border: 1px solid #dbeafe;
+    }
+
+    .tekmax-article .tm-badge-success {
+      background: #f0fdf4;
+      color: #16a34a;
+      border: 1px solid #dcfce7;
+    }
+
+    /* Lead Paragraph */
+    .tekmax-article .tm-lead {
+      font-size: 1.15rem;
+      line-height: 1.85;
+      color: #1e293b;
+      background: #f8fafc;
+      padding: 22px 26px;
+      border-right: 4px solid var(--tm-primary);
+      border-radius: var(--tm-radius-md);
+      margin-bottom: 30px;
+    }
+
+    /* Visual Media & Figures */
+    .tekmax-article figure.tm-figure {
+      margin: 30px 0;
+      background: #ffffff;
+      border: 1px solid var(--tm-border);
+      border-radius: var(--tm-radius-lg);
+      overflow: hidden;
+      box-shadow: var(--tm-shadow);
+      text-align: center;
+    }
+
+    .tekmax-article figure.tm-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+      object-fit: cover;
+    }
+
+    .tekmax-article figure.tm-figure:hover img {
+      transform: scale(1.01);
+    }
+
+    .tekmax-article figcaption.tm-caption {
+      padding: 12px 18px;
+      font-size: 0.88rem;
+      color: var(--tm-text-muted);
+      background: var(--tm-surface);
+      border-top: 1px solid var(--tm-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* Callouts & Alert Boxes */
+    .tekmax-article .tm-callout {
+      padding: 20px 24px;
+      border-radius: var(--tm-radius-md);
+      margin: 25px 0;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      border-right: 4px solid;
+    }
+
+    .tekmax-article .tm-callout-info {
+      background: #f0f9ff;
+      border-color: #0284c7;
+      color: #0369a1;
+    }
+
+    .tekmax-article .tm-callout-tip {
+      background: #f0fdf4;
+      border-color: #16a34a;
+      color: #15803d;
+    }
+
+    .tekmax-article .tm-callout-warning {
+      background: #fffbeb;
+      border-color: #d97706;
+      color: #b45309;
+    }
+
+    .tekmax-article .tm-callout-icon {
+      font-size: 1.4rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .tekmax-article .tm-callout-content {
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .tekmax-article .tm-callout-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Data Tables */
+    .tekmax-article .tm-table-container {
+      width: 100%;
+      overflow-x: auto;
+      margin: 30px 0;
+      border: 1px solid var(--tm-border);
+      border-radius: var(--tm-radius-md);
+      box-shadow: var(--tm-shadow);
+      background: #ffffff;
+    }
+
+    .tekmax-article table.tm-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: right;
+      font-size: 0.95rem;
+    }
+
+    .tekmax-article table.tm-table th {
+      background: var(--tm-surface-2);
+      color: var(--tm-secondary);
+      font-weight: 700;
+      padding: 14px 18px;
+      border-bottom: 2px solid var(--tm-border);
+      white-space: nowrap;
+    }
+
+    .tekmax-article table.tm-table td {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--tm-border);
+      color: #334155;
+    }
+
+    .tekmax-article table.tm-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .tekmax-article table.tm-table tr:nth-child(even) {
+      background: #fafafa;
+    }
+
+    .tekmax-article .tm-metric-score {
+      font-family: 'Fira Code', monospace;
+      font-weight: 700;
+      padding: 2px 8px;
+      border-radius: 4px;
+      display: inline-block;
+      direction: ltr;
+    }
+
+    .tekmax-article .score-green {
+      background: #dcfce7;
+      color: #15803d;
+    }
+
+    .tekmax-article .score-orange {
+      background: #ffedd5;
+      color: #c2410c;
+    }
+
+    /* Feature Cards Grid */
+    .tekmax-article .tm-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 20px;
+      margin: 25px 0;
+    }
+
+    .tekmax-article .tm-card {
+      background: #ffffff;
+      border: 1px solid var(--tm-border);
+      border-radius: var(--tm-radius-md);
+      padding: 22px;
+      box-shadow: var(--tm-shadow);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .tekmax-article .tm-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--tm-shadow-lg);
+      border-color: #cbd5e1;
+    }
+
+    .tekmax-article .tm-card-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: #fef2f2;
+      color: var(--tm-primary);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      margin-bottom: 14px;
+    }
+
+    .tekmax-article .tm-card h4 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      color: var(--tm-secondary);
+      margin: 0 0 8px 0;
+    }
+
+    .tekmax-article .tm-card p {
+      font-size: 0.92rem;
+      color: var(--tm-text-muted);
+      margin-bottom: 0;
+      line-height: 1.65;
+    }
+
+    /* Lists */
+    .tekmax-article ul.tm-list,
+    .tekmax-article ol.tm-list {
+      padding-right: 22px;
+      margin-bottom: 22px;
+      color: #334155;
+    }
+
+    .tekmax-article ul.tm-list li,
+    .tekmax-article ol.tm-list li {
+      margin-bottom: 10px;
+      line-height: 1.75;
+    }
+
+    /* Code Preview Box */
+    .tekmax-article .tm-code-snippet {
+      direction: ltr;
+      text-align: left;
+      background: #0f172a;
+      color: #e2e8f0;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+      padding: 18px 22px;
+      border-radius: var(--tm-radius-md);
+      overflow-x: auto;
+      margin: 25px 0;
+      border: 1px solid #334155;
+    }
+
+    /* Verdict Box */
+    .tekmax-article .tm-verdict-box {
+      background: linear-gradient(135deg, #1e2229 0%, #0f172a 100%);
+      color: #ffffff;
+      border-radius: var(--tm-radius-lg);
+      padding: 35px 30px;
+      margin: 40px 0;
+      box-shadow: var(--tm-shadow-lg);
+    }
+
+    .tekmax-article .tm-verdict-box h3 {
+      color: #ffffff;
+      font-size: 1.5rem;
+      margin-top: 0;
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .tekmax-article .tm-verdict-box p {
+      color: #cbd5e1;
+      font-size: 1.05rem;
+      line-height: 1.8;
+      margin-bottom: 20px;
+    }
+
+    .tekmax-article .tm-verdict-scores {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin-top: 25px;
+      padding-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .tekmax-article .tm-v-score-item {
+      background: rgba(255, 255, 255, 0.06);
+      padding: 14px 16px;
+      border-radius: 8px;
+      text-align: center;
+    }
+
+    .tekmax-article .tm-v-score-val {
+      font-size: 1.8rem;
+      font-weight: 900;
+      color: #38bdf8;
+      font-family: 'Fira Code', monospace;
+    }
+
+    .tekmax-article .tm-v-score-label {
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+      .tekmax-article {
+        padding: 15px 12px;
+      }
+      .tekmax-article h1.tm-title {
+        font-size: 1.7rem;
+      }
+      .tekmax-article h2.tm-sec-title {
+        font-size: 1.35rem;
+      }
+      .tekmax-article .tm-lead {
+        font-size: 1.05rem;
+        padding: 18px 20px;
+      }
+      .tekmax-article .tm-verdict-box {
+        padding: 24px 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<article class="tekmax-article">
+
+  <!-- Header Meta -->
+  <div class="tm-meta-bar">
+    <span class="tm-badge tm-badge-primary">مراجعة حصرية 2026</span>
+    <span class="tm-badge tm-badge-accent">Core Web Vitals Tested</span>
+    <span class="tm-badge tm-badge-success">Blogger XML Native</span>
+    <span>• قراءة متأنية: 14 دقيقة</span>
+    <span>• الكاتب: قسم المراجعات التقنية</span>
+  </div>
+
+  <!-- Main H1 -->
+  <h1 class="tm-title">قالب TekMax 2026: مراجعة شاملة لأقوى قوالب بلوجر التقنية وسرعة Core Web Vitals وتجربة الاستخدام</h1>
+
+  <!-- Lead -->
+  <div class="tm-lead">
+    هل ما تزال منصة <strong>Blogger</strong> قادرة على مجاراة معايير الويب الحديثة لعام 2026 دون الاعتماد على أطر عمل ثقيلة أو مكتبات تستهلك موارد الأجهزة؟ يأتي قالب <strong>TekMax Pro</strong> ليقدم إجابة عملية حاسمة؛ حيث يدمج بين فلسفة التصميم المعاصر بنمط <em>Bento Grid</em>، وكود نقي معزول بالكامل من <em>Vanilla JavaScript</em>، مع توافق كامل 100% مع واجهة <em>Theme Designer</em> الأصلية لبلوجر ومؤشرات <em>Core Web Vitals</em>.
+  </div>
+
+  <!-- Main Hero Image -->
+  <figure class="tm-figure">
+    <img src="article_images/hero_slider_bento.webp" alt="واجهة قالب TekMax وسلايدر Hero Bento المبتكر للمقالات المميزة" width="1920" height="912" fetchpriority="high"/>
+    <figcaption class="tm-caption">
+      <span>الشكل 1:</span> الواجهة الرئيسية لقالب TekMax بنمط Hero Bento Grid الحديث الذي يعرض 3 مقالات استراتيجية بشكل متزامن.
+    </figcaption>
+  </figure>
+
+  <!-- Section: Introduction -->
+  <h2 class="tm-sec-title">1. مقدمة: ما هو قالب TekMax ولماذا تم تصميمه؟</h2>
+  <p>
+    على مدار سنوات طويلة، عانت قوالب بلوجر العربية من معضلتين رئيسيتين: إما قوالب قديمة مبنية على جداول وإصدارات عتيقة من jQuery تُرهق المتصفح وتتسبب في انهيار سرعة الموقع، أو قوالب تجارية حديثة المظهر لكنها تفتقر إلى إمكانية التخصيص الأصلي وتجبر صاحب المدونة على تحرير كود XML المعقد عند الرغبة في تغيير لون أو حجم عنصر أو موضع زر.
+  </p>
+  <p>
+    تم تصميم وتطوير <strong>TekMax</strong> لكسر هذه المعادلة وتقديم قالب تقني وإخباري بمواصفات المنصات العالمية؛ حيث صُمم القالب من الصفر بهندسة <strong>Configuration-First</strong>، ليمنح الناشر السيطرة الكاملة على أكثر من <strong>78 متغيراً حقيقياً</strong> من خلال واجهة "مصمم المظهر" (Theme Designer) دون المساس بسطر برمجي واحد.
+  </p>
+
+  <div class="tm-callout tm-callout-info">
+    <div class="tm-callout-icon">💡</div>
+    <div class="tm-callout-content">
+      <strong>الفئة المستهدفة بالقالب:</strong>
+      المدونات التقنية، مجلات التكنولوجيا والذكاء الاصطناعي، مواقع أخبار الهواتف والبرمجيات، مطورو الويب الذين ينشرون شروحات وأكواد برمجية، والمدونون المحترفون الذين يسعون للقبول السريع في Google AdSense والحصول على تصنيفات متقدمة في محركات البحث.
+    </div>
+  </div>
+
+  <!-- Section: Visual Design -->
+  <h2 class="tm-sec-title">2. الهوية البصرية وفلسفة التصميم (Design & Ergonomics)</h2>
+  <p>
+    يعتمد TekMax على نظام تصميم دقيق يمزج بين <strong>الأحمر الملكي الخاص بالقالب (Crimson Red: <code>#dc1f43</code>)</strong>، و<strong>الأزرق التقني الكهربائي (Electric Blue: <code>#2563eb</code>)</strong>، مع أرضيات بيضاء رمادية ناعمة (<code>#f8f9fa</code>) في الوضع النهاري، وخلفيات تيتانيوم داكنة مسامية في الوضع الليلي لمنع إجهاد العين أثناء القراءة الطويلة.
+  </p>
+
+  <div class="tm-grid-2">
+    <div class="tm-card">
+      <div class="tm-card-icon">⚡</div>
+      <h4>أداء فوري مع Vanilla CSS</h4>
+      <p>تخلص القالب تماماً من أطر Tailwind أو Bootstrap الثقيلة، واعتمد على منظومة Vanilla CSS ذاتية الدعم، مما قلل وقت معالجة الـ CSS إلى الصفر.</p>
+    </div>
+    <div class="tm-card">
+      <div class="tm-card-icon">📐</div>
+      <h4>تجاوب بنسبة 100% مع RTL</h4>
+      <p>بنية هندسية عربية أصلية مبنية من اليمين إلى اليسار (RTL) دون الاعتماد على حلول الترقيع، مع مرونة تامة على كافة أحجام الشاشات.</p>
+    </div>
+    <div class="tm-card">
+      <div class="tm-card-icon">🔤</div>
+      <h4>محرك خطوط جوجل العربي</h4>
+      <p>يدعم التبديل الفوري بين 4 خطوط عربية رائدة: (Cairo, Tajawal, IBM Plex Sans Arabic, Noto Kufi) من مصمم المظهر مباشرة مع <code>font-display: swap</code>.</p>
+    </div>
+    <div class="tm-card">
+      <div class="tm-card-icon">✨</div>
+      <h4>تسريع عتادي دقيق للأيقونات والشعار</h4>
+      <p>شعار فائق الدقة (Crisp-Edges) مفرغ بدون مساحات ميتة متناسق أفقياً مع شريط الأدوات، مع تحسين تلقائي للتباين في الوضعين.</p>
+    </div>
+  </div>
+
+  <!-- Section: Homepage Breakdown -->
+  <h2 class="tm-sec-title">3. تشريح مكونات الصفحة الرئيسية (Homepage Structure)</h2>
+  <p>
+    تتألف الصفحة الرئيسية لقالب TekMax من منظومة من الطبقات الإخبارية المتتابعة التي تُبقي الزائر متفاعلاً وتزيد من معدل بقائه في الموقع:
+  </p>
+  <ul class="tm-list">
+    <li><strong>الشريط العلوي (Top Bar):</strong> يضم روابط الصفحات الثابتة الهامة (اتصل بنا، سياسة الخصوصية...) مع روابط حسابات التواصل الاجتماعي، مع قابلية التحكم في ألوانه بالكامل.</li>
+    <li><strong>الهيدر الأساسي المتطور (Site Header):</strong> يضم شعار المدونة عالي الدقة، قائمة التنقل الرئيسية التفاعلية متعددة المستويات، محرك البحث الفوري، زر التبديل الليلي/النهاري، وزر "تابعنا".</li>
+    <li><strong>سلايدر Hero Bento Grid:</strong> يعرض المقال الرئيسي الأبرز بحجم عريض في اليمين، ومقالين ثانويين بجانبه، مزود بآلية <code>ensureHeroComplete</code> لضمان اكتمال ظهور البطاقات الثلاث دائماً.</li>
+    <li><strong>شريط الأخبار الرائجة (Trending Bar):</strong> يعرض المقالات الأكثر قراءة وتفاعلاً بصيغة جذابة تدعم النقرات الفورية.</li>
+    <li><strong>شبكة المقالات الأساسية (Main Post Stream):</strong> بطاقات مقالات أنيقة بنسبة أبعاد ثابتة للصور (<code>aspect-ratio: 16/9</code>) لحماية الموقع من انزياح التخطيط (Zero Layout Shift).</li>
+    <li><strong>القائمة الجانبية (Sidebar):</strong> تضم أكثر المقالات شعبية، قائمة التصنيفات التفاعلية، بطاقة الكاتب الشخصية، وصناديق إعلانية مجهزة.</li>
+  </ul>
+
+  <figure class="tm-figure">
+    <img src="article_images/article_stream_and_sidebar.webp" alt="شبكة المقالات الرئيسية والقائمة الجانبية في قالب TekMax" width="1920" height="912" loading="lazy"/>
+    <figcaption class="tm-caption">
+      <span>الشكل 2:</span> شبكة المقالات الرئيسية وتناسق المسافات الفاصلة بين المحتوى والشريط الجانبي.
+    </figcaption>
+  </figure>
+
+  <!-- Section: Single Post Experience -->
+  <h2 class="tm-sec-title">4. تجربة قراءة المقال والميزات الحصرية (Single Post UX)</h2>
+  <p>
+    صُممت صفحة المقال الداخلي لتكون بيئة قراءة خالية من التشتت ومليئة بالأدوات المساعدة للقارئ والناشر على حد سواء:
+  </p>
+
+  <figure class="tm-figure">
+    <img src="article_images/single_post_interface.webp" alt="واجهة قراءة المقال الداخلي في قالب TekMax" width="1920" height="912" loading="lazy"/>
+    <figcaption class="tm-caption">
+      <span>الشكل 3:</span> صفحة المقال الداخلي وتكامل صندوق معلومات المقال والأدوات التفاعلية ومسار التنقل.
+    </figcaption>
+  </figure>
+
+  <!-- Sub-features -->
+  <h3 class="tm-sub-title">أ. صندوق معلومات المقال وأزرار الإجراءات (Post Info Box)</h3>
+  <p>
+    يقع أعلى كل مقال مباشرة بعد مسار التنقل (Breadcrumbs)، ويجمع كافة البيانات الحيوية للمقال في شبكة هندسية فائقة الجمال (<code>.pinfo-grid</code>):
+  </p>
+  <ul class="tm-list">
+    <li><strong>كاتب المقال:</strong> مع أيقونة المستخدم ورابط مباشر لملف الكاتب.</li>
+    <li><strong>تاريخ النشر وتاريخ التحديث:</strong> يتميز TekMax بإظهار تاريخ التحديث الفعلي لدعم السيو ومصداقية المحتوى المتجدد.</li>
+    <li><strong>وقت القراءة المقدر:</strong> يُحسب ديناميكياً بدقة الكلمات العربية ("3 دقائق للقراءة").</li>
+    <li><strong>التصنيف وعدد التعليقات:</strong> مع روابط تفاعلية سريعة.</li>
+    <li><strong>بطاقة طباعة المقال التفاعلية:</strong> تتيح للقارئ طباعة المقال أو حفظه بصيغة PDF بنقرة واحدة بتنسيق طباعة مخصص يخفي الإعلانات والهيدر.</li>
+    <li><strong>زر تعديل المقال (للمشرفين فقط):</strong> يظهر للمدير المسجل في بلوجر ليفتح محرر المقال مباشرة دون الحاجة للبحث عنه في لوحة التحكم.</li>
+    <li><strong>قائمة المشاركة العائمة:</strong> باللون الأزرق التقني مع نسخ مباشر لرابط المقال ومشاركة فورية عبر شبكات التواصل.</li>
+  </ul>
+
+  <figure class="tm-figure">
+    <img src="article_images/post_info_box.png" alt="معاينة صندوق معلومات المقال في الوضعين الفاتح والداكن" width="1200" height="600" loading="lazy"/>
+    <figcaption class="tm-caption">
+      <span>الشكل 4:</span> بطاقات صندوق معلومات المقال وشبكة الإجراءات السريعة في الوضع النهاري والليلي.
+    </figcaption>
+  </figure>
+
+  <h3 class="tm-sub-title">ب. جدول المحتويات التلقائي الذكي (Automatic Table of Contents)</h3>
+  <p>
+    يقوم محرك <code>initAutomaticTOC</code> بفحص ترويسات المقال (<code>H2</code> و <code>H3</code>) تلقائياً، ويقوم بتوليد فهرس تفاعلي ذكي بالأرقام التسلسلية، مع إمكانية طي وفرد الفهرس، والتمرير السلس (Smooth Scroll) نحو الفقرة المستهدفة مع تعويض دقيق لارتفاع الهيدر الثابت.
+  </p>
+
+  <figure class="tm-figure">
+    <img src="article_images/table_of_contents_and_btt.webp" alt="جدول المحتويات التلقائي وزر الصعود للأعلى في TekMax" width="1920" height="912" loading="lazy"/>
+    <figcaption class="tm-caption">
+      <span>الشكل 5:</span> جدول المحتويات التلقائي التفاعلي مدمجاً داخل المقال مع زر الصعود إلى الأعلى.
+    </figcaption>
+  </figure>
+
+  <h3 class="tm-sub-title">ج. محرك تحويل الاقتباسات إلى شفرات GitHub (GitHub Syntax Highlighter)</h3>
+  <p>
+    واحدة من أروع وأندر ميزات قالب TekMax؛ حيث يكفي للناشر أثناء كتابة مقاله في محرر بلوجر العادي أن يقوم بتحديد الكود والضغط على زر <strong>"اقتباس نص" (Quote / <code>&lt;blockquote&gt;</code>)</strong>.
+  </p>
+  <p>
+    يقوم القالب فوراً بالتعرف على لغة البرمجة (HTML, CSS, JS, Python, PHP, Shell, SQL...) وتحويل الاقتباس إلى صندوق كود مطابق لتصميم <strong>GitHub</strong> بنسبة 100%:
+  </p>
+  <ul class="tm-list">
+    <li>شريط علوي بنمط نوافذ macOS (الدوائر الثلاث: الأحمر، الأصفر، الأخضر).</li>
+    <li>شارة اسم اللغة البرمجية مع أيقونة الوسوم البرمجية.</li>
+    <li>عمود مستقل لأرقام الأسطر (Line Numbers Gutter) غير قابل للتحديد عند النسخ.</li>
+    <li>زر نسخ ذكي بنقرة واحدة (1-Click Copy) مع إشعار بصري فوري ("تم النسخ بنجاح ✓").</li>
+    <li>حماية الاقتباسات الأدبية العادية والتمييز التلقائي بينها وبين الأكواد.</li>
+  </ul>
+
+  <figure class="tm-figure">
+    <img src="article_images/github_code_light.png" alt="صندوق الكود البرمجي بنمط GitHub في الوضع النهاري" width="1200" height="650" loading="lazy"/>
+    <figcaption class="tm-caption">
+      <span>الشكل 6:</span> كود GitHub الملون في الوضع النهاري مع شارة اللغة وأزرار الماك وعمود ترقيم الأسطر.
+    </figcaption>
+  </figure>
+
+  <figure class="tm-figure">
+    <img src="article_images/github_code_dark.png" alt="صندوق الكود البرمجي بنمط GitHub في الوضع الليلي" width="1200" height="650" loading="lazy"/>
+    <figcaption class="tm-caption">
+      <span>الشكل 7:</span> صندوق كود GitHub الأصلي في الوضع الليلي مع ألوان التمييز النيونية وتأكيد النسخ الفوري.
+    </figcaption>
+  </figure>
+
+  <h3 class="tm-sub-title">د. صندوق "اقرأ أيضاً" المدمج بين الفقرات (In-Article Related)</h3>
+  <p>
+    لزيادة معدل تصفح المقالات وتقليل معدل الارتداد (Bounce Rate)، يدمج القالب صندوق اقتراحات ذكي ينغرس تلقائياً بين فقرات المقال (عند 50% أو 25% أو 40% من المحتوى حسب الرغبة). يتميز بترقيم ثنائي ناصع (01، 02) وتصميم كارت أبيض نقي مع سهم حركي تفاعلي.
+  </p>
+
+  <figure class="tm-figure">
+    <img src="article_images/in_article_related_box.webp" alt="صندوق شاهد أيضاً المدمج تلقائياً بين فقرات المقال" width="1233" height="633" loading="lazy"/>
+    <figcaption class="tm-caption">
+      <span>الشكل 8:</span> صندوق "اقرأ أيضاً" التلقائي المدمج بين الفقرات استناداً إلى تصنيف المقال الحالي.
+    </figcaption>
+  </figure>
+
+  <h3 class="tm-sub-title">هـ. شريط تقدم القراءة وزر الصعود للأعلى</h3>
+  <p>
+    يظهر شريط بلون القالب الأساسي أعلى الشاشة يوضح للزائر النسبة المئوية المتبقية لإنهاء المقال، كما يظهر زر الصعود إلى الأعلى (<code>#backToTopBtn</code>) بسلاسة عند تجاوز 300 بكسل من التمرير ليعيد الزائر للقمة بانسيابية تامة.
+  </p>
+
+  <h3 class="tm-sub-title">و. نظام زر المتابعة الذكي ثلاثي المواضع (Follow Button Modes)</h3>
+  <p>
+    يدعم القالب 3 خيارات لموضع زر المتابعة يمكن التبديل بينها برقم واحد من مصمم المظهر:
+  </p>
+  <ul class="tm-list">
+    <li><strong>الوضع 1 (الهيدر):</strong> يظهر زر المتابعة بجوار أيقونة البحث والوضع الليلي في أعلى الموقع.</li>
+    <li><strong>الوضع 2 (المقال):</strong> يظهر الزر داخل صندوق معلومات المقال بجوار أزرار المشاركة.</li>
+    <li><strong>الوضع 3 (عائم في الشاشة):</strong> يطفو الزر بثبات تام في أسفل يسار الشاشة أثناء التمرير لمضاعفة الاشتراكات.</li>
+  </ul>
+
+  <!-- Section: Dark Mode -->
+  <h2 class="tm-sec-title">5. محرك الوضع الليلي الأصلي (Native Dark Mode)</h2>
+  <p>
+    تمت برمجة الوضع الليلي في TekMax بالاعتماد على خصائص الـ CSS Custom Properties ومن خلال وسم <code>data-theme="dark"</code> المطبق فورياً على جذر الصفحة <code>&lt;html&gt;</code>.
+  </p>
+  <p>
+    الميزة الاستثنائية هنا هي وجود <strong>الموزع المتزامن الفوري في <code>&lt;head&gt;</code></strong>؛ حيث يقرأ تفضيل الزائر من <code>localStorage</code> قبل أن يقوم المتصفح برسم بكسل واحد على الشاشة، مما يمنع نهائياً وميض الشاشة الأبيض المزعج (Flash of Unstyled Theme - FOUT).
+  </p>
+
+  <figure class="tm-figure">
+    <img src="article_images/dark_mode_experience.webp" alt="تجربة الوضع الليلي الفخم في قالب TekMax" width="1920" height="912" loading="lazy"/>
+    <figcaption class="tm-caption">
+      <span>الشكل 9:</span> تجربة التصفح بالوضع الليلي مع الحفاظ على أعلى درجات الراحة البصرية والتباين المعتمد.
+    </figcaption>
+  </figure>
+
+  <!-- Section: Performance & Speed -->
+  <h2 class="tm-sec-title">6. أداء قالب TekMax وسرعته: نتائج تدقيق PageSpeed الحقيقية</h2>
+  <p>
+    التزاماً بالشفافية المطلقة ولأننا لا نعتمد على عبارات تسويقية عامة، تم إجراء فحص دقيق وشامل لأداء مدونة TekMax الحية عبر أداة <strong>Google PageSpeed Insights الرسمية</strong> عبر الرابط المعتمد، وفيما يلي النتائج الفعلية المستخرجة مباشرة من تقرير الاختبار دون أي تزييف أو مبالغة:
+  </p>
+
+  <!-- Desktop Scores Table -->
+  <div class="tm-table-container">
+    <table class="tm-table">
+      <thead>
+        <tr>
+          <th>المؤشر المعتمد</th>
+          <th>نتيجة الكمبيوتر (Desktop)</th>
+          <th>نتيجة الهاتف (Mobile)</th>
+          <th>الحالة والتقييم</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>مؤشر الأداء الإجمالي (Performance Score)</strong></td>
+          <td><span class="tm-metric-score score-green">92 / 100</span></td>
+          <td><span class="tm-metric-score score-green">84 / 100</span></td>
+          <td>ممتاز - نطاق الأداء المتقدم (Green Zone)</td>
+        </tr>
+        <tr>
+          <td><strong>إمكانية الوصول (Accessibility)</strong></td>
+          <td><span class="tm-metric-score score-green">96 / 100</span></td>
+          <td><span class="tm-metric-score score-green">96 / 100</span></td>
+          <td>مطابق لمعايير WCAG 2.2 AA العالمية</td>
+        </tr>
+        <tr>
+          <td><strong>أفضل الممارسات (Best Practices)</strong></td>
+          <td><span class="tm-metric-score score-green">100 / 100</span></td>
+          <td><span class="tm-metric-score score-green">100 / 100</span></td>
+          <td>علامة كاملة - خلو تام من أخطاء الويب والأمان</td>
+        </tr>
+        <tr>
+          <td><strong>تحسين محركات البحث (SEO Score)</strong></td>
+          <td><span class="tm-metric-score score-green">92 / 100</span></td>
+          <td><span class="tm-metric-score score-green">92 / 100</span></td>
+          <td>بنية مهيكلة وصديقة لمحركات البحث بالكامل</td>
+        </tr>
+        <tr>
+          <td><strong>أول رسم للمحتوى (FCP - First Contentful Paint)</strong></td>
+          <td><span class="tm-metric-score score-green">0.8 ثانية</span></td>
+          <td><span class="tm-metric-score score-green">1.9 ثانية</span></td>
+          <td>ظهور فوري لعناصر الصفحة الأولى</td>
+        </tr>
+        <tr>
+          <td><strong>أكبر رسم للمحتوى (LCP - Largest Contentful Paint)</strong></td>
+          <td><span class="tm-metric-score score-green">0.9 ثانية</span></td>
+          <td><span class="tm-metric-score score-orange">4.3 ثوانٍ</span></td>
+          <td>فائق السرعة على الكمبيوتر، ويتأثر بحجم صور المدون على الجوال</td>
+        </tr>
+        <tr>
+          <td><strong>إجمالي زمن الحظر (TBT - Total Blocking Time)</strong></td>
+          <td><span class="tm-metric-score score-green">0 ميلي ثانية</span></td>
+          <td><span class="tm-metric-score score-green">0 ميلي ثانية</span></td>
+          <td>إنجاز تقني نادر: صفر حظر للمعالج (Zero JS Blocking)</td>
+        </tr>
+        <tr>
+          <td><strong>انزياح التخطيط التراكمي (CLS)</strong></td>
+          <td><span class="tm-metric-score score-orange">0.155</span></td>
+          <td><span class="tm-metric-score score-green">0.032</span></td>
+          <td>ثبات بصري ممتاز على الجوال (0.032) ومقبول على المكتبي</td>
+        </tr>
+        <tr>
+          <td><strong>مؤشر السرعة (Speed Index)</strong></td>
+          <td><span class="tm-metric-score score-green">0.8 ثانية</span></td>
+          <td><span class="tm-metric-score score-green">1.9 ثانية</span></td>
+          <td>اكتمال التحميل البصري في أجزاء من الثانية</td>
+        </tr>
+        <tr>
+          <td><strong>إجمالي حجم الصفحة وعدد الطلبات</strong></td>
+          <td>748 KiB (20 طلباً)</td>
+          <td>772 KiB (14 طلباً فقط)</td>
+          <td>خفيف جداً مقارنة بالمجلات الإخبارية الضخمة</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <figure class="tm-figure">
+    <img src="article_images/pagespeed_desktop_score.png" alt="نتائج اختبار Google PageSpeed الرسمية لقالب TekMax على الكمبيوتر المكتبي" width="1200" height="550" loading="lazy"/>
+    <figcaption class="tm-caption">
+      <span>الشكل 10:</span> بطاقة درجات Google PageSpeed Insights الرسمية على الكمبيوتر: أداء 92، إمكانية وصول 96، أفضل الممارسات 100، وسيو 92.
+    </figcaption>
+  </figure>
+
+  <figure class="tm-figure">
+    <img src="article_images/pagespeed_mobile_score.png" alt="نتائج اختبار Google PageSpeed الرسمية لقالب TekMax على الهاتف المحمول" width="1200" height="550" loading="lazy"/>
+    <figcaption class="tm-caption">
+      <span>الشكل 11:</span> بطاقة درجات Google PageSpeed Insights على الهاتف المحمول: أداء 84 مع علامة كاملة 100 في أفضل الممارسات وتصفير تام لزمن الحظر (0ms TBT).
+    </figcaption>
+  </figure>
+
+  <!-- Explaining the numbers -->
+  <h3 class="tm-sub-title">تحليل نتائج السرعة ماذا تعني هذه الأرقام للمدون؟</h3>
+  <ul class="tm-list">
+    <li><strong>معجزة زمن الحظر (0 ms Total Blocking Time):</strong> هذا الرقم يعني أن القالب لا يقوم بتحميل أي سكريبتات ثقيلة تجعل الصفحة تتجمد أو تتأخر في الاستجابة لنقرات الزائر، مما يوفر تجربة تصفح سلسة جداً لا تتوفر حتى في أشهر قوالب ووردبريس المدفوعة.</li>
+    <li><strong>أفضل الممارسات (100 / 100):</strong> شهادة تقنية بأن كود القالب آمن بالكامل، خالي من الثغرات، يستخدم اتصالات HTTPS المشفرة، ويحترم معايير الأمان المتقدمة.</li>
+    <li><strong>واقعية LCP على الجوال (4.3s):</strong> يوضح التقرير أن سبب وقت الـ LCP على الجوال يعود حصرياً إلى الصورة البارزة التي رفعها صاحب المدونة في المقال بحجم أبعاد كبير ودقة عالية غير مضغوطة. وقد تم حل ذلك في القالب عبر محرك <code>srcset</code> التلقائي الذي يخدم مقاسات أصغر لشاشات الهواتف.</li>
+  </ul>
+
+  <!-- Section: Technical SEO -->
+  <h2 class="tm-sec-title">7. المعمارية البرمجية وسيو القالب (Technical SEO Engine)</h2>
+  <p>
+    تم بناء TekMax ليكون جاهزاً بنسبة 100% للتصدر في محركات البحث من خلال حزمة تحسينات برمجية دقيقة:
+  </p>
+  <ul class="tm-list">
+    <li><strong>صرامة تسلسل العناوين (Heading Hierarchy):</strong> في الصفحة الرئيسية يكون اسم المدونة هو وسم <code>&lt;h1&gt;</code> الوحيد، بينما في صفحة المقال يتحول اسم الموقع إلى وسم <code>&lt;div&gt;</code> ليكون عنوان المقال هو وسم <code>&lt;h1&gt;</code> الوحيد والحصري في كامل الصفحة، مما يحل مشكلة الـ "Dual H1" الأزلية في بلوجر.</li>
+    <li><strong>البيانات المنظمة الموحدة (Schema.org / JSON-LD @graph):</strong> يُولّد القالب كود Schema احترافي موحد يربط بين <code>WebSite</code>، <code>Organization</code>، <code>BlogPosting</code>، و <code>BreadcrumbList</code>، مما يضمن ظهور النجوم، تواريخ التحديث، وبيانات الكاتب في نتائج بحث Google الغنية (Rich Snippets).</li>
+    <li><strong>عزل صفحات الأرشيف والبحث (Noindex, Follow):</strong> حماية المدونة من عقوبات المحتوى المكرر عبر توجيه عناكب البحث بعدم فهرسة صفحات نتائج البحث الداخلية مع تتبع الروابط بذكاء.</li>
+    <li><strong>وسوم التواصل الاجتماعي (Open Graph &amp; Twitter Cards):</strong> توليد بطاقات معاينة فائقة الدقة عند مشاركة أي رابط على فيسبوك وتويتر ولينكد إن وتيليجرام.</li>
+  </ul>
+
+  <!-- Section: Mobile Experience -->
+  <h2 class="tm-sec-title">8. تجربة الهواتف الذكية والأجهزة اللوحية (Mobile Experience)</h2>
+  <p>
+    تمت إعادة هندسة القالب ليعمل كأنه تطبيق هاتف ذكي سريع الاستجابة:
+  </p>
+  <ul class="tm-list">
+    <li><strong>قائمة جانبية منزلقة ناعمة (Off-Canvas Navigation):</strong> تفتح بلمسة واحدة دون أي تأخير مع زر إغلاق صريح وحظر لتمرير الصفحة الخلفية.</li>
+    <li><strong>إلغاء التغبيش الزجاجي عند التمرير اللمسي:</strong> لضمان معدل إطارات ثابت (60 FPS) على الهواتف الاقتصادية والمتوسطة.</li>
+    <li><strong>أحجام أزرار متوافقة مع إبهام اليد (Touch Targets):</strong> كافة الأزرار والأيقونات تتجاوز قياس 48×48 بكسل لمنع النقرات الخاطئة.</li>
+  </ul>
+
+  <figure class="tm-figure">
+    <img src="article_images/mobile_responsive_view.webp" alt="معاينة تجاوب قالب TekMax على شاشات الهواتف الذكية" width="627" height="717" loading="lazy" style="max-width: 380px; margin: 0 auto;"/>
+    <figcaption class="tm-caption">
+      <span>الشكل 12:</span> التناسق التام لعناصر القالب على شاشة الهاتف دون أي شريط تمرير أفقي.
+    </figcaption>
+  </figure>
+
+  <!-- Section: Verdict & Pros/Cons -->
+  <div class="tm-verdict-box">
+    <h3>تقييم المحرر والكلمة الختامية في قالب TekMax</h3>
+    <p>
+      يمثل قالب <strong>TekMax Pro</strong> قفزة نوعية في صناعة قوالب بلوجر العربية لعام 2026. إنه يثبت للعالم أن منصة Blogger المجانية، عندما تحظى بكود هندسي محكم ونظيف وخالي من الشوائب، قادرة على التفوق على منصات مدفوعة ومعقدة.
+    </p>
+    <p>
+      بفضل تصميمه العصري، وتصفير زمن الحظر (0ms TBT)، ونظام الأكواد بنمط GitHub، والتحكم السلس في 78 متغيراً دون لمس الـ XML، يعد القالب خياراً استثنائياً لكل صانع محتوى يبحث عن التميز والسرعة والأناقة.
+    </p>
+
+    <div class="tm-verdict-scores">
+      <div class="tm-v-score-item">
+        <div class="tm-v-score-val">9.5/10</div>
+        <div class="tm-v-score-label">التصميم والمظهر العصري</div>
+      </div>
+      <div class="tm-v-score-item">
+        <div class="tm-v-score-val">9.8/10</div>
+        <div class="tm-v-score-label">خفة الكود وزمن المعالجة</div>
+      </div>
+      <div class="tm-v-score-item">
+        <div class="tm-v-score-val">9.7/10</div>
+        <div class="tm-v-score-label">التوافق مع السيو (SEO)</div>
+      </div>
+      <div class="tm-v-score-item">
+        <div class="tm-v-score-val">9.6/10</div>
+        <div class="tm-v-score-label">سهولة التخصيص للمستخدم</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tm-callout tm-callout-tip">
+    <div class="tm-callout-icon">📌</div>
+    <div class="tm-callout-content">
+      <strong>هل تريد البدء في استخدام القالب؟</strong>
+      راجع مقالنا المكمل: <strong><a href="TekMax-Guide.html">دليل استخدام وتخصيص قالب TekMax 2026 خطوة بخطوة</a></strong> لمعرفة طريقة التركيب وضبط كافة الإعدادات والخيارات البرمجية باحترافية.
+    </div>
+  </div>
+
+</article>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+Before modifying BlogTekMax Pro.xml:
+
+1. Read and follow ALL rules in:
+
+   * rules/blogger-theme-designer.md
+   * rules/blogger-xml-safety.md
+   * rules/blogger-component-config.md
+
+2. Treat these rules as mandatory architecture constraints.
+
+3. Do not implement any new visual component until you determine its configuration strategy.
+
+4. Every component must be classified into:
+
+   * Blogger Theme Designer variable
+   * CSS custom property
+   * Blogger widget setting
+   * JavaScript/runtime configuration
+   * Structural constant
+
+5. Never invent unsupported Blogger XML syntax or Theme Designer variable types.
+
+6. Preserve Blog1 and all required Blogger functionality.
+
+7. Before editing, inspect the existing implementation.
+
+8. After editing, run:
+
+   * XML validation
+   * Blogger syntax validation
+   * Theme Designer compatibility audit
+   * component configuration audit
+   * responsive audit
+   * dark-mode audit
+
+9. If a requested implementation conflicts with Blogger's actual capabilities, STOP and report the conflict instead of guessing.
+
+Do not bypass these rules for convenience.

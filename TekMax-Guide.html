@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>دليل استخدام قالب TekMax 2026: شرح جميع الميزات والإعدادات وطريقة التخصيص خطوة بخطوة</title>
+  <meta name="description" content="دليل الاستخدام الشامل والعملي لقالب TekMax Pro لمنصة Blogger: شرح طريقة التركيب، ضبط إعدادات مصمم المظهر (Theme Designer)، تفعيل الأكواد بنمط GitHub، تخصيص الألوان والخطوط، وإدارة الإعلانات الذكية."/>
+  <meta name="keywords" content="دليل قالب TekMax, شرح قالب بلوجر, تخصيص قالب بلوجر, تركيب قالب بلوجر, مصمم المظهر بلوجر, أكواد بلوجر GitHub, إعدادات قالب TekMax"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* Scoped Styles for TekMax Guide Article */
+    .tekmax-guide {
+      --tm-primary: #dc1f43;
+      --tm-primary-hover: #b81635;
+      --tm-secondary: #1e2229;
+      --tm-accent: #2563eb;
+      --tm-accent-hover: #1d4ed8;
+      --tm-bg: #ffffff;
+      --tm-surface: #f8fafc;
+      --tm-surface-2: #f1f5f9;
+      --tm-border: #e2e8f0;
+      --tm-text: #0f172a;
+      --tm-text-muted: #64748b;
+      --tm-radius-lg: 16px;
+      --tm-radius-md: 10px;
+      --tm-radius-sm: 6px;
+      --tm-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.03);
+      --tm-shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.08), 0 4px 10px -2px rgba(0, 0, 0, 0.04);
+      
+      font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+      color: var(--tm-text);
+      line-height: 1.85;
+      font-size: 1.05rem;
+      direction: rtl;
+      max-width: 920px;
+      margin: 0 auto;
+      padding: 20px 15px;
+      box-sizing: border-box;
+      background-color: var(--tm-bg);
+    }
+
+    .tekmax-guide * {
+      box-sizing: border-box;
+    }
+
+    /* Headings */
+    .tekmax-guide h1.tm-title {
+      font-size: 2.2rem;
+      font-weight: 900;
+      color: var(--tm-text);
+      line-height: 1.35;
+      margin: 0 0 18px 0;
+      letter-spacing: -0.02em;
+    }
+
+    .tekmax-guide h2.tm-sec-title {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: var(--tm-secondary);
+      margin: 45px 0 20px 0;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--tm-border);
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .tekmax-guide h2.tm-sec-title::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      right: 0;
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(90deg, var(--tm-primary), var(--tm-accent));
+      border-radius: 3px;
+    }
+
+    .tekmax-guide h3.tm-sub-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--tm-text);
+      margin: 30px 0 14px 0;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .tekmax-guide p {
+      margin-bottom: 20px;
+      color: #334155;
+    }
+
+    .tekmax-guide strong {
+      color: var(--tm-text);
+      font-weight: 700;
+    }
+
+    .tekmax-guide a {
+      color: var(--tm-primary);
+      text-decoration: none;
+      font-weight: 600;
+      transition: color 0.2s ease;
+    }
+
+    .tekmax-guide a:hover {
+      color: var(--tm-primary-hover);
+      text-decoration: underline;
+    }
+
+    /* Meta Badges */
+    .tekmax-guide .tm-meta-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-bottom: 25px;
+      padding-bottom: 20px;
+      border-bottom: 1px solid var(--tm-border);
+      font-size: 0.9rem;
+      color: var(--tm-text-muted);
+    }
+
+    .tekmax-guide .tm-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .tekmax-guide .tm-badge-primary {
+      background: #fef2f2;
+      color: var(--tm-primary);
+      border: 1px solid #fee2e2;
+    }
+
+    .tekmax-guide .tm-badge-accent {
+      background: #eff6ff;
+      color: var(--tm-accent);
+      border: 1px solid #dbeafe;
+    }
+
+    .tekmax-guide .tm-badge-success {
+      background: #f0fdf4;
+      color: #16a34a;
+      border: 1px solid #dcfce7;
+    }
+
+    /* Lead Paragraph */
+    .tekmax-guide .tm-lead {
+      font-size: 1.15rem;
+      line-height: 1.85;
+      color: #1e293b;
+      background: #f8fafc;
+      padding: 22px 26px;
+      border-right: 4px solid var(--tm-accent);
+      border-radius: var(--tm-radius-md);
+      margin-bottom: 30px;
+    }
+
+    /* Step Cards */
+    .tekmax-guide .tm-step-card {
+      background: #ffffff;
+      border: 1px solid var(--tm-border);
+      border-radius: var(--tm-radius-md);
+      padding: 24px;
+      margin: 25px 0;
+      box-shadow: var(--tm-shadow);
+      position: relative;
+    }
+
+    .tekmax-guide .tm-step-num {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--tm-primary);
+      color: #ffffff;
+      font-weight: 900;
+      font-size: 1.1rem;
+      margin-left: 12px;
+      vertical-align: middle;
+    }
+
+    .tekmax-guide .tm-step-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 16px;
+      font-size: 1.2rem;
+      font-weight: 800;
+      color: var(--tm-secondary);
+    }
+
+    /* Figures */
+    .tekmax-guide figure.tm-figure {
+      margin: 25px 0;
+      background: #ffffff;
+      border: 1px solid var(--tm-border);
+      border-radius: var(--tm-radius-lg);
+      overflow: hidden;
+      box-shadow: var(--tm-shadow);
+      text-align: center;
+    }
+
+    .tekmax-guide figure.tm-figure img {
+      width: 100%;
+      height: auto;
+      display: block;
+      transition: transform 0.3s ease;
+      object-fit: cover;
+    }
+
+    .tekmax-guide figure.tm-figure:hover img {
+      transform: scale(1.01);
+    }
+
+    .tekmax-guide figcaption.tm-caption {
+      padding: 12px 18px;
+      font-size: 0.88rem;
+      color: var(--tm-text-muted);
+      background: var(--tm-surface);
+      border-top: 1px solid var(--tm-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+    }
+
+    /* Callouts */
+    .tekmax-guide .tm-callout {
+      padding: 20px 24px;
+      border-radius: var(--tm-radius-md);
+      margin: 25px 0;
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      border-right: 4px solid;
+    }
+
+    .tekmax-guide .tm-callout-info {
+      background: #f0f9ff;
+      border-color: #0284c7;
+      color: #0369a1;
+    }
+
+    .tekmax-guide .tm-callout-tip {
+      background: #f0fdf4;
+      border-color: #16a34a;
+      color: #15803d;
+    }
+
+    .tekmax-guide .tm-callout-warning {
+      background: #fffbeb;
+      border-color: #d97706;
+      color: #b45309;
+    }
+
+    .tekmax-guide .tm-callout-icon {
+      font-size: 1.4rem;
+      line-height: 1;
+      flex-shrink: 0;
+    }
+
+    .tekmax-guide .tm-callout-content {
+      font-size: 0.98rem;
+      line-height: 1.7;
+    }
+
+    .tekmax-guide .tm-callout-content p:last-child {
+      margin-bottom: 0;
+    }
+
+    /* Data Tables */
+    .tekmax-guide .tm-table-container {
+      width: 100%;
+      overflow-x: auto;
+      margin: 25px 0;
+      border: 1px solid var(--tm-border);
+      border-radius: var(--tm-radius-md);
+      box-shadow: var(--tm-shadow);
+      background: #ffffff;
+    }
+
+    .tekmax-guide table.tm-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: right;
+      font-size: 0.92rem;
+    }
+
+    .tekmax-guide table.tm-table th {
+      background: var(--tm-surface-2);
+      color: var(--tm-secondary);
+      font-weight: 700;
+      padding: 12px 16px;
+      border-bottom: 2px solid var(--tm-border);
+      white-space: nowrap;
+    }
+
+    .tekmax-guide table.tm-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--tm-border);
+      color: #334155;
+    }
+
+    .tekmax-guide table.tm-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .tekmax-guide table.tm-table tr:nth-child(even) {
+      background: #fafafa;
+    }
+
+    .tekmax-guide code.tm-code {
+      font-family: 'Fira Code', monospace;
+      background: #f1f5f9;
+      color: #e11d48;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.88rem;
+      direction: ltr;
+      display: inline-block;
+    }
+
+    /* Code Snippets */
+    .tekmax-guide .tm-code-block {
+      direction: ltr;
+      text-align: left;
+      background: #0f172a;
+      color: #e2e8f0;
+      font-family: 'Fira Code', monospace;
+      font-size: 0.9rem;
+      padding: 18px 22px;
+      border-radius: var(--tm-radius-md);
+      overflow-x: auto;
+      margin: 20px 0;
+      border: 1px solid #334155;
+    }
+
+    /* Lists */
+    .tekmax-guide ul.tm-list,
+    .tekmax-guide ol.tm-list {
+      padding-right: 22px;
+      margin-bottom: 22px;
+      color: #334155;
+    }
+
+    .tekmax-guide ul.tm-list li,
+    .tekmax-guide ol.tm-list li {
+      margin-bottom: 10px;
+      line-height: 1.75;
+    }
+
+    @media (max-width: 768px) {
+      .tekmax-guide {
+        padding: 15px 12px;
+      }
+      .tekmax-guide h1.tm-title {
+        font-size: 1.7rem;
+      }
+      .tekmax-guide h2.tm-sec-title {
+        font-size: 1.35rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<article class="tekmax-guide">
+
+  <!-- Meta Bar -->
+  <div class="tm-meta-bar">
+    <span class="tm-badge tm-badge-primary">دليل الاستخدام الرسمي 2026</span>
+    <span class="tm-badge tm-badge-accent">Configuration-First</span>
+    <span class="tm-badge tm-badge-success">78 إعداداً معتمداً</span>
+    <span>• مدة التطبيق: 15 دقيقة</span>
+    <span>• موجه لـ: مديري ومحرري بلوجر</span>
+  </div>
+
+  <!-- Main H1 -->
+  <h1 class="tm-title">دليل استخدام وتخصيص قالب TekMax 2026: شرح جميع الميزات والإعدادات وطريقة التخصيص خطوة بخطوة</h1>
+
+  <!-- Lead -->
+  <div class="tm-lead">
+    مرحباً بك في الدليل الإرشادي والتطبيقي الشامل لقالب <strong>TekMax Pro</strong>. يهدف هذا الدليل إلى تقديم مرجع عملي منظم لكل ميزة وإعداد وودجت متاح في القالب، لتمكينك من تهيئة مدونتك التقنية بأقصى درجات الاحترافية ودون الحاجة لأي خلفية برمجية في تحرير أكواد XML.
+  </div>
+
+  <!-- Section 1: Installation -->
+  <h2 class="tm-sec-title">1. كيفية تركيب وتثبيت القالب في Blogger بشكل صحيح</h2>
+  <p>
+    لضمان تثبيت القالب بدون بقايا ملفات قديمة أو تعارضات في عناصر الواجهة، اتبع الخطوات القياسية المعتمدة التالية:
+  </p>
+
+  <div class="tm-step-card">
+    <div class="tm-step-header">
+      <span class="tm-step-num">1</span>
+      أخذ نسخة احتياطية من مظهرك الحالي
+    </div>
+    <p>
+      قبل أي تعديل، توجه إلى لوحة تحكم <strong>Blogger &gt; المظهر (Theme)</strong>، اضغط على السهم المجاور لزر "تخصيص"، ثم اختر <strong>الاحتفاظ بنسخة احتياطية (Backup)</strong> وقم بتنزيل الملف على جهازك.
+    </p>
+  </div>
+
+  <div class="tm-step-card">
+    <div class="tm-step-header">
+      <span class="tm-step-num">2</span>
+      استعادة ورفع ملف BlogTekMax Pro.xml
+    </div>
+    <p>
+      اضغط مرة أخرى على نفس القائمة المنسدلة واختر <strong>استعادة (Restore)</strong>، ثم اضغط على زر <strong>تحميل (Upload)</strong> وحدد ملف <code>BlogTekMax Pro.xml</code>. انتظر بضع ثوانٍ حتى تظهر لك رسالة "تمت استعادة المظهر بنجاح".
+    </p>
+  </div>
+
+  <figure class="tm-figure">
+    <img src="article_images/blogger_theme_install.png" alt="نجاح استعادة ورفع قالب TekMax داخل لوحة تحكم بلوجر" width="1200" height="600" loading="lazy"/>
+    <figcaption class="tm-caption">
+      <span>الشكل 1:</span> رسالة نجاح استعادة المظهر وتثبيت القالب مباشرة من لوحة تحكم Blogger.
+    </figcaption>
+  </figure>
+
+  <div class="tm-step-card">
+    <div class="tm-step-header">
+      <span class="tm-step-num">3</span>
+      تعيين مظهر الجوال إلى "سطح المكتب" (إعداد إلزامي)
+    </div>
+    <p>
+      اضغط على نفس القائمة المنسدلة واختر <strong>إعدادات الجوال (Mobile Settings)</strong>، ثم اختر <strong>سطح المكتب (Desktop)</strong> واضغط "حفظ".
+    </p>
+    <div class="tm-callout tm-callout-warning" style="margin: 15px 0 0 0;">
+      <div class="tm-callout-icon">⚠️</div>
+      <div class="tm-callout-content">
+        <strong>تنبيه هام جداً:</strong> قالب TekMax يمتلك تصميماً متجاوباً أصلياً 100% (Responsive)، وإذا تركت خيار مظهر الجوال على الافتراضي، ستقوم بلوجر بعرض مظهرها البدائي القديم بدلاً من واجهة القالب المتطورة.
+      </div>
+    </div>
+  </div>
+
+  <!-- Section 2: Theme Designer Settings -->
+  <h2 class="tm-sec-title">2. دليل إعدادات مصمم المظهر (Theme Designer Settings)</h2>
+  <p>
+    تتم كافة التخصيصات من خلال لوحة <strong>المظهر &gt; تخصيص &gt; متقدم (Advanced)</strong>. ينقسم القالب إلى <strong>13 مجموعة متخصصة</strong> تضم <strong>78 متغيراً حقيقياً</strong>، وفيما يلي تفصيل كل إعداد ووظيفته والقيم المعتمدة له:
+  </p>
+
+  <!-- Group 1: Layout -->
+  <h3 class="tm-sub-title">المجموعة 1: أبعاد وتخطيط القالب (Layout Settings)</h3>
+  <div class="tm-table-container">
+    <table class="tm-table">
+      <thead>
+        <tr>
+          <th>اسم المتغير (Variable)</th>
+          <th>الوظيفة وماذا يفعل</th>
+          <th>القيمة الافتراضية</th>
+          <th>القيم المقترحة</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code class="tm-code">contentMaxWidth</code></td>
+          <td>أقصى عرض للحاوية الرئيسية للموقع</td>
+          <td><code>1200px</code></td>
+          <td>1140px إلى 1320px حسب كثافة المحتوى</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Group 2: Sidebar Settings -->
+  <h3 class="tm-sub-title">المجموعة 2: إعدادات القائمة الجانبية (Sidebar Controls)</h3>
+  <p>تتيح لك هذه المجموعة إخفاء الشريط الجانبي وتوسيع المحتوى لعرض كامل (Full-Width) في أي قسم تريده:</p>
+  <div class="tm-table-container">
+    <table class="tm-table">
+      <thead>
+        <tr>
+          <th>اسم المتغير</th>
+          <th>مكان التطبيق</th>
+          <th>خيارات القيمة</th>
+          <th>الافتراضي</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code class="tm-code">hideSidebarHome</code></td>
+          <td>إخفاء القائمة الجانبية من الصفحة الرئيسية</td>
+          <td><strong>1 = لا</strong> (ظاهرة) / <strong>2 = نعم</strong> (مخفية)</td>
+          <td><code>1px</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">hideSidebarPost</code></td>
+          <td>إخفاء القائمة الجانبية من صفحة المقالات (قراءة بعرض كامل)</td>
+          <td><strong>1 = لا</strong> / <strong>2 = نعم</strong></td>
+          <td><code>1px</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">hideSidebarPage</code></td>
+          <td>إخفاء القائمة الجانبية من الصفحات الثابتة (مثل من نحن والمكتبة)</td>
+          <td><strong>1 = لا</strong> / <strong>2 = نعم</strong></td>
+          <td><code>1px</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">hideSidebarMobile</code></td>
+          <td>إخفاء القائمة الجانبية بالكامل على شاشات الهواتف المحمولة</td>
+          <td><strong>1 = لا</strong> / <strong>2 = نعم</strong></td>
+          <td><code>1px</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Group 3: Colors -->
+  <h3 class="tm-sub-title">المجموعة 3: ألوان القالب الرئيسية (Theme Colors)</h3>
+  <div class="tm-table-container">
+    <table class="tm-table">
+      <thead>
+        <tr>
+          <th>اسم المتغير</th>
+          <th>العنصر الذي يتحكم به</th>
+          <th>اللون الافتراضي</th>
+          <th>الرمز اللوني</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code class="tm-code">primaryColor</code></td>
+          <td>لون الهوية الأساسي (الأزرار، الروابط النشطة، شريط التقدم)</td>
+          <td>الأحمر الملكي (Royal Crimson)</td>
+          <td><code>#dc1f43</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">secondaryColor</code></td>
+          <td>اللون الداكن الثانوي للعناوين والفوتر</td>
+          <td>كحلي مسامي تيتانيوم</td>
+          <td><code>#1e2229</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">accentColor</code></td>
+          <td>لون التمييز النابض والتركيز</td>
+          <td>أحمر متوهج (Vibrant Red)</td>
+          <td><code>#ff244d</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">bodyBackground</code></td>
+          <td>خلفية الموقع العامة في الوضع النهاري</td>
+          <td>أبيض ناصع</td>
+          <td><code>#ffffff</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">surfaceColor</code></td>
+          <td>خلفية بطاقات المقالات والأسطح المرتفعة</td>
+          <td>رمادي ناعم</td>
+          <td><code>#f8f9fa</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">textColor</code></td>
+          <td>لون النصوص والفقرات الأساسية</td>
+          <td>أسود كربوني عميق</td>
+          <td><code>#111317</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">mutedTextColor</code></td>
+          <td>لون البيانات الوصفية (التواريخ، اسم الكاتب، عدد التعليقات)</td>
+          <td>رمادي متوسط مهدئ للعين</td>
+          <td><code>#555d6b</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">borderColor</code></td>
+          <td>لون الخطوط الفاصلة وحدود البطاقات</td>
+          <td>رمادي فاتح متناسق</td>
+          <td><code>#eaedf1</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Group 4: Typography -->
+  <h3 class="tm-sub-title">المجموعة 4: الخطوط والطباعة (Typography)</h3>
+  <p>
+    يدعم القالب 4 عائلات خطوط عربية فائقة الاحترافية من Google Fonts. لتغيير خط الموقع بالكامل، كل ما عليك هو تغيير قيمة المتغير <code class="tm-code">fontChoice</code>:
+  </p>
+  <ul class="tm-list">
+    <li><strong>القيمة 1 (1px):</strong> خط <strong>Cairo</strong> (الافتراضي) - الخط الهندسي الأكثر وضوحاً وفخامة في المواقع التقنية.</li>
+    <li><strong>القيمة 2 (2px):</strong> خط <strong>Tajawal</strong> - خط حديث ناعم ذو انسيابية عالية في القراءة الصحفية.</li>
+    <li><strong>القيمة 3 (3px):</strong> خط <strong>IBM Plex Sans Arabic</strong> - الخط التقني المعتمد لدى شركات التقنية والمطورين.</li>
+    <li><strong>القيمة 4 (4px):</strong> خط <strong>Noto Kufi Arabic</strong> - خط كوفي رسمي عصري ملائم للمجلات والمنصات الإخبارية.</li>
+  </ul>
+
+  <!-- Group 5 & 6: Header & Logo -->
+  <h3 class="tm-sub-title">المجموعة 5 و 6: الهيدر والشعار (Header &amp; Navigation)</h3>
+  <div class="tm-table-container">
+    <table class="tm-table">
+      <thead>
+        <tr>
+          <th>اسم المتغير</th>
+          <th>الوظيفة والتأثير</th>
+          <th>الافتراضي</th>
+          <th>ملاحظات الاستخدام</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code class="tm-code">enableLogo</code></td>
+          <td>تفعيل الشعار الصوري بدلاً من النص</td>
+          <td><code>1px</code> (نعم)</td>
+          <td>1 = إظهار الصورة، 2 = نص فقط</td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">logoDisplayMode</code></td>
+          <td>نمط عرض الشعار</td>
+          <td><code>1px</code> (شعار فقط)</td>
+          <td>1 = شعار، 2 = اسم الموقع، 3 = كلاهما معاً</td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">logoWidth</code></td>
+          <td>أقصى عرض للشعار على شاشات الكمبيوتر</td>
+          <td><code>420px</code></td>
+          <td>يمكن زيادته حتى 650px للشعارات العريضة</td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">logoHeight</code></td>
+          <td>أقصى ارتفاع للشعار على شاشات الكمبيوتر</td>
+          <td><code>80px</code></td>
+          <td>شعار كبير جداً وبارز وشديد الوضوح لنسخة الكمبيوتر مع هيدر 94px</td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">logoMobileWidth</code></td>
+          <td>عرض الشعار على شاشات الهواتف الذكية</td>
+          <td><code>260px</code></td>
+          <td>يضمن وضوح الشعار بالكامل على شاشات الجوال</td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">logoMobileHeight</code></td>
+          <td>ارتفاع الشعار على شاشات الهواتف</td>
+          <td><code>48px</code></td>
+          <td>يتناسق بجمالية مع أزرار القائمة والبحث للجوال</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <figure class="tm-figure">
+    <img src="article_images/tekmax_logo_light.png" alt="معاينة الشعار الجديد المحاذى رأسياً وأفقياً بدقة في الهيدر" width="1025" height="172" loading="lazy" style="max-width: 500px; margin: 0 auto;"/>
+    <figcaption class="tm-caption">
+      <span>الشكل 2:</span> شعار TekMax بدقة Retina ومحاذاة سنترية متطابقة أفقياً مع عناصر الهيدر.
+    </figcaption>
+  </figure>
+
+  <!-- Group 7: Back to Top -->
+  <h3 class="tm-sub-title">المجموعة 7: زر الصعود إلى الأعلى (Back to Top)</h3>
+  <div class="tm-table-container">
+    <table class="tm-table">
+      <thead>
+        <tr>
+          <th>اسم المتغير</th>
+          <th>الوظيفة</th>
+          <th>القيم المتاحة</th>
+          <th>الافتراضي</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code class="tm-code">enableBackToTop</code></td>
+          <td>تفعيل ظهور زر الصعود عند التمرير</td>
+          <td>1 = نعم / 2 = لا</td>
+          <td><code>1px</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">backToTopPosition</code></td>
+          <td>موضع الزر في الشاشة</td>
+          <td><strong>1 = يسار الشاشة</strong> / <strong>2 = يمين الشاشة</strong></td>
+          <td><code>1px</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">backToTopSize</code></td>
+          <td>قطر الزر الدائري</td>
+          <td>من 38px إلى 54px</td>
+          <td><code>44px</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">backToTopBg</code></td>
+          <td>لون خلفية الزر</td>
+          <td>أي كود لوني HEX</td>
+          <td><code>#dc1f43</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Group 8: In-Article Related -->
+  <h3 class="tm-sub-title">المجموعة 8: قسم "اقرأ أيضاً" المدمج في المقال (In-Article Related)</h3>
+  <div class="tm-table-container">
+    <table class="tm-table">
+      <thead>
+        <tr>
+          <th>اسم المتغير</th>
+          <th>الوظيفة</th>
+          <th>القيم والخيارات</th>
+          <th>الافتراضي</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code class="tm-code">enableInArticleRelated</code></td>
+          <td>تفعيل الصندوق التلقائي بين الفقرات</td>
+          <td>1 = نعم / 2 = لا</td>
+          <td><code>1px</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">inArticleRelatedPos</code></td>
+          <td>موقع انغراس الصندوق داخل المقال</td>
+          <td><strong>1 = في منتصف المقال (50%)</strong><br/>2 = بعد ربع المحتوى (25%)<br/>3 = عند (40%)<br/>4 = عند (60%)</td>
+          <td><code>1px</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">inArticleRelatedCount</code></td>
+          <td>عدد المقالات المقترحة المعروضة</td>
+          <td>من مقال واحد حتى 5 مقالات</td>
+          <td><code>2px</code> (مقالين)</td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">inArticleShowThumb</code></td>
+          <td>إظهار صورة مصغرة للمقال المقترح</td>
+          <td>1 = نعم / 2 = لا</td>
+          <td><code>1px</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Group 10 & 12: TekMax 2.0 & Advanced Features -->
+  <h3 class="tm-sub-title">المجموعات 10 و 12: إعدادات TekMax 2.0 والميزات المتقدمة</h3>
+  <p>
+    تمثل هذه المجموعة لوحة التحكم الذكية بكافة الوظائف التفاعلية الدقيقة للمقال:
+  </p>
+  <div class="tm-table-container">
+    <table class="tm-table">
+      <thead>
+        <tr>
+          <th>اسم المتغير</th>
+          <th>الوظيفة الحصرية</th>
+          <th>خيارات التبديل</th>
+          <th>الافتراضي</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code class="tm-code">enableTOC</code></td>
+          <td>تفعيل جدول المحتويات التلقائي للمقال</td>
+          <td>1 = نعم / 2 = لا</td>
+          <td><code>1px</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">enableReadingProgress</code></td>
+          <td>تفعيل شريط تقدم القراءة العلوي</td>
+          <td>1 = نعم / 2 = لا</td>
+          <td><code>1px</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">enableSyntaxHighlight</code></td>
+          <td>تفعيل ملوّن الشفرات البرمجية بنمط GitHub</td>
+          <td>1 = نعم / 2 = لا</td>
+          <td><code>1px</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">enableCodeCopy</code></td>
+          <td>تفعيل زر النسخ السريع للأكواد بنقرة واحدة</td>
+          <td>1 = نعم / 2 = لا</td>
+          <td><code>1px</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">enablePostInfo</code></td>
+          <td>تفعيل صندوق معلومات المقال العلوي</td>
+          <td>1 = نعم / 2 = لا</td>
+          <td><code>1px</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">showPublishDate</code></td>
+          <td>إظهار تاريخ النشر الأصلي</td>
+          <td>1 = نعم / 2 = لا</td>
+          <td><code>1px</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">showUpdatedDate</code></td>
+          <td>إظهار تاريخ آخر تحديث للمقال</td>
+          <td>1 = نعم / 2 = لا</td>
+          <td><code>1px</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">showReadingTime</code></td>
+          <td>إظهار بطاقة وقت القراءة المقدر</td>
+          <td>1 = نعم / 2 = لا</td>
+          <td><code>1px</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">enablePrintButton</code></td>
+          <td>إظهار بطاقة طباعة المقال السريعة</td>
+          <td>1 = نعم / 2 = لا</td>
+          <td><code>1px</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">enableEditPost</code></td>
+          <td>إظهار زر تحرير المقال الإداري السريع</td>
+          <td>1 = نعم / 2 = لا</td>
+          <td><code>1px</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">enableFollowButton</code></td>
+          <td>تفعيل نظام زر متابعة الموقع</td>
+          <td>1 = نعم / 2 = لا</td>
+          <td><code>1px</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">followButtonPosition</code></td>
+          <td>موضع زر المتابعة الذكي</td>
+          <td><strong>1 = في الهيدر</strong><br/><strong>2 = داخل صندوق المقال</strong><br/><strong>3 = زر عائم في الشاشة</strong></td>
+          <td><code>1px</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">enableSmart404</code></td>
+          <td>تفعيل صفحة الخطأ 404 الذكية مع اقتراح مقالات بديلة</td>
+          <td>1 = نعم / 2 = لا</td>
+          <td><code>1px</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">enablePagination</code></td>
+          <td>تفعيل ترقيم الصفحات الرقمي</td>
+          <td>1 = نعم / 2 = لا</td>
+          <td><code>1px</code></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <figure class="tm-figure">
+    <img src="article_images/adv_features_matrix.png" alt="نتائج فحص مصفوفة الميزات المتقدمة وتطابقها التام مع مصمم المظهر" width="1200" height="450" loading="lazy"/>
+    <figcaption class="tm-caption">
+      <span>الشكل 3:</span> نجاح اختبار كافة متغيرات الميزات المتقدمة واستجابتها الفورية للتفعيل والتعطيل بنسبة 100%.
+    </figcaption>
+  </figure>
+
+  <!-- Section 3: Layout & Widgets -->
+  <h2 class="tm-sec-title">3. خريطة ودجات وتنسيق بلوجر (Blogger Layout Map)</h2>
+  <p>
+    عند التوجه إلى لوحة <strong>Blogger &gt; التنسيق (Layout)</strong>، ستجد هيكلاً منظماً يضم <strong>25 قسماً و 27 ودجت</strong> تتيح لك تخصيص المحتوى بالسحب والإفلات:
+  </p>
+
+  <ul class="tm-list">
+    <li><strong>أدوات الشريط العلوي:</strong>
+      <ul>
+        <li><code class="tm-code">LinkList10</code> (روابط الشريط العلوي): لإضافة روابط الصفحات الأساسية مثل "من نحن"، "اتصل بنا".</li>
+        <li><code class="tm-code">LinkList11</code> (أيقونات التواصل): لإضافة روابط حساباتك (فيسبوك، تويتر، يوتيوب...) حيث يتعرف القالب تلقائياً على اسم الموقع ويضع أيقونته SVG.</li>
+      </ul>
+    </li>
+    <li><strong>الهيدر وشريط التنقل:</strong>
+      <ul>
+        <li><code class="tm-code">Header1</code>: لرفع شعار الموقع وتعيين عنوان ووصف المدونة.</li>
+        <li><code class="tm-code">LinkList1</code> (قائمة التنقل): لإضافة أقسام وتصنيفات الموقع، ويدعم القوائم المنسدلة الفرعية بكتابة شرطة سفلية قبل اسم الرابط مثل: <code>_قسم فرعي</code>.</li>
+        <li><code class="tm-code">LinkList100</code> (زر تابعنا): لتحديد الرابط الذي يفتح عند نقر زر المتابعة.</li>
+      </ul>
+    </li>
+    <li><strong>سلايدر Hero والأقسام الترويجية:</strong>
+      <ul>
+        <li><code class="tm-code">PopularPosts99</code> (سلايدر المحتوى المميز): لعرض المقالات المميزة في شبكة Hero Bento Grid.</li>
+        <li><code class="tm-code">PopularPosts2</code> (الأكثر رواجاً): يغذي شريط الأخبار الرائجة أسفل السلايدر.</li>
+      </ul>
+    </li>
+    <li><strong>الشريط الجانبي (Sidebar):</strong>
+      <ul>
+        <li><code class="tm-code">PopularPosts1</code> (اختيارات المحرر): يعرض المقالات الأكثر قراءة في السايدبار.</li>
+        <li><code class="tm-code">Label1</code> (التصنيفات الشائعة): يعرض سحابة وسوم وتصنيفات المدونة بنمط كبسولات أنيقة مع عداد المقالات.</li>
+        <li><code class="tm-code">Profile1</code> (عن الكاتب): يعرض صورة ونبذة تعريفية عن صاحب المدونة.</li>
+      </ul>
+    </li>
+  </ul>
+
+  <!-- Section 4: Feature-by-Feature Practical Steps -->
+  <h2 class="tm-sec-title">4. كيفية استخدام ميزات القالب أثناء كتابة المقالات</h2>
+
+  <!-- Feature 1: GitHub Code -->
+  <div class="tm-step-card">
+    <div class="tm-step-header">
+      <span class="tm-step-num">A</span>
+      طريقة كتابة وتلوين الأكواد بنمط GitHub الأصلي
+    </div>
+    <p>
+      لست بحاجة لتثبيت أي إضافات خارجية. أثناء كتابة المقال داخل محرر بلوجر:
+    </p>
+    <ol class="tm-list">
+      <li>اكتب الكود البرمجي الخاص بك أو الصقه في المحرر.</li>
+      <li>حدد نص الكود بالكامل، ثم اضغط على زر <strong>اقتباس نص (Quote / <code>&lt;blockquote&gt;</code>)</strong> من شريط أدوات بلوجر.</li>
+      <li>(اختياري) لتحديد لغة البرمجة بدقة، اكتب في أول سطر من الكود اسم اللغة بين قوسين معقوفين مثل <code>[python]</code> أو <code>[html]</code> أو <code>[css]</code>.</li>
+      <li>بمجرد حفظ المقال أو معاينته، سيتحول الاقتباس تلقائياً إلى صندوق كود GitHub متطور مع أزرار ماك وعمود أرقام الأسطر وزر النسخ السريع!</li>
+    </ol>
+  </div>
+
+  <figure class="tm-figure">
+    <img src="article_images/github_code_copied.png" alt="تأكيد نسخ الكود البرمجي بنقرة واحدة داخل مقال TekMax" width="1200" height="450" loading="lazy"/>
+    <figcaption class="tm-caption">
+      <span>الشكل 4:</span> زر النسخ التفاعلي السريع مع إشعار "تم النسخ بنجاح" وتأثير الإطار الأخضر.
+    </figcaption>
+  </figure>
+
+  <!-- Feature 2: TOC -->
+  <div class="tm-step-card">
+    <div class="tm-step-header">
+      <span class="tm-step-num">B</span>
+      طريقة تفعيل وتوليد جدول المحتويات (TOC)
+    </div>
+    <p>
+      يعمل جدول المحتويات بصورة ذاتية 100%؛ كل ما عليك هو تنسيق عناوين وفقرات مقالك باستخدام عناوين بلوجر القياسية:
+    </p>
+    <ul class="tm-list">
+      <li>استخدم <strong>عنوان رئيسي (Heading)</strong> للعناوين الأساسية للمقال (تُولد كوسم <code>&lt;h2&gt;</code>).</li>
+      <li>استخدم <strong>عنوان فرعي (Subheading)</strong> للنقاط المتفرعة (تُولد كوسم <code>&lt;h3&gt;</code>).</li>
+      <li>سيقوم القالب تلقائياً ببناء الفهرس الرقمي أعلى المقال مع إمكانية الفتح والإغلاق والتمرير السلس.</li>
+    </ul>
+  </div>
+
+  <!-- Feature 3: Follow Button -->
+  <div class="tm-step-card">
+    <div class="tm-step-header">
+      <span class="tm-step-num">C</span>
+      طريقة ضبط مواضع زر المتابعة الثلاثة
+    </div>
+    <p>
+      إذا كنت تريد توجيه الزوار لمتابعة قناتك على تيليجرام أو حسابك على إكس أو نشرتك البريدية:
+    </p>
+    <ol class="tm-list">
+      <li>توجه إلى <strong>المظهر &gt; تخصيص &gt; متقدم &gt; الميزات المتقدمة</strong>.</li>
+      <li>ابحث عن <code class="tm-code">followButtonPosition</code>:
+        <ul>
+          <li>ضع القيمة <strong>1</strong> ليظهر الزر في الهيدر العلوي بجانب البحث.</li>
+          <li>ضع القيمة <strong>2</strong> ليظهر داخل صندوق معلومات المقال بجانب زر المشاركة.</li>
+          <li>ضع القيمة <strong>3</strong> ليظهر كزر عائم ثابت في أسفل يسار الشاشة طوال تصفح الزائر.</li>
+        </ul>
+      </li>
+      <li>توجه إلى <strong>التنسيق &gt; زر تابعنا (LinkList100)</strong> واكتب الرابط المستهدف.</li>
+    </ol>
+  </div>
+
+  <figure class="tm-figure">
+    <img src="article_images/follow_button_positions.png" alt="اختبارات أوضاع زر المتابعة الثلاثة واجتيازها بنسبة 100%" width="1200" height="400" loading="lazy"/>
+    <figcaption class="tm-caption">
+      <span>الشكل 5:</span> التحقق الهندسي من الأوضاع الثلاثة المعتمدة لزر المتابعة بدون أي تعارض بصري.
+    </figcaption>
+  </figure>
+
+  <!-- Section 5: Ad System -->
+  <h2 class="tm-sec-title">5. نظام الإعلانات الذكي ومواقع الظهور (TMSmartAdsEngine)</h2>
+  <p>
+    يمتلك القالب نظام إعلانات ذكي محمي من انزياح التخطيط (Zero-CLS)؛ حيث تم حجز ارتفاع مسبق لكل صندوق إعلاني لمنع قفز المحتوى عند تحميل إعلانات AdSense:
+  </p>
+
+  <div class="tm-table-container">
+    <table class="tm-table">
+      <thead>
+        <tr>
+          <th>معرف الودجت في التنسيق</th>
+          <th>موقع ظهور الإعلان</th>
+          <th>المقاس الموصى به</th>
+          <th>نوع الدمج</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code class="tm-code">HTML202</code></td>
+          <td>أسفل الهيدر مباشرة (كافة الصفحات)</td>
+          <td>728×90 أو تجاوبي (Responsive)</td>
+          <td>ثابت محجوز الأبعاد</td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">HTML203</code></td>
+          <td>أعلى الصفحة الرئيسية (بين الهيرو والمقالات)</td>
+          <td>728×90 أو 970×90</td>
+          <td>ثابت للرئيسية فقط</td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">HTML304</code></td>
+          <td>منتصف الرئيسية (بين بطاقات المقالات)</td>
+          <td>إعلان التغذية (In-Feed Ad)</td>
+          <td>مدمج بالتغذية الإخبارية</td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">HTML204</code></td>
+          <td>أعلى المقال (قبل بداية النص)</td>
+          <td>Responsive أو 336×280</td>
+          <td>داخل صفحة المقال</td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">HTML205</code></td>
+          <td>داخل المقال 1 (تلقائي ذكي بعد الفقرة الثانية)</td>
+          <td>Responsive تلقائي</td>
+          <td>حقن ذكي عبر <code>TMSmartAdsEngine</code></td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">HTML206</code></td>
+          <td>داخل المقال 2 (في منتصف نص المقال)</td>
+          <td>Responsive تلقائي</td>
+          <td>حقن ذكي بمنتصف الفقرات</td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">HTML207</code></td>
+          <td>أسفل المقال (مباشرة بعد نهاية المحتوى)</td>
+          <td>728×90 أو 300×250</td>
+          <td>داخل صفحة المقال</td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">HTML310</code></td>
+          <td>أعلى الشريط الجانبي (Sticky / ثابت)</td>
+          <td>300×250 أو 300×600</td>
+          <td>في السايدبار</td>
+        </tr>
+        <tr>
+          <td><code class="tm-code">HTML210</code></td>
+          <td>الفوتر (أسفل الموقع قبل حقوق النشر)</td>
+          <td>728×90 أو تجاوبي عريض</td>
+          <td>في كافة الصفحات</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tm-callout tm-callout-tip">
+    <div class="tm-callout-icon">💡</div>
+    <div class="tm-callout-content">
+      <strong>كيفية تفعيل إعلانات داخل المقال:</strong>
+      ببساطة توجه إلى لوحة "التنسيق"، افتح أداة <code>[ إعلان ] - داخل المقال 1</code> وضع شفرة إعلان Google AdSense داخلها واضغط حفظ. سيقوم محرك <code>TMSmartAdsEngine</code> بحساب عدد فقرات المقال وغرس الإعلان في الموضع المثالي دون التأثير على سرعة القراءة!
+    </div>
+  </div>
+
+  <!-- Section 6: Performance Best Practices -->
+  <h2 class="tm-sec-title">6. نصائح لتحقيق أعلى أداء وسرعة 100/100 مع قالب TekMax</h2>
+  <p>
+    للحفاظ على الدرجات الخضراء الفائقة في Google PageSpeed ومؤشرات Core Web Vitals، ننصح باتباع القواعد التالية:
+  </p>
+  <ul class="tm-list">
+    <li><strong>استخدم صيغة WebP للصور:</strong> احرص دائماً على رفع صور المقالات بصيغة <code>.webp</code> الحديثة لتقليل حجم الصور بأكثر من 70% مقارنة بـ JPG و PNG التقليدية.</li>
+    <li><strong>التزم بنسب الأبعاد الثابتة:</strong> يفضل أن تكون الصور البارزة للمقالات بأبعاد <code>1200×675</code> بكسل أو <code>800×450</code> بكسل (نسبة 16:9) لضمان ملائمتها لشبكة القالب ومنع أي انزياح بصري.</li>
+    <li><strong>تجنب الإضافات الخارجية والسكريبتات المجهولة:</strong> قالب TekMax مزود بكافة الميزات داخلياً (أكواد، مشاركة، خطوط، فهرس، وضع ليلي) بدون أي حاجة لاستدعاء مكتبات jQuery أو FontAwesome الخارجية التي تبطئ الموقع وتضر بالسيو.</li>
+    <li><strong>اكتب نصوص Alt وصفية للصور:</strong> عند إدراج أي صورة في المقال، احرص على كتابة النص البديل (Alt text) بدقة لمساعدة محركات البحث وزيادة درجة السيو وإمكانية الوصول إلى 100%.</li>
+  </ul>
+
+  <!-- Conclusion & Link -->
+  <div class="tm-callout tm-callout-info" style="margin-top: 40px;">
+    <div class="tm-callout-icon">📖</div>
+    <div class="tm-callout-content">
+      <strong>تريد معرفة المزيد عن أداء القالب واختباراته المعملية؟</strong>
+      اقرأ مقالنا المفصل: <strong><a href="TekMax-Review.html">مراجعة شاملة لقالب TekMax 2026: تجربة عملية لأقوى قوالب بلوجر التقنية وسرعة Core Web Vitals</a></strong> للاطلاع على نتائج تدقيق PageSpeed التفصيلية والتشريح التقني للهندسة البرمجية.
+    </div>
+  </div>
+
+</article>
+
+</body>
+</html>

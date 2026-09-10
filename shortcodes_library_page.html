@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>مكتبة الأكواد القصيرة — BlogTekMax Pro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Fira+Code:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --primary-soft: #eff6ff;
+      --primary-border: #dbeafe;
+      --success: #10b981;
+      --bg-page: #f8fafc;
+      --card-bg: #ffffff;
+      --card-border: #e2e8f0;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --terminal-bg: #090d16;
+      --terminal-border: #1e293b;
+      --terminal-text: #f1f5f9;
+      --tag-color: #38bdf8;
+      --attr-color: #fbbf24;
+      --val-color: #34d399;
+      --radius-card: 16px;
+      --radius-code: 10px;
+      --radius-btn: 8px;
+      --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.03);
+      --shadow-hover: 0 10px 25px -5px rgba(37, 99, 235, 0.08);
+      --font-body: 'Cairo', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'Fira Code', Consolas, Monaco, 'Courier New', monospace;
+    }
+
+    [data-theme="dark"] {
+      --bg-page: #0b0f19;
+      --card-bg: #131b2e;
+      --card-border: rgba(255, 255, 255, 0.08);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --primary-soft: rgba(37, 99, 235, 0.15);
+      --primary-border: rgba(37, 99, 235, 0.3);
+      --terminal-bg: #050811;
+      --terminal-border: rgba(255, 255, 255, 0.1);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 40px 16px;
+      direction: rtl;
+      text-align: right;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .shortcodes-wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    /* -------------------------------------------------------------
+       1. Top Header Card
+       ------------------------------------------------------------- */
+    .shortcodes-header-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-card);
+      padding: 36px 24px;
+      text-align: center;
+      margin-bottom: 28px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .shortcodes-pill-badge {
+      display: inline-block;
+      background: var(--primary);
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 700;
+      padding: 5px 18px;
+      border-radius: 9999px;
+      margin-bottom: 12px;
+      letter-spacing: 0.3px;
+    }
+
+    .shortcodes-main-title {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--text-main);
+      margin-bottom: 8px;
+      letter-spacing: -0.5px;
+    }
+
+    .shortcodes-main-subtitle {
+      font-size: 15px;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    /* -------------------------------------------------------------
+       2. Grid of Cards
+       ------------------------------------------------------------- */
+    .shortcodes-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 22px;
+    }
+
+    @media (max-width: 768px) {
+      .shortcodes-grid {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+      .shortcodes-main-title {
+        font-size: 24px;
+      }
+      .shortcodes-header-card {
+        padding: 28px 18px;
+      }
+    }
+
+    /* -------------------------------------------------------------
+       3. Individual Card
+       ------------------------------------------------------------- */
+    .shortcode-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: var(--radius-card);
+      padding: 22px 20px 20px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .shortcode-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-hover);
+      border-color: rgba(37, 99, 235, 0.3);
+    }
+
+    /* Card Top Row */
+    .shortcode-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 16px;
+      gap: 12px;
+    }
+
+    .shortcode-info {
+      flex: 1;
+    }
+
+    .shortcode-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin-bottom: 4px;
+    }
+
+    .shortcode-desc {
+      font-size: 13px;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    .shortcode-num-badge {
+      background: var(--primary-soft);
+      border: 1px solid var(--primary-border);
+      color: var(--primary);
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 13px;
+      font-weight: 700;
+      flex-shrink: 0;
+      font-family: var(--font-body);
+    }
+
+    /* -------------------------------------------------------------
+       4. Terminal Code Box
+       ------------------------------------------------------------- */
+    .shortcode-box {
+      background: var(--terminal-bg);
+      border: 1px solid var(--terminal-border);
+      border-radius: var(--radius-code);
+      margin-bottom: 14px;
+      overflow: hidden;
+    }
+
+    .shortcode-box-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 12px;
+      background: rgba(255, 255, 255, 0.03);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      direction: ltr;
+    }
+
+    .shortcode-box-label {
+      font-size: 10px;
+      font-weight: 700;
+      color: #64748b;
+      letter-spacing: 0.8px;
+      font-family: var(--font-mono);
+      text-transform: uppercase;
+    }
+
+    .shortcode-box-quick-copy {
+      background: transparent;
+      border: none;
+      color: #94a3b8;
+      font-size: 11px;
+      font-family: var(--font-body);
+      font-weight: 600;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 2px 6px;
+      border-radius: 4px;
+      transition: color 0.15s, background 0.15s;
+      direction: rtl;
+    }
+
+    .shortcode-box-quick-copy:hover {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .shortcode-code-body {
+      padding: 13px 14px;
+      direction: ltr;
+      text-align: left;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      line-height: 1.5;
+      color: var(--terminal-text);
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    /* Syntax Highlighting */
+    .c-tag { color: var(--tag-color); font-weight: 500; }
+    .c-attr { color: var(--attr-color); }
+    .c-val { color: var(--val-color); }
+    .c-txt { color: #f8fafc; }
+
+    /* -------------------------------------------------------------
+       5. Copy Button
+       ------------------------------------------------------------- */
+    .shortcode-copy-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 12px 16px;
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      border-radius: var(--radius-btn);
+      font-size: 14px;
+      font-weight: 700;
+      font-family: var(--font-body);
+      cursor: pointer;
+      transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+      box-shadow: 0 2px 4px rgba(37, 99, 235, 0.12);
+    }
+
+    .shortcode-copy-btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+
+    .shortcode-copy-btn:active {
+      transform: translateY(0);
+    }
+
+    .shortcode-copy-btn.copied {
+      background: var(--success) !important;
+      box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25) !important;
+    }
+
+    /* -------------------------------------------------------------
+       6. Toast Notification
+       ------------------------------------------------------------- */
+    .shortcode-toast {
+      position: fixed;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #0f172a;
+      color: #ffffff;
+      padding: 12px 24px;
+      border-radius: 9999px;
+      font-size: 14px;
+      font-weight: 700;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+      z-index: 99999;
+      font-family: var(--font-body);
+    }
+
+    .shortcode-toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="shortcodes-wrap" id="shortcodesApp">
+
+    <!-- Header Card -->
+    <header class="shortcodes-header-card">
+      <span class="shortcodes-pill-badge">مكتبة مساعدة</span>
+      <h1 class="shortcodes-main-title">مكتبة الأكواد القصيرة</h1>
+      <p class="shortcodes-main-subtitle">انسخ الكود ثم الصقه في وضع HTML داخل مقالك</p>
+    </header>
+
+    <!-- Grid of 17 Shortcodes -->
+    <div class="shortcodes-grid">
+
+      <!-- Card 01: تنبيه معلومات -->
+      <div class="shortcode-card" data-code='<tekmax-alert type="info">نص معلومة مهمة للقارئ</tekmax-alert>'>
+        <div class="shortcode-card-header">
+          <div class="shortcode-info">
+            <h3 class="shortcode-title">تنبيه معلومات</h3>
+            <p class="shortcode-desc">لعرض معلومة مهمة أو لفت انتباه القارئ</p>
+          </div>
+          <div class="shortcode-num-badge">01</div>
+        </div>
+        <div class="shortcode-box">
+          <div class="shortcode-box-header">
+            <span class="shortcode-box-label">CODE</span>
+            <button class="shortcode-box-quick-copy" type="button">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>نسخ</span>
+            </button>
+          </div>
+          <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-alert</span> <span class="c-attr">type</span>=<span class="c-val">"info"</span>&gt;<span class="c-txt">نص معلومة مهمة للقارئ</span>&lt;/<span class="c-tag">tekmax-alert</span>&gt;</div>
+        </div>
+        <button class="shortcode-copy-btn" type="button">
+          <span>نسخ الكود</span>
+        </button>
+      </div>
+
+      <!-- Card 02: رسالة نجاح -->
+      <div class="shortcode-card" data-code='<tekmax-alert type="success">تمت العملية بنجاح!</tekmax-alert>'>
+        <div class="shortcode-card-header">
+          <div class="shortcode-info">
+            <h3 class="shortcode-title">رسالة نجاح</h3>
+            <p class="shortcode-desc">لتأكيد إنجاز خطوة أو عملية</p>
+          </div>
+          <div class="shortcode-num-badge">02</div>
+        </div>
+        <div class="shortcode-box">
+          <div class="shortcode-box-header">
+            <span class="shortcode-box-label">CODE</span>
+            <button class="shortcode-box-quick-copy" type="button">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>نسخ</span>
+            </button>
+          </div>
+          <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-alert</span> <span class="c-attr">type</span>=<span class="c-val">"success"</span>&gt;<span class="c-txt">تمت العملية بنجاح!</span>&lt;/<span class="c-tag">tekmax-alert</span>&gt;</div>
+        </div>
+        <button class="shortcode-copy-btn" type="button">
+          <span>نسخ الكود</span>
+        </button>
+      </div>
+
+      <!-- Card 03: رسالة تحذير -->
+      <div class="shortcode-card" data-code='<tekmax-alert type="warning">انتبه: هذا الإجراء لا يمكن التراجع عنه!</tekmax-alert>'>
+        <div class="shortcode-card-header">
+          <div class="shortcode-info">
+            <h3 class="shortcode-title">رسالة تحذير</h3>
+            <p class="shortcode-desc">لتنبيه القارئ لأخذ الحيطة والحذر</p>
+          </div>
+          <div class="shortcode-num-badge">03</div>
+        </div>
+        <div class="shortcode-box">
+          <div class="shortcode-box-header">
+            <span class="shortcode-box-label">CODE</span>
+            <button class="shortcode-box-quick-copy" type="button">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>نسخ</span>
+            </button>
+          </div>
+          <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-alert</span> <span class="c-attr">type</span>=<span class="c-val">"warning"</span>&gt;<span class="c-txt">انتبه: هذا الإجراء لا يمكن التراجع عنه!</span>&lt;/<span class="c-tag">tekmax-alert</span>&gt;</div>
+        </div>
+        <button class="shortcode-copy-btn" type="button">
+          <span>نسخ الكود</span>
+        </button>
+      </div>
+
+      <!-- Card 04: رسالة خطأ -->
+      <div class="shortcode-card" data-code='<tekmax-alert type="danger">حدث خطأ غير متوقع، يرجى المحاولة لاحقاً</tekmax-alert>'>
+        <div class="shortcode-card-header">
+          <div class="shortcode-info">
+            <h3 class="shortcode-title">رسالة خطأ</h3>
+            <p class="shortcode-desc">لتنبيه القارئ إلى أخطاء أو تعليمات خاطئة</p>
+          </div>
+          <div class="shortcode-num-badge">04</div>
+        </div>
+        <div class="shortcode-box">
+          <div class="shortcode-box-header">
+            <span class="shortcode-box-label">CODE</span>
+            <button class="shortcode-box-quick-copy" type="button">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>نسخ</span>
+            </button>
+          </div>
+          <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-alert</span> <span class="c-attr">type</span>=<span class="c-val">"danger"</span>&gt;<span class="c-txt">حدث خطأ غير متوقع، يرجى المحاولة لاحقاً</span>&lt;/<span class="c-tag">tekmax-alert</span>&gt;</div>
+        </div>
+        <button class="shortcode-copy-btn" type="button">
+          <span>نسخ الكود</span>
+        </button>
+      </div>
+
+      <!-- Card 05: ملاحظة -->
+      <div class="shortcode-card" data-code='<tekmax-note>ملاحظة مهمة: يرجى مراعاة الشروط قبل البدء</tekmax-note>'>
+        <div class="shortcode-card-header">
+          <div class="shortcode-info">
+            <h3 class="shortcode-title">ملاحظة</h3>
+            <p class="shortcode-desc">صندوق مميز للملاحظات داخل المقال</p>
+          </div>
+          <div class="shortcode-num-badge">05</div>
+        </div>
+        <div class="shortcode-box">
+          <div class="shortcode-box-header">
+            <span class="shortcode-box-label">CODE</span>
+            <button class="shortcode-box-quick-copy" type="button">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>نسخ</span>
+            </button>
+          </div>
+          <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-note</span>&gt;<span class="c-txt">ملاحظة مهمة: يرجى مراعاة الشروط قبل البدء</span>&lt;/<span class="c-tag">tekmax-note</span>&gt;</div>
+        </div>
+        <button class="shortcode-copy-btn" type="button">
+          <span>نسخ الكود</span>
+        </button>
+      </div>
+
+      <!-- Card 06: زر احترافي -->
+      <div class="shortcode-card" data-code='<tekmax-button href="https://example.com" target="_blank">انقر هنا</tekmax-button>'>
+        <div class="shortcode-card-header">
+          <div class="shortcode-info">
+            <h3 class="shortcode-title">زر احترافي</h3>
+            <p class="shortcode-desc">زر لإعادة التوجيه لرابط خارجي أو داخلي</p>
+          </div>
+          <div class="shortcode-num-badge">06</div>
+        </div>
+        <div class="shortcode-box">
+          <div class="shortcode-box-header">
+            <span class="shortcode-box-label">CODE</span>
+            <button class="shortcode-box-quick-copy" type="button">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>نسخ</span>
+            </button>
+          </div>
+          <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-button</span> <span class="c-attr">href</span>=<span class="c-val">"https://example.com"</span> <span class="c-attr">target</span>=<span class="c-val">"_blank"</span>&gt;<span class="c-txt">انقر هنا</span>&lt;/<span class="c-tag">tekmax-button</span>&gt;</div>
+        </div>
+        <button class="shortcode-copy-btn" type="button">
+          <span>نسخ الكود</span>
+        </button>
+      </div>
+
+      <!-- Card 07: اقتباس -->
+      <div class="shortcode-card" data-code='<tekmax-quote author="اسم الكاتب">نص الاقتباس هنا...</tekmax-quote>'>
+        <div class="shortcode-card-header">
+          <div class="shortcode-info">
+            <h3 class="shortcode-title">اقتباس</h3>
+            <p class="shortcode-desc">اقتباس منسق مع اسم المصدر</p>
+          </div>
+          <div class="shortcode-num-badge">07</div>
+        </div>
+        <div class="shortcode-box">
+          <div class="shortcode-box-header">
+            <span class="shortcode-box-label">CODE</span>
+            <button class="shortcode-box-quick-copy" type="button">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>نسخ</span>
+            </button>
+          </div>
+          <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-quote</span> <span class="c-attr">author</span>=<span class="c-val">"اسم الكاتب"</span>&gt;<span class="c-txt">نص الاقتباس هنا...</span>&lt;/<span class="c-tag">tekmax-quote</span>&gt;</div>
+        </div>
+        <button class="shortcode-copy-btn" type="button">
+          <span>نسخ الكود</span>
+        </button>
+      </div>
+
+      <!-- Card 08: صندوق كود -->
+      <div class="shortcode-card" data-code='<tekmax-code lang="html">&lt;!-- اكتب كودك هنا --&gt;</tekmax-code>'>
+        <div class="shortcode-card-header">
+          <div class="shortcode-info">
+            <h3 class="shortcode-title">صندوق كود</h3>
+            <p class="shortcode-desc">شاشه برمجية مع زر نسخ تلقائي</p>
+          </div>
+          <div class="shortcode-num-badge">08</div>
+        </div>
+        <div class="shortcode-box">
+          <div class="shortcode-box-header">
+            <span class="shortcode-box-label">CODE</span>
+            <button class="shortcode-box-quick-copy" type="button">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>نسخ</span>
+            </button>
+          </div>
+          <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-code</span> <span class="c-attr">lang</span>=<span class="c-val">"html"</span>&gt;<span class="c-txt">&amp;lt;!-- اكتب كودك هنا --&amp;gt;</span>&lt;/<span class="c-tag">tekmax-code</span>&gt;</div>
+        </div>
+        <button class="shortcode-copy-btn" type="button">
+          <span>نسخ الكود</span>
+        </button>
+      </div>
+
+      <!-- Card 09: زر تحميل -->
+      <div class="shortcode-card" data-code='<tekmax-download href="https://example.com/file.zip" size="25 MB">تحميل الملف الآن</tekmax-download>'>
+        <div class="shortcode-card-header">
+          <div class="shortcode-info">
+            <h3 class="shortcode-title">زر تحميل</h3>
+            <p class="shortcode-desc">زر تحميل عصري مع حجم الملف</p>
+          </div>
+          <div class="shortcode-num-badge">09</div>
+        </div>
+        <div class="shortcode-box">
+          <div class="shortcode-box-header">
+            <span class="shortcode-box-label">CODE</span>
+            <button class="shortcode-box-quick-copy" type="button">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>نسخ</span>
+            </button>
+          </div>
+          <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-download</span> <span class="c-attr">href</span>=<span class="c-val">"https://example.com/file.zip"</span> <span class="c-attr">size</span>=<span class="c-val">"25 MB"</span>&gt;<span class="c-txt">تحميل الملف الآن</span>&lt;/<span class="c-tag">tekmax-download</span>&gt;</div>
+        </div>
+        <button class="shortcode-copy-btn" type="button">
+          <span>نسخ الكود</span>
+        </button>
+      </div>
+
+      <!-- Card 10: خطوات مرتبة -->
+      <div class="shortcode-card" data-code='<tekmax-steps><tekmax-step>الخطوة الأولى</tekmax-step><tekmax-step>الخطوة الثانية</tekmax-step></tekmax-steps>'>
+        <div class="shortcode-card-header">
+          <div class="shortcode-info">
+            <h3 class="shortcode-title">خطوات مرتبة</h3>
+            <p class="shortcode-desc">لعرض خطوات الشرح بترقيم تلقائي</p>
+          </div>
+          <div class="shortcode-num-badge">10</div>
+        </div>
+        <div class="shortcode-box">
+          <div class="shortcode-box-header">
+            <span class="shortcode-box-label">CODE</span>
+            <button class="shortcode-box-quick-copy" type="button">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>نسخ</span>
+            </button>
+          </div>
+          <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-steps</span>&gt;&lt;<span class="c-tag">tekmax-step</span>&gt;<span class="c-txt">الخطوة الأولى</span>&lt;/<span class="c-tag">tekmax-step</span>&gt;&lt;<span class="c-tag">tekmax-step</span>&gt;<span class="c-txt">الخطوة الثانية</span>&lt;/<span class="c-tag">tekmax-step</span>&gt;&lt;/<span class="c-tag">tekmax-steps</span>&gt;</div>
+        </div>
+        <button class="shortcode-copy-btn" type="button">
+          <span>نسخ الكود</span>
+        </button>
+      </div>
+
+      <!-- Card 11: قائمة قابلة للفتح -->
+      <div class="shortcode-card" data-code='<tekmax-accordion title="عنوان السؤال هنا">نص الإجابة أو التفاصيل هنا...</tekmax-accordion>'>
+        <div class="shortcode-card-header">
+          <div class="shortcode-info">
+            <h3 class="shortcode-title">قائمة قابلة للفتح</h3>
+            <p class="shortcode-desc">أسئلة شائعة أو نصوص قابلة للطي والفتح</p>
+          </div>
+          <div class="shortcode-num-badge">11</div>
+        </div>
+        <div class="shortcode-box">
+          <div class="shortcode-box-header">
+            <span class="shortcode-box-label">CODE</span>
+            <button class="shortcode-box-quick-copy" type="button">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>نسخ</span>
+            </button>
+          </div>
+          <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-accordion</span> <span class="c-attr">title</span>=<span class="c-val">"عنوان السؤال هنا"</span>&gt;<span class="c-txt">نص الإجابة أو التفاصيل هنا...</span>&lt;/<span class="c-tag">tekmax-accordion</span>&gt;</div>
+        </div>
+        <button class="shortcode-copy-btn" type="button">
+          <span>نسخ الكود</span>
+        </button>
+      </div>
+
+      <!-- Card 12: محتوى مخفي -->
+      <div class="shortcode-card" data-code='<tekmax-spoiler title="انقر لعرض المحتوى">هذا هو المحتوى المخفي</tekmax-spoiler>'>
+        <div class="shortcode-card-header">
+          <div class="shortcode-info">
+            <h3 class="shortcode-title">محتوى مخفي</h3>
+            <p class="shortcode-desc">إمكانية إخفاء نص وإظهاره بنقر القارئ</p>
+          </div>
+          <div class="shortcode-num-badge">12</div>
+        </div>
+        <div class="shortcode-box">
+          <div class="shortcode-box-header">
+            <span class="shortcode-box-label">CODE</span>
+            <button class="shortcode-box-quick-copy" type="button">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>نسخ</span>
+            </button>
+          </div>
+          <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-spoiler</span> <span class="c-attr">title</span>=<span class="c-val">"انقر لعرض المحتوى"</span>&gt;<span class="c-txt">هذا هو المحتوى المخفي</span>&lt;/<span class="c-tag">tekmax-spoiler</span>&gt;</div>
+        </div>
+        <button class="shortcode-copy-btn" type="button">
+          <span>نسخ الكود</span>
+        </button>
+      </div>
+
+      <!-- Card 13: شارة -->
+      <div class="shortcode-card" data-code='<tekmax-badge>نص الشارة</tekmax-badge>'>
+        <div class="shortcode-card-header">
+          <div class="shortcode-info">
+            <h3 class="shortcode-title">شارة</h3>
+            <p class="shortcode-desc">شارة نصية صغيرة ثلاثية الأبعاد أو ملونة</p>
+          </div>
+          <div class="shortcode-num-badge">13</div>
+        </div>
+        <div class="shortcode-box">
+          <div class="shortcode-box-header">
+            <span class="shortcode-box-label">CODE</span>
+            <button class="shortcode-box-quick-copy" type="button">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>نسخ</span>
+            </button>
+          </div>
+          <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-badge</span>&gt;<span class="c-txt">نص الشارة</span>&lt;/<span class="c-tag">tekmax-badge</span>&gt;</div>
+        </div>
+        <button class="shortcode-copy-btn" type="button">
+          <span>نسخ الكود</span>
+        </button>
+      </div>
+
+      <!-- Card 14: عمودان -->
+      <div class="shortcode-card" data-code='<tekmax-columns><tekmax-column>محتوى العمود الأول</tekmax-column><tekmax-column>محتوى العمود الثاني</tekmax-column></tekmax-columns>'>
+        <div class="shortcode-card-header">
+          <div class="shortcode-info">
+            <h3 class="shortcode-title">عمودان</h3>
+            <p class="shortcode-desc">تقسيم المحتوى إلى عمودين متساويين</p>
+          </div>
+          <div class="shortcode-num-badge">14</div>
+        </div>
+        <div class="shortcode-box">
+          <div class="shortcode-box-header">
+            <span class="shortcode-box-label">CODE</span>
+            <button class="shortcode-box-quick-copy" type="button">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>نسخ</span>
+            </button>
+          </div>
+          <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-columns</span>&gt;&lt;<span class="c-tag">tekmax-column</span>&gt;<span class="c-txt">محتوى العمود الأول</span>&lt;/<span class="c-tag">tekmax-column</span>&gt;&lt;<span class="c-tag">tekmax-column</span>&gt;<span class="c-txt">محتوى العمود الثاني</span>&lt;/<span class="c-tag">tekmax-column</span>&gt;&lt;/<span class="c-tag">tekmax-columns</span>&gt;</div>
+        </div>
+        <button class="shortcode-copy-btn" type="button">
+          <span>نسخ الكود</span>
+        </button>
+      </div>
+
+      <!-- Card 15: فيديو يوتيوب -->
+      <div class="shortcode-card" data-code='<tekmax-video url="https://www.youtube.com/watch?v=VIDEO_ID"></tekmax-video>'>
+        <div class="shortcode-card-header">
+          <div class="shortcode-info">
+            <h3 class="shortcode-title">فيديو يوتيوب</h3>
+            <p class="shortcode-desc">فيديو متجاوب بصندوق أنيق وقابل للتكبير</p>
+          </div>
+          <div class="shortcode-num-badge">15</div>
+        </div>
+        <div class="shortcode-box">
+          <div class="shortcode-box-header">
+            <span class="shortcode-box-label">CODE</span>
+            <button class="shortcode-box-quick-copy" type="button">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>نسخ</span>
+            </button>
+          </div>
+          <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-video</span> <span class="c-attr">url</span>=<span class="c-val">"https://www.youtube.com/watch?v=VIDEO_ID"</span>&gt;&lt;/<span class="c-tag">tekmax-video</span>&gt;</div>
+        </div>
+        <button class="shortcode-copy-btn" type="button">
+          <span>نسخ الكود</span>
+        </button>
+      </div>
+
+      <!-- Card 16: شريط تقدم -->
+      <div class="shortcode-card" data-code='<tekmax-progress value="75"></tekmax-progress>'>
+        <div class="shortcode-card-header">
+          <div class="shortcode-info">
+            <h3 class="shortcode-title">شريط تقدم</h3>
+            <p class="shortcode-desc">عرض نسبة إنجاز من مئة بشكل جذاب</p>
+          </div>
+          <div class="shortcode-num-badge">16</div>
+        </div>
+        <div class="shortcode-box">
+          <div class="shortcode-box-header">
+            <span class="shortcode-box-label">CODE</span>
+            <button class="shortcode-box-quick-copy" type="button">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>نسخ</span>
+            </button>
+          </div>
+          <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-progress</span> <span class="c-attr">value</span>=<span class="c-val">"75"</span>&gt;&lt;/<span class="c-tag">tekmax-progress</span>&gt;</div>
+        </div>
+        <button class="shortcode-copy-btn" type="button">
+          <span>نسخ الكود</span>
+        </button>
+      </div>
+
+      <!-- Card 17: فاصل زخرفي -->
+      <div class="shortcode-card" data-code='<tekmax-separator></tekmax-separator>'>
+        <div class="shortcode-card-header">
+          <div class="shortcode-info">
+            <h3 class="shortcode-title">فاصل زخرفي</h3>
+            <p class="shortcode-desc">فاصل أنيق بين فقرات المقال</p>
+          </div>
+          <div class="shortcode-num-badge">17</div>
+        </div>
+        <div class="shortcode-box">
+          <div class="shortcode-box-header">
+            <span class="shortcode-box-label">CODE</span>
+            <button class="shortcode-box-quick-copy" type="button">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+              <span>نسخ</span>
+            </button>
+          </div>
+          <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-separator</span>&gt;&lt;/<span class="c-tag">tekmax-separator</span>&gt;</div>
+        </div>
+        <button class="shortcode-copy-btn" type="button">
+          <span>نسخ الكود</span>
+        </button>
+      </div>
+
+    </div><!-- /.shortcodes-grid -->
+
+    <!-- Toast Notification -->
+    <div class="shortcode-toast" id="shortcodeToast">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+      <span>تم نسخ الكود بنجاح! الصقه في مقالك.</span>
+    </div>
+
+  </div><!-- /#shortcodesApp -->
+
+  <script>
+    (function() {
+      'use strict';
+
+      var toast = document.getElementById('shortcodeToast');
+      var toastTimer = null;
+
+      function showToast(msg) {
+        if (!toast) return;
+        if (msg) {
+          var span = toast.querySelector('span');
+          if (span) span.textContent = msg;
+        }
+        toast.classList.add('show');
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function() {
+          toast.classList.remove('show');
+        }, 2200);
+      }
+
+      function copyText(text, btnElement) {
+        if (!text) return;
+
+        function onSuccess() {
+          if (btnElement) {
+            btnElement.classList.add('copied');
+            var origContent = btnElement.innerHTML;
+            btnElement.innerHTML = '<span>تم النسخ! ✓</span>';
+            setTimeout(function() {
+              btnElement.classList.remove('copied');
+              btnElement.innerHTML = origContent;
+            }, 2000);
+          }
+          showToast('تم نسخ الكود بنجاح! الصقه في مقالك.');
+        }
+
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(onSuccess).catch(function() {
+            fallbackCopy(text, onSuccess);
+          });
+        } else {
+          fallbackCopy(text, onSuccess);
+        }
+      }
+
+      function fallbackCopy(text, cb) {
+        var textArea = document.createElement('textarea');
+        textArea.value = text;
+        textArea.style.position = 'fixed';
+        textArea.style.top = '-9999px';
+        textArea.style.left = '-9999px';
+        document.body.appendChild(textArea);
+        textArea.focus();
+        textArea.select();
+        try {
+          var successful = document.execCommand('copy');
+          if (successful && cb) cb();
+        } catch (err) {
+          console.error('Fallback copy failed', err);
+        }
+        document.body.removeChild(textArea);
+      }
+
+      // Bind all copy buttons
+      var cards = document.querySelectorAll('.shortcode-card');
+      cards.forEach(function(card) {
+        var rawCode = card.getAttribute('data-code');
+        if (!rawCode) return;
+
+        // Big bottom copy button
+        var copyBtn = card.querySelector('.shortcode-copy-btn');
+        if (copyBtn) {
+          copyBtn.addEventListener('click', function() {
+            copyText(rawCode, copyBtn);
+          });
+        }
+
+        // Quick copy button in code box header
+        var quickBtn = card.querySelector('.shortcode-box-quick-copy');
+        if (quickBtn) {
+          quickBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
+            copyText(rawCode, quickBtn);
+          });
+        }
+      });
+    })();
+  </script>
+</body>
+</html>

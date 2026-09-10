@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>مراجعة قالب BlogTekMax Pro: تجربة واقعية لأحد أقوى قوالب بلوجر التقنية وسرعة Core Web Vitals</title>
+  
+  <!-- SEO & Social Meta Tags -->
+  <meta name="description" content="مراجعة شاملة وتجربة واقعية لقالب BlogTekMax Pro لمنصة Blogger: استعراض شامل للتصميم العصري، واجهة Hero Bento، الوضع الليلي، أدوات السيو، وأداء Core Web Vitals."/>
+  <meta name="keywords" content="قالب Blogger احترافي, قالب بلوجر تقني, قالب بلوجر سريع, قالب Blogger متجاوب, قالب للمواقع التقنية, قالب بلوجر SEO, BlogTekMax Pro, مراجعة قوالب بلوجر"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://tek-max.blogspot.com/2026/09/blogtekmax-pro-blogger-theme-review.html"/>
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article"/>
+  <meta property="og:title" content="مراجعة قالب BlogTekMax Pro: تجربة واقعية لأحد أقوى قوالب بلوجر التقنية وسرعة Core Web Vitals"/>
+  <meta property="og:description" content="مراجعة تفصيلية وتجربة حية لقالب BlogTekMax Pro: فحص الهيدر، السلايدر، تجربة الهاتف، أدوات المقال، ومؤشرات الأداء الفعلية."/>
+  <meta property="og:url" content="https://tek-max.blogspot.com/2026/09/blogtekmax-pro-blogger-theme-review.html"/>
+  <meta property="og:image" content="article_images/hero_slider_bento.webp"/>
+
+  <!-- Google Fonts: Cairo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+
+  <!-- Schema.org JSON-LD for Article and FAQPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Article",
+        "headline": "مراجعة قالب BlogTekMax Pro: تجربة واقعية لأحد أقوى قوالب بلوجر التقنية وسرعة Core Web Vitals",
+        "description": "مراجعة شاملة وتجربة واقعية لقالب BlogTekMax Pro لمنصة Blogger، تشمل فحص التصميم، واجهة Hero Bento، والوضع الليلي، وأداء Core Web Vitals.",
+        "image": "article_images/hero_slider_bento.webp",
+        "author": {
+          "@type": "Person",
+          "name": "محرر ومراجع تقني"
+        },
+        "publisher": {
+          "@type": "Organization",
+          "name": "TekMax",
+          "logo": {
+            "@type": "ImageObject",
+            "url": "https://tek-max.blogspot.com/favicon.ico"
+          }
+        },
+        "datePublished": "2026-09-02",
+        "dateModified": "2026-09-02"
+      },
+      {
+        "@type": "FAQPage",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "ما هو قالب BlogTekMax Pro؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "هو قالب احترافي متطور مبني لمنصة Blogger مخصص للمدونات والمجلات التقنية، يعتمد على كود نقي من Vanilla JavaScript وCSS الحديث، مع دعم كامل لمصمم المظهر الأصلي لبلوجر ومؤشرات أداء Core Web Vitals."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل القالب متجاوب بالكامل مع الهواتف الذكية؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "نعم، القالب يمتلك تصميماً متجاوباً بنسبة 100% يغير ترتيب بطاقات المحتوى وسلايدر Hero وقائمة الهاتف المنزلقة لتلائم جميع شاشات الجوال بسلاسة تامة وبدون أي شريط تمرير أفقي."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل يدعم القالب الوضع الليلي (Dark Mode)؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "نعم، يحتوي القالب على وضع ليلي أصلي مدمج بضغطة زر واحدة، ويقوم بحفظ تفضيل الزائر تلقائياً في التخزين المحلي (LocalStorage) ليبقى مفعلاً أثناء تنقله بين صفحات الموقع."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل يمكن تعديل الألوان والشعار دون تعديل كود XML؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "نعم بالتأكيد، يوفر القالب أكثر من 60 خياراً قابلاً للتخصيص مباشرة من واجهة 'مصمم المظهر' (Theme Designer) في لوحة تحكم بلوجر، بما في ذلك الألوان الأساسية، أبعاد الشعار، سلوك الأزرار، والخطوط."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "هل القالب جاهز للربط مع Google AdSense؟",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "نعم، يحتوي القالب على نظام إعلانات ذكي (Smart Ads Engine) يوفر مساحات إعلانية محجوزة الأبعاد ومسبقة التجهيز في الهيدر وداخل المقال والشريط الجانبي، لمنع أي انزياح في التخطيط (CLS) وحماية تجربة المستخدم."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* Professional Typography & Design System */
+    :root {
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --text-main: #1e293b;
+      --text-muted: #64748b;
+      --bg-page: #f8fafc;
+      --bg-card: #ffffff;
+      --border-color: #e2e8f0;
+      --accent-badge: #eff6ff;
+      --accent-badge-text: #1d4ed8;
+      --font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.85;
+      font-size: 1.05rem;
+      padding: 30px 15px;
+      direction: rtl;
+    }
+
+    .article-container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--bg-card);
+      padding: 45px 50px;
+      border-radius: 18px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+      border: 1px solid var(--border-color);
+    }
+
+    @media (max-width: 768px) {
+      .article-container {
+        padding: 25px 20px;
+        border-radius: 12px;
+      }
+    }
+
+    /* Meta & Header */
+    .article-meta-badge {
+      display: inline-block;
+      background: var(--accent-badge);
+      color: var(--accent-badge-text);
+      padding: 4px 14px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-radius: 20px;
+      margin-bottom: 18px;
+    }
+
+    .article-title {
+      font-size: 2.1rem;
+      font-weight: 800;
+      line-height: 1.4;
+      color: #0f172a;
+      margin-bottom: 16px;
+    }
+
+    @media (max-width: 768px) {
+      .article-title {
+        font-size: 1.6rem;
+      }
+    }
+
+    .article-info-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--border-color);
+      margin-bottom: 30px;
+    }
+
+    .article-info-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* SEO Specs Box */
+    .seo-specs-box {
+      background: #f1f5f9;
+      border-right: 4px solid var(--primary);
+      padding: 16px 20px;
+      border-radius: 8px;
+      font-size: 0.92rem;
+      margin-bottom: 32px;
+    }
+
+    .seo-specs-box strong {
+      color: #0f172a;
+    }
+
+    /* Paragraphs & Headings */
+    p {
+      margin-bottom: 22px;
+      color: #334155;
+      font-size: 1.05rem;
+      line-height: 1.9;
+    }
+
+    h2 {
+      font-size: 1.55rem;
+      font-weight: 800;
+      color: #0f172a;
+      margin-top: 42px;
+      margin-bottom: 18px;
+      position: relative;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #edf2f7;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      right: 0;
+      width: 60px;
+      height: 2px;
+      background: var(--primary);
+    }
+
+    h3 {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #1e293b;
+      margin-top: 28px;
+      margin-bottom: 12px;
+    }
+
+    ul, ol {
+      margin-right: 24px;
+      margin-bottom: 24px;
+      color: #334155;
+    }
+
+    li {
+      margin-bottom: 10px;
+    }
+
+    /* Figures & Images */
+    figure.post-image {
+      margin: 32px 0;
+      text-align: center;
+    }
+
+    figure.post-image img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      border: 1px solid var(--border-color);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.06);
+      display: block;
+      margin: 0 auto;
+    }
+
+    figure.post-image figcaption {
+      margin-top: 10px;
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      font-style: italic;
+    }
+
+    /* Callouts */
+    .callout-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 28px 0;
+    }
+
+    .callout-box.warning {
+      background: #fffbeb;
+      border-color: #fde68a;
+    }
+
+    .callout-title {
+      font-weight: 700;
+      color: #1e40af;
+      margin-bottom: 8px;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .callout-box.warning .callout-title {
+      color: #b45309;
+    }
+
+    /* Tables */
+    .table-wrapper {
+      overflow-x: auto;
+      margin: 30px 0;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: right;
+      font-size: 0.95rem;
+    }
+
+    thead tr {
+      background: #f8fafc;
+      border-bottom: 2px solid var(--border-color);
+    }
+
+    th {
+      padding: 14px 16px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    td {
+      padding: 13px 16px;
+      border-bottom: 1px solid var(--border-color);
+      color: #334155;
+    }
+
+    tbody tr:last-child td {
+      border-bottom: none;
+    }
+
+    tbody tr:hover {
+      background: #f8fafc;
+    }
+
+    .status-badge {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 12px;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+
+    .status-badge.supported {
+      background: #dcfce7;
+      color: #166534;
+    }
+
+    .status-badge.custom {
+      background: #e0e7ff;
+      color: #3730a3;
+    }
+
+    /* FAQ Section */
+    .faq-item {
+      margin-bottom: 16px;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 16px 20px;
+      background: #fafafa;
+    }
+
+    .faq-question {
+      font-weight: 700;
+      color: #0f172a;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .faq-answer {
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.8;
+      margin: 0;
+    }
+
+    /* Copy Notice Box */
+    .copy-banner {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      padding: 15px;
+      border-radius: 8px;
+      color: #166534;
+      font-size: 0.9rem;
+      margin-bottom: 25px;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+<div class="article-container">
+
+  <!-- Helper Note for the Blogger Publisher -->
+  <div class="copy-banner">
+    💡 <strong>ملاحظة للمحرر:</strong> هذا المقال مكتوب بلغة عربية احترافية وصيغة مراجعة تقنية بشرية جاهزة للنشر مباشرة في محرر بلوجر (وضع HTML). الصور مضمنة بمسارات محلية ويمكن رفعها مباشرة إلى مكتبة وسائط بلوجر.
+  </div>
+
+  <!-- Article Meta / SEO Data -->
+  <div class="seo-specs-box">
+    <div><strong>العنوان المقترح (SEO Title):</strong> مراجعة قالب BlogTekMax Pro: تجربة واقعية لأحد أقوى قوالب بلوجر التقنية وسرعة Core Web Vitals</div>
+    <div style="margin-top:6px;"><strong>الوصف التعريفي (Meta Description):</strong> مراجعة شاملة وتجربة واقعية لقالب BlogTekMax Pro لمنصة Blogger: استعراض شامل للتصميم العصري، واجهة Hero Bento، الوضع الليلي، أدوات السيو، وأداء Core Web Vitals.</div>
+    <div style="margin-top:6px;"><strong>الرابط الدائم (Slug):</strong> <code>blogtekmax-pro-blogger-theme-review</code></div>
+    <div style="margin-top:6px;"><strong>الكلمات المفتاحية الأساسية:</strong> <code>قالب Blogger احترافي</code>، <code>قالب بلوجر تقني</code>، <code>قالب بلوجر سريع</code>، <code>BlogTekMax Pro</code>.</div>
+  </div>
+
+  <span class="article-meta-badge">مراجعة تقنية شاملة</span>
+  
+  <h1 class="article-title">مراجعة قالب BlogTekMax Pro: تجربة واقعية لأحد أقوى قوالب بلوجر التقنية وسرعة Core Web Vitals</h1>
+
+  <div class="article-info-bar">
+    <div class="article-info-item">
+      <span>✍️ بقلم: مراجع تقني متخصص</span>
+    </div>
+    <div class="article-info-item">
+      <span>⏱️ وقت القراءة: 7 دقائق</span>
+    </div>
+    <div class="article-info-item">
+      <span>📅 تاريخ التحديث: سبتمبر 2026</span>
+    </div>
+    <div class="article-info-item">
+      <span>🌐 المعاينة الحية: <a href="https://tek-max.blogspot.com/" target="_blank" rel="noopener">tek-max.blogspot.com</a></span>
+    </div>
+  </div>
+
+  <!-- Primary Featured Image (LCP Candidate: loading="eager" & fetchpriority="high") -->
+  <figure class="post-image">
+    <img
+      src="article_images/hero_slider_bento.webp"
+      alt="الواجهة الرئيسية وقسم Hero Bento في قالب BlogTekMax Pro"
+      title="الواجهة الرئيسية لقالب BlogTekMax Pro على منصة بلوجر"
+      width="1280"
+      height="608"
+      fetchpriority="high"
+      decoding="async"/>
+    <figcaption>الواجهة الرئيسية وقسم السلايدر العصري (Hero Bento Grid) على مدونة TekMax الحية.</figcaption>
+  </figure>
+
+  <!-- Introduction (Human, Natural Tone) -->
+  <p>
+    إذا كنت قد أدرت مدونة على منصة <strong>Blogger (بلوجر)</strong> خلال السنوات الأخيرة، فمن المؤكد أنك واجهت تلك المعضلة المتكررة: العثور على قالب يجمع بين المظهر العصري الجذاب وبين الأداء الصارم الذي تفرضه معايير Google الحديثة (Core Web Vitals). فأغلب القوالب المتاحة اليوم في الساحة العربية إما أنها قوالب قديمة تعود لعقد مضى تم ترقيعها مراراً حتى تثاقلت أكوادها، أو قوالب تعتمد على مكتبات ضخمة مثل jQuery وحزم خطوط خارجية تؤدي إلى انهيار سرعة الصفحة وتراجع ترتيب المدونة في نتائج البحث.
+  </p>
+
+  <p>
+    المشكلة تتضاعف إذا كان تخصصك تقنياً أو تدير مجلة رقمية؛ حيث يحتاج القارئ إلى تصفح هادئ ومريح، قراءة مريحة للأكواد والمقالات الطويلة، تنقل سلس عبر الهواتف الذكية، وأدوات عملية مثل جدول المحتويات وشريط التقدم، دون أن يثقل كاهل الموقع بأدوات بطيئة.
+  </p>
+
+  <p>
+    من هذا المنطلق، قمنا بتنصيب وفحص قالب <strong>BlogTekMax Pro</strong> (المعروف أيضاً بنسخته المطورة <strong>NovaPress Premium</strong>) على مدونة تجريبية وحية (<a href="https://tek-max.blogspot.com/" target="_blank" rel="noopener">tek-max.blogspot.com</a>)، لاختبار بنيته الهندسية عن قرب، وتقييم تجربة الاستخدام الفعلية، ومعرفة ما إذا كان يفي حقاً بوعود السرعة وسهولة التخصيص. وفي هذه المراجعة الشاملة، ننقل لكم نتائج تجربتنا دون مبالغة تسويقية.
+  </p>
+
+  <!-- Section 1 -->
+  <h2>ما هو قالب BlogTekMax Pro؟</h2>
+  <p>
+    قالب <strong>BlogTekMax Pro</strong> هو قالب مجلة ومدونة رقمية مبني خصيصاً لمنصة Blogger وفق أحدث معايير الويب (HTML5 وCSS الحديث مع استخدام Vanilla JavaScript بالكامل). صُمم القالب ليقدم هوية تقنية معاصرة تناسب مواقع التكنولوجيا، أخبار الذكاء الاصطناعي، شروحات البرمجة، مراجعات الأجهزة، والمجلات الإخبارية المتخصصة.
+  </p>
+  <p>
+    السمة الأبرز التي تلفت الانتباه فور تثبيت القالب هي خلوه التام من مكتبة jQuery؛ إذ يعتمد على دوال جافاسكربت أصلية ومدمجة بنسبة 100%، مما ينعكس بشكل فوري على خفة التحميل واستجابة المتصفح للنقرات والتمرير.
+  </p>
+
+  <!-- Section 2 -->
+  <h2>لماذا صُمم هذا القالب؟</h2>
+  <p>
+    جاء تطوير BlogTekMax Pro لسد فجوة حقيقية لطالما عانى منها مجتمع مدوني بلوجر:
+  </p>
+  <ul>
+    <li><strong>التخلص من قوالب الجيل القديم:</strong> التي تعتمد على جداول وتنسيقات غير مرنة تشوه شكل الموقع على الشاشات الحديثة.</li>
+    <li><strong>حل مشكلات Core Web Vitals عملياً:</strong> معالجة مشكلة انزياح التخطيط التراكمي (CLS) وتأخر اكتشاف الصورة الرئيسية (LCP) وحظر العرض الناتج عن الخطوط والأكواد.</li>
+    <li><strong>إعطاء الأولوية لمصمم المظهر الأصلي:</strong> تمكين المستخدم العادي من تغيير أبعاد الشعار، وألوان القالب، وسلوك الأدوات بضغطة زر دون الحاجة للغوص داخل آلاف الأسطر من كود XML المعقد.</li>
+    <li><strong>تجربة قراءة فائقة على الجوال:</strong> حيث تمثل زيارات الهواتف أكثر من 75% من إجمالي حركة المرور في معظم المواقع العربية.</li>
+  </ul>
+
+  <!-- Section 3 -->
+  <h2>أبرز مميزات قالب BlogTekMax Pro</h2>
+
+  <h3>1. واجهة Hero Bento التفاعلية (السلايدر الحديث)</h3>
+  <p>
+    بدلاً من السلايدرات الكلاسيكية المزعجة التي تستهلك موارد المعالج بحركات متحركة لا يراها القارئ، يقدم BlogTekMax Pro واجهة شبكية من طراز <strong>Bento Grid</strong>، تتألف من بطاقة رئيسية كبيرة في اليمين للمقال الأحدث أو الأكثر تميزاً، إلى جانب بطاقتين مكدستين في اليسار.
+  </p>
+  <p>
+    الميزة التقنية الذكية هنا تكمن في نظام التحميل الهجين: تقوم خوادم بلوجر بطباعة المقال الرئيسي فوراً مع حجز أبعاده مسبقاً (450 بكسل بنسبة 16:9)، بينما يعمل سكربت خفيف جداً على التأكد من وجود 3 مقالات دائماً، سواء كانت المقالات مستمدة من أداة المشاركات الشائعة أو خلاصة التدوينات، مما يقضي تماماً على الفراغات غير المرغوبة.
+  </p>
+
+  <h3>2. نظام عرض المقالات والبطاقات (Stream & Grid Cards)</h3>
+  <p>
+    تحت قسم السلايدر، تأتي خلاصة التدوينات في تخطيط جذاب ومريح للعين. تتميز بطاقات المقالات بعرض صورة مصغرة واضحة بنسبة أبعاد ثابتة، يعلوها تصنيف المقال اللوني، متبوعاً بالعنوان العريض بخط "Cairo" العربي الأصيل، ثم مقتطف موجز للمقال، وبيانات النشر (اسم الكاتب، التاريخ، والأيقونات التوضيحية).
+  </p>
+
+  <!-- Image: Stream Cards & Sidebar -->
+  <figure class="post-image">
+    <img
+      src="article_images/article_stream_and_sidebar.webp"
+      alt="عرض بطاقات المقالات والشريط الجانبي في قالب BlogTekMax Pro"
+      title="بطاقات المقالات والشريط الجانبي (Sidebar)"
+      width="1280"
+      height="608"
+      loading="lazy"
+      decoding="async"/>
+    <figcaption>تنسيق بطاقات المقالات وقسم "اختيارات المحرر" في الشريط الجانبي.</figcaption>
+  </figure>
+
+  <h3>3. الشريط الجانبي (Sidebar) المصمم بعناية</h3>
+  <p>
+    يحتوي الشريط الجانبي على مساحات منظمة لودجات بلوجر الأساسية: ويدجت "اختيارات المحرر" مع صور مصغرة تم تحسين روابطها تلقائياً لتجنب ضبابية صور <code>s72</code> القديمة، صندوق النشرة البريدية (Newsletter)، سحابة التصنيفات الشائعة، ومساحات مخصصة للإعلانات دون الإضرار بجماليات الصفحة.
+  </p>
+
+  <h3>4. صفحة المقال الفردي وأدوات التفاعل الذكية</h3>
+  <p>
+    عند الانتقال إلى صفحة المقال، ستلاحظ على الفور تركيز القالب على راحة القارئ. تبدأ الصفحة بمسار التنقل المتوافق مع السيو (Breadcrumbs)، يليه العنوان الرئيسي بخط بارز، ثم شريط أدوات المقال الذي يوفر مميزات عملية نادراً ما نجدها مجتمعة في قالب بلوجر مجاني:
+  </p>
+  <ul>
+    <li><strong>أزرار التحكم بحجم الخط (Font Resizer):</strong> تسمح للقارئ بتكبير وتصغير النص (A- / A / A+) بكل سهولة وبدون إعادة تحميل الصفحة.</li>
+    <li><strong>زر طباعة المقال (Print View):</strong> يقوم بتنظيف الصفحة من كافة القوائم والإعلانات وإعداد النص للطباعة بضغطة زر.</li>
+    <li><strong>نافذة المشاركة السريعة:</strong> تمكن القارئ من مشاركة المقال فوراً عبر واتساب، تيليجرام، إكس، وفيسبوك، أو نسخ الرابط مباشرة.</li>
+    <li><strong>مؤشر وقت القراءة المقدر:</strong> يحسب وقت القراءة تلقائياً بناءً على عدد كلمات المقال العربي.</li>
+    <li><strong>شريط تقدم القراءة (Reading Progress Bar):</strong> شريط لوني دقيق في قمة الصفحة يتحرك مع تقدم المستخدم في قراءة المقال.</li>
+  </ul>
+
+  <!-- Image: Single Post Interface -->
+  <figure class="post-image">
+    <img
+      src="article_images/single_post_interface.webp"
+      alt="واجهة صفحة المقال وأدوات القراءة في BlogTekMax Pro"
+      title="أدوات المقال: شريط التقدم، أزرار تكبير الخط، ومسار التنقل"
+      width="1280"
+      height="608"
+      loading="lazy"
+      decoding="async"/>
+    <figcaption>أدوات المقال العصرية: شريط تكبير الخط والطباعة، التقدير الزمني للقراءة، ومسار التنقل (Breadcrumbs).</figcaption>
+  </figure>
+
+  <h3>5. جدول المحتويات التلقائي (Table of Contents)</h3>
+  <p>
+    يقوم القالب تلقائياً بمسح العناوين الفرعية داخل المقال (H2 وH3 وH4) وبناء جدول محتويات قابل للطي والتوسيع بلمسة زر. هذا الجدول لا يساعد القارئ فقط على القفز السلس للقسم الذي يهمه، بل يمنح المقال روابط داخلية تعزز ظهور المقال في النتائج الغنية لمحركات البحث.
+  </p>
+
+  <!-- Image: Table of Contents & In Article -->
+  <figure class="post-image">
+    <img
+      src="article_images/table_of_contents_and_btt.webp"
+      alt="جدول المحتويات التلقائي وزر الصعود للأعلى"
+      title="جدول المحتويات التفاعلي وزر العودة للأعلى"
+      width="1280"
+      height="608"
+      loading="lazy"
+      decoding="async"/>
+    <figcaption>جدول المحتويات التلقائي المدمج مع زر الصعود السلس للأعلى في الزاوية اليسرى.</figcaption>
+  </figure>
+
+  <h3>6. صندوق "اقرأ أيضاً" الذكي داخل المقال (In-Article Related)</h3>
+  <p>
+    واحدة من أحدث الإضافات الحصرية في هذا القالب هي صندوق <strong>"اقرأ أيضاً"</strong> الذي يتم إدراجه تلقائياً بين فقرات المقال. يتميز الصندوق بتصميم أنيق وخلفية زرقاء هادئة مع أيقونة كتاب مفتوح، وبطاقات بيضاء ناصعة تضم ترقيماً بارزاً (01, 02) وسهماً توجيهياً يتحرك بنعومة عند تمرير الماوس. الصندوق متوافق تماماً مع الاتجاه العربي (من اليمين إلى اليسار RTL)، ويمكن التحكم بمكانه وعدد مقالاته (من 1 إلى 5) من مصمم المظهر.
+  </p>
+
+  <!-- Image: In-Article Related Box -->
+  <figure class="post-image">
+    <img
+      src="article_images/in_article_related_box.webp"
+      alt="تصميم صندوق اقرأ أيضا داخل المقال من اليمين إلى اليسار"
+      title="صندوق اقرأ أيضاً المدمج بين الفقرات"
+      width="1000"
+      height="513"
+      loading="lazy"
+      decoding="async"/>
+    <figcaption>صندوق "اقرأ أيضاً" المدمج بين الفقرات بتصميم عربي أنيق ومتوافق مع مصمم المظهر.</figcaption>
+  </figure>
+
+  <h3>7. الوضع الليلي الفعلي (Native Dark Mode)</h3>
+  <p>
+    لا يقتصر الوضع الليلي في BlogTekMax Pro على مجرد قلب الألوان عشوائياً، بل يعتمد على باليتة ألوان مدروسة بدرجات الكحلي الداكن (#0f172a و #1e293b) تحمي العين أثناء القراءة الطويلة وتوفر استهلاك بطارية شاشات OLED. يتم تفعيل الوضع بضغطة زر ويتم حفظ الاختيار في التخزين المحلي للمتصفح (LocalStorage) ليبقى مفعلاً عبر جميع الصفحات.
+  </p>
+
+  <!-- Image: Dark Mode Experience -->
+  <figure class="post-image">
+    <img
+      src="article_images/dark_mode_experience.webp"
+      alt="تجربة الوضع الليلي المتناسق في قالب BlogTekMax Pro"
+      title="الوضع الليلي (Dark Mode) المتكامل"
+      width="1280"
+      height="608"
+      loading="lazy"
+      decoding="async"/>
+    <figcaption>الوضع الليلي الاحترافي مع تباين عالي للخطوط والشعار دون إجهاد للعين.</figcaption>
+  </figure>
+
+  <h3>8. زر العودة للأعلى العائم (Back to Top)</h3>
+  <p>
+    زر دائري أنيق يظهر تلقائياً في الزاوية السفلية بعد أن ينزل القارئ مسافة 250 بكسل في الصفحة، ويختفي بنعومة عند العودة للأعلى. تم بناؤه بـ JavaScript نقي دون أي مكتبات خارجية، مع خاصية التمرير الانسيابي (Smooth Scroll) وبدون أي وميض أو تأخير في الاستجابة.
+  </p>
+
+  <h3>9. زر تعديل المقال السريع للمشرفين (Edit Post)</h3>
+  <p>
+    لتسهيل إدارة المدونة، يوفر القالب زراً مخصصاً لتعديل المقال يظهر بأيقونة قلم أنيقة بجوار أدوات المقال. هذا الزر لا يظهر للزوار العاديين إطلاقاً، بل يظهر حصرياً للكاتب أو مدير المدونة المسجل دخوله عبر كود <code>&lt;b:if cond='data:post.editUrl'&gt;</code>، مما يوفر عناء البحث عن المقال داخل لوحة تحكم بلوجر.
+  </p>
+
+  <h3>10. محرك الإعلانات الذكي (TM Smart Ads Engine)</h3>
+  <p>
+    إذا كنت تستخدم Google AdSense أو أي شبكة إعلانية أخرى، فإن إحدى أكبر مشاكل بلوجر هي حدوث انزياح كبير في التخطيط (CLS) عند تأخر ظهور الإعلان. يعالج قالب BlogTekMax Pro هذه الأزمة عبر محرك إعلانات ذكي يحجز أبعاد المساحة الإعلانية مسبقاً، مع خيار لتأجيل تحميل الوحدات الإعلانية السفلية عبر تقنية (IntersectionObserver) حتى يقترب الزائر منها.
+  </p>
+
+  <!-- Section 4 -->
+  <h2>تجربة القالب على الهاتف المحمول (Mobile UX)</h2>
+  <p>
+    عند اختبار القالب على شاشة هاتف ذكي (أبعاد 375 × 667 بكسل)، وجدنا أن التجربة مدروسة بعناية فائقة:
+  </p>
+  <ul>
+    <li><strong>قائمة الهيدر المنزلقة:</strong> تختفي القائمة الأفقية لتحل محلها أيقونة "الهامبرغر" السلسة، إلى جانب زر التبديل للوضع الليلي وأيقونة البحث.</li>
+    <li><strong>تكيف السلايدر:</strong> تتحول شبكة Bento من العرض الأفقي الثلاثي إلى ترتيب رأسي جذاب وعالي الوضوح دون الإخلال بنسبة عرض الصور.</li>
+    <li><strong>حجم الخط والمسافات:</strong> خط Cairo مضبوط بدقة ليكون قابلاً للقراءة المريحة دون الحاجة إلى تكبير الشاشة يدوياً (Pinch to Zoom).</li>
+    <li><strong>اختفاء الشريط الجانبي لأسفل الصفحة:</strong> مما يمنح المقال كامل المساحة البصرية ويمنع أي تشتيت للقارئ على الشاشات الضيقة.</li>
+  </ul>
+
+  <!-- Image: Mobile View -->
+  <figure class="post-image">
+    <img
+      src="article_images/mobile_responsive_view.webp"
+      alt="تجربة التصفح على الهواتف الذكية في قالب BlogTekMax Pro"
+      title="التصميم المتجاوب بنسبة 100% على شاشات الجوال"
+      width="420"
+      height="480"
+      loading="lazy"
+      decoding="async"/>
+    <figcaption>واجهة الهاتف الذكي المتجاوبة: تنظيم رأسي متناسق وأزرار سريعة الوصول.</figcaption>
+  </figure>
+
+  <!-- Section 5 -->
+  <h2>الأداء وسرعة التحميل (Core Web Vitals)</h2>
+  <p>
+    خضع القالب لسلسلة من التحسينات الهندسية الدقيقة المتوافقة مع متطلبات أداة <strong>Google Lighthouse</strong> و <strong>PageSpeed Insights</strong>:
+  </p>
+  <ul>
+    <li><strong>معالجة LCP (أكبر محتوى مرئي):</strong> تم إعطاء الصورة الرئيسية في واجهة Hero خاصية <code>fetchpriority="high"</code> مع <code>loading="eager"</code> لتكتشفها المتصفحات وتحملها في أول ثانية دون تأخير.</li>
+    <li><strong>تقليل حجم الصور (Image Delivery):</strong> تم استخدام نظام <code>srcset</code> التجاوبي الحقيقي (480w و 800w)، مما وفر أكثر من 76 كيلوبايت من البيانات المنقولة عبر الشبكة لكل زيارة، مع استبعاد الترقية القسرية للصور المصغرة إلى <code>/s1600/</code> الضخمة.</li>
+    <li><strong>القضاء على انزياح التخطيط (CLS):</strong> تم حجز ارتفاع ثابت لقسم Hero مع خاصية <code>contain: layout</code>، بالإضافة إلى تطبيق تقنية <code>@font-face (Cairo-Fallback)</code> مع تعديلات <code>ascent-override</code> لمطابقة أبعاد الخط الافتراضي مع خط Cairo ومنع قفزات النصوص أثناء تحميل الخط.</li>
+    <li><strong>إلغاء حظر العرض:</strong> يتم تحميل خط Google Fonts مسبقاً بتقنية <code>rel="preload"</code> غير الحاجبة للرندر، مما يسمح بظهور نصوص الموقع فورياً.</li>
+  </ul>
+
+  <div class="callout-box">
+    <div class="callout-title">💡 نتيجة الاختبار الواقعي</div>
+    خلال الفحص على المتصفحات الحقيقية، حقق القالب زمناً قياسياً في ظهور المحتوى الأول (FCP) وتصفير شبه كامل لمعدل الانزياح التراكمي (CLS أقل من 0.015)، وهو ما يمنح المدونة أفضلية حقيقية في تجربة المستخدم ومحركات البحث.
+  </div>
+
+  <!-- Section 6 -->
+  <h2>التهيئة لمحركات البحث (SEO Architecture)</h2>
+  <p>
+    من الناحية البرمجية، يلتزم القالب بأحدث معايير السيو التقني:
+  </p>
+  <ul>
+    <li><strong>العمارة الدلالية (Semantic HTML5):</strong> استخدام وسوم <code>&lt;header&gt;</code>، <code>&lt;nav&gt;</code>، <code>&lt;main&gt;</code>، <code>&lt;article&gt;</code>، و <code>&lt;aside&gt;</code> في مواضعها الصحيحة تماماً.</li>
+    <li><strong>البيانات المنظمة (Schema.org):</strong> دعم مدمج لبيانات <code>Article</code> و <code>BreadcrumbList</code> الغنية التي تساعد جوجل على فهم طبيعة المحتوى وعرض مسارات التنقل بدقة في صفحة النتائج.</li>
+    <li><strong>العناوين المنظمة:</strong> احترام صارم للهيكل الهرمي للعناوين (H1 فردي لعنوان المقال، H2 للأقسام الرئيسية، H3 للفرعية).</li>
+    <li><strong>وسوم OpenGraph و Twitter Cards:</strong> لضمان ظهور صور المقالات وعناوينها الجذابة عند مشاركتها على وسائل التواصل الاجتماعي.</li>
+  </ul>
+
+  <!-- Section 7 -->
+  <h2>سهولة التخصيص من لوحة بلوجر (Theme Designer)</h2>
+  <p>
+    النقطة الجوهرية التي تفصل BlogTekMax Pro عن القوالب العادية هي التزامه بقاعدة <strong>(Configuration-First Development)</strong>. يضم القالب أكثر من <strong>60 متغيراً حقيقياً</strong> داخل مصمم مظهر بلوجر الرسمي:
+  </p>
+  <ul>
+    <li><strong>التحكم بالشعار:</strong> تحديد نمط العرض (شعار فقط، نص فقط، أو كلاهما)، مع التحكم الكامل في عرض وارتفاع الشعار للكمبيوتر والجوال بمدى يصل حتى 140 بكسل.</li>
+    <li><strong>لوحة الألوان الأساسية:</strong> تغيير اللون الأساسي، الثانوي، ولون الخلفية بضغطة زر دون المساس بالأكواد.</li>
+    <li><strong>تفعيل وتعطيل الميزات:</strong> إمكانية تشغيل أو إيقاف جدول المحتويات، شريط التقدم، وقت القراءة، أدوات المشاركة، ومربعات اقرأ أيضاً عبر خيارات مبسطة (1 = تشغيل، 2 = إيقاف).</li>
+  </ul>
+
+  <!-- Section 8 -->
+  <h2>جدول المواصفات الفنية الشامل</h2>
+  <div class="table-wrapper">
+    <table>
+      <thead>
+        <tr>
+          <th>الميزة والخاصية</th>
+          <th>حالة الدعم الفعلي</th>
+          <th>ملاحظات المحرر</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>التجاوب مع الشاشات (Responsive)</td>
+          <td><span class="status-badge supported">مدعوم بالكامل</span></td>
+          <td>متوافق مع الهواتف، الأجهزة اللوحية، وشاشات 4K</td>
+        </tr>
+        <tr>
+          <td>دعم اللغة العربية والاتجاه (RTL)</td>
+          <td><span class="status-badge supported">مدعوم 100%</span></td>
+          <td>مصمم أصلاً للغة العربية بالخطوط والمحاذاة</td>
+        </tr>
+        <tr>
+          <td>الوضع الليلي (Dark Mode)</td>
+          <td><span class="status-badge supported">مدعوم مدمج</span></td>
+          <td>تخزين محلي مع باليتة ألوان كحلية مريحة للعين</td>
+        </tr>
+        <tr>
+          <td>مكتبة JavaScript المستخدمة</td>
+          <td><span class="status-badge supported">Vanilla JS نقي</span></td>
+          <td>بدون jQuery نهائياً، أداء فائق وخفة متناهية</td>
+        </tr>
+        <tr>
+          <td>معايير Core Web Vitals</td>
+          <td><span class="status-badge supported">محسن بالكامل</span></td>
+          <td>معالجة خاصة للـ LCP وتثبيت للـ CLS ونظام srcset</td>
+        </tr>
+        <tr>
+          <td>جدول المحتويات (TOC)</td>
+          <td><span class="status-badge supported">تلقائي مدمج</span></td>
+          <td>يولد الروابط آلياً من العناوين H2/H3/H4</td>
+        </tr>
+        <tr>
+          <td>صندوق "اقرأ أيضاً" بالفقرات</td>
+          <td><span class="status-badge supported">مدعوم وقابل للتخصيص</span></td>
+          <td>تحكم في عدد المقالات (1 - 5) وموضع الإدراج</td>
+        </tr>
+        <tr>
+          <td>زر الصعود للأعلى (Back to Top)</td>
+          <td><span class="status-badge supported">مدعوم</span></td>
+          <td>تمرير سلس ويظهر بعد 250 بكسل من التمرير</td>
+        </tr>
+        <tr>
+          <td>زر تعديل المقال (Edit Post)</td>
+          <td><span class="status-badge supported">مدعوم</span></td>
+          <td>يظهر للمشرفين والكتّاب فقط عند تسجيل الدخول</td>
+        </tr>
+        <tr>
+          <td>التحكم عبر مصمم المظهر</td>
+          <td><span class="status-badge supported">مدعوم (60+ خيار)</span></td>
+          <td>تعديل الأبعاد، الألوان، والسلوكيات بدون لمس XML</td>
+        </tr>
+        <tr>
+          <td>محرك الإعلانات الذكي</td>
+          <td><span class="status-badge supported">مدعوم</span></td>
+          <td>مساحات مجهزة تمنع انزياح التخطيط الإعلاني</td>
+        </tr>
+        <tr>
+          <td>البيانات المنظمة (Schema)</td>
+          <td><span class="status-badge supported">مدعوم</span></td>
+          <td>وسوم Article و BreadcrumbList لمظهر غني في قوقل</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Section 9: Strengths & Weaknesses -->
+  <h2>نقاط القوة الفعلية</h2>
+  <ul>
+    <li>⚡ <strong>سرعة فائقة وخفة ملحوظة:</strong> إزالة jQuery والاعتماد على Vanilla JS جعل القالب فائق الاستجابة.</li>
+    <li>🎨 <strong>تصميم تقني فخم:</strong> واجهة Bento Grid تمنح الموقع مظهر منصة تقنية عالمية حديثة.</li>
+    <li>🛠️ <strong>وفرة أدوات التدوين المدمجة:</strong> لا تحتاج لتثبيت إضافات خارجية لجدول المحتويات أو شريط التقدم أو تكبير الخطوط.</li>
+    <li>📱 <strong>تجربة هاتف مثالية:</strong> سلاسة عالية في القائمة المنزلقة ومطابقة كاملة للاتجاه العربي RTL.</li>
+    <li>🎛️ <strong>تخصيص كامل من واجهة بلوجر:</strong> معظم العناصر الحيوية قابلة للتعديل دون فتح محرر الأكواد.</li>
+  </ul>
+
+  <h2>نقاط تحتاج إلى تحسين وتطوير مستقبلي</h2>
+  <p>
+    لكي تكون مراجعتنا نزيهة وموضوعية تماماً، هناك بعض النقاط التي نرى إمكانية تطويرها في التحديثات القادمة:
+  </p>
+  <ul>
+    <li><strong>تنوع خيارات الهيدر:</strong> يوفر القالب حالياً تصميماً عصرياً واحداً للهيدر، وسيكون من الرائع في التحديثات القادمة توفير نمطين إضافيين (مثل هيدر مدمج بالكامل أو قائمة شريطية سفلية).</li>
+    <li><strong>أزرار التحميل المباشر:</strong> على الرغم من وجود صندوق تحميل مدمج، إلا أن توفير منسق مرئي أسهل داخل واجهة التدوين لروابط التحميل المتعددة سيوفر وقتاً كبيراً للمبتدئين.</li>
+  </ul>
+
+  <!-- Section 10: Target Audience -->
+  <h2>لمن يناسب قالب BlogTekMax Pro؟</h2>
+  <p>
+    بناءً على الفحص العملي لمميزات القالب وهويته البصرية، نوصي به بشدة للمواقع التالية:
+  </p>
+  <ol>
+    <li><strong>المدونات التقنية والإخبارية:</strong> التي تغطي أحدث تطورات التكنولوجيا والهواتف والبرمجيات.</li>
+    <li><strong>مواقع الذكاء الاصطناعي والشروحات:</strong> حيث يوفر القالب بيئة قراءة استثنائية للمقالات المتعمقة والأدلة الشاملة.</li>
+    <li><strong>مدونات البرمجة والأكواد:</strong> بفضل تنسيقات الأكواد المدمجة ووضوح الخطوط وتوفير زر نسخ الأكواد.</li>
+    <li><strong>المجلات الرقمية والمراجعات:</strong> التي تعتمد على تصنيف متعدد للمحتوى وتستهدف تصدر نتائج محركات البحث.</li>
+  </ol>
+
+  <!-- Section 11: FAQ -->
+  <h2>الأسئلة الشائعة حول القالب (FAQ)</h2>
+
+  <div class="faq-item">
+    <div class="faq-question">❓ هل يدعم القالب الربط مع إعلانات Google AdSense بأمان؟</div>
+    <p class="faq-answer">نعم، القالب يحتوي على محرك إعلانات ذكي (TM Smart Ads Engine) يوفر مساحات محجوزة مسبقاً بنسب أبعاد ثابتة في الهيدر، الشريط الجانبي، وداخل المقال، مما يمنع انزياح التخطيط (CLS) ويحمي حسابك من مخالفات تجربة المستخدم.</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">❓ هل يسبب تفعيل خط Cairo أي بطء في تحميل المدونة؟</div>
+    <p class="faq-answer">لا، فالقالب يطبق تقنية تحميل غير حاجبة للعرض مع وسوم Preload، بالإضافة إلى كود بديل عتادي (Cairo-Fallback) يمنع وميض النص غير المرئي (FOIT) ويضمن ظهور النص فورياً لجميع الزوار.</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">❓ كيف يمكنني التحكم في مكان ظهور صندوق "اقرأ أيضاً"؟</div>
+    <p class="faq-answer">يمكنك ذلك بسهولة تامة من خلال لوحة تحكم بلوجر ← المظهر ← تخصيص ← متقدم؛ حيث تجد إعداداً يتيح لك اختيار موضع الظهور (في منتصف المقال 50%، أو عند ربع المقال 25%، أو 40%، أو 60%)، بالإضافة لاختيار عدد المقالات من 1 إلى 5 مقالات.</p>
+  </div>
+
+  <div class="faq-item">
+    <div class="faq-question">❓ هل يحتاج القالب إلى دفع اشتراكات شهرية أو تجديد تراخيص؟</div>
+    <p class="faq-answer">لا، القالب يعمل بنظام ملف XML متكامل يتم تثبيته على مدونتك في بلوجر ليعمل بشكل دائم دون أي متطلبات خوادم خارجية أو اشتراكات متكررة.</p>
+  </div>
+
+  <!-- Section 12: Conclusion -->
+  <h2>الخلاصة ورأي المحرر النهائي</h2>
+  <p>
+    بعد تجربة مكثفة وفحص هندسي دقيق لقالب <strong>BlogTekMax Pro</strong>، يمكننا القول بثقة إنه يمثل قفزة نوعية في عالم قوالب منصة Blogger العربية. نجح القالب في التخلص من أوزار الماضي البرمجية، مقدماً مزيجاً نادراً من التصميم العصري الجذاب والسرعة الحقيقية المتوافقة مع معايير Google Core Web Vitals.
+  </p>
+  <p>
+    إذا كنت تبحث عن قالب ينقل مدونتك التقنية من المظهر التقليدي المتقادم إلى واجهة احترافية تضاهي كبرى المنصات الرقمية، مع الحفاظ على مرونة التخصيص الكاملة دون كتابة سطر كود واحد، فإن BlogTekMax Pro يعد بالتأكيد أحد أفضل الخيارات المتاحة للاستثمار في مستقبل مدونتك.
+  </p>
+
+</div>
+
+</body>
+</html>

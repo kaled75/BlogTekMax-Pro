@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دليل تشغيل الميزات المتقدمة — قالب TekMax Pro</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&family=Fira+Code:wght@400;600&family=Plus+Jakarta+Sans:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-hover: #1d4ed8;
+            --primary-light: rgba(37, 99, 235, 0.08);
+            --accent: #0ea5e9;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --bg-base: #f8fafc;
+            --bg-surface: #ffffff;
+            --bg-card: #ffffff;
+            --text-main: #0f172a;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+            --border-hover: #cbd5e1;
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0,0,0,0.08), 0 2px 4px -2px rgba(0,0,0,0.05);
+            --shadow-lg: 0 12px 24px -4px rgba(0,0,0,0.08), 0 4px 8px -2px rgba(0,0,0,0.04);
+            --radius-sm: 8px;
+            --radius-md: 12px;
+            --radius-lg: 18px;
+            --radius-xl: 24px;
+            --code-bg: #0f172a;
+            --code-text: #f8fafc;
+            --font-main: 'Cairo', system-ui, -apple-system, sans-serif;
+            --font-mono: 'Fira Code', monospace;
+        }
+
+        [data-theme="dark"] {
+            --bg-base: #090d16;
+            --bg-surface: #0f172a;
+            --bg-card: #131d33;
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
+            --border: #1e293b;
+            --border-hover: #334155;
+            --primary-light: rgba(37, 99, 235, 0.15);
+            --shadow-sm: 0 1px 3px rgba(0,0,0,0.3);
+            --shadow-md: 0 4px 8px rgba(0,0,0,0.4);
+            --shadow-lg: 0 14px 28px rgba(0,0,0,0.5);
+            --code-bg: #060910;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-main);
+            background: var(--bg-base);
+            color: var(--text-main);
+            line-height: 1.75;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            overflow-x: hidden;
+        }
+
+        /* Ambient Glow */
+        .ambient-glow {
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1000px;
+            height: 450px;
+            background: radial-gradient(circle, rgba(37, 99, 235, 0.12) 0%, rgba(14, 165, 233, 0.05) 50%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .container {
+            max-width: 1240px;
+            margin: 0 auto;
+            padding: 0 24px;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Top Navigation Header */
+        header.nav-header {
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            background: rgba(255, 255, 255, 0.85);
+            border-bottom: 1px solid var(--border);
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        [data-theme="dark"] header.nav-header {
+            background: rgba(15, 23, 42, 0.85);
+        }
+
+        .nav-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 72px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: var(--text-main);
+        }
+
+        .brand-logo-badge {
+            width: 42px;
+            height: 42px;
+            border-radius: var(--radius-sm);
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 900;
+            font-size: 20px;
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+        }
+
+        .brand-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .brand-ver {
+            font-size: 0.75rem;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-weight: 700;
+            border: 1px solid rgba(37, 99, 235, 0.2);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .theme-toggle-btn {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            color: var(--text-main);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s ease;
+        }
+        .theme-toggle-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .theme-toggle-btn svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Hero Banner */
+        .hero-section {
+            padding: 56px 0 40px;
+            text-align: center;
+        }
+
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 6px 16px;
+            border-radius: 999px;
+            font-size: 0.9rem;
+            font-weight: 700;
+            border: 1px solid rgba(37, 99, 235, 0.25);
+            margin-bottom: 20px;
+        }
+
+        .hero-badge svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .hero-title {
+            font-size: 2.75rem;
+            font-weight: 900;
+            line-height: 1.3;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, var(--text-main) 30%, var(--primary) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.15rem;
+            color: var(--text-muted);
+            max-width: 780px;
+            margin: 0 auto 36px;
+            line-height: 1.8;
+        }
+
+        /* Stats Strip */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+            margin-bottom: 48px;
+        }
+
+        .stat-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 20px;
+            text-align: center;
+            box-shadow: var(--shadow-sm);
+            transition: transform 0.2s ease, border-color 0.2s ease;
+        }
+        .stat-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+        }
+
+        .stat-value {
+            font-size: 2rem;
+            font-weight: 900;
+            color: var(--primary);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            margin-bottom: 4px;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-muted);
+        }
+
+        /* Notice Box */
+        .fix-notice {
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.08) 0%, rgba(37, 99, 235, 0.05) 100%);
+            border: 1px solid rgba(16, 185, 129, 0.25);
+            border-radius: var(--radius-lg);
+            padding: 24px 28px;
+            margin-bottom: 48px;
+            display: flex;
+            align-items: flex-start;
+            gap: 18px;
+        }
+
+        .fix-notice-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: var(--success);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .fix-notice-content h3 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 6px;
+        }
+
+        .fix-notice-content p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* Filter Tabs */
+        .filter-bar {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            padding: 10px 20px;
+            border-radius: 999px;
+            font-size: 0.92rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-family: var(--font-main);
+        }
+
+        .filter-btn:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            border-color: var(--primary);
+            box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+        }
+
+        /* Feature Cards Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+            gap: 24px;
+            margin-bottom: 60px;
+        }
+
+        .feature-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 28px;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-4px);
+            border-color: var(--primary);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .card-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 16px;
+            margin-bottom: 18px;
+        }
+
+        .feature-icon-box {
+            width: 48px;
+            height: 48px;
+            border-radius: var(--radius-md);
+            background: var(--primary-light);
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            border: 1px solid rgba(37, 99, 235, 0.15);
+        }
+
+        .feature-icon-box svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .feature-category-badge {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 4px 10px;
+            border-radius: 6px;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 4px;
+            color: var(--text-main);
+        }
+
+        .feature-var {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--accent);
+            background: rgba(14, 165, 233, 0.08);
+            padding: 2px 8px;
+            border-radius: 4px;
+            margin-bottom: 14px;
+            direction: ltr;
+        }
+
+        .feature-desc {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .config-box {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 14px 16px;
+            margin-bottom: 18px;
+            font-size: 0.88rem;
+        }
+
+        .config-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 6px 0;
+        }
+
+        .config-row:not(:last-child) {
+            border-bottom: 1px dashed var(--border);
+        }
+
+        .config-label {
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .config-val {
+            font-family: var(--font-mono);
+            font-weight: 600;
+            color: var(--primary);
+            background: var(--primary-light);
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.82rem;
+            direction: ltr;
+        }
+
+        .usage-section {
+            border-top: 1px solid var(--border);
+            padding-top: 16px;
+        }
+
+        .usage-header {
+            font-size: 0.88rem;
+            font-weight: 800;
+            color: var(--text-main);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .usage-header svg {
+            width: 14px;
+            height: 14px;
+            color: var(--primary);
+        }
+
+        .usage-tip {
+            font-size: 0.86rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+        }
+
+        .code-snippet {
+            background: var(--code-bg);
+            color: var(--code-text);
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            padding: 10px 12px;
+            border-radius: var(--radius-sm);
+            margin-top: 10px;
+            overflow-x: auto;
+            direction: ltr;
+            text-align: left;
+        }
+
+        /* Live Playground Section */
+        .playground-section {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            margin-bottom: 60px;
+            box-shadow: var(--shadow-md);
+        }
+
+        .playground-header {
+            text-align: center;
+            margin-bottom: 36px;
+        }
+
+        .playground-title {
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 12px;
+        }
+
+        .playground-subtitle {
+            font-size: 1.05rem;
+            color: var(--text-muted);
+        }
+
+        .playground-layout {
+            display: grid;
+            grid-template-columns: 360px 1fr;
+            gap: 32px;
+            align-items: start;
+        }
+
+        .switch-panel {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            padding: 24px;
+            max-height: 600px;
+            overflow-y: auto;
+        }
+
+        .switch-panel-title {
+            font-size: 1.1rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .switch-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 0;
+        }
+
+        .switch-item:not(:last-child) {
+            border-bottom: 1px solid var(--border);
+        }
+
+        .switch-info {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .switch-title {
+            font-size: 0.9rem;
+            font-weight: 700;
+            color: var(--text-main);
+        }
+
+        .switch-sub {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            direction: ltr;
+            text-align: right;
+        }
+
+        /* Modern Toggle Switch */
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 48px;
+            height: 26px;
+            flex-shrink: 0;
+        }
+
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: var(--border-hover);
+            transition: .3s;
+            border-radius: 34px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px;
+            width: 18px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .3s;
+            border-radius: 50%;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+        }
+
+        input:checked + .slider {
+            background-color: var(--primary);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(22px);
+        }
+
+        /* Simulator Screen */
+        .preview-screen {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            position: relative;
+        }
+
+        .preview-topbar {
+            background: var(--bg-base);
+            border-bottom: 1px solid var(--border);
+            padding: 12px 18px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .browser-dots {
+            display: flex;
+            gap: 6px;
+        }
+
+        .dot {
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+
+        .browser-url {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            padding: 4px 16px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+            font-family: var(--font-mono);
+            direction: ltr;
+            width: 50%;
+            text-align: center;
+        }
+
+        .sim-article-wrap {
+            padding: 30px;
+            position: relative;
+        }
+
+        /* Sim Elements */
+        .sim-reading-progress {
+            height: 4px;
+            background: var(--accent);
+            width: 45%;
+            margin-bottom: 20px;
+            border-radius: 2px;
+            transition: opacity 0.2s ease;
+        }
+
+        .sim-tools-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 14px;
+            background: var(--bg-base);
+            border-radius: var(--radius-sm);
+            margin-bottom: 20px;
+        }
+
+        .sim-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.82rem;
+            font-weight: 700;
+        }
+
+        .sim-btn {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: var(--text-main);
+            cursor: default;
+        }
+
+        .sim-featured-img {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #3b82f6, #06b6d4);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 800;
+            font-size: 1.1rem;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .sim-series-box {
+            background: rgba(37, 99, 235, 0.08);
+            border-right: 4px solid var(--primary);
+            padding: 14px 18px;
+            border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+            margin-bottom: 20px;
+        }
+
+        .sim-toc-box {
+            background: var(--bg-base);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+            margin-bottom: 20px;
+        }
+
+        .sim-toc-title {
+            font-weight: 800;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .sim-toc-list {
+            list-style: none;
+            padding-right: 12px;
+            font-size: 0.86rem;
+            color: var(--primary);
+            line-height: 1.8;
+        }
+
+        .sim-code-block {
+            background: var(--code-bg);
+            border-radius: var(--radius-sm);
+            padding: 14px;
+            color: var(--code-text);
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .sim-code-copy-btn {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(255,255,255,0.1);
+            color: white;
+            border: none;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            cursor: pointer;
+        }
+
+        .sim-share-row {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 14px 0;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            margin-bottom: 20px;
+        }
+
+        .sim-author-box {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            padding: 16px;
+            background: var(--bg-base);
+            border-radius: var(--radius-sm);
+            margin-bottom: 20px;
+        }
+
+        .sim-author-avatar {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+        }
+
+        .sim-related-box {
+            border: 1px solid var(--border);
+            border-radius: var(--radius-sm);
+            padding: 16px;
+        }
+
+        /* Hidden Class Utility in Simulator */
+        .is-hidden {
+            display: none !important;
+        }
+
+        /* Instructions Accordion */
+        .guide-steps {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-xl);
+            padding: 40px;
+            margin-bottom: 60px;
+        }
+
+        .guide-steps h2 {
+            font-size: 1.8rem;
+            font-weight: 900;
+            margin-bottom: 24px;
+            text-align: center;
+        }
+
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        .step-card {
+            background: var(--bg-surface);
+            border: 1px solid var(--border);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            position: relative;
+        }
+
+        .step-number {
+            width: 36px;
+            height: 36px;
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            font-size: 1.1rem;
+            margin-bottom: 16px;
+        }
+
+        .step-card h3 {
+            font-size: 1.15rem;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .step-card p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        footer.site-footer {
+            border-top: 1px solid var(--border);
+            padding: 36px 0;
+            text-align: center;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            background: var(--bg-surface);
+        }
+
+        /* Responsive */
+        @media (max-width: 992px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .playground-layout {
+                grid-template-columns: 1fr;
+            }
+            .steps-container {
+                grid-template-columns: 1fr;
+            }
+            .hero-title {
+                font-size: 2.1rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-title {
+                font-size: 1.75rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="ambient-glow"></div>
+
+    <!-- Header -->
+    <header class="nav-header">
+        <div class="container nav-inner">
+            <a href="#" class="brand">
+                <div class="brand-logo-badge">TM</div>
+                <div>
+                    <div class="brand-title">
+                        TekMax Pro
+                        <span class="brand-ver">v2.0</span>
+                    </div>
+                </div>
+            </a>
+            <div class="header-actions">
+                <button class="theme-toggle-btn" id="themeToggle" title="تبديل الوضع الليلي / النهاري">
+                    <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Hero -->
+        <section class="hero-section">
+            <div class="hero-badge">
+                <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                دليل المطورين والناشرين الرسمي
+            </div>
+            <h1 class="hero-title">دليل تشغيل وضبط الميزات المتقدمة</h1>
+            <p class="hero-subtitle">
+                شرح شامل لجميع الميزات الـ 13 الذكية في قالب TekMax Pro، وكيفية التحكم بها بالكامل (تفعيل أو إلغاء) من داخل مصمم المظهر (Theme Designer) بدون تعديل كود XML، مع أمثلة عملية للمدونين أثناء كتابة المقالات.
+            </p>
+
+            <!-- Stats -->
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">13</div>
+                    <div class="stat-label">ميزة متقدمة قابلة للتخصيص</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">0%</div>
+                    <div class="stat-label">انزياح تراكمي (CLS = 0)</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">100%</div>
+                    <div class="stat-label">تكامل مع مصمم مظهر بلوجر</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">0.1ms</div>
+                    <div class="stat-label">زمن المعالجة المتزامنة للأداء</div>
+                </div>
+            </div>
+
+            <!-- Fix Notice -->
+            <div class="fix-notice">
+                <div class="fix-notice-icon">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M5 13l4 4L19 7"/></svg>
+                </div>
+                <div class="fix-notice-content">
+                    <h3>تم إصلاح مشكلة عدم استجابة خيارات الإلغاء جذرياً!</h3>
+                    <p>
+                        سابقاً، كانت المتغيرات يتم حجبها عبر محددات السمات في CSS (مثل <code>body[style*="..."]</code>) والتي لا تتطابق مع خصائص بلوجر، كما كانت ملفات الجافاسكريبت تنفذ دون فحص حالة الإلغاء. الآن تم تطبيق بنية <strong>الموزع المتزامن فائق السرعة (Synchronous Class Dispatcher)</strong> وقواعد CSS الصارمة مع حواجز الحماية البرمجية (Guard Clauses)؛ بمجرد اختيار "2" (لا) في لوحة التحكم، يتم إخفاء العنصر بالكامل مع إيقاف أي مستمعات أحداث أو سحب بيانات تلقائياً بدون أي استهلاك للموارد.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar">
+            <button class="filter-btn active" data-filter="all">جميع الميزات (13)</button>
+            <button class="filter-btn" data-filter="structure">بنية وتنسيق المقال</button>
+            <button class="filter-btn" data-filter="ux">تجربة القارئ</button>
+            <button class="filter-btn" data-filter="author">أدوات الكاتب</button>
+            <button class="filter-btn" data-filter="social">المشاركة والمحتوى ذو الصلة</button>
+        </div>
+
+        <!-- 13 Features Grid -->
+        <div class="features-grid" id="featuresGrid">
+
+            <!-- 1. Featured Image -->
+            <div class="feature-card" data-category="structure">
+                <div class="card-top">
+                    <div class="feature-icon-box">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+                    </div>
+                    <span class="feature-category-badge">بنية المقال</span>
+                </div>
+                <h3 class="feature-title">1. صورة المقال البارزة</h3>
+                <span class="feature-var">showPostFeaturedImage</span>
+                <p class="feature-desc">
+                    تعرض الصورة البارزة أعلى المقال بنسبة أبعاد سينمائية متجاوبة (16:9) مع نظام منع التكرار الذكي لعدم عرض أول صورة داخل محتوى المقال مرتين.
+                </p>
+                <div class="config-box">
+                    <div class="config-row">
+                        <span class="config-label">1 = نعم (تفعيل):</span>
+                        <span class="config-val">1px (افتراضي)</span>
+                    </div>
+                    <div class="config-row">
+                        <span class="config-label">2 = لا (إلغاء):</span>
+                        <span class="config-val">2px (إخفاء فوري)</span>
+                    </div>
+                </div>
+                <div class="usage-section">
+                    <div class="usage-header">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        طريقة استخدام الكاتب:
+                    </div>
+                    <p class="usage-tip">
+                        يكفي إدراج صورة واحدة في بداية التدوينة أو رفعها كصورة بارزة؛ وسيقوم القالب تلقائياً باعتمادها ومنع تكرارها داخل المقال لضمان أفضل سرعة LCP.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 2. Table of Contents (TOC) -->
+            <div class="feature-card" data-category="structure">
+                <div class="card-top">
+                    <div class="feature-icon-box">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h16M4 18h7"/></svg>
+                    </div>
+                    <span class="feature-category-badge">بنية المقال</span>
+                </div>
+                <h3 class="feature-title">2. جدول المحتويات (TOC)</h3>
+                <span class="feature-var">enableTOC</span>
+                <p class="feature-desc">
+                    فهرس تلقائي ينشئ جدول محتويات أنيق وقابل للطي تلقائياً بالاعتماد على العناوين داخل المقال لتمكين القارئ من التنقل السريع في المقالات الطويلة.
+                </p>
+                <div class="config-box">
+                    <div class="config-row">
+                        <span class="config-label">1 = نعم (تفعيل):</span>
+                        <span class="config-val">1px (افتراضي)</span>
+                    </div>
+                    <div class="config-row">
+                        <span class="config-label">2 = لا (إلغاء):</span>
+                        <span class="config-val">2px (إخفاء وإيقاف JS)</span>
+                    </div>
+                </div>
+                <div class="usage-section">
+                    <div class="usage-header">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        طريقة استخدام الكاتب:
+                    </div>
+                    <p class="usage-tip">
+                        استخدم تنسيق <strong>العنوان الرئيسي (Heading / H2)</strong> أو <strong>العنوان الفرعي (H3)</strong> في محرر بلوجر. يظهر الجدول تلقائياً إذا وُجد عنوانان فأكثر!
+                    </p>
+                    <div class="code-snippet">&lt;h2&gt;عنوان القسم الأول&lt;/h2&gt;
+&lt;h3&gt;عنوان فرعي هام&lt;/h3&gt;</div>
+                </div>
+            </div>
+
+            <!-- 3. Reading Progress Bar -->
+            <div class="feature-card" data-category="ux">
+                <div class="card-top">
+                    <div class="feature-icon-box">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 14l-7 7m0 0l-7-7m7 7V3"/></svg>
+                    </div>
+                    <span class="feature-category-badge">تجربة القارئ</span>
+                </div>
+                <h3 class="feature-title">3. شريط تقدم القراءة</h3>
+                <span class="feature-var">enableReadingProgress</span>
+                <p class="feature-desc">
+                    شريط رفيع ودقيق يثبت في أعلى الشاشة يوضح للزائر نسبة ما قرأه من محتوى المقال مع التمرير باستخدام تقنية Passive Scroll لصفر تقطيع في الأداء.
+                </p>
+                <div class="config-box">
+                    <div class="config-row">
+                        <span class="config-label">1 = نعم (تفعيل):</span>
+                        <span class="config-val">1px (افتراضي)</span>
+                    </div>
+                    <div class="config-row">
+                        <span class="config-label">2 = لا (إلغاء):</span>
+                        <span class="config-val">2px (إلغاء المستمع بالكامل)</span>
+                    </div>
+                </div>
+                <div class="usage-section">
+                    <div class="usage-header">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        طريقة الاستخدام:
+                    </div>
+                    <p class="usage-tip">
+                        يعمل بشكل تلقائي 100% فور فتح أي مقال فردي. وعند الإلغاء، لا يتم تسجيل أي حدث Scroll في المتصفح.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 4. Font Resizer -->
+            <div class="feature-card" data-category="ux">
+                <div class="card-top">
+                    <div class="feature-icon-box">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 12h8m-8 6h16"/></svg>
+                    </div>
+                    <span class="feature-category-badge">تجربة القارئ</span>
+                </div>
+                <h3 class="feature-title">4. أداة تغيير حجم الخط</h3>
+                <span class="feature-var">enableFontResizer</span>
+                <p class="feature-desc">
+                    أزرار تفاعلية (+A / A / -A) تمكن القارئ من تكبير أو تصغير نص المقال لراحة العين، مع حفظ القياس المفضل في ذاكرة المتصفح (localStorage).
+                </p>
+                <div class="config-box">
+                    <div class="config-row">
+                        <span class="config-label">1 = نعم (تفعيل):</span>
+                        <span class="config-val">1px (افتراضي)</span>
+                    </div>
+                    <div class="config-row">
+                        <span class="config-label">2 = لا (إلغاء):</span>
+                        <span class="config-val">2px (إخفاء الأزرار)</span>
+                    </div>
+                </div>
+                <div class="usage-section">
+                    <div class="usage-header">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        طريقة الاستخدام:
+                    </div>
+                    <p class="usage-tip">
+                        تظهر الأداة تلقائياً في شريط أدوات المقال أسفل العنوان مباشرة. يستطيع القارئ ضبط الخط بضغطة زر واحدة.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 5. Reading Time -->
+            <div class="feature-card" data-category="ux">
+                <div class="card-top">
+                    <div class="feature-icon-box">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    </div>
+                    <span class="feature-category-badge">تجربة القارئ</span>
+                </div>
+                <h3 class="feature-title">5. وقت القراءة التقريبي</h3>
+                <span class="feature-var">enableReadingTime</span>
+                <p class="feature-desc">
+                    شارة ذكية تحسب عدد كلمات المقال الفعلي وتقدر وقت القراءة بالدقائق استناداً إلى متوسط سرعة القراءة العربية (190 كلمة/دقيقة).
+                </p>
+                <div class="config-box">
+                    <div class="config-row">
+                        <span class="config-label">1 = نعم (تفعيل):</span>
+                        <span class="config-val">1px (افتراضي)</span>
+                    </div>
+                    <div class="config-row">
+                        <span class="config-label">2 = لا (إلغاء):</span>
+                        <span class="config-val">2px (إخفاء الشارة)</span>
+                    </div>
+                </div>
+                <div class="usage-section">
+                    <div class="usage-header">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        طريقة الاستخدام:
+                    </div>
+                    <p class="usage-tip">
+                        تظهر بجانب اسم الكاتب وتاريخ النشر (مثال: "4 دقائق قراءة"). تُحسب فورياً بدون التأثير على محركات البحث أو سرعة العرض.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 6. Related Posts -->
+            <div class="feature-card" data-category="social">
+                <div class="card-top">
+                    <div class="feature-icon-box">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+                    </div>
+                    <span class="feature-category-badge">المحتوى ذو الصلة</span>
+                </div>
+                <h3 class="feature-title">6. المقالات ذات الصلة</h3>
+                <span class="feature-var">enableRelatedPosts</span>
+                <p class="feature-desc">
+                    محرك جلب تلقائي يعرض شبكة مقالات مقترحة أسفل المقال وأيضاً صناديق "اقرأ أيضاً" داخل المقال بناءً على التصنيفات (Labels) المشتركة.
+                </p>
+                <div class="config-box">
+                    <div class="config-row">
+                        <span class="config-label">1 = نعم (تفعيل):</span>
+                        <span class="config-val">1px (افتراضي)</span>
+                    </div>
+                    <div class="config-row">
+                        <span class="config-label">2 = لا (إلغاء):</span>
+                        <span class="config-val">2px (إلغاء الطلبات والشبكة)</span>
+                    </div>
+                </div>
+                <div class="usage-section">
+                    <div class="usage-header">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        طريقة استخدام الكاتب:
+                    </div>
+                    <p class="usage-tip">
+                        احرص دائماً على إضافة <strong>تصنيف (Label)</strong> واحد على الأقل لكل مقال؛ ليتمكن المحرك من اقتراح المقالات المتشابهة تلقائياً.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 7. Author Box -->
+            <div class="feature-card" data-category="structure">
+                <div class="card-top">
+                    <div class="feature-icon-box">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg>
+                    </div>
+                    <span class="feature-category-badge">بنية المقال</span>
+                </div>
+                <h3 class="feature-title">7. صندوق الكاتب (Author Box)</h3>
+                <span class="feature-var">enableAuthorBox</span>
+                <p class="feature-desc">
+                    بطاقة تعريفية بالكاتب أسفل المقال متوافقة مع Schema.org Person، تعرض الصورة الرمزية، النبذة التعريفية، وروابط التواصل الاجتماعي.
+                </p>
+                <div class="config-box">
+                    <div class="config-row">
+                        <span class="config-label">1 = نعم (تفعيل):</span>
+                        <span class="config-val">1px (افتراضي)</span>
+                    </div>
+                    <div class="config-row">
+                        <span class="config-label">2 = لا (إلغاء):</span>
+                        <span class="config-val">2px (إخفاء الصندوق)</span>
+                    </div>
+                </div>
+                <div class="usage-section">
+                    <div class="usage-header">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        طريقة استخدام الكاتب:
+                    </div>
+                    <p class="usage-tip">
+                        اكتب نبذتك الشخصية في إعدادات ملف تعريف بلوجر (Blogger User Profile)؛ وستظهر فورياً داخل البطاقة بكل أناقة.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 8. Copy Code Button -->
+            <div class="feature-card" data-category="author">
+                <div class="card-top">
+                    <div class="feature-icon-box">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                    </div>
+                    <span class="feature-category-badge">أدوات المطورين</span>
+                </div>
+                <h3 class="feature-title">8. زر نسخ الأكواد البرمجية</h3>
+                <span class="feature-var">enableCopyCode</span>
+                <p class="feature-desc">
+                    يضيف زر نسخ تفاعلي أنيق أعلى كل مربع كود برمجي (&lt;pre&gt;&lt;code&gt;) مع شارة نوع اللغة البرمجية وإشعار نجاح النسخ بلون أخضر.
+                </p>
+                <div class="config-box">
+                    <div class="config-row">
+                        <span class="config-label">1 = نعم (تفعيل):</span>
+                        <span class="config-val">1px (افتراضي)</span>
+                    </div>
+                    <div class="config-row">
+                        <span class="config-label">2 = لا (إلغاء):</span>
+                        <span class="config-val">2px (إخفاء الزر وإلغاء الربط)</span>
+                    </div>
+                </div>
+                <div class="usage-section">
+                    <div class="usage-header">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        طريقة استخدام الكاتب:
+                    </div>
+                    <p class="usage-tip">
+                        في محرر HTML للمقال، اكتب الكود داخل وسمي <code>pre</code> و <code>code</code> وحدد اللغة لتظهر شارة اللغة تلقائياً:
+                    </p>
+                    <div class="code-snippet">&lt;pre class="language-javascript"&gt;&lt;code&gt;
+console.log("Hello TekMax!");
+&lt;/code&gt;&lt;/pre&gt;</div>
+                </div>
+            </div>
+
+            <!-- 9. Image Lightbox -->
+            <div class="feature-card" data-category="ux">
+                <div class="card-top">
+                    <div class="feature-icon-box">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v6m3-3H7"/></svg>
+                    </div>
+                    <span class="feature-category-badge">تجربة القارئ</span>
+                </div>
+                <h3 class="feature-title">9. مستعرض الصور (Lightbox)</h3>
+                <span class="feature-var">enableLightbox</span>
+                <p class="feature-desc">
+                    نافذة عرض عائمة وسريعة لصور المقال تتيح التكبير (Zoom)، والتنقل بين الصور عبر الأسهم ولوحة المفاتيح واللمس على الهواتف.
+                </p>
+                <div class="config-box">
+                    <div class="config-row">
+                        <span class="config-label">1 = نعم (تفعيل):</span>
+                        <span class="config-val">1px (افتراضي)</span>
+                    </div>
+                    <div class="config-row">
+                        <span class="config-label">2 = لا (إلغاء):</span>
+                        <span class="config-val">2px (إلغاء المستعرض وفتح طبيعي)</span>
+                    </div>
+                </div>
+                <div class="usage-section">
+                    <div class="usage-header">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        طريقة الاستخدام:
+                    </div>
+                    <p class="usage-tip">
+                        تلقائي بالكامل! أي صورة يدرجها الكاتب في المقال تصبح قابلة للنقر والتكبير بدقة عالية فورية.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 10. Print Button -->
+            <div class="feature-card" data-category="author">
+                <div class="card-top">
+                    <div class="feature-icon-box">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 01-2-2v-5a2 2 0 012-2h16a2 2 0 012 2v5a2 2 0 01-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                    </div>
+                    <span class="feature-category-badge">أدوات الكاتب</span>
+                </div>
+                <h3 class="feature-title">10. زر طباعة المقال</h3>
+                <span class="feature-var">enablePrintButton</span>
+                <p class="feature-desc">
+                    زر يظهر في شريط أدوات المقال يستدعي نافذة الطباعة النظيفة تلقائياً، مع تطبيق قواعد Print CSS الخاصة لحذف القوائم والإعلانات وحفظ الحبر.
+                </p>
+                <div class="config-box">
+                    <div class="config-row">
+                        <span class="config-label">1 = نعم (تفعيل):</span>
+                        <span class="config-val">1px (افتراضي)</span>
+                    </div>
+                    <div class="config-row">
+                        <span class="config-label">2 = لا (إلغاء):</span>
+                        <span class="config-val">2px (إخفاء زر الطباعة)</span>
+                    </div>
+                </div>
+                <div class="usage-section">
+                    <div class="usage-header">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        طريقة الاستخدام:
+                    </div>
+                    <p class="usage-tip">
+                        جاهز بدون أي إعداد إضافي. عند الضغط عليه يقوم المتصفح بتجهيز نسخة مقروءة بيضاء ونقية للطباعة أو الحفظ بصيغة PDF.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 11. Social Share Buttons -->
+            <div class="feature-card" data-category="social">
+                <div class="card-top">
+                    <div class="feature-icon-box">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg>
+                    </div>
+                    <span class="feature-category-badge">المشاركة الاجتماعية</span>
+                </div>
+                <h3 class="feature-title">11. أزرار المشاركة الاجتماعية</h3>
+                <span class="feature-var">enableShareButtons</span>
+                <p class="feature-desc">
+                    شريط مشاركة فوري يدعم شبكات التواصل (X، فيسبوك، واتساب، لينكد إن، تيليجرام)، مع دعم واجهة Web Share API الأصلية للهواتف وزر نسخ الرابط.
+                </p>
+                <div class="config-box">
+                    <div class="config-row">
+                        <span class="config-label">1 = نعم (تفعيل):</span>
+                        <span class="config-val">1px (افتراضي)</span>
+                    </div>
+                    <div class="config-row">
+                        <span class="config-label">2 = لا (إلغاء):</span>
+                        <span class="config-val">2px (إخفاء الشريط بالكامل)</span>
+                    </div>
+                </div>
+                <div class="usage-section">
+                    <div class="usage-header">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        طريقة الاستخدام:
+                    </div>
+                    <p class="usage-tip">
+                        يظهر أسفل نص المقال مباشرة بتصميم ناعم ومريح. ينظف الروابط من وسوم التعقب عند النسخ لضمان الروابط النظيفة.
+                    </p>
+                </div>
+            </div>
+
+            <!-- 12. Article Series Box -->
+            <div class="feature-card" data-category="structure">
+                <div class="card-top">
+                    <div class="feature-icon-box">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+                    </div>
+                    <span class="feature-category-badge">بنية المقال</span>
+                </div>
+                <h3 class="feature-title">12. صندوق سلسلة المقالات</h3>
+                <span class="feature-var">enableArticleSeries</span>
+                <p class="feature-desc">
+                    صندوق مميز لتنظيم الدورات وسلاسل الشروحات المكونة من عدة أجزاء، يربط الدروس ببعضها مع أزرار الدرس السابق والتالي ورقم الجزء.
+                </p>
+                <div class="config-box">
+                    <div class="config-row">
+                        <span class="config-label">1 = نعم (تفعيل):</span>
+                        <span class="config-val">1px (افتراضي)</span>
+                    </div>
+                    <div class="config-row">
+                        <span class="config-label">2 = لا (إلغاء):</span>
+                        <span class="config-val">2px (تعطيل وإخفاء الصندوق)</span>
+                    </div>
+                </div>
+                <div class="usage-section">
+                    <div class="usage-header">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        طريقة استخدام الكاتب:
+                    </div>
+                    <p class="usage-tip">
+                        يكفي وضع اسم السلسلة بين قوسين في عنوان المقال (مثال: <code>دورة بايثون [الجزء 1]</code>) وسيتعرف عليها القالب تلقائياً!
+                    </p>
+                </div>
+            </div>
+
+            <!-- 13. Author Edit Button -->
+            <div class="feature-card" data-category="author">
+                <div class="card-top">
+                    <div class="feature-icon-box">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 00-2 2v14a2 2 0 002 2h14a2 2 0 002-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 013 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                    </div>
+                    <span class="feature-category-badge">أدوات الكاتب</span>
+                </div>
+                <h3 class="feature-title">13. زر تعديل المقال للمؤلفين</h3>
+                <span class="feature-var">enableEditPost</span>
+                <p class="feature-desc">
+                    زر اختصار سريع يظهر في شريط أدوات المقال ينقل المؤلف مباشرة إلى صفحة تحرير المقال في لوحة تحكم بلوجر الحديثة بنقرة واحدة.
+                </p>
+                <div class="config-box">
+                    <div class="config-row">
+                        <span class="config-label">1 = نعم (تفعيل):</span>
+                        <span class="config-val">1px (افتراضي)</span>
+                    </div>
+                    <div class="config-row">
+                        <span class="config-label">2 = لا (إلغاء):</span>
+                        <span class="config-val">2px (إخفاء الزر للجميع)</span>
+                    </div>
+                </div>
+                <div class="usage-section">
+                    <div class="usage-header">
+                        <svg fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        طريقة الاستخدام:
+                    </div>
+                    <p class="usage-tip">
+                        الرابط موجه مباشرة إلى: <code>https://www.blogger.com/blog/post/edit/[BlogID]/[PostID]</code> مما يجعله يعمل حتى لو كان الكاش نشطاً.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- Live Interactive Playground Simulator -->
+        <section class="playground-section">
+            <div class="playground-header">
+                <h2 class="playground-title">محاكي التبديل الحي (Live Toggle Simulator)</h2>
+                <p class="playground-subtitle">
+                    جرّب تشغيل وإلغاء الميزات الـ 13 هنا مباشرة؛ وشاهد كيف تختفي وتظهر العناصر في المعاينة الحية فوراً بنفس الآلية المطبقة في قالب بلوجر!
+                </p>
+            </div>
+
+            <div class="playground-layout">
+                <!-- Switches -->
+                <div class="switch-panel">
+                    <div class="switch-panel-title">
+                        <span>لوحة التحكم الافتراضية</span>
+                        <span style="font-size: 0.8rem; color: var(--primary);">حالة حية</span>
+                    </div>
+
+                    <div class="switch-item">
+                        <div class="switch-info">
+                            <span class="switch-title">صورة المقال البارزة</span>
+                            <span class="switch-sub">showPostFeaturedImage</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked data-target="simFeaturedImg">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="switch-item">
+                        <div class="switch-info">
+                            <span class="switch-title">جدول المحتويات (TOC)</span>
+                            <span class="switch-sub">enableTOC</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked data-target="simToc">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="switch-item">
+                        <div class="switch-info">
+                            <span class="switch-title">شريط تقدم القراءة</span>
+                            <span class="switch-sub">enableReadingProgress</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked data-target="simReadingProgress">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="switch-item">
+                        <div class="switch-info">
+                            <span class="switch-title">أداة تغيير حجم الخط</span>
+                            <span class="switch-sub">enableFontResizer</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked data-target="simFontResizer">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="switch-item">
+                        <div class="switch-info">
+                            <span class="switch-title">وقت القراءة التقريبي</span>
+                            <span class="switch-sub">enableReadingTime</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked data-target="simReadingTime">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="switch-item">
+                        <div class="switch-info">
+                            <span class="switch-title">المقالات ذات الصلة</span>
+                            <span class="switch-sub">enableRelatedPosts</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked data-target="simRelatedPosts">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="switch-item">
+                        <div class="switch-info">
+                            <span class="switch-title">صندوق الكاتب</span>
+                            <span class="switch-sub">enableAuthorBox</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked data-target="simAuthorBox">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="switch-item">
+                        <div class="switch-info">
+                            <span class="switch-title">زر نسخ الأكواد</span>
+                            <span class="switch-sub">enableCopyCode</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked data-target="simCopyCode">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="switch-item">
+                        <div class="switch-info">
+                            <span class="switch-title">زر طباعة المقال</span>
+                            <span class="switch-sub">enablePrintBtn</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked data-target="simPrintBtn">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="switch-item">
+                        <div class="switch-info">
+                            <span class="switch-title">أزرار المشاركة</span>
+                            <span class="switch-sub">enableShareBtns</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked data-target="simShareBtns">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="switch-item">
+                        <div class="switch-info">
+                            <span class="switch-title">صندوق سلسلة المقالات</span>
+                            <span class="switch-sub">enableArticleSeries</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked data-target="simArticleSeries">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+
+                    <div class="switch-item">
+                        <div class="switch-info">
+                            <span class="switch-title">زر تعديل المقال</span>
+                            <span class="switch-sub">enableEditPost</span>
+                        </div>
+                        <label class="toggle-switch">
+                            <input type="checkbox" checked data-target="simEditPost">
+                            <span class="slider"></span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Preview Screen -->
+                <div class="preview-screen">
+                    <div class="preview-topbar">
+                        <div class="browser-dots">
+                            <div class="dot dot-red"></div>
+                            <div class="dot dot-yellow"></div>
+                            <div class="dot dot-green"></div>
+                        </div>
+                        <div class="browser-url">https://yourblog.blogspot.com/post-sample.html</div>
+                        <div style="width: 40px;"></div>
+                    </div>
+
+                    <div class="sim-article-wrap">
+                        <!-- Reading Progress Bar -->
+                        <div class="sim-reading-progress" id="simReadingProgress"></div>
+
+                        <!-- Header & Meta -->
+                        <h2 style="font-size: 1.4rem; font-weight: 800; margin-bottom: 10px;">دليل تطوير تطبيقات الويب الحديثة [سلسلة متقدمة]</h2>
+                        
+                        <!-- Meta bar with reading time -->
+                        <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px;">
+                            <span style="font-size: 0.85rem; color: var(--text-muted);">بواسطة: كاتب المدونة</span>
+                            <span class="sim-badge" id="simReadingTime">⏱️ 3 دقائق قراءة</span>
+                        </div>
+
+                        <!-- Tools row (Font resizer, Print, Edit) -->
+                        <div class="sim-tools-row">
+                            <div id="simFontResizer">
+                                <span style="font-size: 0.8rem; font-weight: 700; margin-left: 6px;">الخط:</span>
+                                <button class="sim-btn">A-</button>
+                                <button class="sim-btn">A</button>
+                                <button class="sim-btn">A+</button>
+                            </div>
+                            <div style="display: flex; gap: 8px;">
+                                <button class="sim-btn" id="simPrintBtn">🖨️ طباعة</button>
+                                <button class="sim-btn" id="simEditPost" style="color: var(--primary); border-color: rgba(37,99,235,0.3);">✏️ تعديل المقال</button>
+                            </div>
+                        </div>
+
+                        <!-- Featured Image -->
+                        <div class="sim-featured-img" id="simFeaturedImg">
+                            🖼️ صورة المقال البارزة (16:9 Cinema Aspect)
+                        </div>
+
+                        <!-- Article Series Box -->
+                        <div class="sim-series-box" id="simArticleSeries">
+                            <div style="font-weight: 800; font-size: 0.95rem; color: var(--primary);">📚 سلسلة متقدمة: تطوير الويب (الجزء 1 من 4)</div>
+                            <div style="font-size: 0.82rem; color: var(--text-muted); margin-top: 4px;">الدرس السابق: مقدمة | الدرس التالي: ضبط الخادم</div>
+                        </div>
+
+                        <!-- TOC -->
+                        <div class="sim-toc-box" id="simToc">
+                            <div class="sim-toc-title">
+                                <span>📑 جدول المحتويات</span>
+                                <span style="font-size: 0.75rem; color: var(--text-muted);">(تلقائي من العناوين)</span>
+                            </div>
+                            <ul class="sim-toc-list">
+                                <li>1. نظرة عامة وتثبيت الأدوات</li>
+                                <li>2. ضبط بنية المشروع وقواعد الأداء</li>
+                                <li>3. النشر والتكامل السحابي</li>
+                            </ul>
+                        </div>
+
+                        <!-- Paragraph -->
+                        <p style="font-size: 0.92rem; color: var(--text-muted); line-height: 1.8; margin-bottom: 18px;">
+                            يقدم قالب TekMax Pro تجربة استثنائية للمدونين، حيث تجمع كل ميزة بين الخفة التامة ومراعاة معايير Core Web Vitals مع مرونة كاملة في التخصيص.
+                        </p>
+
+                        <!-- Code block with copy -->
+                        <div class="sim-code-block">
+                            <button class="sim-code-copy-btn" id="simCopyCode">نسخ الكود</button>
+                            <div>&lt;div class="tekmax-card"&gt;Fast & Modern&lt;/div&gt;</div>
+                        </div>
+
+                        <!-- Share Strip -->
+                        <div class="sim-share-row" id="simShareBtns">
+                            <span style="font-size: 0.85rem; font-weight: 800;">مشاركة المقال:</span>
+                            <button class="sim-btn">Twitter/X</button>
+                            <button class="sim-btn">Facebook</button>
+                            <button class="sim-btn">WhatsApp</button>
+                            <button class="sim-btn">نسخ الرابط</button>
+                        </div>
+
+                        <!-- Author Box -->
+                        <div class="sim-author-box" id="simAuthorBox">
+                            <div class="sim-author-avatar">TM</div>
+                            <div>
+                                <div style="font-weight: 800; font-size: 0.95rem;">فريق تيك ماكس</div>
+                                <div style="font-size: 0.82rem; color: var(--text-muted);">فريق متخصص في تطوير قوالب بلوجر وتجربة المستخدم الحديثة.</div>
+                            </div>
+                        </div>
+
+                        <!-- Related Posts -->
+                        <div class="sim-related-box" id="simRelatedPosts">
+                            <div style="font-weight: 800; font-size: 0.95rem; margin-bottom: 8px;">🔗 مقالات ذات صلة مقترحة:</div>
+                            <div style="font-size: 0.85rem; color: var(--primary); display: flex; flex-direction: column; gap: 4px;">
+                                <span>• كيفية تسريع قالب بلوجر والوصول لعلامة 100/100 في PageSpeed</span>
+                                <span>• دليل استخدام نظام الترقيم الحقيقي بدون جافاسكريبت</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Steps to Use in Blogger Theme Designer -->
+        <section class="guide-steps">
+            <h2>طريقة تغيير الإعدادات من لوحة تحكم بلوجر</h2>
+            <div class="steps-container">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>الدخول إلى مصمم المظهر</h3>
+                    <p>
+                        من القائمة الجانبية في لوحة تحكم Blogger، اضغط على <strong>المظهر (Theme)</strong> ثم اختر <strong>تخصيص (Customize)</strong> لفتح محرر التصميم المرئي.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>قسم إعدادات تيك ماكس 2.0</h3>
+                    <p>
+                        انتقل إلى خيار <strong>متقدم (Advanced)</strong>، ثم اختر القائمة المنسدلة وابحث عن: <br>
+                        <strong>إعدادات تيك ماكس 2.0 (TekMax 2.0 Settings)</strong>.
+                    </p>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>التبديل بين 1 و 2</h3>
+                    <p>
+                        ستجد كل ميزة أمامها مؤشر قياس: <br>
+                        • <strong>1px</strong> = نعم (تفعيل الميزة) <br>
+                        • <strong>2px</strong> = لا (إلغاء الميزة فوراً) <br>
+                        ثم اضغط على أيقونة الحفظ بالأسفل.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>جميع الحقوق محفوظة © قالب TekMax Pro v2.0 — توثيق ودليل الميزات المتقدمة</p>
+        </div>
+    </footer>
+
+    <!-- Interactive Script -->
+    <script>
+        // Dark Mode Toggle
+        const themeToggleBtn = document.getElementById('themeToggle');
+        const currentTheme = localStorage.getItem('tekmax_doc_theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+
+        themeToggleBtn.addEventListener('click', () => {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            const nextTheme = isDark ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', nextTheme);
+            localStorage.setItem('tekmax_doc_theme', nextTheme);
+        });
+
+        // Filter Tabs
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const cards = document.querySelectorAll('.feature-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                const category = btn.getAttribute('data-filter');
+
+                cards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'flex';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Live Toggle Simulator Switches
+        const switches = document.querySelectorAll('.toggle-switch input');
+        switches.forEach(sw => {
+            sw.addEventListener('change', function() {
+                const targetId = this.getAttribute('data-target');
+                const targetEl = document.getElementById(targetId);
+                if (targetEl) {
+                    if (this.checked) {
+                        targetEl.classList.remove('is-hidden');
+                    } else {
+                        targetEl.classList.add('is-hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>

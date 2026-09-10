@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>حزمة التسويق والعمل الحر لقالب BlogTekMax Pro | خمسات، كفيل، والسوشيال ميديا</title>
+  
+  <!-- Google Fonts: Cairo -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet"/>
+
+  <style>
+    :root {
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --success: #16a34a;
+      --success-bg: #dcfce7;
+      --bg-page: #f8fafc;
+      --bg-card: #ffffff;
+      --border-color: #e2e8f0;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --font-family: 'Cairo', system-ui, -apple-system, sans-serif;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-family);
+      background-color: var(--bg-page);
+      color: var(--text-main);
+      line-height: 1.8;
+      padding: 40px 20px;
+      direction: rtl;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    /* Header Banner */
+    .hero-banner {
+      background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+      color: #ffffff;
+      padding: 40px 36px;
+      border-radius: 20px;
+      margin-bottom: 35px;
+      box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.2);
+      border: 1px solid #334155;
+      text-align: center;
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(37, 99, 235, 0.25);
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      color: #93c5fd;
+      padding: 4px 16px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      border-radius: 30px;
+      margin-bottom: 14px;
+    }
+
+    .hero-title {
+      font-size: 2.2rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+
+    .hero-subtitle {
+      font-size: 1.05rem;
+      color: #cbd5e1;
+      max-width: 750px;
+      margin: 0 auto 20px;
+    }
+
+    .live-demo-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(255, 255, 255, 0.08);
+      padding: 8px 18px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      color: #38bdf8;
+      text-decoration: none;
+      border: 1px solid rgba(56, 189, 248, 0.25);
+      transition: all 0.2s ease;
+    }
+
+    .live-demo-tag:hover {
+      background: rgba(56, 189, 248, 0.15);
+      border-color: #38bdf8;
+    }
+
+    /* Section Tabs / Navigation */
+    .tab-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 30px;
+      justify-content: center;
+    }
+
+    .tab-btn {
+      background: #ffffff;
+      border: 1px solid var(--border-color);
+      padding: 12px 24px;
+      border-radius: 12px;
+      font-family: inherit;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--text-muted);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+    }
+
+    .tab-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .tab-btn.active {
+      background: var(--primary);
+      color: #ffffff;
+      border-color: var(--primary);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.25);
+    }
+
+    /* Cards */
+    .kit-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 32px;
+      margin-bottom: 30px;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+      position: relative;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-bottom: 22px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .card-title-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .platform-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.4rem;
+      background: #f1f5f9;
+    }
+
+    .card-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: var(--text-main);
+    }
+
+    .card-badge {
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      background: #eff6ff;
+      color: var(--primary);
+    }
+
+    /* Copy Button */
+    .copy-btn {
+      background: var(--primary);
+      color: #ffffff;
+      border: none;
+      padding: 9px 20px;
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.2);
+    }
+
+    .copy-btn:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    .copy-btn.copied {
+      background: var(--success);
+    }
+
+    /* Content Box */
+    .text-content-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 24px;
+      font-size: 0.98rem;
+      line-height: 1.85;
+      color: #334155;
+      white-space: pre-wrap;
+      font-family: var(--font-family);
+      overflow-x: auto;
+      user-select: text;
+    }
+
+    .tip-box {
+      margin-top: 18px;
+      background: #fefce8;
+      border: 1px solid #fef08a;
+      padding: 14px 18px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+      color: #854d0e;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    /* Toast Notification */
+    .toast {
+      position: fixed;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%) translateY(100px);
+      background: #0f172a;
+      color: #ffffff;
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+      z-index: 9999;
+      opacity: 0;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid #334155;
+    }
+
+    .toast.show {
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+
+    .toast-icon {
+      color: #4ade80;
+    }
+
+    /* Quick Specs Grid */
+    .specs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 12px;
+      margin-top: 20px;
+    }
+
+    .spec-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 0.88rem;
+    }
+
+    .spec-label {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      display: block;
+      margin-bottom: 3px;
+    }
+
+    .spec-value {
+      font-weight: 700;
+      color: var(--text-main);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header Banner -->
+  <div class="hero-banner">
+    <span class="hero-badge">💼 حزمة التسويق والعمل الحر الاحترافية</span>
+    <h1 class="hero-title">BlogTekMax Pro / NovaPress Premium</h1>
+    <p class="hero-subtitle">
+      نماذج إعلانية وتفاصيل خدمات جاهزة للنشر بنقرة زر واحدة على منصات العمل المصغرة (خمسات، كفيل، بيكاليكا، ومستقل) ومنصات التواصل الاجتماعي (فيسبوك، إكس، لينكد إن، وتيليجرام).
+    </p>
+    <a href="https://tek-max.blogspot.com/" target="_blank" rel="noopener" class="live-demo-tag">
+      <span>🌐 رابط المعاينة الحية المعتمد:</span>
+      <strong>tek-max.blogspot.com</strong>
+    </a>
+  </div>
+
+  <!-- Tabs Navigation -->
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="scrollToSection('khamsat-section')">💼 منصات العمل المصغر (خمسات / كفيل)</button>
+    <button class="tab-btn" onclick="scrollToSection('facebook-section')">📘 منشورات فيسبوك (Facebook)</button>
+    <button class="tab-btn" onclick="scrollToSection('twitter-section')">🐦 منصة إكس / تويتر (X / Twitter)</button>
+    <button class="tab-btn" onclick="scrollToSection('linkedin-section')">💼 منشور لينكد إن (LinkedIn)</button>
+    <button class="tab-btn" onclick="scrollToSection('telegram-section')">✈️ تيليجرام وواتساب (Broadcast)</button>
+  </div>
+
+  <!-- =========================================================================
+       1. KHAMSAT & KAFEEL SECTION
+       ========================================================================= -->
+  <section id="khamsat-section">
+    <div class="kit-card">
+      <div class="card-header">
+        <div class="card-title-group">
+          <div class="platform-icon" style="background:#fef3c7; color:#d97706;">🛍️</div>
+          <div>
+            <h2 class="card-title">1. وصف خدمة منصات العمل المصغر (خمسات / كفيل)</h2>
+            <span class="card-badge">مُهيأ لسياسات خمسات وكفيل 100% • خالي من المخالفات</span>
+          </div>
+        </div>
+        <button class="copy-btn" onclick="copyText('khamsat-text', this)">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          <span>نسخ وصف الخدمة</span>
+        </button>
+      </div>
+
+      <div class="text-content-box" id="khamsat-text">عنوان الخدمة المقترح:
+قالب BlogTekMax Pro الاحترافي لبلوجر | مجلة تقنية عصرية وسرعة خارقة Core Web Vitals
+
+وصف الخدمة:
+مرحباً بك،
+هل تبحث عن قالب بلوجر عصري ينقل مدونتك لمستوى المنصات التقنية العالمية مع ضمان سرعة فائقة وتصدر نتائج محركات البحث؟
+
+أقدم لك قالب BlogTekMax Pro (NovaPress Premium)، القالب المصمم هندسياً خصيصاً للمدونات التقنية، المجلات الإخبارية، مواقع الشروحات والذكاء الاصطناعي، بمزيج فريد يجمع بين التصميم الفخم وسرعة التحميل القياسية.
+
+⚡ لماذا تختار قالب BlogTekMax Pro لمدونتك؟
+
+1. أداء وسرعة قياسية (Core Web Vitals):
+• كود برمجي فائق النقاء مبني بـ Vanilla JavaScript بالكامل وخالٍ تماماً من مكتبة jQuery الثقيلة.
+• تحميل ذكي للصور بنظام srcset التجاوبي الحقيقي لتوفير استهلاك البيانات بنسبة 70%.
+• صفر انزياح في التخطيط (CLS) بفضل عزل أبعاد العناصر ومطابقة أبعاد الخطوط البديلة.
+• أولوية اكتشاف عالية للصورة الرئيسية (LCP) لضمان ظهور الصفحة الأولى في لمح البصر.
+
+2. تصميم واجهة Bento Grid العصرية:
+• سلايدر شبكي مميز للتدوينات الأحدث يعرض 3 مقالات كاملة بذكاء وتفاعل انسيابي.
+• تناسق لوني جذاب مستوحى من كبرى المواقع العالمية مع خط "Cairo" العربي الأصيل.
+
+3. أدوات تدوين مدمجة دون الحاجة لإضافات:
+• جدول محتويات تلقائي وقابل للطي (Table of Contents) يولد الروابط آلياً من العناوين.
+• صندوق "اقرأ أيضاً" الحصري المدمج بين الفقرات برقمين وتنسيق عربي فخم من اليمين لليسار.
+• شريط تقدم القراءة في قمة المقال ومؤشر زمني لحساب وقت القراءة المقدر.
+• أزرار تكبير وتصغير الخط (A- / A / A+) لراحة الزائر، مع زر طباعة ومشاركة سريعة.
+• زر تعديل المقال السريع للمشرفين والكتّاب المسجلين فقط.
+
+4. وضع ليلي حقيقي (Native Dark Mode):
+• تبديل فوري بلمسة واحدة بدرجات كحلية مريحة للعين، مع حفظ خيار الزائر تلقائياً.
+
+5. توافق تام مع Google AdSense:
+• محرك إعلاني ذكي بمساحات محجوزة مسبقاً تمنع أي هبوط في تجربة المستخدم أو انزياح التخطيط.
+
+6. تحكم وتخصيص كامل من مصمم المظهر (Theme Designer):
+• أكثر من 60 خياراً مدمجاً للتحكم بألوان الموقع، أبعاد الشعار، والخطوط بضغطة زر دون لمس كود XML.
+
+---
+📦 ما الذي ستحصل عليه مقابل الخدمة الأساسية (5$):
+✓ ملف القالب الأصلي بنسخته الكاملة (ملف XML نقي ومفحوص 100%).
+✓ كود نظيف، صالح وصحيح ومعرب بالكامل بدون أي روابط مشفرة أو إعلانات خفية.
+✓ ملف الشعار الشفاف فائق الدقة (PNG + WebP) متوافق مع الوضعين الفاتح والليلي.
+✓ إرشادات ودليل مبسط لكيفية تثبيت القالب وضبط الإعدادات الأساسية.
+
+---
+🎯 تطويرات الخدمة المتاحة:
++ تركيب القالب على مدونتك وضبط التخطيط والشعار والأقسام باحترافية: +5$
++ تخصيص الألوان والهوية البصرية بما يناسب مجالك التقني: +5$
++ ضبط وتهيئة إعلانات AdSense وتفعيل أدوات السيو الداخلية: +10$
+
+🔗 للمعاينة الحية والتأكد من الأداء:
+https://tek-max.blogspot.com/
+
+جاهز لاستقبال استفساراتك قبل الطلب وسأكون سعيداً بخدمتك!</div>
+
+      <div class="tip-box">
+        <span>💡</span>
+        <div>
+          <strong>نصيحة لمنصات خمسات وكفيل:</strong> استخدم صور القالب المرفقة في ملف <code>article_images/hero_slider_bento.webp</code> و <code>single_post_interface.webp</code> كصور مصغرة (Thumbnails) رئيسية للخدمة، حيث تزيد الصور الحقيقية من نسبة النقر والطلبات بنسبة 40%.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       2. FACEBOOK SECTION
+       ========================================================================= -->
+  <section id="facebook-section">
+    <div class="kit-card">
+      <div class="card-header">
+        <div class="card-title-group">
+          <div class="platform-icon" style="background:#eff6ff; color:#1d4ed8;">📘</div>
+          <div>
+            <h2 class="card-title">2. منشور فيسبوك طويل وشامل (Facebook Deep-Dive Post)</h2>
+            <span class="card-badge">أسلوب قصصي ومقنع • مناسب لمجموعات المدونين والتقنية</span>
+          </div>
+        </div>
+        <button class="copy-btn" onclick="copyText('fb-long-text', this)">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          <span>نسخ المنشور</span>
+        </button>
+      </div>
+
+      <div class="text-content-box" id="fb-long-text">لو أنت صاحب مدونة على Blogger، البوست ده معمول علشانك تحديداً! ✋
+
+كلنا عارفين المعاناة: عاوز قالب شكله فخم ومودرن زي المواقع العالمية، لكن في نفس الوقت أول ما تركب أي قالب تلاقي سرعة الموقع في Google PageSpeed نزلت للأرض، وانزياح التخطيط (CLS) بيبوظ ترتيبك في جوجل، والموقع على الموبايل تقيل ومش مريح!
+
+علشان كده تم تطوير قالب BlogTekMax Pro (NovaPress Premium) كحل حقيقي لكل المشاكل دي:
+
+ليه القالب ده مختلف عن أي قالب شوفته قبل كده لبلوجر؟
+
+🚀 1. بدون مكتبة jQuery نهائياً:
+القالب معتمد بالكامل على Pure Vanilla JavaScript، وده بيخليه خفيف جداً، سريع الاستجابة، وصفر استهلاك لموارد الموبايل.
+
+🎨 2. واجهة Hero Bento Grid الفخمة:
+مش مجرد سلايدر عادي؛ شبكة تفاعلية بتعرض أحدث التدوينات بتنسيق Bento Grid العصري، مع ضمان ظهور 3 مقالات دائماً حتى لو المدونة جديدة.
+
+⚡ 3. مهيأ 100% لمعايير Core Web Vitals:
+• نظام srcset حقيقي بيحدد حجم الصور بدقة لكل شاشة ويوفر 70% من البيانات.
+• حجز مسبق لمساحات الإعلانات والصور عشان يصفر الـ CLS تماماً.
+• تحميل غير حاجب لخط Cairo لمنع أي تأخير في ظهور النص الأول.
+
+📖 4. أدوات قراءة متطورة:
+• جدول محتويات تلقائي (TOC) بيقرا العناوين ويعمل روابط داخلية تقوي السيو.
+• صندوق "اقرأ أيضاً" الحصري المدمج بين الفقرات برقمين وسهم تفاعلي وتنسيق عربي راقي.
+• أزرار تكبير وتصغير الخطوط، زر طباعة المقال، وزر تعديل المقال السريع للإدارة.
+• شريط تقدم القراءة ومؤشر زمني لوقت القراءة المقدر.
+
+🌙 5. وضع ليلي حقيقي (Dark Mode):
+ألوان كحلية هادية ومدروسة مش مجرد عكس عشوائي للألوان، وبيحفظ تفضيل الزائر تلقائياً.
+
+🎛️ 6. تحكم كامل بدون لمس الأكواد:
+أكتر من 60 خيار تحكم من "مصمم المظهر" مباشرة: غير أبعاد الشعار لحد 140px، غير الألوان، وتحكم في كل ودجت بضغطة زر!
+
+القالب متوافق تماماً مع إعلانات أدسنس والسيو الدلالي (Schema.org Article & Breadcrumbs).
+
+👀 تقدر تعاين القالب بنفسك وتشوف السرعة والتجربة على الرابط المباشر:
+👉 https://tek-max.blogspot.com/
+
+شاركنا رأيك في التعليقات، وإيه أكتر ميزة شايف مدونتك محتاجاها دلوقتي؟ 👇
+
+#بلوجر #قوالب_بلوجر #Blogger #تصميم_مواقع #سيو #CoreWebVitals #BlogTekMax #تقنية</div>
+    </div>
+
+    <!-- Facebook Short Post -->
+    <div class="kit-card">
+      <div class="card-header">
+        <div class="card-title-group">
+          <div class="platform-icon" style="background:#eff6ff; color:#2563eb;">⚡</div>
+          <div>
+            <h2 class="card-title">3. منشور فيسبوك سريع وجذاب (Short & Punchy Post)</h2>
+            <span class="card-badge">مباشر وسريع القراءة • مثالي للحسابات والصفحات التقنية</span>
+          </div>
+        </div>
+        <button class="copy-btn" onclick="copyText('fb-short-text', this)">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          <span>نسخ المنشور</span>
+        </button>
+      </div>
+
+      <div class="text-content-box" id="fb-short-text">قوالب بلوجر مش لازم تكون بطيئة ولا شكلها قديم! ✨
+
+قالب BlogTekMax Pro بيقدّم تجربة مجلة تقنية متكاملة على منصة Blogger بمواصفات المنصات العالمية:
+
+✅ سرعة قياسية في Core Web Vitals وخالي تماماً من jQuery
+✅ واجهة Hero Bento ثلاثية عصرية
+✅ وضع ليلي (Dark Mode) حقيقي وبضغطة زر
+✅ جدول محتويات تلقائي وصندوق "اقرأ أيضاً" مدمج بين الفقرات
+✅ متوافق 100% مع شاشات الهواتف ومعايير السيو وأدسنس
+✅ تحكم كامل في الألوان وأبعاد الشعار من مصمم المظهر مباشرة
+
+جرب القالب وشوف الأداء بنفسك على المدونة الحية:
+👉 https://tek-max.blogspot.com/
+
+#بلوجر #قالب_بلوجر #تقنية #BloggerTheme #سيو</div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       3. TWITTER / X SECTION
+       ========================================================================= -->
+  <section id="twitter-section">
+    <div class="kit-card">
+      <div class="card-header">
+        <div class="card-title-group">
+          <div class="platform-icon" style="background:#000000; color:#ffffff;">𝕏</div>
+          <div>
+            <h2 class="card-title">4. سلسلة تغريدات منصة إكس (Twitter/X Thread)</h2>
+            <span class="card-badge">ثريد احترافي مقسم لتغريدات متسلسلة</span>
+          </div>
+        </div>
+        <button class="copy-btn" onclick="copyText('twitter-thread-text', this)">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          <span>نسخ الثريد بالكامل</span>
+        </button>
+      </div>
+
+      <div class="text-content-box" id="twitter-thread-text">1/5
+إذا كنت تعتقد أن منصة Blogger لا يمكنها منافسة ووردبريس في السرعة والجماليات، فإليك مراجعة سريعة لقالب #BlogTekMax_Pro الجديد للمواقع والمجلات التقنية 🧵👇
+
+2/5
+المعضلة الكبرى في بلوجر هي بطء الجافاسكربت وتأثيره على Core Web Vitals.
+تم بناء القالب بـ Vanilla JS بالكامل بدون سطر واحد من jQuery، مع نظام Responsive srcset للصور يقلل استهلاك البيانات بنسبة 70%! ⚡
+
+3/5
+أبرز المميزات في التصميم والتجربة:
+• واجهة Hero Bento Grid عصرية
+• جدول محتويات تلقائي (TOC)
+• صندوق "اقرأ أيضاً" أنيق مدمج بين الفقرات برقمين وسهم RTL
+• شريط تقدم القراءة وتكبير الخطوط وطباعة المقال
+• وضع ليلي هادئ مريح للعين 🌙
+
+4/5
+الجميل في القالب أنه يمنحك التحكم الكامل:
+أكثر من 60 خياراً مدمجاً في "مصمم المظهر" لبلوجر (تعديل مقاسات الشعار حتى 140px، تغيير الألوان، إيقاف وتشغيل الأدوات) بدون فتح ملف الـ XML نهائياً 🎛️
+
+5/5
+القالب متوافق تماماً مع Google AdSense والسيو الداخلي والداتا المهيكلة (Schema.org).
+
+شاهد المعاينة الحية وجرب السرعة بنفسك:
+🔗 https://tek-max.blogspot.com/
+
+#بلوجر #Blogger #تصميم_مواقع #سيو</div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       4. LINKEDIN SECTION
+       ========================================================================= -->
+  <section id="linkedin-section">
+    <div class="kit-card">
+      <div class="card-header">
+        <div class="card-title-group">
+          <div class="platform-icon" style="background:#0a66c2; color:#ffffff;">in</div>
+          <div>
+            <h2 class="card-title">5. منشور منصة لينكد إن الاحترافي (LinkedIn Post)</h2>
+            <span class="card-badge">طابع تقني هندسي • يركز على الويب، السرعة، ومعايير جوجل</span>
+          </div>
+        </div>
+        <button class="copy-btn" onclick="copyText('linkedin-text', this)">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          <span>نسخ منشور لينكد إن</span>
+        </button>
+      </div>
+
+      <div class="text-content-box" id="linkedin-text">هل لا تزال منصة Blogger قادرة على تلبية معايير الويب الصارمة في 2026؟ 🤔
+
+الإجابة نعم، بشرط أن تكون البنية الهندسية للقالب مبنية وفق معايير الأداء الحديثة وليس مجرد تجميل مظهري.
+
+قمت بمراجعة تقنية لقالب BlogTekMax Pro المخصص للمجلات والمواقع التقنية، ووجدت مجموعة من الممارسات الهندسية الممتازة التي تستحق الإشادة:
+
+1️⃣ التخلص التام من التبعيات (Zero External JS Libraries):
+الاعتماد الكلي على Vanilla JavaScript النقي أدى إلى تقليص زمن استجابة المتصفح وتصفير مهام حظر الرندر (Render-Blocking Resources).
+
+2️⃣ هندسة تسليم الصور (Smart Image Delivery):
+بدلاً من السلوك الافتراضي الذي يضخم حجم الصور المصغرة، يطبق القالب وسم srcset التجاوبي الحقيقي لتوفير استهلاك الباندويث ودعم LCP أسرع.
+
+3️⃣ القضاء على انزياح التخطيط التراكمي (CLS < 0.015):
+تطبيق تقنية @font-face مع ضبط ascent-override لمطابقة أبعاد خط Cairo مع الخطوط العتادية البديلة، مما ألغى تماماً قفزات النصوص عند تحميل الصفحة.
+
+4️⃣ فلسفة التخصيص أولاً (Configuration-First):
+توفير أكثر من 60 متغيراً أصلياً داخل Blogger Theme Designer يمنح مشرف الموقع مرونة هائلة لتغيير الأبعاد والألوان وسلوك الأدوات دون لمس كود XML.
+
+يمثل القالب نموذجاً عملياً لكيفية الجمع بين واجهة Bento الحديثة، والوضع الليلي، والبيانات المهيكلة (Schema.org)، دون التضحية بمؤشرات Core Web Vitals.
+
+للاطلاع على المعاينة الحية وتجربة الأداء:
+🔗 https://tek-max.blogspot.com/
+
+#WebPerformance #CoreWebVitals #Blogger #FrontendDevelopment #SEO #UXDesign #PageSpeed</div>
+    </div>
+  </section>
+
+  <!-- =========================================================================
+       5. TELEGRAM & WHATSAPP BROADCAST SECTION
+       ========================================================================= -->
+  <section id="telegram-section">
+    <div class="kit-card">
+      <div class="card-header">
+        <div class="card-title-group">
+          <div class="platform-icon" style="background:#229ed9; color:#ffffff;">✈️</div>
+          <div>
+            <h2 class="card-title">6. رسالة تيليجرام وواتساب الإعلانية (Broadcast Message)</h2>
+            <span class="card-badge">تنسيق مرتب ومباشر مع الرموز التعبيرية</span>
+          </div>
+        </div>
+        <button class="copy-btn" onclick="copyText('telegram-text', this)">
+          <svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect width="14" height="14" x="8" y="8" rx="2" ry="2"/><path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2"/></svg>
+          <span>نسخ الرسالة</span>
+        </button>
+      </div>
+
+      <div class="text-content-box" id="telegram-text">🔥 لكل أصحاب مدونات Blogger التقنية والمجلات الرقمية!
+
+لو بتدور على قالب سريع جداً وشكله فخم يغير شكل موقعك بالكامل، اتفرج على قالب:
+🚀 BlogTekMax Pro (NovaPress Premium)
+
+أهم مميزات القالب:
+⚡ سرعة فائقة بدون مكتبة jQuery نهائياً
+🎯 واجهة Hero Bento ثلاثية عصرية للتدوينات الأحدث
+🌙 وضع ليلي (Dark Mode) حقيقي ومريح للعين
+📑 جدول محتويات تلقائي وقابل للطي (TOC)
+💡 صندوق "اقرأ أيضاً" الحصري المدمج بين الفقرات
+📱 متوافق 100% مع الهواتف الذكية ومتجاوب بالكامل
+💰 مهيأ لإعلانات أدسنس بدون أي انزياح في التخطيط (CLS)
+🎛️ تحكم كامل في الألوان والشعار والأدوات من مصمم المظهر مباشرة
+
+🌐 رابط المعاينة الحية:
+👉 https://tek-max.blogspot.com/
+
+قالب احترافي يستحق التجربة لنقل مدونتك لمستوى جديد تماماً! 🚀</div>
+    </div>
+  </section>
+
+</div>
+
+<!-- Toast Notification -->
+<div class="toast" id="toast">
+  <span class="toast-icon">✓</span>
+  <span id="toast-message">تم نسخ النص بنجاح إلى الحافظة!</span>
+</div>
+
+<script>
+  // Smooth scroll to section
+  function scrollToSection(id) {
+    const el = document.getElementById(id);
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' });
+    }
+    // Update active tab
+    document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+  }
+
+  // Copy to clipboard with toast notification
+  function copyText(elementId, btn) {
+    const textEl = document.getElementById(elementId);
+    if (!textEl) return;
+
+    const textToCopy = textEl.innerText;
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      // Visual feedback on button
+      const origHTML = btn.innerHTML;
+      btn.classList.add('copied');
+      btn.innerHTML = '<svg width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M20 6L9 17l-5-5"/></svg><span>تم النسخ!</span>';
+      
+      // Show Toast
+      const toast = document.getElementById('toast');
+      toast.classList.add('show');
+      setTimeout(() => {
+        toast.classList.remove('show');
+        btn.classList.remove('copied');
+        btn.innerHTML = origHTML;
+      }, 2500);
+    }).catch(err => {
+      console.error('Failed to copy: ', err);
+    });
+  }
+</script>
+
+</body>
+</html>

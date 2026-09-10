@@ -1,0 +1,25 @@
+# Temporary & Backup XML files
+*.xml.*
+*.bak*
+*.backup*
+*.tmp
+*.temp
+*~
+
+# Windows & OS Files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+.DS_Store
+
+# Scratch & Temporary Folders
+scratch/
+مجلد جديد*/
+*.pyc
+__pycache__/
+
+# Scratch scripts and notes
+مستند نصي جديد.txt
+برمت جمناي.txt
+تشغبيل الميزات المتقدمة.html

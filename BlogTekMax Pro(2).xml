@@ -6534,7 +6534,7 @@ body#layout a.add-widget-button:hover {
                         <b:if cond='data:view.isError'>
                             <!-- 6. Smart 404 Page View -->
                             <b:include name='smart404Page'/>
-                        <b:elseif cond='data:view.isArchive or (data:view.isPage and (data:blog.url contains &quot;archive&quot; or data:blog.url contains &quot;أرشيف&quot;))'/>
+                        <b:elseif cond='data:view.isArchive or (data:view.isPage and (data:view.url.path contains &quot;archive&quot; or data:view.url.canonical contains &quot;archive&quot; or data:view.title contains &quot;أرشيف&quot; or data:view.title contains &quot;ارشيف&quot; or data:view.title contains &quot;Archive&quot;))'/>
                             <!-- 7. Advanced Archive Page Container -->
                             <div class='advanced-archive-app' id='advancedArchiveApp'/>
                         <b:elseif cond='data:view.isMultipleItems'/>
@@ -9337,7 +9337,28 @@ body#layout a.add-widget-button:hover {
                     Smart404.init();
                 }
 
-                if (document.getElementById('advancedArchiveApp')) {
+                // Smart Archive Detection & Auto-Mounting (Supports XML condition, custom div, URL, and page title)
+                var archiveApp = document.getElementById('advancedArchiveApp');
+                if (!archiveApp && (window.location.pathname.indexOf('archive') !== -1 || document.title.indexOf('أرشيف') !== -1 || document.title.indexOf('ارشيف') !== -1 || document.title.indexOf('Archive') !== -1)) {
+                    var articleWrap = document.querySelector('.article-wrapper') || document.querySelector('.entry-content') || document.querySelector('.post-body');
+                    if (articleWrap) {
+                        archiveApp = document.createElement('div');
+                        archiveApp.id = 'advancedArchiveApp';
+                        archiveApp.className = 'advanced-archive-app';
+                        var pInfo = document.getElementById('postInfoBox');
+                        if (pInfo) pInfo.style.display = 'none';
+                        var bc = document.querySelector('.article-breadcrumbs');
+                        if (bc) bc.style.display = 'none';
+                        var headline = document.querySelector('.article-headline');
+                        if (headline) headline.style.display = 'none';
+                        var shareStrip = document.querySelector('.article-share-strip');
+                        if (shareStrip) shareStrip.style.display = 'none';
+                        var comments = document.querySelector('.comments-wrap, #comments');
+                        if (comments) comments.style.display = 'none';
+                        articleWrap.appendChild(archiveApp);
+                    }
+                }
+                if (archiveApp || document.getElementById('advancedArchiveApp')) {
                     Archive.init();
                 }
             }

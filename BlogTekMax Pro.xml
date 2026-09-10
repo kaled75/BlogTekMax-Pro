@@ -1971,7 +1971,7 @@ body.is-search { --hide-sidebar-val: $(hideSidebarHome); }
 }
 
 
-/* --- SIDEBAR SOCIAL WIDGET (MODERN 2-COLUMN CARDS GRID) --- */
+/* --- SIDEBAR SOCIAL WIDGET (TEKMAX SIGNATURE CORAL RED PALETTE) --- */
 .sidebar-social-sec {
   margin-bottom: 28px !important;
   display: block !important;
@@ -1986,32 +1986,8 @@ body.is-search { --hide-sidebar-val: $(hideSidebarHome); }
   box-shadow: none !important;
 }
 
-.sidebar-social-widget-title {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--text-color, #111317);
-  margin: 0 0 16px 0;
-  padding-bottom: 8px;
-  border-bottom: 2px solid var(--border-color, #eaedf1);
-  position: relative;
-}
-
-.sidebar-social-widget-title::after {
-  content: '';
-  position: absolute;
-  bottom: -2px;
-  right: 0;
-  width: 45px;
-  height: 2px;
-  background: var(--primary-color, #f83a5e);
-}
-
-[dir="ltr"] .sidebar-social-widget-title::after {
-  right: auto;
-  left: 0;
+.sidebar-social-widget .widget-header-row {
+  margin-bottom: 16px;
 }
 
 .sidebar-social-grid {
@@ -2025,40 +2001,36 @@ body.is-search { --hide-sidebar-val: $(hideSidebarHome); }
   align-items: center;
   gap: 10px;
   padding: 10px 12px;
-  border-radius: var(--sidebar-social-radius, 10px);
+  border-radius: var(--sidebar-social-radius, 12px);
   background: var(--surface-color, #ffffff);
   border: 1px solid var(--border-color, #eaedf1);
   text-decoration: none !important;
   color: var(--text-color, #111317) !important;
   font-family: var(--body-font, 'Cairo', sans-serif);
-  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
 }
 
-.sidebar-social-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-}
-
 .sidebar-social-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: 8px;
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
   display: flex;
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  background: rgba(0, 0, 0, 0.04);
-  color: var(--text-color, #111317);
-  transition: background 0.22s ease, color 0.22s ease;
+  background: rgba(248, 58, 94, 0.08);
+  color: var(--primary-color, #f83a5e);
+  transition: all 0.25s ease;
 }
 
 .sidebar-social-icon svg {
-  width: 16px;
-  height: 16px;
+  width: 17px;
+  height: 17px;
   fill: currentColor;
   display: block;
+  transition: transform 0.25s ease;
 }
 
 .sidebar-social-meta {
@@ -2069,141 +2041,72 @@ body.is-search { --hide-sidebar-val: $(hideSidebarHome); }
 }
 
 .sidebar-social-name {
-  font-size: 0.84rem;
+  font-size: 0.86rem;
   font-weight: 700;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  text-transform: capitalize;
-}
-
-.sidebar-social-action {
-  font-size: 0.72rem;
-  color: var(--muted-text, #64748b);
-  font-weight: 500;
+  color: var(--text-color, #111317);
   transition: color 0.2s ease;
 }
 
-/* Brand specific styling & hover states */
-.sidebar-social-btn[data-network*="facebook"]:hover,
-.sidebar-social-btn[data-network*="فيسبوك"]:hover {
-  border-color: #1877f2;
-  background: rgba(24, 119, 242, 0.06);
+.sidebar-social-action {
+  font-size: 0.70rem;
+  color: var(--muted-text, #64748b);
+  font-weight: 600;
+  transition: color 0.2s ease;
 }
-.sidebar-social-btn[data-network*="facebook"]:hover .sidebar-social-icon,
-.sidebar-social-btn[data-network*="فيسبوك"]:hover .sidebar-social-icon {
-  background: #1877f2;
+
+/* Hover & Active States (TekMax Coral Red Signature) */
+.sidebar-social-btn:hover {
+  transform: translateY(-3px);
+  border-color: var(--primary-color, #f83a5e);
+  background: var(--surface-color, #ffffff);
+  box-shadow: 0 10px 24px -4px rgba(248, 58, 94, 0.22);
+}
+
+.sidebar-social-btn:hover .sidebar-social-icon {
+  background: linear-gradient(135deg, var(--primary-color, #f83a5e) 0%, #fa6582 100%);
   color: #ffffff;
+  box-shadow: 0 4px 10px rgba(248, 58, 94, 0.3);
 }
 
-.sidebar-social-btn[data-network*="x"]:hover,
-.sidebar-social-btn[data-network*="twitter"]:hover,
-.sidebar-social-btn[data-network*="تويتر"]:hover {
-  border-color: #111317;
-  background: rgba(0, 0, 0, 0.05);
-}
-.sidebar-social-btn[data-network*="x"]:hover .sidebar-social-icon,
-.sidebar-social-btn[data-network*="twitter"]:hover .sidebar-social-icon,
-.sidebar-social-btn[data-network*="تويتر"]:hover .sidebar-social-icon {
-  background: #111317;
-  color: #ffffff;
+.sidebar-social-btn:hover .sidebar-social-icon svg {
+  transform: scale(1.08);
 }
 
-.sidebar-social-btn[data-network*="instagram"]:hover,
-.sidebar-social-btn[data-network*="انستغرام"]:hover,
-.sidebar-social-btn[data-network*="انستقرام"]:hover {
-  border-color: #e1306c;
-  background: rgba(225, 48, 108, 0.06);
-}
-.sidebar-social-btn[data-network*="instagram"]:hover .sidebar-social-icon,
-.sidebar-social-btn[data-network*="انستغرام"]:hover .sidebar-social-icon,
-.sidebar-social-btn[data-network*="انستقرام"]:hover .sidebar-social-icon {
-  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-  color: #ffffff;
+.sidebar-social-btn:hover .sidebar-social-name {
+  color: var(--primary-color, #f83a5e);
 }
 
-.sidebar-social-btn[data-network*="youtube"]:hover,
-.sidebar-social-btn[data-network*="يوتيوب"]:hover {
-  border-color: #ff0000;
-  background: rgba(255, 0, 0, 0.06);
-}
-.sidebar-social-btn[data-network*="youtube"]:hover .sidebar-social-icon,
-.sidebar-social-btn[data-network*="يوتيوب"]:hover .sidebar-social-icon {
-  background: #ff0000;
-  color: #ffffff;
+.sidebar-social-btn:hover .sidebar-social-action {
+  color: var(--primary-color, #f83a5e);
 }
 
-.sidebar-social-btn[data-network*="telegram"]:hover,
-.sidebar-social-btn[data-network*="تليجرام"]:hover,
-.sidebar-social-btn[data-network*="تيليجرام"]:hover {
-  border-color: #229ed9;
-  background: rgba(34, 158, 217, 0.06);
-}
-.sidebar-social-btn[data-network*="telegram"]:hover .sidebar-social-icon,
-.sidebar-social-btn[data-network*="تليجرام"]:hover .sidebar-social-icon,
-.sidebar-social-btn[data-network*="تيليجرام"]:hover .sidebar-social-icon {
-  background: #229ed9;
-  color: #ffffff;
-}
-
-.sidebar-social-btn[data-network*="whatsapp"]:hover,
-.sidebar-social-btn[data-network*="واتساب"]:hover,
-.sidebar-social-btn[data-network*="واتس"]:hover {
-  border-color: #25d366;
-  background: rgba(37, 211, 102, 0.06);
-}
-.sidebar-social-btn[data-network*="whatsapp"]:hover .sidebar-social-icon,
-.sidebar-social-btn[data-network*="واتساب"]:hover .sidebar-social-icon,
-.sidebar-social-btn[data-network*="واتس"]:hover .sidebar-social-icon {
-  background: #25d366;
-  color: #ffffff;
-}
-
-.sidebar-social-btn[data-network*="tiktok"]:hover,
-.sidebar-social-btn[data-network*="تيك"]:hover {
-  border-color: #00f2fe;
-  background: rgba(0, 242, 254, 0.06);
-}
-.sidebar-social-btn[data-network*="tiktok"]:hover .sidebar-social-icon,
-.sidebar-social-btn[data-network*="تيك"]:hover .sidebar-social-icon {
-  background: #010101;
-  color: #00f2fe;
-}
-
-.sidebar-social-btn[data-network*="linkedin"]:hover,
-.sidebar-social-btn[data-network*="لينكد"]:hover {
-  border-color: #0a66c2;
-  background: rgba(10, 102, 194, 0.06);
-}
-.sidebar-social-btn[data-network*="linkedin"]:hover .sidebar-social-icon,
-.sidebar-social-btn[data-network*="لينكد"]:hover .sidebar-social-icon {
-  background: #0a66c2;
-  color: #ffffff;
-}
-
-.sidebar-social-btn[data-network*="pinterest"]:hover,
-.sidebar-social-btn[data-network*="بينترست"]:hover {
-  border-color: #e60023;
-  background: rgba(230, 0, 35, 0.06);
-}
-.sidebar-social-btn[data-network*="pinterest"]:hover .sidebar-social-icon,
-.sidebar-social-btn[data-network*="بينترست"]:hover .sidebar-social-icon {
-  background: #e60023;
-  color: #ffffff;
-}
-
-/* Dark theme overrides */
+/* Dark Theme Adaptations */
 [data-theme="dark"] .sidebar-social-btn,
 body.dark-mode .sidebar-social-btn {
   background: rgba(255, 255, 255, 0.03);
-  border-color: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.07);
   color: #ffffff !important;
+}
+
+[data-theme="dark"] .sidebar-social-btn:hover,
+body.dark-mode .sidebar-social-btn:hover {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: var(--primary-color, #f83a5e);
+  box-shadow: 0 10px 24px -4px rgba(248, 58, 94, 0.35);
 }
 
 [data-theme="dark"] .sidebar-social-icon,
 body.dark-mode .sidebar-social-icon {
-  background: rgba(255, 255, 255, 0.08);
-  color: #ffffff;
+  background: rgba(248, 58, 94, 0.15);
+  color: var(--primary-color, #f83a5e);
+}
+
+[data-theme="dark"] .sidebar-social-name,
+body.dark-mode .sidebar-social-name {
+  color: #f1f5f9;
 }
 
 [data-theme="dark"] .sidebar-social-action,
@@ -2211,11 +2114,11 @@ body.dark-mode .sidebar-social-action {
   color: #94a3b8;
 }
 
-[data-theme="dark"] .sidebar-social-btn[data-network*="x"]:hover .sidebar-social-icon,
-[data-theme="dark"] .sidebar-social-btn[data-network*="twitter"]:hover .sidebar-social-icon,
-[data-theme="dark"] .sidebar-social-btn[data-network*="تويتر"]:hover .sidebar-social-icon {
-  background: #ffffff;
-  color: #000000;
+[data-theme="dark"] .sidebar-social-btn:hover .sidebar-social-name,
+body.dark-mode .sidebar-social-btn:hover .sidebar-social-name,
+[data-theme="dark"] .sidebar-social-btn:hover .sidebar-social-action,
+body.dark-mode .sidebar-social-btn:hover .sidebar-social-action {
+  color: var(--primary-color, #f83a5e);
 }
 
 .sidebar .widget {
@@ -7553,12 +7456,14 @@ body#layout a.add-widget-button:hover {
                     </b:widget-settings>
                     <b:includable id='main'>
                       <div class='sidebar-social-widget'>
-                        <b:if cond='data:title != &quot;&quot;'>
-                          <h3 class='sidebar-social-widget-title'>
-                            <svg fill='none' height='17' stroke='var(--primary-color)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.2' viewBox='0 0 24 24' width='17'><path d='M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z'/></svg>
-                            <span><data:title/></span>
-                          </h3>
-                        </b:if>
+                        <div class='widget-header-row'>
+                          <b:if cond='data:title != &quot;&quot;'>
+                            <h3 class='widget-title'>
+                              <svg class='widget-icon-svg' fill='none' height='16' stroke='var(--primary-color)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.2' viewBox='0 0 24 24' width='16'><circle cx='18' cy='5' r='3'/><circle cx='6' cy='12' r='3'/><circle cx='18' cy='19' r='3'/><line x1='8.59' x2='15.42' y1='13.51' y2='17.49'/><line x1='15.41' x2='8.59' y2='10.49'/></svg>
+                              <span><data:title/></span>
+                            </h3>
+                          </b:if>
+                        </div>
                         <div class='sidebar-social-grid'>
                           <b:loop values='data:links' var='link'>
                             <a class='sidebar-social-btn' expr:aria-label='data:link.name' expr:data-network='data:link.name' expr:href='data:link.target' expr:title='data:link.name' rel='noopener noreferrer' target='_blank'>
@@ -7567,7 +7472,7 @@ body#layout a.add-widget-button:hover {
                               </span>
                               <span class='sidebar-social-meta'>
                                 <span class='sidebar-social-name'><data:link.name/></span>
-                                <span class='sidebar-social-action'>متابعة</span>
+                                <span class='sidebar-social-action'>متابعة &#8592;</span>
                               </span>
                             </a>
                           </b:loop>
@@ -8406,6 +8311,13 @@ body#layout a.add-widget-button:hover {
                 var iconSpan = item.querySelector('.sidebar-social-icon');
                 if (iconSpan) {
                     iconSpan.innerHTML = svgMap[key] || svgMap.generic;
+                    var actionSpan = item.querySelector('.sidebar-social-action');
+                    if (actionSpan) {
+                        if (key === 'yt') actionSpan.textContent = 'اشتراك \u2190';
+                        else if (key === 'tg') actionSpan.textContent = 'انضمام \u2190';
+                        else if (key === 'wa') actionSpan.textContent = 'تواصل \u2190';
+                        else actionSpan.textContent = 'متابعة \u2190';
+                    }
                 } else {
                     item.innerHTML = (svgMap[key] || svgMap.generic) + '<span class="top-social-label sr-only">' + label + '</span>';
                 }

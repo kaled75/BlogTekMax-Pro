@@ -286,6 +286,7 @@ Description:  Modern Editorial Tech Magazine Theme inspired by The Wire & SmartM
   <Variable name="hideSidebarPost" description="اخفاء القائمة من المقال (1=لا, 2=نعم)" type="length" default="1px" min="1px" max="2px" value="1px"/>
   <Variable name="hideSidebarPage" description="اخفاء القائمة من الصفحات (1=لا, 2=نعم)" type="length" default="1px" min="1px" max="2px" value="1px"/>
   <Variable name="hideSidebarMobile" description="اخفاء القائمة من الجوال (1=لا, 2=نعم)" type="length" default="1px" min="1px" max="2px" value="1px"/>
+  <Variable name="sidebarSocialRadius" description="استدارة بطاقات التواصل (Social Cards Radius)" type="length" default="10px" min="4px" max="24px" value="10px"/>
 </Group>
 
 <Group description="ألوان القالب الرئيسية (Theme Colors)" selector="body">
@@ -509,6 +510,7 @@ Description:  Modern Editorial Tech Magazine Theme inspired by The Wire & SmartM
   --footer-link: $(footerLinkColor);
   --footer-logo-width: $(footerLogoWidth);
   --footer-logo-height: $(footerLogoHeight);
+  --sidebar-social-radius: $(sidebarSocialRadius);
 
   --contentMaxWidth: $(contentMaxWidth);
   --container-width: var(--contentMaxWidth);
@@ -1961,6 +1963,254 @@ body.is-search { --hide-sidebar-val: $(hideSidebarHome); }
   align-items: center;
   gap: 14px;
   font-weight: 600;
+}
+
+
+/* --- SIDEBAR SOCIAL WIDGET (MODERN 2-COLUMN CARDS GRID) --- */
+.sidebar-social-sec {
+  margin-bottom: 28px !important;
+  display: block !important;
+  width: 100% !important;
+}
+
+.sidebar-social-sec .widget {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.sidebar-social-widget-title {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-color, #111317);
+  margin: 0 0 16px 0;
+  padding-bottom: 8px;
+  border-bottom: 2px solid var(--border-color, #eaedf1);
+  position: relative;
+}
+
+.sidebar-social-widget-title::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+  width: 45px;
+  height: 2px;
+  background: var(--primary-color, #f83a5e);
+}
+
+[dir="ltr"] .sidebar-social-widget-title::after {
+  right: auto;
+  left: 0;
+}
+
+.sidebar-social-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.sidebar-social-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: var(--sidebar-social-radius, 10px);
+  background: var(--surface-color, #ffffff);
+  border: 1px solid var(--border-color, #eaedf1);
+  text-decoration: none !important;
+  color: var(--text-color, #111317) !important;
+  font-family: var(--body-font, 'Cairo', sans-serif);
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.sidebar-social-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.sidebar-social-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: rgba(0, 0, 0, 0.04);
+  color: var(--text-color, #111317);
+  transition: background 0.22s ease, color 0.22s ease;
+}
+
+.sidebar-social-icon svg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+  display: block;
+}
+
+.sidebar-social-meta {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  line-height: 1.25;
+}
+
+.sidebar-social-name {
+  font-size: 0.84rem;
+  font-weight: 700;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-transform: capitalize;
+}
+
+.sidebar-social-action {
+  font-size: 0.72rem;
+  color: var(--muted-text, #64748b);
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+/* Brand specific styling & hover states */
+.sidebar-social-btn[data-network*="facebook"]:hover,
+.sidebar-social-btn[data-network*="فيسبوك"]:hover {
+  border-color: #1877f2;
+  background: rgba(24, 119, 242, 0.06);
+}
+.sidebar-social-btn[data-network*="facebook"]:hover .sidebar-social-icon,
+.sidebar-social-btn[data-network*="فيسبوك"]:hover .sidebar-social-icon {
+  background: #1877f2;
+  color: #ffffff;
+}
+
+.sidebar-social-btn[data-network*="x"]:hover,
+.sidebar-social-btn[data-network*="twitter"]:hover,
+.sidebar-social-btn[data-network*="تويتر"]:hover {
+  border-color: #111317;
+  background: rgba(0, 0, 0, 0.05);
+}
+.sidebar-social-btn[data-network*="x"]:hover .sidebar-social-icon,
+.sidebar-social-btn[data-network*="twitter"]:hover .sidebar-social-icon,
+.sidebar-social-btn[data-network*="تويتر"]:hover .sidebar-social-icon {
+  background: #111317;
+  color: #ffffff;
+}
+
+.sidebar-social-btn[data-network*="instagram"]:hover,
+.sidebar-social-btn[data-network*="انستغرام"]:hover,
+.sidebar-social-btn[data-network*="انستقرام"]:hover {
+  border-color: #e1306c;
+  background: rgba(225, 48, 108, 0.06);
+}
+.sidebar-social-btn[data-network*="instagram"]:hover .sidebar-social-icon,
+.sidebar-social-btn[data-network*="انستغرام"]:hover .sidebar-social-icon,
+.sidebar-social-btn[data-network*="انستقرام"]:hover .sidebar-social-icon {
+  background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+  color: #ffffff;
+}
+
+.sidebar-social-btn[data-network*="youtube"]:hover,
+.sidebar-social-btn[data-network*="يوتيوب"]:hover {
+  border-color: #ff0000;
+  background: rgba(255, 0, 0, 0.06);
+}
+.sidebar-social-btn[data-network*="youtube"]:hover .sidebar-social-icon,
+.sidebar-social-btn[data-network*="يوتيوب"]:hover .sidebar-social-icon {
+  background: #ff0000;
+  color: #ffffff;
+}
+
+.sidebar-social-btn[data-network*="telegram"]:hover,
+.sidebar-social-btn[data-network*="تليجرام"]:hover,
+.sidebar-social-btn[data-network*="تيليجرام"]:hover {
+  border-color: #229ed9;
+  background: rgba(34, 158, 217, 0.06);
+}
+.sidebar-social-btn[data-network*="telegram"]:hover .sidebar-social-icon,
+.sidebar-social-btn[data-network*="تليجرام"]:hover .sidebar-social-icon,
+.sidebar-social-btn[data-network*="تيليجرام"]:hover .sidebar-social-icon {
+  background: #229ed9;
+  color: #ffffff;
+}
+
+.sidebar-social-btn[data-network*="whatsapp"]:hover,
+.sidebar-social-btn[data-network*="واتساب"]:hover,
+.sidebar-social-btn[data-network*="واتس"]:hover {
+  border-color: #25d366;
+  background: rgba(37, 211, 102, 0.06);
+}
+.sidebar-social-btn[data-network*="whatsapp"]:hover .sidebar-social-icon,
+.sidebar-social-btn[data-network*="واتساب"]:hover .sidebar-social-icon,
+.sidebar-social-btn[data-network*="واتس"]:hover .sidebar-social-icon {
+  background: #25d366;
+  color: #ffffff;
+}
+
+.sidebar-social-btn[data-network*="tiktok"]:hover,
+.sidebar-social-btn[data-network*="تيك"]:hover {
+  border-color: #00f2fe;
+  background: rgba(0, 242, 254, 0.06);
+}
+.sidebar-social-btn[data-network*="tiktok"]:hover .sidebar-social-icon,
+.sidebar-social-btn[data-network*="تيك"]:hover .sidebar-social-icon {
+  background: #010101;
+  color: #00f2fe;
+}
+
+.sidebar-social-btn[data-network*="linkedin"]:hover,
+.sidebar-social-btn[data-network*="لينكد"]:hover {
+  border-color: #0a66c2;
+  background: rgba(10, 102, 194, 0.06);
+}
+.sidebar-social-btn[data-network*="linkedin"]:hover .sidebar-social-icon,
+.sidebar-social-btn[data-network*="لينكد"]:hover .sidebar-social-icon {
+  background: #0a66c2;
+  color: #ffffff;
+}
+
+.sidebar-social-btn[data-network*="pinterest"]:hover,
+.sidebar-social-btn[data-network*="بينترست"]:hover {
+  border-color: #e60023;
+  background: rgba(230, 0, 35, 0.06);
+}
+.sidebar-social-btn[data-network*="pinterest"]:hover .sidebar-social-icon,
+.sidebar-social-btn[data-network*="بينترست"]:hover .sidebar-social-icon {
+  background: #e60023;
+  color: #ffffff;
+}
+
+/* Dark theme overrides */
+[data-theme="dark"] .sidebar-social-btn,
+body.dark-mode .sidebar-social-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #ffffff !important;
+}
+
+[data-theme="dark"] .sidebar-social-icon,
+body.dark-mode .sidebar-social-icon {
+  background: rgba(255, 255, 255, 0.08);
+  color: #ffffff;
+}
+
+[data-theme="dark"] .sidebar-social-action,
+body.dark-mode .sidebar-social-action {
+  color: #94a3b8;
+}
+
+[data-theme="dark"] .sidebar-social-btn[data-network*="x"]:hover .sidebar-social-icon,
+[data-theme="dark"] .sidebar-social-btn[data-network*="twitter"]:hover .sidebar-social-icon,
+[data-theme="dark"] .sidebar-social-btn[data-network*="تويتر"]:hover .sidebar-social-icon {
+  background: #ffffff;
+  color: #000000;
 }
 
 .sidebar .widget {
@@ -7275,6 +7525,58 @@ body#layout a.add-widget-button:hover {
         <!-- Configurable Editorial Sidebar -->
         <aside class='sidebar' role='complementary'>
             <div class='sidebar-inner sticky-sidebar'>
+                <!-- 0. SIDEBAR SOCIAL WIDGET (FIRST IN SIDEBAR - LOCKED) -->
+                <b:section class='sidebar-social-sec' id='sidebar-social-sec' maxwidgets='1' name='مواقع التواصل (أعلى الشريط الجانبي)' showaddelement='no'>
+                  <b:widget id='LinkList20' locked='true' title='تابعنا على منصاتنا' type='LinkList' version='2' visible='true'>
+                    <b:widget-settings>
+                      <b:widget-setting name='sorting'>NONE</b:widget-setting>
+                      <b:widget-setting name='text-0'>Facebook</b:widget-setting>
+                      <b:widget-setting name='link-0'>https://facebook.com/</b:widget-setting>
+                      <b:widget-setting name='text-1'>X</b:widget-setting>
+                      <b:widget-setting name='link-1'>https://twitter.com/</b:widget-setting>
+                      <b:widget-setting name='text-2'>Instagram</b:widget-setting>
+                      <b:widget-setting name='link-2'>https://instagram.com/</b:widget-setting>
+                      <b:widget-setting name='text-3'>YouTube</b:widget-setting>
+                      <b:widget-setting name='link-3'>https://youtube.com/</b:widget-setting>
+                      <b:widget-setting name='text-4'>Telegram</b:widget-setting>
+                      <b:widget-setting name='link-4'>https://t.me/</b:widget-setting>
+                      <b:widget-setting name='text-5'>WhatsApp</b:widget-setting>
+                      <b:widget-setting name='link-5'>https://whatsapp.com/</b:widget-setting>
+                    </b:widget-settings>
+                    <b:includable id='main'>
+                      <div class='sidebar-social-widget'>
+                        <b:if cond='data:title != &quot;&quot;'>
+                          <h3 class='sidebar-social-widget-title'>
+                            <svg fill='none' height='17' stroke='var(--primary-color)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.2' viewBox='0 0 24 24' width='17'><path d='M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z'/></svg>
+                            <span><data:title/></span>
+                          </h3>
+                        </b:if>
+                        <div class='sidebar-social-grid'>
+                          <b:loop values='data:links' var='link'>
+                            <a class='sidebar-social-btn' expr:aria-label='data:link.name' expr:data-network='data:link.name' expr:href='data:link.target' expr:title='data:link.name' rel='noopener noreferrer' target='_blank'>
+                              <span class='sidebar-social-icon'>
+                                <svg height='16' viewBox='0 0 24 24' width='16'><circle cx='12' cy='12' r='10'/></svg>
+                              </span>
+                              <span class='sidebar-social-meta'>
+                                <span class='sidebar-social-name'><data:link.name/></span>
+                                <span class='sidebar-social-action'>متابعة</span>
+                              </span>
+                            </a>
+                          </b:loop>
+                        </div>
+                      </div>
+                    </b:includable>
+                    <b:includable id='content'>
+                      <div class='widget-content'>
+                        <ul>
+                          <b:loop values='data:links' var='link'>
+                            <li><a expr:href='data:link.target'><data:link.name/></a></li>
+                          </b:loop>
+                        </ul>
+                      </div>
+                    </b:includable>
+                  </b:widget>
+                </b:section>
                 <!-- 10. ADS SIDEBAR TOP -->
                 <b:section class='ads-sidebar-top-sec' id='ads-sidebar-top' maxwidgets='1' name='[ إعلان ] - أعلى السايدبار' showaddelement='yes'>
                   <b:widget id='HTML310' locked='false' title='[ إعلان ] - أعلى السايدبار' type='HTML' version='2' visible='false'>
@@ -7998,7 +8300,7 @@ body#layout a.add-widget-button:hover {
                 generic: '<svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>'
             };
 
-            var items = document.querySelectorAll('.top-social-item, .footer-social-btn, .author-social-links a');
+            var items = document.querySelectorAll('.top-social-item, .footer-social-btn, .author-social-links a, .sidebar-social-btn');
             for (var i = 0; i < items.length; i++) {
                 var item = items[i];
                 var name = (item.getAttribute('data-network') || item.getAttribute('title') || item.getAttribute('aria-label') || item.textContent || '').toLowerCase().trim();
@@ -8020,7 +8322,12 @@ body#layout a.add-widget-button:hover {
                 else if (name.indexOf('rss') !== -1 || href.indexOf('feeds') !== -1 || href.indexOf('rss') !== -1) key = 'rss';
 
                 var label = item.getAttribute('title') || item.getAttribute('aria-label') || name || 'منصة التواصل';
-                item.innerHTML = (svgMap[key] || svgMap.generic) + '<span class="top-social-label sr-only">' + label + '</span>';
+                var iconSpan = item.querySelector('.sidebar-social-icon');
+                if (iconSpan) {
+                    iconSpan.innerHTML = svgMap[key] || svgMap.generic;
+                } else {
+                    item.innerHTML = (svgMap[key] || svgMap.generic) + '<span class="top-social-label sr-only">' + label + '</span>';
+                }
             }
         }
         var topSocialDone = false;

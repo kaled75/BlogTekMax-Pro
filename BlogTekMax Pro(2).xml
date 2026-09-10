@@ -5793,6 +5793,96 @@ html.no-syntax-highlight .gh-code {
   color: inherit !important;
   font-weight: normal !important;
 }
+
+/* ==========================================================================
+   BLOGGER NATIVE CONTACT FORM GADGET (ContactForm1)
+   ========================================================================== */
+#ContactForm1 {
+  margin-bottom: 24px;
+}
+.tm-contact-form-widget {
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: var(--radius-lg, 16px);
+  padding: 24px;
+  box-sizing: border-box;
+}
+[data-theme="dark"] .tm-contact-form-widget {
+  background: #171a20;
+  border-color: #242832;
+}
+.tm-contact-form-widget .editors-picks-heading {
+  margin-bottom: 18px;
+}
+.tm-contact-form-widget .contact-form-name,
+.tm-contact-form-widget .contact-form-email,
+.tm-contact-form-widget .contact-form-email-message {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 8px;
+  background: var(--bg-color, #f8fafc);
+  color: var(--text-color, #111827);
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 0.9rem;
+  transition: all 0.2s ease;
+}
+[data-theme="dark"] .tm-contact-form-widget .contact-form-name,
+[data-theme="dark"] .tm-contact-form-widget .contact-form-email,
+[data-theme="dark"] .tm-contact-form-widget .contact-form-email-message {
+  background: #0d0f12;
+  border-color: #242832;
+  color: #f1f5f9;
+}
+.tm-contact-form-widget .contact-form-name:focus,
+.tm-contact-form-widget .contact-form-email:focus,
+.tm-contact-form-widget .contact-form-email-message:focus {
+  border-color: var(--primary-color, #f83a5e) !important;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(248, 58, 94, 0.15);
+}
+.tm-contact-form-widget .contact-form-button-submit {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: var(--primary-color, #f83a5e);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 4px 12px rgba(248, 58, 94, 0.25);
+}
+.tm-contact-form-widget .contact-form-button-submit:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow: 0 6px 16px rgba(248, 58, 94, 0.35);
+}
+.contact-form-error-message,
+.contact-form-success-message {
+  padding: 12px 16px;
+  border-radius: 8px;
+  font-size: 0.88rem;
+  line-height: 1.5;
+  margin-top: 10px;
+}
+.contact-form-error-message {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  color: #dc2626;
+}
+.contact-form-success-message {
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  color: #059669;
+}
 ]]></b:skin>
 <b:template-skin><![CDATA[
 /* ==========================================================================
@@ -8630,7 +8720,39 @@ body#layout a.add-widget-button:hover {
   </a>
 </b:includable>
                   </b:widget>
-                </b:section>
+                
+                  <b:widget id='ContactForm1' locked='false' title='نموذج الاتصال' type='ContactForm' version='2' visible='true'>
+                    <b:includable id='main'>
+                      <div class='widget-content tm-contact-form-widget'>
+                        <b:if cond='data:title != &quot;&quot;'>
+                          <h3 class='editors-picks-heading'>
+                            <svg class='widget-icon-svg' fill='none' height='16' stroke='var(--primary-color)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2.2' viewBox='0 0 24 24' width='16'><path d='M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z'/><polyline points='22,6 12,13 2,6'/></svg>
+                            <span><data:title/></span>
+                          </h3>
+                        </b:if>
+                        <form name='contact-form'>
+                          <div class='tm-input-group' style='margin-bottom:12px;'>
+                            <label expr:for='data:widget.instanceId + "_contact-form-name"' style='font-size:0.82rem;font-weight:700;display:block;margin-bottom:4px;'><data:contactFormNameMsg/></label>
+                            <input class='contact-form-name' expr:id='data:widget.instanceId + "_contact-form-name"' name='name' placeholder='الاسم الكريم' size='30' style='width:100%;padding:10px 14px;border:1px solid var(--border-color,#e2e8f0);border-radius:8px;background:var(--bg-color,#f8fafc);color:inherit;box-sizing:border-box;' type='text' value=''/>
+                          </div>
+                          <div class='tm-input-group' style='margin-bottom:12px;'>
+                            <label expr:for='data:widget.instanceId + "_contact-form-email"' style='font-size:0.82rem;font-weight:700;display:block;margin-bottom:4px;'><data:contactFormEmailMsg/> <span style='color:#ef4444;'>*</span></label>
+                            <input class='contact-form-email' expr:id='data:widget.instanceId + "_contact-form-email"' name='email' placeholder='name@example.com' size='30' style='width:100%;padding:10px 14px;border:1px solid var(--border-color,#e2e8f0);border-radius:8px;background:var(--bg-color,#f8fafc);color:inherit;box-sizing:border-box;' type='text' value=''/>
+                          </div>
+                          <div class='tm-input-group' style='margin-bottom:14px;'>
+                            <label expr:for='data:widget.instanceId + "_contact-form-email-message"' style='font-size:0.82rem;font-weight:700;display:block;margin-bottom:4px;'><data:contactFormMessageMsg/> <span style='color:#ef4444;'>*</span></label>
+                            <textarea class='contact-form-email-message' cols='25' expr:id='data:widget.instanceId + "_contact-form-email-message"' name='email-message' placeholder='اكتب رسالتك هنا...' rows='4' style='width:100%;padding:10px 14px;border:1px solid var(--border-color,#e2e8f0);border-radius:8px;background:var(--bg-color,#f8fafc);color:inherit;box-sizing:border-box;resize:vertical;'/>
+                          </div>
+                          <input class='contact-form-button contact-form-button-submit tm-submit-btn' expr:id='data:widget.instanceId + "_contact-form-submit"' expr:value='data:contactFormSendMsg ?: "إرسال الرسالة الآن"' style='width:100%;justify-content:center;cursor:pointer;' type='button'/>
+                          <div style='margin-top:10px;'>
+                            <p class='contact-form-error-message tm-form-status error' expr:id='data:widget.instanceId + "_contact-form-error-message"' style='display:none;'/>
+                            <p class='contact-form-success-message tm-form-status success' expr:id='data:widget.instanceId + "_contact-form-success-message"' style='display:none;'/>
+                          </div>
+                        </form>
+                      </div>
+                    </b:includable>
+                  </b:widget>
+</b:section>
                 <!-- 11. ADS SIDEBAR BOTTOM -->
                 <b:section class='ads-sidebar-bottom-sec' id='ads-sidebar-bottom' maxwidgets='1' name='[ إعلان ] - أسفل السايدبار' showaddelement='yes'>
                   <b:widget id='HTML311' locked='false' title='[ إعلان ] - أسفل السايدبار' type='HTML' version='2' visible='false'>

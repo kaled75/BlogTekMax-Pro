@@ -5801,8 +5801,18 @@ html.no-syntax-highlight .gh-code {
 /* ==========================================================================
    BLOGGER NATIVE CONTACT FORM GADGET (ContactForm1)
    ========================================================================== */
+/* إخفاء ودجت اتصل بنا من القائمة الجانبية مع إبقائه مفعلاً في نظام بلوجر */
+.sidebar-section #ContactForm1,
+.sidebar #ContactForm1,
 #ContactForm1 {
+  display: none !important;
   margin-bottom: 24px;
+}
+
+/* إظهاره حصرياً داخل صفحة اتصل بنا المستقلة */
+#tmBloggerNativeMount #ContactForm1,
+.tm-contact-page #ContactForm1 {
+  display: block !important;
 }
 .tm-contact-form-widget {
   background: var(--card-bg, #ffffff);

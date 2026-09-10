@@ -6435,28 +6435,32 @@ body#layout a.add-widget-button:hover {
 
         <!-- C. Highlight Callout Banner Section (Fully Configurable from Blogger Layout) -->
         <div class='highlight-banner-wrapper container'>
-            <b:section class='highlight-banner-section' id='highlight-banner-section' maxwidgets='1' showaddelement='yes'>
+            <b:section class='highlight-banner-section' id='highlight-banner-section' maxwidgets='1' name='بنر الاشتراك / الانضمام للمجتمع' showaddelement='yes'>
               <b:widget id='Text2' locked='false' title='انضم إلى مجتمع BlogTekMax الآن!' type='Text' version='2' visible='true'>
                 <b:widget-settings>
-                  <b:widget-setting name='content'>تابع أحدث المستجدات والتحليلات التقنية أولا&#1611; بأول.</b:widget-setting>
+                  <b:widget-setting name='content'>اشترك للحصول على أحدث المقالات والدروس مجاناً مباشرة إلى بريدك.</b:widget-setting>
                 </b:widget-settings>
                 <b:includable id='main'>
                     <b:if cond='data:view.isHomepage or data:view.isLayoutMode'>
-                        <div class='highlight-banner'>
-                            <div>
+                        <div class='highlight-banner' id='highlightBanner'>
+                            <div class='highlight-banner-content'>
                                 <span class='badge-tag' style='margin-bottom:8px;'>EXCLUSIVE</span>
                                 <b:if cond='data:title != &quot;&quot;'>
                                     <h3><data:title/></h3>
                                 <b:else/>
                                     <h3>انضم إلى مجتمع BlogTekMax الآن!</h3>
                                 </b:if>
-                                <b:if cond='data:text != &quot;&quot;'>
-                                    <p><data:text/></p>
-                                <b:else/>
-                                    <p>تابع أحدث المستجدات والتحليلات التقنية أولا&#1611; بأول.</p>
-                                </b:if>
+                                <div class='highlight-banner-desc' id='highlightBannerDesc'>
+                                    <b:if cond='data:content != &quot;&quot;'>
+                                        <data:content/>
+                                    <b:elseif cond='data:text != &quot;&quot;'/>
+                                        <p><data:text/></p>
+                                    <b:else/>
+                                        <p>اشترك للحصول على أحدث المقالات والدروس مجاناً مباشرة إلى بريدك.</p>
+                                    </b:if>
+                                </div>
                             </div>
-                            <a class='highlight-btn' href='#footerSection'>اشترك مجانا&#1611;</a>
+                            <a class='highlight-btn' href='#footerSection' id='highlightBtn'>اشترك مجاناً</a>
                         </div>
                     </b:if>
                 </b:includable>
@@ -8254,6 +8258,79 @@ body#layout a.add-widget-button:hover {
     <script type='text/javascript'>
     //<![CDATA[
     (function() {
+        // 1.8. Highlight Banner Subscription Engine (Connects Layout link to button & prevents anchor jumping)
+        (function initHighlightSubscription() {
+            function setupBanner() {
+                var banner = document.getElementById('highlightBanner') || document.querySelector('.highlight-banner');
+                if (!banner) return;
+                var btn = banner.querySelector('.highlight-btn');
+                var desc = banner.querySelector('.highlight-banner-desc') || banner.querySelector('p');
+                if (!btn || !desc) return;
+
+                var targetUrl = '';
+                var customBtnText = '';
+
+                // 1. Check if user added an <a> tag via Blogger editor
+                var innerLinks = desc.querySelectorAll('a');
+                if (innerLinks && innerLinks.length > 0) {
+                    for (var i = innerLinks.length - 1; i >= 0; i--) {
+                        var aTag = innerLinks[i];
+                        var href = (aTag.getAttribute('href') || '').trim();
+                        if (href && href !== '#' && href !== '#footerSection') {
+                            targetUrl = href;
+                            var txt = (aTag.textContent || '').trim();
+                            if (txt && txt.length < 35 && !txt.startsWith('http')) {
+                                customBtnText = txt;
+                            }
+                            aTag.remove();
+                            break;
+                        }
+                    }
+                }
+
+                // 2. Check if a raw URL was pasted in the text
+                if (!targetUrl) {
+                    var rawHtml = desc.innerHTML || '';
+                    var plainText = desc.textContent || '';
+                    var urlMatch = plainText.match(/(https?:\/\/[^\s<>"'\)]+|mailto:[^\s<>"'\)]+|t\.me\/[^\s<>"'\)]+)/i);
+                    if (urlMatch) {
+                        targetUrl = urlMatch[0];
+                        if (targetUrl.indexOf('://') === -1 && targetUrl.indexOf('mailto:') === -1) {
+                            targetUrl = 'https://' + targetUrl;
+                        }
+                        desc.innerHTML = rawHtml.replace(urlMatch[0], '').trim();
+                    }
+                }
+
+                // 3. Connect to button
+                if (targetUrl) {
+                    btn.setAttribute('href', targetUrl);
+                    btn.setAttribute('target', '_blank');
+                    btn.setAttribute('rel', 'noopener noreferrer');
+                    if (customBtnText) {
+                        btn.textContent = customBtnText;
+                    }
+                    btn.onclick = function(e) {
+                        e.stopPropagation();
+                    };
+                } else {
+                    btn.onclick = function(e) {
+                        e.preventDefault();
+                        var footer = document.getElementById('footerSection') || document.querySelector('.site-footer');
+                        if (footer) {
+                            footer.scrollIntoView({ behavior: 'smooth' });
+                        }
+                    };
+                }
+            }
+
+            if (document.readyState === 'loading') {
+                document.addEventListener('DOMContentLoaded', setupBanner);
+            } else {
+                setupBanner();
+            }
+        })();
+
         // Shared in-memory feed cache to eliminate redundant network requests
         var _tmFeedCache = {};
         function tmFetchFeed(url) {

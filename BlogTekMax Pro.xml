@@ -358,6 +358,7 @@ Description:  Modern Editorial Tech Magazine Theme inspired by The Wire & SmartM
 <Group description="إعدادات تيك ماكس 2.0 (TekMax 2.0 Settings)" selector=".article-wrapper">
   <Variable name="showPostFeaturedImage" description="عرض صورة المقال البارزة (1=نعم, 2=لا)" type="length" default="1px" min="1px" max="2px" value="1px"/>
   <Variable name="enableTOC" description="تفعيل جدول المحتويات (TOC) (1=نعم, 2=لا)" type="length" default="1px" min="1px" max="2px" value="1px"/>
+  <Variable name="tocDefaultOpen" description="حالة جدول المحتويات الافتراضية (1=مفتوح, 2=مطوي)" type="length" default="1px" min="1px" max="2px" value="1px"/>
   <Variable name="enableReadingProgress" description="تفعيل شريط تقدم القراءة (1=نعم, 2=لا)" type="length" default="1px" min="1px" max="2px" value="1px"/>
   <Variable name="enableFontResizer" description="تفعيل أداة تغيير حجم الخط (1=نعم, 2=لا)" type="length" default="1px" min="1px" max="2px" value="1px"/>
     <Variable name="enableRelatedPosts" description="تفعيل المقالات ذات الصلة (1=نعم, 2=لا)" type="length" default="1px" min="1px" max="2px" value="1px"/>
@@ -440,6 +441,7 @@ Description:  Modern Editorial Tech Magazine Theme inspired by The Wire & SmartM
   --enable-image-lazy: $(enableImageLazyLoad);
   --enable-ads-lazy: $(enableAdsLazyLoad);
   --enable-toc: $(enableTOC);
+  --toc-default-open: $(tocDefaultOpen);
   --enable-reading-progress: $(enableReadingProgress);
   --enable-font-resizer: $(enableFontResizer);
   --enable-related-posts: $(enableRelatedPosts);
@@ -9852,8 +9854,8 @@ if (typeof console !== 'undefined' && console.error) console.error('[TM ADS Init
 (function() {
     'use strict';
 
-    document.addEventListener('DOMContentLoaded', function() {
-        var articleBody = document.querySelector('.article-body-content');
+    function initPostFeatures() {
+        var articleBody = document.querySelector('.article-body-content') || document.querySelector('.post-body') || document.querySelector('.entry-content');
         if (!articleBody) return;
 
         // --- DEDUPLICATE POST FEATURED IMAGE (ZERO FORCED REFLOW) ---
@@ -10106,15 +10108,18 @@ if (typeof console !== 'undefined' && console.error) console.error('[TM ADS Init
             }
         })();
 
-        // --- 6. AUTOMATIC TABLE OF CONTENTS (TOC) MODULE (ARROW RIGHT, ICON LEFT, COMPACT) ---
+        // --- 6. AUTOMATIC TABLE OF CONTENTS (TOC) MODULE (ARROW RIGHT, ICON LEFT, EXPANDED/COLLAPSIBLE) ---
         (function initAutomaticTOC() {
             if (document.documentElement.classList.contains('hide-toc')) return;
             var headings = articleBody.querySelectorAll('h2, h3, h4');
-            if (headings.length < 2) return; // Skip if fewer than 2 headings
+            if (headings.length === 0) return; // Skip if no headings at all
+
+            var defaultOpenVal = (getComputedStyle(document.documentElement).getPropertyValue('--toc-default-open') || '').trim();
+            var isDefaultCollapsed = (defaultOpenVal === '2px' || defaultOpenVal === '2');
 
             var tocContainer = document.createElement('div');
-            // COLLAPSED BY DEFAULT
-            tocContainer.className = 'tekmax-toc-container collapsed';
+            // By default open (expanded) so readers can immediately view contents; customizable via Theme Designer
+            tocContainer.className = 'tekmax-toc-container' + (isDefaultCollapsed ? ' collapsed' : '');
             tocContainer.setAttribute('role', 'navigation');
             tocContainer.setAttribute('aria-label', 'جدول المحتويات');
 
@@ -10122,7 +10127,7 @@ if (typeof console !== 'undefined' && console.error) console.error('[TM ADS Init
             tocHeader.className = 'toc-header';
             // Arrow on Right, Title in middle, List icon on Left
             tocHeader.innerHTML = '<div class="toc-header-right">' +
-                '<button type="button" class="toc-toggle-btn" aria-label="عرض أو إخفاء جدول المحتويات" aria-expanded="false">' +
+                '<button type="button" class="toc-toggle-btn" aria-label="عرض أو إخفاء جدول المحتويات" aria-expanded="' + (isDefaultCollapsed ? 'false' : 'true') + '">' +
                 '<svg class="toc-chevron" viewBox="0 0 24 24"><polyline points="18 15 12 9 6 15"/></svg>' +
                 '</button>' +
                 '<h3 class="toc-title">جدول المحتويات</h3>' +
@@ -10161,7 +10166,8 @@ if (typeof console !== 'undefined' && console.error) console.error('[TM ADS Init
                     numStr = h2Count + '.' + h3Count + '.' + h4Count + '.';
                 }
 
-                var text = (h.textContent || h.innerText || '').trim();
+                var text = (h.textContent || h.innerText || '').replace(/[\u00a0\s]+/g, ' ').trim();
+                if (!text) text = 'القسم ' + (idx + 1);
                 var id = h.id;
                 if (!id) {
                     id = 'tekmax-heading-' + (idx + 1);
@@ -10209,9 +10215,17 @@ if (typeof console !== 'undefined' && console.error) console.error('[TM ADS Init
                 }
             });
 
-            // Insert before first heading
+            // Insert before first heading or before its top container inside articleBody
             var firstH = headings[0];
-            firstH.parentNode.insertBefore(tocContainer, firstH);
+            var insertTarget = firstH;
+            while (insertTarget.parentNode && insertTarget.parentNode !== articleBody && insertTarget.parentNode !== document.body) {
+                insertTarget = insertTarget.parentNode;
+            }
+            if (insertTarget && insertTarget.parentNode) {
+                insertTarget.parentNode.insertBefore(tocContainer, insertTarget);
+            } else {
+                articleBody.insertBefore(tocContainer, articleBody.firstChild);
+            }
         })();
 
         // --- 7. COPY CODE MODULE ---
@@ -10353,10 +10367,10 @@ if (typeof console !== 'undefined' && console.error) console.error('[TM ADS Init
                 img.style.cursor = 'zoom-in';
             });
 
-            // Delegated click handler on postBody for all article images (High Efficiency)
-            postBody.addEventListener('click', function(e) {
+            // Delegated click handler on articleBody for all article images (High Efficiency)
+            articleBody.addEventListener('click', function(e) {
                 var clickedImg = e.target.closest('img');
-                if (!clickedImg || !postBody.contains(clickedImg)) return;
+                if (!clickedImg || !articleBody.contains(clickedImg)) return;
                 var idx = postImgs.indexOf(clickedImg);
                 if (idx !== -1) {
                     e.preventDefault();
@@ -10607,7 +10621,13 @@ if (typeof console !== 'undefined' && console.error) console.error('[TM ADS Init
         })();
 
 
-    });
+    }
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initPostFeatures, { once: true });
+    } else {
+        initPostFeatures();
+    }
 })();
 //]]>
 </script>

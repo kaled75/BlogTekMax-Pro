@@ -84,9 +84,11 @@
           <p>يرجى تعبئة النموذج أدناه بدقة وسيقوم أحد ممثلينا بالتواصل معك في أقرب وقت.</p>
         </div>
 
-        <form id="tmContactForm" class="tm-form" onsubmit="handleTekMaxContact(event)">
+        <form id="tmContactForm" class="tm-form" action="https://formsubmit.co/sfyanalrwymy7@gmail.com" method="POST" onsubmit="handleTekMaxContact(event)">
           <!-- حماية من الرسائل العشوائية والبوتات (FormSubmit Honeypot) -->
           <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off"/>
+          <input type="hidden" name="_captcha" value="false"/>
+          <input type="hidden" name="_template" value="table"/>
 
           <!-- حقل الاسم -->
           <div class="tm-input-group">

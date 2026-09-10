@@ -5897,6 +5897,725 @@ html.no-syntax-highlight .gh-code {
   border: 1px solid rgba(16, 185, 129, 0.3);
   color: #059669;
 }
+
+/* ==========================================================================
+   TEKMAX PRO — ULTRA-FAST SHORTCODES SUITE (CSS-FIRST ARCHITECTURE)
+   ========================================================================== */
+
+/* 1. Alerts & Notices (tekmax-alert) */
+tekmax-alert {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px 20px;
+  border-radius: 12px;
+  margin: 22px 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  border-inline-start: 4px solid;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  box-sizing: border-box;
+}
+tekmax-alert .tm-alert-icon {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+tekmax-alert .tm-alert-content {
+  flex: 1;
+}
+
+tekmax-alert[type="info"], tekmax-alert:not([type]) {
+  background: rgba(37, 99, 235, 0.08);
+  border-color: #2563eb;
+  color: #1e40af;
+}
+[data-theme="dark"] tekmax-alert[type="info"], [data-theme="dark"] tekmax-alert:not([type]) {
+  background: rgba(37, 99, 235, 0.15);
+  color: #93c5fd;
+}
+tekmax-alert[type="success"] {
+  background: rgba(16, 185, 129, 0.08);
+  border-color: #10b981;
+  color: #065f46;
+}
+[data-theme="dark"] tekmax-alert[type="success"] {
+  background: rgba(16, 185, 129, 0.15);
+  color: #6ee7b7;
+}
+tekmax-alert[type="warning"] {
+  background: rgba(245, 158, 11, 0.08);
+  border-color: #f59e0b;
+  color: #92400e;
+}
+[data-theme="dark"] tekmax-alert[type="warning"] {
+  background: rgba(245, 158, 11, 0.15);
+  color: #fcd34d;
+}
+tekmax-alert[type="danger"] {
+  background: rgba(239, 68, 68, 0.08);
+  border-color: #ef4444;
+  color: #991b1b;
+}
+[data-theme="dark"] tekmax-alert[type="danger"] {
+  background: rgba(239, 68, 68, 0.15);
+  color: #fca5a5;
+}
+
+/* 2. Editorial Note (tekmax-note) */
+tekmax-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 22px;
+  border-radius: 12px;
+  margin: 22px 0;
+  background: rgba(248, 58, 94, 0.06);
+  border: 1px dashed rgba(248, 58, 94, 0.35);
+  border-inline-start: 4px solid var(--primary-color, #f83a5e);
+  color: var(--text-color, #111827);
+  font-size: 0.95rem;
+  line-height: 1.65;
+  box-sizing: border-box;
+}
+[data-theme="dark"] tekmax-note {
+  background: rgba(248, 58, 94, 0.12);
+  color: #f8fafc;
+  border-color: rgba(248, 58, 94, 0.45);
+}
+tekmax-note .tm-note-icon {
+  flex-shrink: 0;
+  color: var(--primary-color, #f83a5e);
+  margin-top: 2px;
+}
+
+/* 3. Action Button (tekmax-button) */
+tekmax-button {
+  display: inline-block;
+  margin: 8px 4px;
+}
+tekmax-button a, .tm-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  background: var(--primary-color, #f83a5e);
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 11px 24px;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(248, 58, 94, 0.28);
+  box-sizing: border-box;
+}
+tekmax-button a:hover, .tm-btn:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow: 0 6px 20px rgba(248, 58, 94, 0.38);
+}
+
+/* 4. Download Button (tekmax-download) */
+tekmax-download {
+  display: inline-flex;
+  margin: 10px 0;
+}
+tekmax-download a {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: #ffffff !important;
+  text-decoration: none !important;
+  font-weight: 700;
+  font-size: 0.92rem;
+  padding: 12px 22px;
+  border-radius: 12px;
+  transition: all 0.25s ease;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.28);
+  box-sizing: border-box;
+}
+tekmax-download a:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.4);
+}
+tekmax-download .tm-dl-size {
+  background: rgba(0, 0, 0, 0.22);
+  padding: 3px 9px;
+  border-radius: 6px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+/* 5. Custom Quote (tekmax-quote) */
+tekmax-quote {
+  display: block;
+  position: relative;
+  padding: 24px 28px 20px;
+  margin: 26px 0;
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-inline-start: 4px solid var(--primary-color, #f83a5e);
+  border-radius: 14px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+  font-size: 1.02rem;
+  font-style: italic;
+  line-height: 1.8;
+  box-sizing: border-box;
+}
+[data-theme="dark"] tekmax-quote {
+  background: #171a20;
+  border-color: #242832;
+  color: #f1f5f9;
+}
+tekmax-quote .tm-quote-author {
+  display: block;
+  margin-top: 12px;
+  font-size: 0.88rem;
+  font-style: normal;
+  font-weight: 700;
+  color: var(--primary-color, #f83a5e);
+}
+tekmax-quote .tm-quote-mark {
+  position: absolute;
+  top: 14px;
+  left: 20px;
+  font-size: 2.8rem;
+  line-height: 1;
+  color: var(--border-color, #e2e8f0);
+  opacity: 0.5;
+  user-select: none;
+}
+[data-theme="dark"] tekmax-quote .tm-quote-mark {
+  color: #242832;
+}
+
+/* 6. Numbered Steps (tekmax-steps & tekmax-step) */
+tekmax-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 24px 0;
+  counter-reset: tekmaxStepCounter;
+  position: relative;
+}
+tekmax-step {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  position: relative;
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 12px;
+  padding: 16px 18px;
+  box-sizing: border-box;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+[data-theme="dark"] tekmax-step {
+  background: #171a20;
+  border-color: #242832;
+  color: #f1f5f9;
+}
+tekmax-step::before {
+  counter-increment: tekmaxStepCounter;
+  content: counter(tekmaxStepCounter);
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--primary-color, #f83a5e);
+  color: #ffffff;
+  font-size: 0.85rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(248, 58, 94, 0.35);
+}
+
+/* 7. Accordion (tekmax-accordion) */
+tekmax-accordion {
+  display: block;
+  margin: 12px 0;
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 12px;
+  background: var(--card-bg, #ffffff);
+  overflow: hidden;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+[data-theme="dark"] tekmax-accordion {
+  background: #171a20;
+  border-color: #242832;
+}
+tekmax-accordion details summary {
+  padding: 16px 20px;
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  color: var(--text-color, #111827);
+  transition: color 0.2s ease;
+}
+[data-theme="dark"] tekmax-accordion details summary {
+  color: #f1f5f9;
+}
+tekmax-accordion details summary::-webkit-details-marker {
+  display: none;
+}
+tekmax-accordion details summary::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid var(--muted-color, #64748b);
+  border-bottom: 2px solid var(--muted-color, #64748b);
+  transform: rotate(45deg);
+  transition: transform 0.25s ease;
+  flex-shrink: 0;
+}
+tekmax-accordion details[open] summary::after {
+  transform: rotate(-135deg);
+}
+tekmax-accordion details[open] summary {
+  color: var(--primary-color, #f83a5e);
+}
+tekmax-accordion .tm-accordion-content {
+  padding: 0 20px 18px;
+  font-size: 0.92rem;
+  line-height: 1.7;
+  color: var(--muted-color, #475569);
+  border-top: 1px solid var(--border-color, #e2e8f0);
+  padding-top: 14px;
+}
+[data-theme="dark"] tekmax-accordion .tm-accordion-content {
+  color: #94a3b8;
+  border-color: #242832;
+}
+
+/* 8. Spoiler / Hidden Content (tekmax-spoiler) */
+tekmax-spoiler {
+  display: block;
+  margin: 16px 0;
+}
+tekmax-spoiler .tm-spoiler-box {
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 12px;
+  background: var(--card-bg, #ffffff);
+  overflow: hidden;
+  box-sizing: border-box;
+}
+[data-theme="dark"] tekmax-spoiler .tm-spoiler-box {
+  background: #171a20;
+  border-color: #242832;
+}
+tekmax-spoiler .tm-spoiler-toggle {
+  width: 100%;
+  text-align: right;
+  padding: 14px 18px;
+  background: rgba(0, 0, 0, 0.025);
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--text-color, #111827);
+  transition: background 0.2s ease;
+}
+[data-theme="dark"] tekmax-spoiler .tm-spoiler-toggle {
+  background: rgba(255, 255, 255, 0.03);
+  color: #f1f5f9;
+}
+tekmax-spoiler .tm-spoiler-content {
+  padding: 16px 18px;
+  display: none;
+  border-top: 1px solid var(--border-color, #e2e8f0);
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+[data-theme="dark"] tekmax-spoiler .tm-spoiler-content {
+  border-color: #242832;
+}
+tekmax-spoiler.open .tm-spoiler-content {
+  display: block;
+}
+
+/* 9. Small Pill Badge (tekmax-badge) */
+tekmax-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 12px;
+  border-radius: 99px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  background: rgba(248, 58, 94, 0.1);
+  color: var(--primary-color, #f83a5e);
+  border: 1px solid rgba(248, 58, 94, 0.25);
+  margin: 2px 4px;
+  vertical-align: middle;
+}
+tekmax-badge[color="blue"] {
+  background: rgba(37, 99, 235, 0.1);
+  color: #2563eb;
+  border-color: rgba(37, 99, 235, 0.25);
+}
+tekmax-badge[color="green"] {
+  background: rgba(16, 185, 129, 0.1);
+  color: #10b981;
+  border-color: rgba(16, 185, 129, 0.25);
+}
+tekmax-badge[color="orange"] {
+  background: rgba(245, 158, 11, 0.1);
+  color: #f59e0b;
+  border-color: rgba(245, 158, 11, 0.25);
+}
+
+/* 10. Multi Columns (tekmax-columns & tekmax-column) */
+tekmax-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 24px 0;
+}
+@media (max-width: 768px) {
+  tekmax-columns {
+    grid-template-columns: 1fr;
+  }
+}
+tekmax-column {
+  display: block;
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 12px;
+  padding: 20px;
+  box-sizing: border-box;
+  font-size: 0.95rem;
+  line-height: 1.65;
+}
+[data-theme="dark"] tekmax-column {
+  background: #171a20;
+  border-color: #242832;
+  color: #f1f5f9;
+}
+
+/* 11. Ultra-Fast Lite YouTube Video (tekmax-video) */
+tekmax-video {
+  display: block;
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  border-radius: 14px;
+  overflow: hidden;
+  background: #000000;
+  margin: 24px 0;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  box-sizing: border-box;
+}
+tekmax-video img.tm-vid-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.85;
+  transition: opacity 0.3s ease;
+  cursor: pointer;
+}
+tekmax-video:hover img.tm-vid-thumb {
+  opacity: 1;
+}
+tekmax-video .tm-vid-play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 68px;
+  height: 48px;
+  background: var(--primary-color, #f83a5e);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  box-shadow: 0 4px 16px rgba(248, 58, 94, 0.4);
+}
+tekmax-video:hover .tm-vid-play {
+  transform: translate(-50%, -50%) scale(1.1);
+  filter: brightness(1.1);
+}
+tekmax-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* 12. Progress Bar (tekmax-progress) */
+tekmax-progress {
+  display: block;
+  margin: 18px 0;
+}
+tekmax-progress .tm-progress-track {
+  width: 100%;
+  height: 12px;
+  background: var(--border-color, #e2e8f0);
+  border-radius: 99px;
+  overflow: hidden;
+  position: relative;
+}
+[data-theme="dark"] tekmax-progress .tm-progress-track {
+  background: #242832;
+}
+tekmax-progress .tm-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary-color, #f83a5e), #ff6b8b);
+  border-radius: 99px;
+  transition: width 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+tekmax-progress .tm-progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 700;
+  margin-bottom: 6px;
+  color: var(--text-color, #111827);
+}
+[data-theme="dark"] tekmax-progress .tm-progress-label {
+  color: #f1f5f9;
+}
+
+/* 13. Decorative Separator (tekmax-separator) */
+tekmax-separator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 36px 0;
+  position: relative;
+}
+tekmax-separator::before, tekmax-separator::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--border-color, #e2e8f0), transparent);
+}
+tekmax-separator .tm-sep-icon {
+  padding: 0 16px;
+  color: var(--primary-color, #f83a5e);
+  display: flex;
+  align-items: center;
+}
+
+/* 14. Interactive Shortcodes Catalog Page (tekmax-shortcodes-page) */
+.tm-sc-page {
+  max-width: 960px;
+  margin: 0 auto;
+}
+.tm-sc-filters {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+.tm-sc-filter-btn {
+  padding: 9px 18px;
+  border-radius: 99px;
+  border: 1px solid var(--border-color, #e2e8f0);
+  background: var(--card-bg, #ffffff);
+  color: var(--text-color, #111827);
+  font-family: inherit;
+  font-size: 0.88rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+[data-theme="dark"] .tm-sc-filter-btn {
+  background: #171a20;
+  border-color: #242832;
+  color: #f1f5f9;
+}
+.tm-sc-filter-btn.active, .tm-sc-filter-btn:hover {
+  background: var(--primary-color, #f83a5e);
+  color: #ffffff;
+  border-color: var(--primary-color, #f83a5e);
+  box-shadow: 0 4px 12px rgba(248, 58, 94, 0.25);
+}
+.tm-sc-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+}
+.tm-sc-card {
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  box-sizing: border-box;
+}
+[data-theme="dark"] .tm-sc-card {
+  background: #171a20;
+  border-color: #242832;
+}
+.tm-sc-card:hover {
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+}
+.tm-sc-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+  border-bottom: 1px solid var(--border-color, #e2e8f0);
+  padding-bottom: 12px;
+}
+[data-theme="dark"] .tm-sc-header {
+  border-color: #242832;
+}
+.tm-sc-title-wrap {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.tm-sc-num {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(248, 58, 94, 0.1);
+  color: var(--primary-color, #f83a5e);
+  font-weight: 800;
+  font-size: 0.88rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.tm-sc-title {
+  margin: 0;
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text-color, #111827);
+}
+[data-theme="dark"] .tm-sc-title {
+  color: #f1f5f9;
+}
+.tm-sc-desc {
+  margin: 2px 0 0;
+  font-size: 0.85rem;
+  color: var(--muted-color, #64748b);
+}
+.tm-sc-preview-box {
+  background: var(--bg-color, #f8fafc);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 12px;
+  padding: 18px;
+  margin-bottom: 16px;
+}
+[data-theme="dark"] .tm-sc-preview-box {
+  background: #0f1115;
+  border-color: #242832;
+}
+.tm-sc-preview-label {
+  font-size: 0.75rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--muted-color, #64748b);
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.tm-sc-code-box {
+  position: relative;
+  background: #0f172a;
+  color: #e2e8f0;
+  border-radius: 12px;
+  padding: 14px 18px;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 0.88rem;
+  direction: ltr;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  overflow-x: auto;
+}
+.tm-sc-code-box code {
+  white-space: pre-wrap;
+  word-break: break-all;
+  flex: 1;
+  color: #38bdf8;
+}
+.tm-copy-btn {
+  background: rgba(255, 255, 255, 0.12);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 8px;
+  padding: 7px 14px;
+  font-family: inherit;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+.tm-copy-btn:hover {
+  background: var(--primary-color, #f83a5e);
+  border-color: var(--primary-color, #f83a5e);
+}
+.tm-copy-btn.copied {
+  background: #10b981 !important;
+  border-color: #10b981 !important;
+}
+
+/* Toast Notification for Copy */
+.tm-toast {
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%) translateY(100px);
+  background: #10b981;
+  color: #ffffff;
+  padding: 12px 24px;
+  border-radius: 99px;
+  font-weight: 700;
+  font-size: 0.92rem;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  z-index: 999999;
+  opacity: 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  pointer-events: none;
+}
+.tm-toast.show {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+}
+
 ]]></b:skin>
 <b:template-skin><![CDATA[
 /* ==========================================================================
@@ -11517,6 +12236,380 @@ if (typeof console !== 'undefined' && console.error) console.error('[TM ADS Init
         initImageLazyLoading();
     }
 })();
+//]]>
+</script>
+
+<!-- ==========================================================================
+     TEKMAX PRO SHORTCODES ENGINE (Zero Overhead, < 2.5KB)
+     ========================================================================== -->
+<script>
+//<![CDATA[
+/* ==========================================================================
+   TEKMAX PRO — ULTRA-FAST SHORTCODES ENGINE (Zero Dependency, < 2.5KB)
+   ========================================================================== */
+(function() {
+    'use strict';
+
+    function initTekMaxShortcodes(root) {
+        root = root || document;
+
+        // 1. Alerts: Inject icons
+        var alerts = root.querySelectorAll('tekmax-alert:not([data-ready])');
+        for (var i = 0; i < alerts.length; i++) {
+            var a = alerts[i];
+            a.setAttribute('data-ready', 'true');
+            var type = a.getAttribute('type') || 'info';
+            var iconSvg = '';
+            if (type === 'success') {
+                iconSvg = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>';
+            } else if (type === 'warning') {
+                iconSvg = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3Z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>';
+            } else if (type === 'danger') {
+                iconSvg = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>';
+            } else {
+                iconSvg = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>';
+            }
+            if (!a.querySelector('.tm-alert-icon')) {
+                var content = a.innerHTML;
+                a.innerHTML = '<span class="tm-alert-icon">' + iconSvg + '</span><div class="tm-alert-content">' + content + '</div>';
+            }
+        }
+
+        // 2. Note
+        var notes = root.querySelectorAll('tekmax-note:not([data-ready])');
+        for (var j = 0; j < notes.length; j++) {
+            var n = notes[j];
+            n.setAttribute('data-ready', 'true');
+            if (!n.querySelector('.tm-note-icon')) {
+                var nContent = n.innerHTML;
+                var nIcon = '<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9"/><path d="M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>';
+                n.innerHTML = '<span class="tm-note-icon">' + nIcon + '</span><div class="tm-note-content">' + nContent + '</div>';
+            }
+        }
+
+        // 3. Action & Outline Buttons
+        var btns = root.querySelectorAll('tekmax-button:not([data-ready])');
+        for (var k = 0; k < btns.length; k++) {
+            var b = btns[k];
+            b.setAttribute('data-ready', 'true');
+            if (!b.querySelector('a')) {
+                var href = b.getAttribute('href') || '#';
+                var target = b.getAttribute('target') || '_self';
+                var variant = b.getAttribute('variant') || '';
+                var text = b.innerHTML;
+                var cls = 'tm-btn' + (variant === 'outline' ? ' tm-btn-outline' : '');
+                b.innerHTML = '<a href="' + href + '" target="' + target + '" rel="noopener" class="' + cls + '">' + text + '</a>';
+            }
+        }
+
+        // 4. Quote
+        var quotes = root.querySelectorAll('tekmax-quote:not([data-ready])');
+        for (var q = 0; q < quotes.length; q++) {
+            var qt = quotes[q];
+            qt.setAttribute('data-ready', 'true');
+            var author = qt.getAttribute('author');
+            var authorHtml = author ? '<cite class="tm-quote-author">— ' + author + '</cite>' : '';
+            var mark = '<span class="tm-quote-mark">“</span>';
+            if (!qt.querySelector('.tm-quote-mark')) {
+                var qBody = qt.innerHTML;
+                qt.innerHTML = mark + '<div class="tm-quote-body">' + qBody + '</div>' + authorHtml;
+            }
+        }
+
+        // 5. Download Button
+        var dls = root.querySelectorAll('tekmax-download:not([data-ready])');
+        for (var d = 0; d < dls.length; d++) {
+            var dl = dls[d];
+            dl.setAttribute('data-ready', 'true');
+            if (!dl.querySelector('a')) {
+                var dHref = dl.getAttribute('href') || '#';
+                var dSize = dl.getAttribute('size');
+                var dText = dl.innerHTML;
+                var dlIcon = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>';
+                var sizeHtml = dSize ? '<span class="tm-dl-size">' + dSize + '</span>' : '';
+                dl.innerHTML = '<a href="' + dHref + '" target="_blank" rel="noopener" download>' + dlIcon + '<span>' + dText + '</span>' + sizeHtml + '</a>';
+            }
+        }
+
+        // 6. Accordion
+        var accs = root.querySelectorAll('tekmax-accordion:not([data-ready])');
+        for (var ac = 0; ac < accs.length; ac++) {
+            var acc = accs[ac];
+            acc.setAttribute('data-ready', 'true');
+            if (!acc.querySelector('details')) {
+                var accTitle = acc.getAttribute('title') || 'انقر للقراءة';
+                var accContent = acc.innerHTML;
+                acc.innerHTML = '<details><summary>' + accTitle + '</summary><div class="tm-accordion-content">' + accContent + '</div></details>';
+            }
+        }
+
+        // 7. Spoiler
+        var sps = root.querySelectorAll('tekmax-spoiler:not([data-ready])');
+        for (var s = 0; s < sps.length; s++) {
+            var sp = sps[s];
+            sp.setAttribute('data-ready', 'true');
+            if (!sp.querySelector('.tm-spoiler-box')) {
+                var spTitle = sp.getAttribute('title') || 'انقر لعرض المحتوى المخفي';
+                var spContent = sp.innerHTML;
+                sp.innerHTML = '<div class="tm-spoiler-box"><button type="button" class="tm-spoiler-toggle"><span>' + spTitle + '</span><svg class="tm-sp-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg></button><div class="tm-spoiler-content">' + spContent + '</div></div>';
+            }
+        }
+
+        // 8. Video (Lite YouTube Embed Facade)
+        var vids = root.querySelectorAll('tekmax-video:not([data-ready])');
+        for (var v = 0; v < vids.length; v++) {
+            var vid = vids[v];
+            vid.setAttribute('data-ready', 'true');
+            var url = vid.getAttribute('url') || '';
+            var match = url.match(/(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i);
+            var vidId = match ? match[1] : '';
+            if (vidId && !vid.querySelector('iframe')) {
+                vid.innerHTML = '<img class="tm-vid-thumb" src="https://img.youtube.com/vi/' + vidId + '/hqdefault.jpg" alt="Video preview" loading="lazy"/><div class="tm-vid-play" role="button" aria-label="تشغيل الفيديو"><svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg></div>';
+                vid.setAttribute('data-vid-id', vidId);
+            }
+        }
+
+        // 9. Progress Bar
+        var progs = root.querySelectorAll('tekmax-progress:not([data-ready])');
+        for (var p = 0; p < progs.length; p++) {
+            var prg = progs[p];
+            prg.setAttribute('data-ready', 'true');
+            var val = parseInt(prg.getAttribute('value') || '50', 10);
+            if (val < 0) val = 0;
+            if (val > 100) val = 100;
+            var label = prg.getAttribute('label') || 'مستوى الإنجاز';
+            prg.innerHTML = '<div class="tm-progress-label"><span>' + label + '</span><span>' + val + '%</span></div><div class="tm-progress-track"><div class="tm-progress-bar" style="width:' + val + '%;"></div></div>';
+        }
+
+        // 10. Separator
+        var seps = root.querySelectorAll('tekmax-separator:not([data-ready])');
+        for (var spIdx = 0; spIdx < seps.length; spIdx++) {
+            var sep = seps[spIdx];
+            sep.setAttribute('data-ready', 'true');
+            if (!sep.querySelector('.tm-sep-icon')) {
+                sep.innerHTML = '<span class="tm-sep-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>';
+            }
+        }
+
+        // 11. Auto-build <tekmax-shortcodes-page> if placed on any page
+        var catalogContainers = root.querySelectorAll('tekmax-shortcodes-page:not([data-ready])');
+        for (var c = 0; c < catalogContainers.length; c++) {
+            var cat = catalogContainers[c];
+            cat.setAttribute('data-ready', 'true');
+            if (!cat.innerHTML.trim()) {
+                generateShortcodesCatalog(cat);
+            }
+        }
+    }
+
+    // Interactive Shortcodes Catalog Builder for <tekmax-shortcodes-page>
+    function generateShortcodesCatalog(targetEl) {
+        var items = [
+            { num: '01', title: 'تنبيه معلومات', cat: 'alerts', kw: 'info alert', desc: 'لعرض معلومة مهمة أو لفت انتباه القارئ بتنسيق أزرق هادئ.', code: '<tekmax-alert type="info">نص معلومة مهمة للقارئ</tekmax-alert>' },
+            { num: '02', title: 'رسالة نجاح', cat: 'alerts', kw: 'success alert', desc: 'لتأكيد إنجاز خطوة أو إتمام عملية بنجاح بلون زمردي مريح.', code: '<tekmax-alert type="success">تمت العملية بنجاح!</tekmax-alert>' },
+            { num: '03', title: 'رسالة تحذير', cat: 'alerts', kw: 'warning alert', desc: 'لتنبيه القارئ لأخذ الحيطة والحذر قبل الشروع في خطوة معينة.', code: '<tekmax-alert type="warning">انتبه: هذا الإجراء لا يمكن التراجع عنه!</tekmax-alert>' },
+            { num: '04', title: 'رسالة خطأ', cat: 'alerts', kw: 'danger error alert', desc: 'لتنبيه القارئ إلى أخطاء شائعة أو مشاكل غير متوقعة.', code: '<tekmax-alert type="danger">حدث خطأ غير متوقع، يرجى المحاولة لاحقاً</tekmax-alert>' },
+            { num: '05', title: 'ملاحظة', cat: 'alerts', kw: 'note memo', desc: 'صندوق مميز ذو إطار منقط ولون رئيسي للملاحظات الخاصة.', code: '<tekmax-note>ملاحظة مهمة: يرجى مراعاة الشروط قبل البدء</tekmax-note>' },
+            { num: '06', title: 'زر احترافي', cat: 'buttons', kw: 'button link', desc: 'زر أنيق لإعادة التوجيه لرابط خارجي أو داخلي.', code: '<tekmax-button href="https://example.com" target="_blank">انقر هنا</tekmax-button>' },
+            { num: '07', title: 'اقتباس منسق', cat: 'structure', kw: 'quote', desc: 'اقتباس مميز بصرياً مع اسم الكاتب أو المصدر.', code: '<tekmax-quote author="اسم الكاتب">نص الاقتباس هنا...</tekmax-quote>' },
+            { num: '08', title: 'زر مفرغ (ثانوي)', cat: 'buttons', kw: 'outline button', desc: 'زر بتصميم Outline أنيق للإجراءات الفرعية.', code: '<tekmax-button variant="outline" href="https://example.com" target="_blank">زر توجيه ثانوي</tekmax-button>' },
+            { num: '09', title: 'زر تحميل', cat: 'buttons', kw: 'download size', desc: 'زر تحميل عصري مع حجم الملف وأيقونة تنزيل.', code: '<tekmax-download href="https://example.com/file.zip" size="25 MB">تحميل الملف الآن</tekmax-download>' },
+            { num: '10', title: 'خطوات مرتبة', cat: 'structure', kw: 'steps', desc: 'لعرض خطوات الشروحات والدروس بترقيم تلقائي.', code: '<tekmax-steps><tekmax-step>الخطوة الأولى</tekmax-step><tekmax-step>الخطوة الثانية</tekmax-step></tekmax-steps>' },
+            { num: '11', title: 'قائمة قابلة للفتح (أكورديون)', cat: 'interactive', kw: 'accordion faq', desc: 'أسئلة شائعة أو نصوص وتفاصيل قابلة للطي والفتح.', code: '<tekmax-accordion title="عنوان السؤال هنا">نص الإجابة أو التفاصيل هنا...</tekmax-accordion>' },
+            { num: '12', title: 'محتوى مخفي (سبويلر)', cat: 'interactive', kw: 'spoiler hidden', desc: 'إمكانية إخفاء نص وإظهاره بنقر القارئ.', code: '<tekmax-spoiler title="انقر لعرض المحتوى">هذا هو المحتوى المخفي</tekmax-spoiler>' },
+            { num: '13', title: 'شارة نصية', cat: 'structure', kw: 'badge tag', desc: 'شارة نصية صغيرة ملونة ومناسبة لتمييز الكلمات.', code: '<tekmax-badge>نص الشارة</tekmax-badge>' },
+            { num: '14', title: 'عمودان متساويان', cat: 'structure', kw: 'columns', desc: 'تقسيم المحتوى إلى عمودين متساويين.', code: '<tekmax-columns><tekmax-column>محتوى العمود الأول</tekmax-column><tekmax-column>محتوى العمود الثاني</tekmax-column></tekmax-columns>' },
+            { num: '15', title: 'فيديو يوتيوب فائق السرعة', cat: 'interactive', kw: 'youtube video', desc: 'فيديو متجاوب بصندوق خفيف وقابل للتكبير.', code: '<tekmax-video url="https://www.youtube.com/watch?v=VIDEO_ID"></tekmax-video>' },
+            { num: '16', title: 'شريط تقدم', cat: 'interactive', kw: 'progress', desc: 'عرض نسبة إنجاز من مئة بشكل جذاب.', code: '<tekmax-progress value="75"></tekmax-progress>' },
+            { num: '17', title: 'فاصل زخرفي', cat: 'structure', kw: 'separator', desc: 'فاصل أنيق بين فقرات المقال.', code: '<tekmax-separator></tekmax-separator>' }
+        ];
+
+        var html = '<div class="tm-sc-page">' +
+            '<div class="tm-sc-filters-bar">' +
+                '<div class="tm-sc-filters">' +
+                    '<button type="button" class="tm-sc-filter-btn active" data-filter="all">الكل (17)</button>' +
+                    '<button type="button" class="tm-sc-filter-btn" data-filter="alerts">تنبيهات وملاحظات</button>' +
+                    '<button type="button" class="tm-sc-filter-btn" data-filter="buttons">أزرار وتحميل</button>' +
+                    '<button type="button" class="tm-sc-filter-btn" data-filter="structure">تنظيم وهيكلة</button>' +
+                    '<button type="button" class="tm-sc-filter-btn" data-filter="interactive">تفاعلية ووسائط</button>' +
+                '</div>' +
+                '<div class="tm-sc-search">' +
+                    '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>' +
+                    '<input type="text" class="tm-sc-search-dynamic" placeholder="ابحث عن كود..."/>' +
+                '</div>' +
+            '</div>' +
+            '<div class="tm-sc-grid">';
+
+        for (var i = 0; i < items.length; i++) {
+            var it = items[i];
+            var escCode = it.code.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+            html += '<article class="tm-sc-card" data-category="' + it.cat + '" data-keywords="' + it.kw + '">' +
+                '<header class="tm-sc-header">' +
+                    '<div class="tm-sc-title-wrap">' +
+                        '<span class="tm-sc-num">' + it.num + '</span>' +
+                        '<div><h3 class="tm-sc-title">' + it.title + '</h3><p class="tm-sc-desc">' + it.desc + '</p></div>' +
+                    '</div>' +
+                '</header>' +
+                '<div class="tm-sc-preview-box">' +
+                    '<span class="tm-sc-preview-label">المعاينة المباشرة:</span>' +
+                    it.code +
+                '</div>' +
+                '<div class="tm-sc-code-box">' +
+                    '<code>' + escCode + '</code>' +
+                    '<button type="button" class="tm-copy-btn" data-code="' + escCode + '">' +
+                        '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>' +
+                        '<span>نسخ الكود</span>' +
+                    '</button>' +
+                '</div>' +
+            '</article>';
+        }
+
+        html += '</div></div>';
+        targetEl.innerHTML = html;
+        initTekMaxShortcodes(targetEl);
+    }
+
+    // Global Click Delegation (Spoilers, YouTube Facade, Copy Buttons, Filter Tabs)
+    document.addEventListener('click', function(e) {
+        // Spoiler toggle
+        var spToggle = e.target.closest('.tm-spoiler-toggle');
+        if (spToggle) {
+            var spBox = spToggle.closest('tekmax-spoiler');
+            if (spBox) {
+                spBox.classList.toggle('open');
+            }
+            return;
+        }
+
+        // Video Play
+        var vidTarget = e.target.closest('tekmax-video');
+        if (vidTarget && !vidTarget.querySelector('iframe')) {
+            var id = vidTarget.getAttribute('data-vid-id');
+            if (id) {
+                vidTarget.innerHTML = '<iframe src="https://www.youtube-nocookie.com/embed/' + id + '?autoplay=1&rel=0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen loading="lazy"></iframe>';
+            }
+            return;
+        }
+
+        // Copy Button
+        var copyBtn = e.target.closest('.tm-copy-btn');
+        if (copyBtn) {
+            var codeAttr = copyBtn.getAttribute('data-code');
+            var codeEl = copyBtn.closest('.tm-sc-code-box');
+            var textToCopy = codeAttr || (codeEl && codeEl.querySelector('code') ? codeEl.querySelector('code').innerText : '');
+            if (textToCopy) {
+                // Decode HTML entities if attribute was encoded
+                var temp = document.createElement('textarea');
+                temp.innerHTML = textToCopy;
+                executeCopy(temp.value, copyBtn);
+            }
+            return;
+        }
+
+        // Dynamic Filter Tabs
+        var filterBtn = e.target.closest('.tm-sc-filter-btn');
+        if (filterBtn) {
+            var group = filterBtn.closest('.tm-sc-filters');
+            var page = filterBtn.closest('.tm-sc-page') || filterBtn.closest('.tm-shortcodes-page') || document;
+            if (group) {
+                var allBtns = group.querySelectorAll('.tm-sc-filter-btn');
+                for (var b = 0; b < allBtns.length; b++) allBtns[b].classList.remove('active');
+                filterBtn.classList.add('active');
+            }
+            var targetCat = filterBtn.getAttribute('data-filter');
+            var cards = page.querySelectorAll('.tm-sc-card');
+            for (var c = 0; c < cards.length; c++) {
+                var card = cards[c];
+                var cat = card.getAttribute('data-category');
+                if (targetCat === 'all' || cat === targetCat) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            }
+            return;
+        }
+    });
+
+    // Dynamic search inputs
+    document.addEventListener('input', function(e) {
+        if (e.target.classList.contains('tm-sc-search-dynamic')) {
+            var q = e.target.value.trim().toLowerCase();
+            var page = e.target.closest('.tm-sc-page') || document;
+            var cards = page.querySelectorAll('.tm-sc-card');
+            for (var i = 0; i < cards.length; i++) {
+                var card = cards[i];
+                var kw = (card.getAttribute('data-keywords') || '').toLowerCase();
+                var title = (card.querySelector('.tm-sc-title') ? card.querySelector('.tm-sc-title').innerText : '').toLowerCase();
+                if (!q || kw.indexOf(q) !== -1 || title.indexOf(q) !== -1) {
+                    card.style.display = '';
+                } else {
+                    card.style.display = 'none';
+                }
+            }
+        }
+    });
+
+    function executeCopy(text, btn) {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+            navigator.clipboard.writeText(text).then(function() {
+                notifyCopied(btn);
+            }).catch(function() {
+                fallbackExecCopy(text, btn);
+            });
+        } else {
+            fallbackExecCopy(text, btn);
+        }
+    }
+
+    function fallbackExecCopy(text, btn) {
+        var ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try {
+            document.execCommand('copy');
+            notifyCopied(btn);
+        } catch(err) {}
+        document.body.removeChild(ta);
+    }
+
+    function notifyCopied(btn) {
+        if (btn) {
+            var orig = btn.innerHTML;
+            btn.classList.add('copied');
+            btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>تم النسخ ✓</span>';
+            setTimeout(function() {
+                btn.classList.remove('copied');
+                btn.innerHTML = orig;
+            }, 2000);
+        }
+
+        var toast = document.getElementById('tmShortcodesToast');
+        if (!toast) {
+            toast = document.createElement('div');
+            toast.id = 'tmShortcodesToast';
+            toast.className = 'tm-toast';
+            toast.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>تم نسخ الكود بنجاح! الصقه في وضع HTML بمقالك.</span>';
+            document.body.appendChild(toast);
+        }
+        toast.classList.add('show');
+        clearTimeout(toast._timeout);
+        toast._timeout = setTimeout(function() {
+            toast.classList.remove('show');
+        }, 2500);
+    }
+
+    // Initialize on ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() { initTekMaxShortcodes(); }, { once: true });
+    } else {
+        initTekMaxShortcodes();
+    }
+})();
+
 //]]>
 </script>
 </body>

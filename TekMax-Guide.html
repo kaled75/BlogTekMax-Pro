@@ -1168,6 +1168,175 @@
     </div>
   </div>
 
+  <!-- SECTION 8: SHORTCODES LIBRARY -->
+  <h2 class="tm-sec-title">8. مكتبة الأكواد القصيرة (TekMax Shortcodes Suite) وطريقة الاستخدام</h2>
+  <p>
+    يأتي قالب <strong>TekMax Pro</strong> مزوداً بنظام هندسي متكامل للأكواد التنسيقية القصيرة (Shortcodes) يضم 17 عنصراً تفاعلياً ومظهرياً عالي الاحترافية. تتيح لك هذه الأكواد إثراء مقالاتك وتنسيق الشروحات، التنبيهات، الأزرار، الاقتباسات، الفيديوهات الخفيفة، والخطوات المرقمة بنقرة زر واحدة دون الحاجة لأي معرفة مسبقة بلغات البرمجة.
+  </p>
+
+  <div class="tm-callout tm-callout-tip">
+    <div class="tm-callout-icon">⚡</div>
+    <div class="tm-callout-content">
+      <strong>صفر تأثير على سرعة القالب (Zero Overhead Architecture):</strong>
+      تم بناء مكتبة الأكواد بهندسة CSS-First الصارمة، حيث تعتمد أكثر من 75% من العناصر على لغة CSS الخالصة وعناصر HTML5 الأصلية (مثل details/summary للأكورديون)، بينما صُمم المحرك البرمجي الداعم بحجم متناهي الصغر (أقل من 2.5 كيلوبايت وبدون أي مكتبات مثل jQuery)، مع تقنية الواجهة الخفيفة (Lite Embed Facade) لفيديوهات يوتيوب التي توفر أكثر من 1 ميجابايت عند تحميل الصفحة، مما يضمن بقاء سرعة مدونتك عند 100/100 في Core Web Vitals!
+    </div>
+  </div>
+
+  <h3 class="tm-sub-title">📑 جدول الأكواد القصيرة المتوفرة في القالب وطريقة كتابتها</h3>
+  <p>
+    يمكنك نسخ أي كود من الجدول التالي ولصقه مباشرة في محرر مقالك ببلوجر بعد التحويل إلى <strong>عرض وضع HTML</strong>:
+  </p>
+
+  <div class="tm-table-wrap">
+    <table class="tm-table">
+      <thead>
+        <tr>
+          <th style="width: 50px;">#</th>
+          <th>اسم العنصر</th>
+          <th>صيغة الكود المباشرة (انسخ والصق في وضع HTML)</th>
+          <th>الوظيفة والاستخدام</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>01</strong></td>
+          <td><strong>تنبيه معلومات</strong></td>
+          <td><code>&lt;tekmax-alert type="info"&gt;نص معلومة مهمة للقارئ&lt;/tekmax-alert&gt;</code></td>
+          <td>لفت انتباه القارئ لمعلومة هامة بلون أزرق وأيقونة إرشادية.</td>
+        </tr>
+        <tr>
+          <td><strong>02</strong></td>
+          <td><strong>رسالة نجاح</strong></td>
+          <td><code>&lt;tekmax-alert type="success"&gt;تمت العملية بنجاح!&lt;/tekmax-alert&gt;</code></td>
+          <td>تأكيد اكتمال مهمة أو عملية بلون زمردي مريح وأيقونة نجاح.</td>
+        </tr>
+        <tr>
+          <td><strong>03</strong></td>
+          <td><strong>رسالة تحذير</strong></td>
+          <td><code>&lt;tekmax-alert type="warning"&gt;انتبه: هذا الإجراء لا يمكن التراجع عنه!&lt;/tekmax-alert&gt;</code></td>
+          <td>تنبيه القارئ لأخذ الحيطة والحذر قبل الشروع في خطوة معينة.</td>
+        </tr>
+        <tr>
+          <td><strong>04</strong></td>
+          <td><strong>رسالة خطأ</strong></td>
+          <td><code>&lt;tekmax-alert type="danger"&gt;حدث خطأ غير متوقع، يرجى المحاولة لاحقاً&lt;/tekmax-alert&gt;</code></td>
+          <td>تنبيه القارئ للأخطاء الشائعة أو التعليمات المحذورة.</td>
+        </tr>
+        <tr>
+          <td><strong>05</strong></td>
+          <td><strong>ملاحظة تحريرية</strong></td>
+          <td><code>&lt;tekmax-note&gt;ملاحظة مهمة: يرجى مراعاة الشروط قبل البدء&lt;/tekmax-note&gt;</code></td>
+          <td>صندوق ملاحظات أنيق بإطار منقط ولون الهوية الرئيسي للمدونة.</td>
+        </tr>
+        <tr>
+          <td><strong>06</strong></td>
+          <td><strong>زر احترافي</strong></td>
+          <td><code>&lt;tekmax-button href="https://example.com" target="_blank"&gt;انقر هنا&lt;/tekmax-button&gt;</code></td>
+          <td>زر دعوة لاتخاذ إجراء (CTA) يعيد التوجيه لرابط خارجي أو داخلي.</td>
+        </tr>
+        <tr>
+          <td><strong>07</strong></td>
+          <td><strong>اقتباس منسق</strong></td>
+          <td><code>&lt;tekmax-quote author="اسم الكاتب"&gt;نص الاقتباس هنا...&lt;/tekmax-quote&gt;</code></td>
+          <td>عرض مقولات واقتباسات مع علامات تنصيص فنية واسم الكاتب.</td>
+        </tr>
+        <tr>
+          <td><strong>08</strong></td>
+          <td><strong>زر مفرغ (ثانوي)</strong></td>
+          <td><code>&lt;tekmax-button variant="outline" href="https://example.com" target="_blank"&gt;زر ثانوي&lt;/tekmax-button&gt;</code></td>
+          <td>زر بتصميم Outline للإجراءات الفرعية أو الروابط الموازية.</td>
+        </tr>
+        <tr>
+          <td><strong>09</strong></td>
+          <td><strong>زر تحميل ملف</strong></td>
+          <td><code>&lt;tekmax-download href="https://example.com/file.zip" size="25 MB"&gt;تحميل الملف الآن&lt;/tekmax-download&gt;</code></td>
+          <td>زر تنزيل عصري يشتمل على شارة حجم الملف وأيقونة تحميل.</td>
+        </tr>
+        <tr>
+          <td><strong>10</strong></td>
+          <td><strong>خطوات مرتبة</strong></td>
+          <td><code>&lt;tekmax-steps&gt;&lt;tekmax-step&gt;الخطوة الأولى&lt;/tekmax-step&gt;&lt;tekmax-step&gt;الخطوة الثانية&lt;/tekmax-step&gt;&lt;/tekmax-steps&gt;</code></td>
+          <td>شروحات الدروس خطوة بخطوة مع ترقيم تلقائي أنيق.</td>
+        </tr>
+        <tr>
+          <td><strong>11</strong></td>
+          <td><strong>قائمة قابلة للطي (أكورديون)</strong></td>
+          <td><code>&lt;tekmax-accordion title="عنوان السؤال هنا"&gt;نص الإجابة أو التفاصيل هنا...&lt;/tekmax-accordion&gt;</code></td>
+          <td>أسئلة شائعة (FAQ) أو معلومات قابلة للتوسيع والطي بدون أي مكتبات ثقيلة.</td>
+        </tr>
+        <tr>
+          <td><strong>12</strong></td>
+          <td><strong>محتوى مخفي (سبويلر)</strong></td>
+          <td><code>&lt;tekmax-spoiler title="انقر لعرض المحتوى"&gt;هذا هو المحتوى المخفي&lt;/tekmax-spoiler&gt;</code></td>
+          <td>إخفاء نصوص حساسة أو أكواد سرية وإظهارها فقط عند نقر الزائر.</td>
+        </tr>
+        <tr>
+          <td><strong>13</strong></td>
+          <td><strong>شارة نصية (Badge)</strong></td>
+          <td><code>&lt;tekmax-badge color="blue"&gt;نص الشارة&lt;/tekmax-badge&gt;</code></td>
+          <td>شارات صغيرة ملونة بيضاوية (يدعم: أزرق، أخضر، برتقالي، أحمر).</td>
+        </tr>
+        <tr>
+          <td><strong>14</strong></td>
+          <td><strong>عمودان متساويان</strong></td>
+          <td><code>&lt;tekmax-columns&gt;&lt;tekmax-column&gt;محتوى 1&lt;/tekmax-column&gt;&lt;tekmax-column&gt;محتوى 2&lt;/tekmax-column&gt;&lt;/tekmax-columns&gt;</code></td>
+          <td>تقسيم المحتوى لعمودين على الشاشات الكبيرة وعمود واحد على الجوال.</td>
+        </tr>
+        <tr>
+          <td><strong>15</strong></td>
+          <td><strong>فيديو يوتيوب فائق السرعة</strong></td>
+          <td><code>&lt;tekmax-video url="https://www.youtube.com/watch?v=VIDEO_ID"&gt;&lt;/tekmax-video&gt;</code></td>
+          <td>تضمين يوتيوب خفيف (Lite Facade) لا يحمّل إطار اليوتيوب الثقيل إلا بعد النقر.</td>
+        </tr>
+        <tr>
+          <td><strong>16</strong></td>
+          <td><strong>شريط تقدم</strong></td>
+          <td><code>&lt;tekmax-progress value="75" label="نسبة إنجاز المشروع"&gt;&lt;/tekmax-progress&gt;</code></td>
+          <td>شريط مئوي تفاعلي لعرض نسب التقييم أو اكتمال المشاريع.</td>
+        </tr>
+        <tr>
+          <td><strong>17</strong></td>
+          <td><strong>فاصل زخرفي</strong></td>
+          <td><code>&lt;tekmax-separator&gt;&lt;/tekmax-separator&gt;</code></td>
+          <td>فاصل ناعم بأيقونة فنية أنيقة للفصل بين الفقرات.</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 class="tm-sub-title">🚀 إنشاء صفحة مكتبة الأكواد في مدونتك (طريقتان سهلتان)</h3>
+  <p>
+    يمكنك تزويد مدونتك بصفحة ثابتة تفاعلية متكاملة لمكتبة الأكواد تتيح لك (ولكتّاب مدونتك وزوارك) استعراض الأكواد بنسخ فوري مباشر وتصفية بالتبويبات والبحث، وذلك عبر إحدى طريقتين:
+  </p>
+
+  <div class="tm-step-card">
+    <div class="tm-step-header">
+      <span class="tm-step-num">أ</span>
+      الطريقة الأولى: استخدام ملف الصفحة الجاهز (موصى بها)
+    </div>
+    <p>
+      1. افتح الملف المرفق <code>pages/shortcodes.html</code> في حزمة القالب وانسخ كامل محتواه.<br/>
+      2. أنشئ صفحة جديدة في بلوجر بعنوان <strong>مكتبة الأكواد القصيرة</strong> وحوّل المحرر لوضع <strong>عرض HTML</strong>.<br/>
+      3. الصق الكود واضبط الرابط المخصص على <code>shortcodes</code> وانقر <strong>نشر</strong>.
+    </p>
+  </div>
+
+  <div class="tm-step-card">
+    <div class="tm-step-header">
+      <span class="tm-step-num">ب</span>
+      الطريقة الثانية: سطر التوليد التلقائي الذكي الذاتي
+    </div>
+    <p>
+      إذا كنت لا ترغب بنسخ كود كبير، كل ما عليك فعله هو إنشاء صفحة جديدة في بلوجر، والتحويل إلى <strong>عرض وضع HTML</strong> ولصق هذا السطر البرمجي الوحيد فقط:
+    </p>
+    <div class="tm-code-block" style="direction: ltr; text-align: left; background: #0f172a; color: #38bdf8; padding: 14px 18px; border-radius: 10px; font-family: 'Fira Code', monospace; margin: 12px 0;">
+      <code>&lt;tekmax-shortcodes-page&gt;&lt;/tekmax-shortcodes-page&gt;</code>
+    </div>
+    <p style="margin-top: 10px;">
+      سيقوم محرك القالب المدمج ببناء الواجهة التفاعلية الكاملة للمكتبة، وتوليد البطاقات الـ 17، وأزرار الفلترة والبحث الفوري وتأثيرات النسخ تلقائياً بمجرد فتح الصفحة في المتصفح!
+    </p>
+  </div>
+
   <!-- Conclusion & Link -->
   <div class="tm-callout tm-callout-info" style="margin-top: 40px;">
     <div class="tm-callout-icon">📖</div>

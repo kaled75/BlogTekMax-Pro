@@ -1,7 +1,13 @@
 <!-- ==========================================================================
      صفحة اتصل بنا الاحترافية — TEKMAX PRO CONTACT PAGE
-     طريقة الاستخدام: انسخ هذا الكود بالكامل وضعه داخل صفحة جديدة في بلوجر (عرض وضع HTML)
-     الرابط المخصص المقترح للصفحة: contact
+     طريقة التفعيل والاستخدام:
+     1. ابحث في أسفل هذا الكود (السطر البرمجي) عن:
+        var TEKMAX_RECEIVING_EMAIL = "YOUR_EMAIL@EXAMPLE.COM";
+        واستبدل YOUR_EMAIL@EXAMPLE.COM ببريدك الإلكتروني الحقيقي (مثال: بريدك في Gmail أو Yahoo).
+     2. انسخ هذا الكود كاملاً والصقه في صفحة بلوجر الجديدة (في وضع عرض HTML).
+     3. الرابط الثابت المقترح للصفحة: contact
+     4. بعد النشر، أرسل أول رسالة تجريبية، وستصلك رسالة تأكيد واحدة من FormSubmit
+        على بريدك اضغط فيها على "Activate Form" لتفعيل الاستلام إلى الأبد.
      ========================================================================== -->
 
 <div class="tm-page-container tm-contact-page">
@@ -81,6 +87,9 @@
         </div>
 
         <form id="tmContactForm" class="tm-form" onsubmit="handleTekMaxContact(event)">
+          <!-- حماية من الرسائل العشوائية والبوتات (FormSubmit Honeypot) -->
+          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off"/>
+
           <!-- حقل الاسم -->
           <div class="tm-input-group">
             <label for="contactName">الاسم الكريم <span class="required">*</span></label>
@@ -146,8 +155,18 @@
 </div>
 
 <script>
+// =========================================================================
+// ⚙️ إعدادات استلام الرسائل — TEKMAX PRO CONTACT FORM CONFIG
+// =========================================================================
+// 1. استبدل 'YOUR_EMAIL@EXAMPLE.COM' أدناه ببريدك الإلكتروني الحقيقي (مثل: z2009z@yahoo.com أو بريدك في Gmail)
+// 2. أول مرة ترسل فيها رسالة تجريبية، ستصلك رسالة تفعيل واحدة من FormSubmit
+//    اضغط على زر (Activate Form) بداخلها، وبعدها ستصلك كافة الرسائل في صندوق الوارد مباشرة!
+// =========================================================================
+var TEKMAX_RECEIVING_EMAIL = "YOUR_EMAIL@EXAMPLE.COM"; 
+
 function handleTekMaxContact(e) {
   e.preventDefault();
+  var form = document.getElementById('tmContactForm');
   var btn = document.getElementById('tmSubmitBtn');
   var statusBox = document.getElementById('tmFormStatus');
   var name = document.getElementById('contactName').value.trim();
@@ -155,6 +174,7 @@ function handleTekMaxContact(e) {
   var subject = document.getElementById('contactSubject').value;
   var msg = document.getElementById('contactMessage').value.trim();
 
+  // فحص اكتمال الحقول
   if (!name || !email || !subject || !msg) {
     statusBox.className = 'tm-form-status error';
     statusBox.textContent = 'يرجى تعبئة كافة الحقول المطلوبة قبل الإرسال.';
@@ -162,17 +182,60 @@ function handleTekMaxContact(e) {
     return;
   }
 
-  // تأثير حالة الإرسال
-  btn.disabled = true;
-  btn.querySelector('.btn-text').textContent = 'جارٍ الإرسال والتأكيد...';
-
-  setTimeout(function() {
-    btn.disabled = false;
-    btn.querySelector('.btn-text').textContent = 'إرسال الرسالة الآن';
-    statusBox.className = 'tm-form-status success';
-    statusBox.innerHTML = '<strong>شكراً لك يا ' + name + '!</strong> تم استلام رسالتك بنجاح وسيتواصل معك فريق TekMax عبر بريدك (' + email + ') في أقرب وقت.<br/><small>إذا كان الأمر عاجلاً، يمكنك مراسلتنا أيضاً مباشرة على <a href="mailto:contact@tek-max.com?subject=' + encodeURIComponent(subject) + '">contact@tek-max.com</a></small>';
+  // فحص ضبط البريد الإلكتروني للمدير
+  if (!TEKMAX_RECEIVING_EMAIL || TEKMAX_RECEIVING_EMAIL === "YOUR_EMAIL@EXAMPLE.COM" || TEKMAX_RECEIVING_EMAIL.indexOf('@') === -1) {
+    statusBox.className = 'tm-form-status error';
+    statusBox.innerHTML = '⚠️ <strong>تنبيه لمدير الموقع:</strong> يرجى فتح كود الصفحة واستبدال <code>YOUR_EMAIL@EXAMPLE.COM</code> في السطر البرمجي ببريدك الإلكتروني الحقيقي لتصلك الرسائل.';
     statusBox.style.display = 'block';
-    document.getElementById('tmContactForm').reset();
-  }, 1000);
+    return;
+  }
+
+  // تغيير حالة الزر أثناء الإرسال
+  btn.disabled = true;
+  var originalBtnText = btn.innerHTML;
+  btn.innerHTML = '<span class="btn-text">جارٍ الإرسال والتأكيد...</span>';
+  statusBox.style.display = 'none';
+
+  // إرسال البيانات المباشر إلى بريدك عبر خدمة FormSubmit الموثوقة
+  fetch('https://formsubmit.co/ajax/' + encodeURIComponent(TEKMAX_RECEIVING_EMAIL), {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json'
+    },
+    body: JSON.stringify({
+      name: name,
+      email: email,
+      _subject: 'رسالة جديدة من مدونة TekMax: ' + subject,
+      subject: subject,
+      message: msg,
+      _template: 'table',
+      _captcha: 'false'
+    })
+  })
+  .then(function(response) {
+    return response.json();
+  })
+  .then(function(data) {
+    btn.disabled = false;
+    btn.innerHTML = originalBtnText;
+
+    if (data.success === 'true' || data.success === true || data.message) {
+      statusBox.className = 'tm-form-status success';
+      statusBox.innerHTML = '<strong>شكراً لك يا ' + name + '!</strong> تم إرسال رسالتك بنجاح وسيتواصل معك فريق TekMax عبر بريدك (' + email + ') في أقرب وقت.<br/><small>ملاحظة: إذا كانت هذه أول تجربة إرسال، يرجى فحص بريدك لتفعيل استلام الرسائل بالضغط على (Activate Form).</small>';
+      statusBox.style.display = 'block';
+      form.reset();
+    } else {
+      throw new Error(data.message || 'تعذر معالجة الإرسال');
+    }
+  })
+  .catch(function(err) {
+    btn.disabled = false;
+    btn.innerHTML = originalBtnText;
+    statusBox.className = 'tm-form-status error';
+    var mailtoFallback = 'mailto:' + encodeURIComponent(TEKMAX_RECEIVING_EMAIL) + '?subject=' + encodeURIComponent('استفسار من ' + name + ': ' + subject) + '&body=' + encodeURIComponent('الاسم: ' + name + '\nالبريد: ' + email + '\n\n' + msg);
+    statusBox.innerHTML = 'تعذر الاتصال بخادم الإرسال حالياً. <br/><a href="' + mailtoFallback + '" style="color:inherit;text-decoration:underline;font-weight:700;margin-top:6px;display:inline-block;">اضغط هنا لإرسال رسالتك مباشرة عبر تطبيق البريد الإلكتروني</a>';
+    statusBox.style.display = 'block';
+  });
 }
 </script>

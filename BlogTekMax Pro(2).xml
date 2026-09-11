@@ -6397,25 +6397,93 @@ tekmax-progress .tm-progress-label {
   color: #f1f5f9;
 }
 
-/* 13. Decorative Separator (tekmax-separator) */
+/* 13. Decorative Separator (tekmax-separator) — 3 Distinct Types */
 tekmax-separator {
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 36px 0;
   position: relative;
+  box-sizing: border-box;
 }
-tekmax-separator::before, tekmax-separator::after {
+tekmax-separator:not([type="dots"])::before,
+tekmax-separator:not([type="dots"])::after {
   content: "";
   flex: 1;
   height: 1px;
   background: linear-gradient(90deg, transparent, var(--border-color, #e2e8f0), transparent);
 }
+[data-theme="dark"] tekmax-separator:not([type="dots"])::before,
+[data-theme="dark"] tekmax-separator:not([type="dots"])::after {
+  background: linear-gradient(90deg, transparent, #2d333f, transparent);
+}
+
+/* Type 1: Star / Diamond (نجمة التميز المتوهجة) */
 tekmax-separator .tm-sep-icon {
   padding: 0 16px;
-  color: var(--primary-color, #f83a5e);
+  color: var(--primary-color, #dc1f43);
   display: flex;
   align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 2px 6px rgba(220, 31, 67, 0.3));
+}
+
+/* Type 2: Pulse Dots (نقاط نبضية تقنية متدرجة) */
+tekmax-separator[type="dots"] {
+  gap: 12px;
+}
+tekmax-separator[type="dots"] .tm-sep-dot {
+  display: inline-block;
+  border-radius: 50%;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+tekmax-separator[type="dots"] .tm-sep-dot.outer {
+  width: 7px;
+  height: 7px;
+  background: var(--border-color, #cbd5e1);
+}
+[data-theme="dark"] tekmax-separator[type="dots"] .tm-sep-dot.outer {
+  background: #334155;
+}
+tekmax-separator[type="dots"] .tm-sep-dot.center {
+  width: 12px;
+  height: 12px;
+  background: var(--primary-color, #dc1f43);
+  box-shadow: 0 0 12px rgba(220, 31, 67, 0.55);
+}
+tekmax-separator[type="dots"]:hover .tm-sep-dot.center {
+  transform: scale(1.2);
+}
+
+/* Type 3: Tech / Gradient (خط هندسي متدرج مع شارة برمجية أنيقة) */
+tekmax-separator[type="tech"]::before {
+  background: linear-gradient(90deg, transparent, var(--primary-color, #dc1f43));
+  height: 1.5px;
+}
+tekmax-separator[type="tech"]::after {
+  background: linear-gradient(90deg, var(--primary-color, #dc1f43), transparent);
+  height: 1.5px;
+}
+tekmax-separator[type="tech"] .tm-sep-badge {
+  padding: 4px 14px;
+  font-family: 'Fira Code', monospace;
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--primary-color, #dc1f43);
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #eaedf1);
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  user-select: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+[data-theme="dark"] tekmax-separator[type="tech"] .tm-sep-badge {
+  background: #171a20;
+  border-color: #242832;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 /* 14. Interactive Shortcodes Catalog Page (tekmax-shortcodes-page) */
@@ -6611,7 +6679,6 @@ tekmax-separator .tm-sep-icon {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
 }
-
 ]]></b:skin>
 <b:template-skin><![CDATA[
 /* ==========================================================================
@@ -12379,11 +12446,24 @@ if (typeof console !== 'undefined' && console.error) console.error('[TM ADS Init
 
         // 10. Separator
         var seps = root.querySelectorAll('tekmax-separator:not([data-ready])');
+        // 10. Separator (3 distinct styles: star, dots, tech)
+        var seps = root.querySelectorAll('tekmax-separator:not([data-ready])');
         for (var spIdx = 0; spIdx < seps.length; spIdx++) {
             var sep = seps[spIdx];
             sep.setAttribute('data-ready', 'true');
-            if (!sep.querySelector('.tm-sep-icon')) {
-                sep.innerHTML = '<span class="tm-sep-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>';
+            var sType = sep.getAttribute('type') || 'star';
+            if (sType === 'dots') {
+                if (!sep.querySelector('.tm-sep-dot')) {
+                    sep.innerHTML = '<span class="tm-sep-dot outer"></span><span class="tm-sep-dot center"></span><span class="tm-sep-dot outer"></span>';
+                }
+            } else if (sType === 'tech') {
+                if (!sep.querySelector('.tm-sep-badge')) {
+                    sep.innerHTML = '<span class="tm-sep-badge">&lt;/&gt;</span>';
+                }
+            } else {
+                if (!sep.querySelector('.tm-sep-icon')) {
+                    sep.innerHTML = '<span class="tm-sep-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>';
+                }
             }
         }
 
@@ -12401,33 +12481,36 @@ if (typeof console !== 'undefined' && console.error) console.error('[TM ADS Init
     // Interactive Shortcodes Catalog Builder for <tekmax-shortcodes-page>
     function generateShortcodesCatalog(targetEl) {
         var items = [
-            { num: '01', title: 'تنبيه معلومات', cat: 'alerts', kw: 'info alert', desc: 'لعرض معلومة مهمة أو لفت انتباه القارئ بتنسيق أزرق هادئ.', code: '<tekmax-alert type="info">نص معلومة مهمة للقارئ</tekmax-alert>' },
-            { num: '02', title: 'رسالة نجاح', cat: 'alerts', kw: 'success alert', desc: 'لتأكيد إنجاز خطوة أو إتمام عملية بنجاح بلون زمردي مريح.', code: '<tekmax-alert type="success">تمت العملية بنجاح!</tekmax-alert>' },
-            { num: '03', title: 'رسالة تحذير', cat: 'alerts', kw: 'warning alert', desc: 'لتنبيه القارئ لأخذ الحيطة والحذر قبل الشروع في خطوة معينة.', code: '<tekmax-alert type="warning">انتبه: هذا الإجراء لا يمكن التراجع عنه!</tekmax-alert>' },
-            { num: '04', title: 'رسالة خطأ', cat: 'alerts', kw: 'danger error alert', desc: 'لتنبيه القارئ إلى أخطاء شائعة أو مشاكل غير متوقعة.', code: '<tekmax-alert type="danger">حدث خطأ غير متوقع، يرجى المحاولة لاحقاً</tekmax-alert>' },
-            { num: '05', title: 'ملاحظة', cat: 'alerts', kw: 'note memo', desc: 'صندوق مميز ذو إطار منقط ولون رئيسي للملاحظات الخاصة.', code: '<tekmax-note>ملاحظة مهمة: يرجى مراعاة الشروط قبل البدء</tekmax-note>' },
-            { num: '06', title: 'زر احترافي', cat: 'buttons', kw: 'button link', desc: 'زر أنيق لإعادة التوجيه لرابط خارجي أو داخلي.', code: '<tekmax-button href="https://example.com" target="_blank">انقر هنا</tekmax-button>' },
-            { num: '07', title: 'اقتباس منسق', cat: 'structure', kw: 'quote', desc: 'اقتباس مميز بصرياً مع اسم الكاتب أو المصدر.', code: '<tekmax-quote author="اسم الكاتب">نص الاقتباس هنا...</tekmax-quote>' },
-            { num: '08', title: 'زر مفرغ (ثانوي)', cat: 'buttons', kw: 'outline button', desc: 'زر بتصميم Outline أنيق للإجراءات الفرعية.', code: '<tekmax-button variant="outline" href="https://example.com" target="_blank">زر توجيه ثانوي</tekmax-button>' },
-            { num: '09', title: 'زر تحميل', cat: 'buttons', kw: 'download size', desc: 'زر تحميل عصري مع حجم الملف وأيقونة تنزيل.', code: '<tekmax-download href="https://example.com/file.zip" size="25 MB">تحميل الملف الآن</tekmax-download>' },
-            { num: '10', title: 'خطوات مرتبة', cat: 'structure', kw: 'steps', desc: 'لعرض خطوات الشروحات والدروس بترقيم تلقائي.', code: '<tekmax-steps><tekmax-step>الخطوة الأولى</tekmax-step><tekmax-step>الخطوة الثانية</tekmax-step></tekmax-steps>' },
-            { num: '11', title: 'قائمة قابلة للفتح (أكورديون)', cat: 'interactive', kw: 'accordion faq', desc: 'أسئلة شائعة أو نصوص وتفاصيل قابلة للطي والفتح.', code: '<tekmax-accordion title="عنوان السؤال هنا">نص الإجابة أو التفاصيل هنا...</tekmax-accordion>' },
-            { num: '12', title: 'محتوى مخفي (سبويلر)', cat: 'interactive', kw: 'spoiler hidden', desc: 'إمكانية إخفاء نص وإظهاره بنقر القارئ.', code: '<tekmax-spoiler title="انقر لعرض المحتوى">هذا هو المحتوى المخفي</tekmax-spoiler>' },
-            { num: '13', title: 'شارة نصية', cat: 'structure', kw: 'badge tag', desc: 'شارة نصية صغيرة ملونة ومناسبة لتمييز الكلمات.', code: '<tekmax-badge>نص الشارة</tekmax-badge>' },
-            { num: '14', title: 'عمودان متساويان', cat: 'structure', kw: 'columns', desc: 'تقسيم المحتوى إلى عمودين متساويين.', code: '<tekmax-columns><tekmax-column>محتوى العمود الأول</tekmax-column><tekmax-column>محتوى العمود الثاني</tekmax-column></tekmax-columns>' },
-            { num: '15', title: 'فيديو يوتيوب فائق السرعة', cat: 'interactive', kw: 'youtube video', desc: 'فيديو متجاوب بصندوق خفيف وقابل للتكبير.', code: '<tekmax-video url="https://www.youtube.com/watch?v=VIDEO_ID"></tekmax-video>' },
-            { num: '16', title: 'شريط تقدم', cat: 'interactive', kw: 'progress', desc: 'عرض نسبة إنجاز من مئة بشكل جذاب.', code: '<tekmax-progress value="75"></tekmax-progress>' },
-            { num: '17', title: 'فاصل زخرفي', cat: 'structure', kw: 'separator', desc: 'فاصل أنيق بين فقرات المقال.', code: '<tekmax-separator></tekmax-separator>' }
+            { num: '01', title: 'تنبيه معلومات', cat: 'alerts', kw: 'info alert تنبيه معلومات ازرق', desc: 'لعرض معلومة مهمة أو لفت انتباه القارئ بتنسيق أزرق هادئ.', code: '<tekmax-alert type="info">نص معلومة مهمة للقارئ</tekmax-alert>' },
+            { num: '02', title: 'رسالة نجاح', cat: 'alerts', kw: 'success alert رسالة نجاح اخضر', desc: 'لتأكيد إنجاز خطوة أو إتمام عملية بنجاح بلون زمردي مريح.', code: '<tekmax-alert type="success">تمت العملية بنجاح!</tekmax-alert>' },
+            { num: '03', title: 'رسالة تحذير', cat: 'alerts', kw: 'warning alert رسالة تحذير اصفر برتقالي', desc: 'لتنبيه القارئ لأخذ الحيطة والحذر قبل الشروع في خطوة معينة.', code: '<tekmax-alert type="warning">انتبه: هذا الإجراء لا يمكن التراجع عنه!</tekmax-alert>' },
+            { num: '04', title: 'رسالة خطأ', cat: 'alerts', kw: 'danger error alert رسالة خطا خطر احمر', desc: 'لتنبيه القارئ إلى أخطاء شائعة أو مشاكل غير متوقعة.', code: '<tekmax-alert type="danger">حدث خطأ غير متوقع، يرجى المحاولة لاحقاً</tekmax-alert>' },
+            { num: '05', title: 'ملاحظة', cat: 'alerts', kw: 'note memo ملاحظة تنبيه', desc: 'صندوق مميز ذو إطار منقط ولون رئيسي للملاحظات الخاصة.', code: '<tekmax-note>ملاحظة مهمة: يرجى مراعاة الشروط قبل البدء</tekmax-note>' },
+            { num: '06', title: 'زر احترافي', cat: 'buttons', kw: 'button link زر توجيه رابط', desc: 'زر أنيق لإعادة التوجيه لرابط خارجي أو داخلي.', code: '<tekmax-button href="https://example.com" target="_blank">انقر هنا</tekmax-button>' },
+            { num: '07', title: 'اقتباس منسق', cat: 'structure', kw: 'quote اقتباس كلام', desc: 'اقتباس مميز بصرياً مع اسم الكاتب أو المصدر.', code: '<tekmax-quote author="اسم الكاتب">نص الاقتباس هنا...</tekmax-quote>' },
+            { num: '08', title: 'زر مفرغ (ثانوي)', cat: 'buttons', kw: 'outline button زر مفرغ ثانوي', desc: 'زر بتصميم Outline أنيق للإجراءات الفرعية.', code: '<tekmax-button variant="outline" href="https://example.com" target="_blank">زر توجيه ثانوي</tekmax-button>' },
+            { num: '09', title: 'زر تحميل', cat: 'buttons', kw: 'download size زر تحميل ملف تنزيل', desc: 'زر تحميل عصري مع حجم الملف وأيقونة تنزيل.', code: '<tekmax-download href="https://example.com/file.zip" size="25 MB">تحميل الملف الآن</tekmax-download>' },
+            { num: '10', title: 'خطوات مرتبة', cat: 'structure', kw: 'steps خطوات ترقيم', desc: 'لعرض خطوات الشروحات والدروس بترقيم تلقائي.', code: '<tekmax-steps><tekmax-step>الخطوة الأولى</tekmax-step><tekmax-step>الخطوة الثانية</tekmax-step></tekmax-steps>' },
+            { num: '11', title: 'قائمة قابلة للفتح (أكورديون)', cat: 'interactive', kw: 'accordion faq اسئلة شائعة اكورديون', desc: 'أسئلة شائعة أو نصوص وتفاصيل قابلة للطي والفتح.', code: '<tekmax-accordion title="عنوان السؤال هنا">نص الإجابة أو التفاصيل هنا...</tekmax-accordion>' },
+            { num: '12', title: 'محتوى مخفي (سبويلر)', cat: 'interactive', kw: 'spoiler hidden محتوى مخفي سبويلر', desc: 'إمكانية إخفاء نص وإظهاره بنقر القارئ.', code: '<tekmax-spoiler title="انقر لعرض المحتوى">هذا هو المحتوى المخفي</tekmax-spoiler>' },
+            { num: '13', title: 'شارة نصية', cat: 'structure', kw: 'badge tag شارة وسم', desc: 'شارة نصية صغيرة ملونة ومناسبة لتمييز الكلمات.', code: '<tekmax-badge>نص الشارة</tekmax-badge>' },
+            { num: '14', title: 'عمودان متساويان', cat: 'structure', kw: 'columns عمودان اعمدة تقسيم', desc: 'تقسيم المحتوى إلى عمودين متساويين.', code: '<tekmax-columns><tekmax-column>محتوى العمود الأول</tekmax-column><tekmax-column>محتوى العمود الثاني</tekmax-column></tekmax-columns>' },
+            { num: '15', title: 'فيديو يوتيوب فائق السرعة', cat: 'interactive', kw: 'youtube video فيديو يوتيوب سريع', desc: 'فيديو متجاوب بصندوق خفيف وقابل للتكبير.', code: '<tekmax-video url="https://www.youtube.com/watch?v=VIDEO_ID"></tekmax-video>' },
+            { num: '16', title: 'شريط تقدم', cat: 'interactive', kw: 'progress شريط تقدم نسبة مئوية', desc: 'عرض نسبة إنجاز من مئة بشكل جذاب.', code: '<tekmax-progress value="75"></tekmax-progress>' },
+            { num: '17', title: 'فاصل النجمة المتوهجة', cat: 'separators', kw: 'separator star فاصل زخرفي نجمة', desc: 'فاصل متلاشٍ بأيقونة نجمة رباعية متوهجة في المنتصف.', code: '<tekmax-separator type="star"></tekmax-separator>' },
+            { num: '18', title: 'فاصل النقاط التقنية', cat: 'separators', kw: 'separator dots فاصل نقاط نبض', desc: 'فاصل بثلاث نقاط عصرية متدرجة مع نقطة مركزية بلون الهوية.', code: '<tekmax-separator type="dots"></tekmax-separator>' },
+            { num: '19', title: 'فاصل الخط الهندسي البرمجي', cat: 'separators', kw: 'separator tech code فاصل تقني خط هندسي', desc: 'فاصل بتدرج لوني انسيابي مع شارة برمجية &lt;/&gt; أنيقة.', code: '<tekmax-separator type="tech"></tekmax-separator>' }
         ];
 
         var html = '<div class="tm-sc-page">' +
             '<div class="tm-sc-filters-bar">' +
                 '<div class="tm-sc-filters">' +
-                    '<button type="button" class="tm-sc-filter-btn active" data-filter="all">الكل (17)</button>' +
-                    '<button type="button" class="tm-sc-filter-btn" data-filter="alerts">تنبيهات وملاحظات</button>' +
-                    '<button type="button" class="tm-sc-filter-btn" data-filter="buttons">أزرار وتحميل</button>' +
-                    '<button type="button" class="tm-sc-filter-btn" data-filter="structure">تنظيم وهيكلة</button>' +
-                    '<button type="button" class="tm-sc-filter-btn" data-filter="interactive">تفاعلية ووسائط</button>' +
+                    '<button type="button" class="tm-sc-filter-btn active" data-filter="all">⚡ الكل (19)</button>' +
+                    '<button type="button" class="tm-sc-filter-btn" data-filter="alerts">🔔 تنبيهات وملاحظات (5)</button>' +
+                    '<button type="button" class="tm-sc-filter-btn" data-filter="buttons">🔘 أزرار وتحميل (3)</button>' +
+                    '<button type="button" class="tm-sc-filter-btn" data-filter="structure">📐 تنظيم وهيكلة (4)</button>' +
+                    '<button type="button" class="tm-sc-filter-btn" data-filter="interactive">🎬 تفاعلية ووسائط (4)</button>' +
+                    '<button type="button" class="tm-sc-filter-btn" data-filter="separators">✨ فواصل زخرفية (3)</button>' +
                 '</div>' +
                 '<div class="tm-sc-search">' +
                     '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>' +
@@ -12605,7 +12688,6 @@ if (typeof console !== 'undefined' && console.error) console.error('[TM ADS Init
         initTekMaxShortcodes();
     }
 })();
-
 //]]>
 </script>
 </body>

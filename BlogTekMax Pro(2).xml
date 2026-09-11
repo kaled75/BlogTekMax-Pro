@@ -375,7 +375,6 @@ Description:  Modern Editorial Tech Magazine Theme inspired by The Wire & SmartM
   <Variable name="enableAdsLazyLoad" description="التحميل الكسول للإعلانات (1=تفعيل, 2=تعطيل)" type="length" default="1px" min="1px" max="2px" value="1px"/>
 </Group>
 
-/* ================================================================= */
 <Group description="الميزات المتقدمة (Advanced Features)" selector=".main-wrapper">
   <Variable name="enableCodeCopy" description="تفعيل زر نسخ الأكواد (1=نعم, 2=لا)" type="length" default="1px" min="1px" max="2px" value="1px"/>
   <Variable name="enableSyntaxHighlight" description="تفعيل تمييز الأكواد Syntax Highlighting (1=نعم, 2=لا)" type="length" default="1px" min="1px" max="2px" value="1px"/>

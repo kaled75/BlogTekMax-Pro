@@ -6401,93 +6401,143 @@ tekmax-progress .tm-progress-label {
   color: #f1f5f9;
 }
 
-/* 13. Decorative Separator (tekmax-separator) — 3 Distinct Types */
+/* 13. Decorative Separator (tekmax-separator) — 3 Radically Distinct Types */
 tekmax-separator {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin: 36px 0;
+  margin: 28px 0;
   position: relative;
   box-sizing: border-box;
 }
-tekmax-separator:not([type="dots"])::before,
-tekmax-separator:not([type="dots"])::after {
+
+/* Type 1: Star / Diamond (Classic Star Divider with Circular Medallion) */
+tekmax-separator:not([type]),
+tekmax-separator[type="star"] {
+  width: 100%;
+}
+tekmax-separator:not([type])::before,
+tekmax-separator[type="star"]::before,
+tekmax-separator:not([type])::after,
+tekmax-separator[type="star"]::after {
   content: "";
   flex: 1;
   height: 1px;
-  background: linear-gradient(90deg, transparent, var(--border-color, #e2e8f0), transparent);
+  background: linear-gradient(90deg, transparent, var(--border-color, #cbd5e1), transparent);
 }
-[data-theme="dark"] tekmax-separator:not([type="dots"])::before,
-[data-theme="dark"] tekmax-separator:not([type="dots"])::after {
-  background: linear-gradient(90deg, transparent, #2d333f, transparent);
+[data-theme="dark"] tekmax-separator:not([type])::before,
+[data-theme="dark"] tekmax-separator[type="star"]::before,
+[data-theme="dark"] tekmax-separator:not([type])::after,
+[data-theme="dark"] tekmax-separator[type="star"]::after {
+  background: linear-gradient(90deg, transparent, #334155, transparent);
 }
-
-/* Type 1: Star / Diamond (نجمة التميز المتوهجة) */
 tekmax-separator .tm-sep-icon {
-  padding: 0 16px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
   color: var(--primary-color, #dc1f43);
   display: flex;
   align-items: center;
   justify-content: center;
-  filter: drop-shadow(0 2px 6px rgba(220, 31, 67, 0.3));
+  margin: 0 16px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  flex-shrink: 0;
+}
+[data-theme="dark"] tekmax-separator .tm-sep-icon {
+  background: #171a20;
+  border-color: #242832;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
 }
 
-/* Type 2: Pulse Dots (نقاط نبضية تقنية متدرجة) */
+/* Type 2: Triple Floating Pulse Dots (NO LINES AT ALL!) */
 tekmax-separator[type="dots"] {
-  gap: 12px;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 20px !important;
+  margin: 32px 0 !important;
+  border: none !important;
+}
+tekmax-separator[type="dots"]::before,
+tekmax-separator[type="dots"]::after {
+  display: none !important;
+  content: none !important;
 }
 tekmax-separator[type="dots"] .tm-sep-dot {
   display: inline-block;
   border-radius: 50%;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.2s ease;
 }
 tekmax-separator[type="dots"] .tm-sep-dot.outer {
-  width: 7px;
-  height: 7px;
-  background: var(--border-color, #cbd5e1);
+  width: 8px;
+  height: 8px;
+  background: #94a3b8;
+  opacity: 0.6;
 }
 [data-theme="dark"] tekmax-separator[type="dots"] .tm-sep-dot.outer {
-  background: #334155;
+  background: #64748b;
+  opacity: 0.8;
 }
 tekmax-separator[type="dots"] .tm-sep-dot.center {
-  width: 12px;
-  height: 12px;
+  width: 14px;
+  height: 14px;
   background: var(--primary-color, #dc1f43);
-  box-shadow: 0 0 12px rgba(220, 31, 67, 0.55);
+  box-shadow: 0 0 14px rgba(220, 31, 67, 0.6);
 }
 tekmax-separator[type="dots"]:hover .tm-sep-dot.center {
-  transform: scale(1.2);
+  transform: scale(1.25);
 }
 
-/* Type 3: Tech / Gradient (خط هندسي متدرج مع شارة برمجية أنيقة) */
-tekmax-separator[type="tech"]::before {
-  background: linear-gradient(90deg, transparent, var(--primary-color, #dc1f43));
-  height: 1.5px;
+/* Type 3: Cyber Tech Striped Track (Repeating Dashed Line with Code Badge) */
+tekmax-separator[type="tech"] {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
 }
+tekmax-separator[type="tech"]::before,
 tekmax-separator[type="tech"]::after {
-  background: linear-gradient(90deg, var(--primary-color, #dc1f43), transparent);
-  height: 1.5px;
+  content: "";
+  flex: 1;
+  height: 3px;
+  background: repeating-linear-gradient(90deg, var(--primary-color, #dc1f43) 0, var(--primary-color, #dc1f43) 8px, transparent 8px, transparent 14px);
+  opacity: 0.75;
 }
 tekmax-separator[type="tech"] .tm-sep-badge {
-  padding: 4px 14px;
+  padding: 4px 16px;
   font-family: 'Fira Code', monospace;
-  font-size: 0.78rem;
+  font-size: 13px;
   font-weight: 800;
   letter-spacing: 2px;
-  color: var(--primary-color, #dc1f43);
-  background: var(--card-bg, #ffffff);
-  border: 1px solid var(--border-color, #eaedf1);
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  color: #ffffff;
+  background: linear-gradient(135deg, var(--primary-color, #dc1f43), #1e293b);
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(220, 31, 67, 0.3);
   user-select: none;
   display: inline-flex;
   align-items: center;
   gap: 4px;
+  flex-shrink: 0;
 }
-[data-theme="dark"] tekmax-separator[type="tech"] .tm-sep-badge {
-  background: #171a20;
-  border-color: #242832;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+
+/* Code Box (tekmax-code) */
+tekmax-code {
+  display: block;
+  background: #090d16;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  padding: 14px 18px;
+  font-family: 'Fira Code', monospace;
+  font-size: 13px;
+  color: #f1f5f9;
+  direction: ltr;
+  text-align: left;
+  overflow-x: auto;
+  margin: 18px 0;
+  box-sizing: border-box;
 }
 
 /* 14. Interactive Shortcodes Catalog Page (tekmax-shortcodes-page) */

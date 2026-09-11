@@ -1,1059 +1,966 @@
 <!-- ==========================================================================
-     صفحة مكتبة الأكواد القصيرة الاحترافية — TEKMAX PRO SHORTCODES SUITE
-     تصميم متناسق 100% مع هوية القالب وسرعة فائقة (Zero Performance Overhead)
+     مكتبة الأكواد القصيرة — TEKMAX PRO SHORTCODES SUITE
+     تصميم راقٍ ومطابق لنمط shortcodes_library_page.html
      
-     طريقة الاستخدام في مدونة بلوجر:
+     طريقة الاستخدام في بلوجر:
      1. أنشئ صفحة ثابتة جديدة في بلوجر بعنوان: مكتبة الأكواد القصيرة
      2. حوّل المحرر إلى (عرض وضع HTML).
      3. انسخ هذا الكود كاملاً والصقه في محرر الصفحة وانقر "نشر".
      4. الرابط الثابت المقترح للصفحة: shortcodes
      ========================================================================== -->
 
-<div class="tm-page-container tm-shortcodes-page">
-  <!-- رأس الصفحة (Hero Header - TekMax Pro Style) -->
-  <header class="tm-page-hero">
-    <div class="tm-page-badge">
-      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
-      <span>مكتبة الأكواد التنسيقية — TekMax Shortcodes Pro</span>
+<div class="shortcodes-wrap" id="shortcodesApp">
+
+  <!-- Header Card (مطابق لنمط shortcodes_library_page.html) -->
+  <header class="shortcodes-header-card">
+    <span class="shortcodes-pill-badge">مكتبة مساعدة</span>
+    <h1 class="shortcodes-main-title">مكتبة الأكواد القصيرة</h1>
+    <p class="shortcodes-main-subtitle">انسخ الكود ثم الصقه في وضع HTML داخل مقالك</p>
+
+    <!-- شريط التصفية السريع المدمج -->
+    <div class="shortcodes-filter-bar">
+      <button type="button" class="sc-filter-btn active" data-filter="all">الكل (19)</button>
+      <button type="button" class="sc-filter-btn" data-filter="alerts">تنبيهات وملاحظات (5)</button>
+      <button type="button" class="sc-filter-btn" data-filter="buttons">أزرار وتحميل (3)</button>
+      <button type="button" class="sc-filter-btn" data-filter="structure">تنظيم وهيكلة (4)</button>
+      <button type="button" class="sc-filter-btn" data-filter="interactive">تفاعلية ووسائط (4)</button>
+      <button type="button" class="sc-filter-btn" data-filter="separators">فواصل زخرفية (3)</button>
     </div>
-    <h1 class="tm-page-title">أكواد احترافية لتنسيق المقالات والشروحات بضغطة زر واحدة</h1>
-    <p class="tm-page-desc">مجموعة هندسية متكاملة من العناصر التنسيقية فائقة السرعة والخفة، مصممة خصيصاً لإثراء محتوى مقالاتك وجعل الشروحات تبدو كأرقى المواقع العالمية دون أي تأثير على سرعة القالب.</p>
-    
-    <!-- شريط الإحصائيات السريعة -->
-    <div class="tm-sc-stats-bar">
-      <div class="tm-sc-stat-item">
-        <span class="tm-sc-stat-num">19+</span>
-        <span class="tm-sc-stat-lbl">عنصراً تنسيقياً جاهزاً</span>
-      </div>
-      <div class="tm-sc-stat-divider"></div>
-      <div class="tm-sc-stat-item">
-        <span class="tm-sc-stat-num">0 KB</span>
-        <span class="tm-sc-stat-lbl">تأثير على سرعة القالب</span>
-      </div>
-      <div class="tm-sc-stat-divider"></div>
-      <div class="tm-sc-stat-item">
-        <span class="tm-sc-stat-num">100%</span>
-        <span class="tm-sc-stat-lbl">متوافق مع الوضع الداكن</span>
-      </div>
-      <div class="tm-sc-stat-divider"></div>
-      <div class="tm-sc-stat-item">
-        <span class="tm-sc-stat-num">1 Click</span>
-        <span class="tm-sc-stat-lbl">نسخ فوري للحافظة</span>
-      </div>
+
+    <!-- شريط البحث الفوري -->
+    <div class="shortcodes-search-wrap">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+      <input type="text" id="shortcodesSearchInput" placeholder="ابحث عن كود أو عنصر..." aria-label="ابحث عن كود">
     </div>
   </header>
 
-  <!-- صندوق دليل الاستخدام السريع (3 خطوات سهلة) -->
-  <section class="tm-sc-guide-box">
-    <div class="tm-guide-step">
-      <div class="tm-guide-num">1</div>
-      <div class="tm-guide-info">
-        <strong>اختر العنصر المناسب</strong>
-        <span>تصفح الأكواد أدناه وعاين شكلها المباشر في الوضعين الفاتح والداكن.</span>
-      </div>
-    </div>
-    <div class="tm-guide-step">
-      <div class="tm-guide-num">2</div>
-      <div class="tm-guide-info">
-        <strong>انسخ الكود بنقرة واحدة</strong>
-        <span>اضغط على زر <b>نسخ الكود</b> لحفظ صيغة العنصر فورياً في الحافظة.</span>
-      </div>
-    </div>
-    <div class="tm-guide-step">
-      <div class="tm-guide-num">3</div>
-      <div class="tm-guide-info">
-        <strong>الصق في مقالك (وضع HTML)</strong>
-        <span>في محرر مقال بلوجر، حوّل العرض إلى <b>عرض وضع HTML</b> والصق الكود مباشرة.</span>
-      </div>
-    </div>
-  </section>
+  <!-- Grid of 19 Shortcode Cards (2 Columns) -->
+  <div class="shortcodes-grid" id="shortcodesGrid">
 
-  <!-- شريط التحكم والتصفية والبحث التفاعلي -->
-  <div class="tm-sc-toolbar">
-    <div class="tm-sc-filters" id="tmScFilters">
-      <button type="button" class="tm-sc-filter-btn active" data-filter="all">⚡ الكل (19)</button>
-      <button type="button" class="tm-sc-filter-btn" data-filter="alerts">🔔 تنبيهات وملاحظات (5)</button>
-      <button type="button" class="tm-sc-filter-btn" data-filter="buttons">🔘 أزرار وتحميل (3)</button>
-      <button type="button" class="tm-sc-filter-btn" data-filter="structure">📐 تنظيم وهيكلة (4)</button>
-      <button type="button" class="tm-sc-filter-btn" data-filter="interactive">🎬 تفاعلية ووسائط (4)</button>
-      <button type="button" class="tm-sc-filter-btn" data-filter="separators">✨ فواصل زخرفية (3)</button>
-    </div>
-
-    <div class="tm-sc-search-wrap">
-      <div class="tm-sc-search">
-        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="text" id="tmScSearchInput" placeholder="ابحث بالاسم أو الكلمة..." aria-label="ابحث عن كود"/>
-        <button type="button" id="tmScClearSearch" class="tm-sc-clear-btn" title="مسح البحث" style="display: none;">&times;</button>
-      </div>
-      <span class="tm-sc-count" id="tmScCounter">عرض 19 من 19 عنصر</span>
-    </div>
-  </div>
-
-  <!-- شبكة عناصر الأكواد القصيرة (19 عنصراً كاملاً) -->
-  <div class="tm-sc-grid" id="tmScGrid">
-
-    <!-- 01 تنبيه معلومات -->
-    <article class="tm-sc-card" data-category="alerts" data-keywords="تنبيه معلومات ازرق info alert">
-      <header class="tm-sc-header">
-        <div class="tm-sc-title-wrap">
-          <span class="tm-sc-num">01</span>
-          <div>
-            <h3 class="tm-sc-title">تنبيه معلومات</h3>
-            <p class="tm-sc-desc">لعرض معلومة مهمة أو لفت انتباه القارئ بتنسيق أزرق هادئ وأيقونة إرشادية.</p>
-          </div>
+    <!-- Card 01: تنبيه معلومات -->
+    <div class="shortcode-card" data-category="alerts" data-keywords="تنبيه معلومات ازرق info alert" data-code='<tekmax-alert type="info">نص معلومة مهمة للقارئ</tekmax-alert>'>
+      <div class="shortcode-card-header">
+        <div class="shortcode-info">
+          <h3 class="shortcode-title">تنبيه معلومات</h3>
+          <p class="shortcode-desc">لعرض معلومة مهمة أو لفت انتباه القارئ</p>
         </div>
-        <span class="tm-sc-cat-badge">تنبيهات</span>
-      </header>
-      <div class="tm-sc-preview-box">
-        <span class="tm-sc-preview-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> المعاينة المباشرة:</span>
+        <div class="shortcode-num-badge">01</div>
+      </div>
+      <div class="shortcode-preview-box">
         <tekmax-alert type="info">نص معلومة مهمة للقارئ</tekmax-alert>
       </div>
-      <div class="tm-sc-code-box">
-        <code>&lt;<span class="tm-tag">tekmax-alert</span> <span class="tm-attr">type</span>=<span class="tm-val">"info"</span>&gt;نص معلومة مهمة للقارئ&lt;/<span class="tm-tag">tekmax-alert</span>&gt;</code>
-        <button type="button" class="tm-copy-btn" data-code='<tekmax-alert type="info">نص معلومة مهمة للقارئ</tekmax-alert>'>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span>نسخ الكود</span>
-        </button>
-      </div>
-    </article>
-
-    <!-- 02 رسالة نجاح -->
-    <article class="tm-sc-card" data-category="alerts" data-keywords="رسالة نجاح تاكيد اخضر success alert">
-      <header class="tm-sc-header">
-        <div class="tm-sc-title-wrap">
-          <span class="tm-sc-num">02</span>
-          <div>
-            <h3 class="tm-sc-title">رسالة نجاح</h3>
-            <p class="tm-sc-desc">لتأكيد إنجاز خطوة أو إتمام عملية بنجاح بلون زمردي مريح وأيقونة علامة صح.</p>
-          </div>
+      <div class="shortcode-box">
+        <div class="shortcode-box-header">
+          <span class="shortcode-box-label">CODE</span>
+          <button class="shortcode-box-quick-copy" type="button">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>نسخ</span>
+          </button>
         </div>
-        <span class="tm-sc-cat-badge">تنبيهات</span>
-      </header>
-      <div class="tm-sc-preview-box">
-        <span class="tm-sc-preview-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> المعاينة المباشرة:</span>
+        <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-alert</span> <span class="c-attr">type</span>=<span class="c-val">"info"</span>&gt;<span class="c-txt">نص معلومة مهمة للقارئ</span>&lt;/<span class="c-tag">tekmax-alert</span>&gt;</div>
+      </div>
+      <button class="shortcode-copy-btn" type="button">
+        <span>نسخ الكود</span>
+      </button>
+    </div>
+
+    <!-- Card 02: رسالة نجاح -->
+    <div class="shortcode-card" data-category="alerts" data-keywords="رسالة نجاح تاكيد اخضر success alert" data-code='<tekmax-alert type="success">تمت العملية بنجاح!</tekmax-alert>'>
+      <div class="shortcode-card-header">
+        <div class="shortcode-info">
+          <h3 class="shortcode-title">رسالة نجاح</h3>
+          <p class="shortcode-desc">لتأكيد إنجاز خطوة أو عملية</p>
+        </div>
+        <div class="shortcode-num-badge">02</div>
+      </div>
+      <div class="shortcode-preview-box">
         <tekmax-alert type="success">تمت العملية بنجاح!</tekmax-alert>
       </div>
-      <div class="tm-sc-code-box">
-        <code>&lt;<span class="tm-tag">tekmax-alert</span> <span class="tm-attr">type</span>=<span class="tm-val">"success"</span>&gt;تمت العملية بنجاح!&lt;/<span class="tm-tag">tekmax-alert</span>&gt;</code>
-        <button type="button" class="tm-copy-btn" data-code='<tekmax-alert type="success">تمت العملية بنجاح!</tekmax-alert>'>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span>نسخ الكود</span>
-        </button>
-      </div>
-    </article>
-
-    <!-- 03 رسالة تحذير -->
-    <article class="tm-sc-card" data-category="alerts" data-keywords="رسالة تحذير تنبيه اصفر برتقالي warning alert">
-      <header class="tm-sc-header">
-        <div class="tm-sc-title-wrap">
-          <span class="tm-sc-num">03</span>
-          <div>
-            <h3 class="tm-sc-title">رسالة تحذير</h3>
-            <p class="tm-sc-desc">لتنبيه القارئ لأخذ الحيطة والحذر قبل الشروع في خطوة غير قابلة للرجوع.</p>
-          </div>
+      <div class="shortcode-box">
+        <div class="shortcode-box-header">
+          <span class="shortcode-box-label">CODE</span>
+          <button class="shortcode-box-quick-copy" type="button">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>نسخ</span>
+          </button>
         </div>
-        <span class="tm-sc-cat-badge">تنبيهات</span>
-      </header>
-      <div class="tm-sc-preview-box">
-        <span class="tm-sc-preview-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> المعاينة المباشرة:</span>
+        <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-alert</span> <span class="c-attr">type</span>=<span class="c-val">"success"</span>&gt;<span class="c-txt">تمت العملية بنجاح!</span>&lt;/<span class="c-tag">tekmax-alert</span>&gt;</div>
+      </div>
+      <button class="shortcode-copy-btn" type="button">
+        <span>نسخ الكود</span>
+      </button>
+    </div>
+
+    <!-- Card 03: رسالة تحذير -->
+    <div class="shortcode-card" data-category="alerts" data-keywords="رسالة تحذير تنبيه اصفر برتقالي warning alert" data-code='<tekmax-alert type="warning">انتبه: هذا الإجراء لا يمكن التراجع عنه!</tekmax-alert>'>
+      <div class="shortcode-card-header">
+        <div class="shortcode-info">
+          <h3 class="shortcode-title">رسالة تحذير</h3>
+          <p class="shortcode-desc">لتنبيه القارئ لأخذ الحيطة والحذر</p>
+        </div>
+        <div class="shortcode-num-badge">03</div>
+      </div>
+      <div class="shortcode-preview-box">
         <tekmax-alert type="warning">انتبه: هذا الإجراء لا يمكن التراجع عنه!</tekmax-alert>
       </div>
-      <div class="tm-sc-code-box">
-        <code>&lt;<span class="tm-tag">tekmax-alert</span> <span class="tm-attr">type</span>=<span class="tm-val">"warning"</span>&gt;انتبه: هذا الإجراء لا يمكن التراجع عنه!&lt;/<span class="tm-tag">tekmax-alert</span>&gt;</code>
-        <button type="button" class="tm-copy-btn" data-code='<tekmax-alert type="warning">انتبه: هذا الإجراء لا يمكن التراجع عنه!</tekmax-alert>'>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span>نسخ الكود</span>
-        </button>
-      </div>
-    </article>
-
-    <!-- 04 رسالة خطأ -->
-    <article class="tm-sc-card" data-category="alerts" data-keywords="رسالة خطأ احمر خطر danger error alert">
-      <header class="tm-sc-header">
-        <div class="tm-sc-title-wrap">
-          <span class="tm-sc-num">04</span>
-          <div>
-            <h3 class="tm-sc-title">رسالة خطأ</h3>
-            <p class="tm-sc-desc">لتنبيه القارئ إلى أخطاء شائعة أو مشاكل غير متوقعة وتفاديها بلون أحمر صريح.</p>
-          </div>
+      <div class="shortcode-box">
+        <div class="shortcode-box-header">
+          <span class="shortcode-box-label">CODE</span>
+          <button class="shortcode-box-quick-copy" type="button">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>نسخ</span>
+          </button>
         </div>
-        <span class="tm-sc-cat-badge">تنبيهات</span>
-      </header>
-      <div class="tm-sc-preview-box">
-        <span class="tm-sc-preview-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> المعاينة المباشرة:</span>
+        <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-alert</span> <span class="c-attr">type</span>=<span class="c-val">"warning"</span>&gt;<span class="c-txt">انتبه: هذا الإجراء لا يمكن التراجع عنه!</span>&lt;/<span class="c-tag">tekmax-alert</span>&gt;</div>
+      </div>
+      <button class="shortcode-copy-btn" type="button">
+        <span>نسخ الكود</span>
+      </button>
+    </div>
+
+    <!-- Card 04: رسالة خطأ -->
+    <div class="shortcode-card" data-category="alerts" data-keywords="رسالة خطأ احمر خطر danger error alert" data-code='<tekmax-alert type="danger">حدث خطأ غير متوقع، يرجى المحاولة لاحقاً</tekmax-alert>'>
+      <div class="shortcode-card-header">
+        <div class="shortcode-info">
+          <h3 class="shortcode-title">رسالة خطأ</h3>
+          <p class="shortcode-desc">لتنبيه القارئ إلى أخطاء أو تعليمات خاطئة</p>
+        </div>
+        <div class="shortcode-num-badge">04</div>
+      </div>
+      <div class="shortcode-preview-box">
         <tekmax-alert type="danger">حدث خطأ غير متوقع، يرجى المحاولة لاحقاً</tekmax-alert>
       </div>
-      <div class="tm-sc-code-box">
-        <code>&lt;<span class="tm-tag">tekmax-alert</span> <span class="tm-attr">type</span>=<span class="tm-val">"danger"</span>&gt;حدث خطأ غير متوقع، يرجى المحاولة لاحقاً&lt;/<span class="tm-tag">tekmax-alert</span>&gt;</code>
-        <button type="button" class="tm-copy-btn" data-code='<tekmax-alert type="danger">حدث خطأ غير متوقع، يرجى المحاولة لاحقاً</tekmax-alert>'>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span>نسخ الكود</span>
-        </button>
-      </div>
-    </article>
-
-    <!-- 05 ملاحظة تحريرية -->
-    <article class="tm-sc-card" data-category="alerts" data-keywords="ملاحظة صندوق تحريري note memo">
-      <header class="tm-sc-header">
-        <div class="tm-sc-title-wrap">
-          <span class="tm-sc-num">05</span>
-          <div>
-            <h3 class="tm-sc-title">ملاحظة تحريرية</h3>
-            <p class="tm-sc-desc">صندوق مميز ذو إطار منقط ولون الهوية الرئيسي للملاحظات الخاصة داخل المقال.</p>
-          </div>
+      <div class="shortcode-box">
+        <div class="shortcode-box-header">
+          <span class="shortcode-box-label">CODE</span>
+          <button class="shortcode-box-quick-copy" type="button">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>نسخ</span>
+          </button>
         </div>
-        <span class="tm-sc-cat-badge">ملاحظات</span>
-      </header>
-      <div class="tm-sc-preview-box">
-        <span class="tm-sc-preview-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> المعاينة المباشرة:</span>
+        <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-alert</span> <span class="c-attr">type</span>=<span class="c-val">"danger"</span>&gt;<span class="c-txt">حدث خطأ غير متوقع، يرجى المحاولة لاحقاً</span>&lt;/<span class="c-tag">tekmax-alert</span>&gt;</div>
+      </div>
+      <button class="shortcode-copy-btn" type="button">
+        <span>نسخ الكود</span>
+      </button>
+    </div>
+
+    <!-- Card 05: ملاحظة -->
+    <div class="shortcode-card" data-category="alerts" data-keywords="ملاحظة صندوق تحريري note memo" data-code='<tekmax-note>ملاحظة مهمة: يرجى مراعاة الشروط قبل البدء</tekmax-note>'>
+      <div class="shortcode-card-header">
+        <div class="shortcode-info">
+          <h3 class="shortcode-title">ملاحظة</h3>
+          <p class="shortcode-desc">صندوق مميز للملاحظات داخل المقال</p>
+        </div>
+        <div class="shortcode-num-badge">05</div>
+      </div>
+      <div class="shortcode-preview-box">
         <tekmax-note>ملاحظة مهمة: يرجى مراعاة الشروط قبل البدء</tekmax-note>
       </div>
-      <div class="tm-sc-code-box">
-        <code>&lt;<span class="tm-tag">tekmax-note</span>&gt;ملاحظة مهمة: يرجى مراعاة الشروط قبل البدء&lt;/<span class="tm-tag">tekmax-note</span>&gt;</code>
-        <button type="button" class="tm-copy-btn" data-code='<tekmax-note>ملاحظة مهمة: يرجى مراعاة الشروط قبل البدء</tekmax-note>'>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span>نسخ الكود</span>
-        </button>
-      </div>
-    </article>
-
-    <!-- 06 زر احترافي -->
-    <article class="tm-sc-card" data-category="buttons" data-keywords="زر احترافي رابط توجيه button link">
-      <header class="tm-sc-header">
-        <div class="tm-sc-title-wrap">
-          <span class="tm-sc-num">06</span>
-          <div>
-            <h3 class="tm-sc-title">زر احترافي (أساسي)</h3>
-            <p class="tm-sc-desc">زر أنيق لإعادة التوجيه لرابط خارجي أو داخلي مع تأثير تحويم وانتقال جذاب.</p>
-          </div>
+      <div class="shortcode-box">
+        <div class="shortcode-box-header">
+          <span class="shortcode-box-label">CODE</span>
+          <button class="shortcode-box-quick-copy" type="button">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>نسخ</span>
+          </button>
         </div>
-        <span class="tm-sc-cat-badge">أزرار</span>
-      </header>
-      <div class="tm-sc-preview-box">
-        <span class="tm-sc-preview-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> المعاينة المباشرة:</span>
-        <tekmax-button href="https://example.com" target="_blank">انقر هنا للانتقال</tekmax-button>
+        <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-note</span>&gt;<span class="c-txt">ملاحظة مهمة: يرجى مراعاة الشروط قبل البدء</span>&lt;/<span class="c-tag">tekmax-note</span>&gt;</div>
       </div>
-      <div class="tm-sc-code-box">
-        <code>&lt;<span class="tm-tag">tekmax-button</span> <span class="tm-attr">href</span>=<span class="tm-val">"https://example.com"</span> <span class="tm-attr">target</span>=<span class="tm-val">"_blank"</span>&gt;انقر هنا&lt;/<span class="tm-tag">tekmax-button</span>&gt;</code>
-        <button type="button" class="tm-copy-btn" data-code='<tekmax-button href="https://example.com" target="_blank">انقر هنا</tekmax-button>'>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span>نسخ الكود</span>
-        </button>
-      </div>
-    </article>
+      <button class="shortcode-copy-btn" type="button">
+        <span>نسخ الكود</span>
+      </button>
+    </div>
 
-    <!-- 07 زر مفرغ ثانوي -->
-    <article class="tm-sc-card" data-category="buttons" data-keywords="زر مفرغ زر ثانوي outline button">
-      <header class="tm-sc-header">
-        <div class="tm-sc-title-wrap">
-          <span class="tm-sc-num">07</span>
-          <div>
-            <h3 class="tm-sc-title">زر مفرغ (ثانوي)</h3>
-            <p class="tm-sc-desc">زر بتصميم Outline أنيق للإجراءات الفرعية أو الروابط الموازية والبديلة.</p>
-          </div>
+    <!-- Card 06: زر احترافي -->
+    <div class="shortcode-card" data-category="buttons" data-keywords="زر احترافي رابط توجيه button link" data-code='<tekmax-button href="https://example.com" target="_blank">انقر هنا</tekmax-button>'>
+      <div class="shortcode-card-header">
+        <div class="shortcode-info">
+          <h3 class="shortcode-title">زر احترافي</h3>
+          <p class="shortcode-desc">زر لإعادة التوجيه لرابط خارجي أو داخلي</p>
         </div>
-        <span class="tm-sc-cat-badge">أزرار</span>
-      </header>
-      <div class="tm-sc-preview-box">
-        <span class="tm-sc-preview-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> المعاينة المباشرة:</span>
-        <tekmax-button variant="outline" href="https://example.com" target="_blank">معاينة تفاصيل الرابط</tekmax-button>
+        <div class="shortcode-num-badge">06</div>
       </div>
-      <div class="tm-sc-code-box">
-        <code>&lt;<span class="tm-tag">tekmax-button</span> <span class="tm-attr">variant</span>=<span class="tm-val">"outline"</span> <span class="tm-attr">href</span>=<span class="tm-val">"https://example.com"</span> <span class="tm-attr">target</span>=<span class="tm-val">"_blank"</span>&gt;زر ثانوي&lt;/<span class="tm-tag">tekmax-button</span>&gt;</code>
-        <button type="button" class="tm-copy-btn" data-code='<tekmax-button variant="outline" href="https://example.com" target="_blank">زر توجيه ثانوي</tekmax-button>'>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span>نسخ الكود</span>
-        </button>
+      <div class="shortcode-preview-box">
+        <tekmax-button href="https://example.com" target="_blank">انقر هنا</tekmax-button>
       </div>
-    </article>
+      <div class="shortcode-box">
+        <div class="shortcode-box-header">
+          <span class="shortcode-box-label">CODE</span>
+          <button class="shortcode-box-quick-copy" type="button">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>نسخ</span>
+          </button>
+        </div>
+        <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-button</span> <span class="c-attr">href</span>=<span class="c-val">"https://example.com"</span> <span class="c-attr">target</span>=<span class="c-val">"_blank"</span>&gt;<span class="c-txt">انقر هنا</span>&lt;/<span class="c-tag">tekmax-button</span>&gt;</div>
+      </div>
+      <button class="shortcode-copy-btn" type="button">
+        <span>نسخ الكود</span>
+      </button>
+    </div>
 
-    <!-- 08 زر تحميل ملف -->
-    <article class="tm-sc-card" data-category="buttons" data-keywords="زر تحميل ملف حجم الملف download size">
-      <header class="tm-sc-header">
-        <div class="tm-sc-title-wrap">
-          <span class="tm-sc-num">08</span>
-          <div>
-            <h3 class="tm-sc-title">زر تحميل ملف عصري</h3>
-            <p class="tm-sc-desc">زر تحميل بتدرج لوني زمردي فخم مع شارة لعرض حجم الملف وأيقونة تنزيل.</p>
-          </div>
+    <!-- Card 07: اقتباس -->
+    <div class="shortcode-card" data-category="structure" data-keywords="اقتباس كلام كاتب quote blockquote" data-code='<tekmax-quote author="اسم الكاتب">نص الاقتباس هنا...</tekmax-quote>'>
+      <div class="shortcode-card-header">
+        <div class="shortcode-info">
+          <h3 class="shortcode-title">اقتباس</h3>
+          <p class="shortcode-desc">اقتباس منسق مع اسم المصدر</p>
         </div>
-        <span class="tm-sc-cat-badge">تحميل</span>
-      </header>
-      <div class="tm-sc-preview-box">
-        <span class="tm-sc-preview-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> المعاينة المباشرة:</span>
+        <div class="shortcode-num-badge">07</div>
+      </div>
+      <div class="shortcode-preview-box">
+        <tekmax-quote author="اسم الكاتب">نص الاقتباس هنا يعبر عن فكرة جوهرية تستحق التأمل...</tekmax-quote>
+      </div>
+      <div class="shortcode-box">
+        <div class="shortcode-box-header">
+          <span class="shortcode-box-label">CODE</span>
+          <button class="shortcode-box-quick-copy" type="button">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>نسخ</span>
+          </button>
+        </div>
+        <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-quote</span> <span class="c-attr">author</span>=<span class="c-val">"اسم الكاتب"</span>&gt;<span class="c-txt">نص الاقتباس هنا...</span>&lt;/<span class="c-tag">tekmax-quote</span>&gt;</div>
+      </div>
+      <button class="shortcode-copy-btn" type="button">
+        <span>نسخ الكود</span>
+      </button>
+    </div>
+
+    <!-- Card 08: صندوق كود -->
+    <div class="shortcode-card" data-category="structure" data-keywords="صندوق كود برمجة شاشة syntax code" data-code='<tekmax-code lang="html">&lt;!-- اكتب كودك هنا --&gt;</tekmax-code>'>
+      <div class="shortcode-card-header">
+        <div class="shortcode-info">
+          <h3 class="shortcode-title">صندوق كود</h3>
+          <p class="shortcode-desc">شاشة برمجية منسقة مع تلوين الخطوط</p>
+        </div>
+        <div class="shortcode-num-badge">08</div>
+      </div>
+      <div class="shortcode-preview-box">
+        <tekmax-code lang="html">&lt;!-- اكتب كودك هنا وسيعرض بشكل منسق --&gt;</tekmax-code>
+      </div>
+      <div class="shortcode-box">
+        <div class="shortcode-box-header">
+          <span class="shortcode-box-label">CODE</span>
+          <button class="shortcode-box-quick-copy" type="button">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>نسخ</span>
+          </button>
+        </div>
+        <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-code</span> <span class="c-attr">lang</span>=<span class="c-val">"html"</span>&gt;<span class="c-txt">&amp;lt;!-- اكتب كودك هنا --&amp;gt;</span>&lt;/<span class="c-tag">tekmax-code</span>&gt;</div>
+      </div>
+      <button class="shortcode-copy-btn" type="button">
+        <span>نسخ الكود</span>
+      </button>
+    </div>
+
+    <!-- Card 09: زر تحميل -->
+    <div class="shortcode-card" data-category="buttons" data-keywords="زر تحميل ملف حجم تنزيل download size" data-code='<tekmax-download href="https://example.com/file.zip" size="25 MB">تحميل الملف الآن</tekmax-download>'>
+      <div class="shortcode-card-header">
+        <div class="shortcode-info">
+          <h3 class="shortcode-title">زر تحميل</h3>
+          <p class="shortcode-desc">زر تحميل عصري مع حجم الملف</p>
+        </div>
+        <div class="shortcode-num-badge">09</div>
+      </div>
+      <div class="shortcode-preview-box">
         <tekmax-download href="https://example.com/file.zip" size="25 MB">تحميل الملف الآن</tekmax-download>
       </div>
-      <div class="tm-sc-code-box">
-        <code>&lt;<span class="tm-tag">tekmax-download</span> <span class="tm-attr">href</span>=<span class="tm-val">"https://example.com/file.zip"</span> <span class="tm-attr">size</span>=<span class="tm-val">"25 MB"</span>&gt;تحميل الملف الآن&lt;/<span class="tm-tag">tekmax-download</span>&gt;</code>
-        <button type="button" class="tm-copy-btn" data-code='<tekmax-download href="https://example.com/file.zip" size="25 MB">تحميل الملف الآن</tekmax-download>'>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span>نسخ الكود</span>
-        </button>
-      </div>
-    </article>
-
-    <!-- 09 اقتباس منسق -->
-    <article class="tm-sc-card" data-category="structure" data-keywords="اقتباس كلام كاتب quote blockquote">
-      <header class="tm-sc-header">
-        <div class="tm-sc-title-wrap">
-          <span class="tm-sc-num">09</span>
-          <div>
-            <h3 class="tm-sc-title">اقتباس منسق</h3>
-            <p class="tm-sc-desc">اقتباس مميز بصرياً مع اسم الكاتب أو المصدر وعلامات تنصيص فنية وإطار ملون.</p>
-          </div>
+      <div class="shortcode-box">
+        <div class="shortcode-box-header">
+          <span class="shortcode-box-label">CODE</span>
+          <button class="shortcode-box-quick-copy" type="button">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>نسخ</span>
+          </button>
         </div>
-        <span class="tm-sc-cat-badge">هيكلة</span>
-      </header>
-      <div class="tm-sc-preview-box">
-        <span class="tm-sc-preview-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> المعاينة المباشرة:</span>
-        <tekmax-quote author="اسم الكاتب">نص الاقتباس هنا يعبر عن فكرة جوهرية تستحق التأمل والتركيز...</tekmax-quote>
+        <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-download</span> <span class="c-attr">href</span>=<span class="c-val">"https://example.com/file.zip"</span> <span class="c-attr">size</span>=<span class="c-val">"25 MB"</span>&gt;<span class="c-txt">تحميل الملف الآن</span>&lt;/<span class="c-tag">tekmax-download</span>&gt;</div>
       </div>
-      <div class="tm-sc-code-box">
-        <code>&lt;<span class="tm-tag">tekmax-quote</span> <span class="tm-attr">author</span>=<span class="tm-val">"اسم الكاتب"</span>&gt;نص الاقتباس هنا...&lt;/<span class="tm-tag">tekmax-quote</span>&gt;</code>
-        <button type="button" class="tm-copy-btn" data-code='<tekmax-quote author="اسم الكاتب">نص الاقتباس هنا...</tekmax-quote>'>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span>نسخ الكود</span>
-        </button>
-      </div>
-    </article>
+      <button class="shortcode-copy-btn" type="button">
+        <span>نسخ الكود</span>
+      </button>
+    </div>
 
-    <!-- 10 خطوات مرتبة -->
-    <article class="tm-sc-card" data-category="structure" data-keywords="خطوات مرتبة ترقيم خطوات الشرح steps">
-      <header class="tm-sc-header">
-        <div class="tm-sc-title-wrap">
-          <span class="tm-sc-num">10</span>
-          <div>
-            <h3 class="tm-sc-title">خطوات مرتبة رقمية</h3>
-            <p class="tm-sc-desc">لعرض خطوات الشروحات والدروس بترقيم تلقائي ودوائر متناسقة بلون الهوية.</p>
-          </div>
+    <!-- Card 10: خطوات مرتبة -->
+    <div class="shortcode-card" data-category="structure" data-keywords="خطوات مرتبة ترقيم خطوات الشرح steps" data-code='<tekmax-steps><tekmax-step>الخطوة الأولى</tekmax-step><tekmax-step>الخطوة الثانية</tekmax-step></tekmax-steps>'>
+      <div class="shortcode-card-header">
+        <div class="shortcode-info">
+          <h3 class="shortcode-title">خطوات مرتبة</h3>
+          <p class="shortcode-desc">لعرض خطوات الشرح بترقيم تلقائي</p>
         </div>
-        <span class="tm-sc-cat-badge">هيكلة</span>
-      </header>
-      <div class="tm-sc-preview-box">
-        <span class="tm-sc-preview-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> المعاينة المباشرة:</span>
+        <div class="shortcode-num-badge">10</div>
+      </div>
+      <div class="shortcode-preview-box">
         <tekmax-steps>
-          <tekmax-step>الخطوة الأولى: تحميل حزمة الملفات وفك الضغط في مجلد مخصص.</tekmax-step>
-          <tekmax-step>الخطوة الثانية: تنفيذ أمر التثبيت وتشغيل الخادم المحلي.</tekmax-step>
+          <tekmax-step>الخطوة الأولى: تهيئة الإعدادات الأولية.</tekmax-step>
+          <tekmax-step>الخطوة الثانية: تشغيل الخادم وتثبيت الحزمة.</tekmax-step>
         </tekmax-steps>
       </div>
-      <div class="tm-sc-code-box">
-        <code>&lt;<span class="tm-tag">tekmax-steps</span>&gt;&lt;<span class="tm-tag">tekmax-step</span>&gt;الخطوة الأولى&lt;/<span class="tm-tag">tekmax-step</span>&gt;&lt;<span class="tm-tag">tekmax-step</span>&gt;الخطوة الثانية&lt;/<span class="tm-tag">tekmax-step</span>&gt;&lt;/<span class="tm-tag">tekmax-steps</span>&gt;</code>
-        <button type="button" class="tm-copy-btn" data-code='<tekmax-steps><tekmax-step>الخطوة الأولى</tekmax-step><tekmax-step>الخطوة الثانية</tekmax-step></tekmax-steps>'>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span>نسخ الكود</span>
-        </button>
-      </div>
-    </article>
-
-    <!-- 11 شارة نصية ملونة -->
-    <article class="tm-sc-card" data-category="structure" data-keywords="شارة نصية تاج badge tag pill">
-      <header class="tm-sc-header">
-        <div class="tm-sc-title-wrap">
-          <span class="tm-sc-num">11</span>
-          <div>
-            <h3 class="tm-sc-title">شارة نصية بيضاوية (Badge)</h3>
-            <p class="tm-sc-desc">شارة نصية صغيرة ملونة مناسبة لتمييز الكلمات والمصطلحات والوسوم والإصدارات.</p>
-          </div>
+      <div class="shortcode-box">
+        <div class="shortcode-box-header">
+          <span class="shortcode-box-label">CODE</span>
+          <button class="shortcode-box-quick-copy" type="button">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>نسخ</span>
+          </button>
         </div>
-        <span class="tm-sc-cat-badge">هيكلة</span>
-      </header>
-      <div class="tm-sc-preview-box">
-        <span class="tm-sc-preview-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> المعاينة المباشرة:</span>
+        <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-steps</span>&gt;&lt;<span class="c-tag">tekmax-step</span>&gt;<span class="c-txt">الخطوة الأولى</span>&lt;/<span class="c-tag">tekmax-step</span>&gt;&lt;<span class="c-tag">tekmax-step</span>&gt;<span class="c-txt">الخطوة الثانية</span>&lt;/<span class="c-tag">tekmax-step</span>&gt;&lt;/<span class="c-tag">tekmax-steps</span>&gt;</div>
+      </div>
+      <button class="shortcode-copy-btn" type="button">
+        <span>نسخ الكود</span>
+      </button>
+    </div>
+
+    <!-- Card 11: قائمة قابلة للفتح -->
+    <div class="shortcode-card" data-category="interactive" data-keywords="قائمة قابلة للفتح اكورديون اسئلة شائعة accordion faq" data-code='<tekmax-accordion title="عنوان السؤال هنا">نص الإجابة أو التفاصيل هنا...</tekmax-accordion>'>
+      <div class="shortcode-card-header">
+        <div class="shortcode-info">
+          <h3 class="shortcode-title">قائمة قابلة للفتح</h3>
+          <p class="shortcode-desc">أسئلة شائعة أو نصوص قابلة للطي والفتح</p>
+        </div>
+        <div class="shortcode-num-badge">11</div>
+      </div>
+      <div class="shortcode-preview-box">
+        <tekmax-accordion title="هل يؤثر هذا الكود على سرعة تحميل المقال؟">
+          لا على الإطلاق! تم بناء هذا المكون بالكامل باستخدام عنصر HTML5 الأصلي details/summary بدون الاعتماد على أي مكتبات خارجية.
+        </tekmax-accordion>
+      </div>
+      <div class="shortcode-box">
+        <div class="shortcode-box-header">
+          <span class="shortcode-box-label">CODE</span>
+          <button class="shortcode-box-quick-copy" type="button">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>نسخ</span>
+          </button>
+        </div>
+        <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-accordion</span> <span class="c-attr">title</span>=<span class="c-val">"عنوان السؤال هنا"</span>&gt;<span class="c-txt">نص الإجابة أو التفاصيل هنا...</span>&lt;/<span class="c-tag">tekmax-accordion</span>&gt;</div>
+      </div>
+      <button class="shortcode-copy-btn" type="button">
+        <span>نسخ الكود</span>
+      </button>
+    </div>
+
+    <!-- Card 12: محتوى مخفي -->
+    <div class="shortcode-card" data-category="interactive" data-keywords="محتوى مخفي سبويلر إخفاء واظهار spoiler hidden" data-code='<tekmax-spoiler title="انقر لعرض المحتوى">هذا هو المحتوى المخفي</tekmax-spoiler>'>
+      <div class="shortcode-card-header">
+        <div class="shortcode-info">
+          <h3 class="shortcode-title">محتوى مخفي</h3>
+          <p class="shortcode-desc">إمكانية إخفاء نص وإظهاره بنقر القارئ</p>
+        </div>
+        <div class="shortcode-num-badge">12</div>
+      </div>
+      <div class="shortcode-preview-box">
+        <tekmax-spoiler title="انقر لعرض المحتوى المخفي">هذا هو المحتوى المخفي الذي يظهر فقط عند نقر الزائر.</tekmax-spoiler>
+      </div>
+      <div class="shortcode-box">
+        <div class="shortcode-box-header">
+          <span class="shortcode-box-label">CODE</span>
+          <button class="shortcode-box-quick-copy" type="button">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>نسخ</span>
+          </button>
+        </div>
+        <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-spoiler</span> <span class="c-attr">title</span>=<span class="c-val">"انقر لعرض المحتوى"</span>&gt;<span class="c-txt">هذا هو المحتوى المخفي</span>&lt;/<span class="c-tag">tekmax-spoiler</span>&gt;</div>
+      </div>
+      <button class="shortcode-copy-btn" type="button">
+        <span>نسخ الكود</span>
+      </button>
+    </div>
+
+    <!-- Card 13: شارة -->
+    <div class="shortcode-card" data-category="structure" data-keywords="شارة تاج badge tag pill" data-code='<tekmax-badge>نص الشارة</tekmax-badge>'>
+      <div class="shortcode-card-header">
+        <div class="shortcode-info">
+          <h3 class="shortcode-title">شارة</h3>
+          <p class="shortcode-desc">شارة نصية صغيرة ثلاثية الأبعاد أو ملونة</p>
+        </div>
+        <div class="shortcode-num-badge">13</div>
+      </div>
+      <div class="shortcode-preview-box">
         <div style="display: flex; gap: 8px; flex-wrap: wrap; align-items: center;">
-          <tekmax-badge>افتراضي أحمر</tekmax-badge>
-          <tekmax-badge color="blue">تقنية وسحاب</tekmax-badge>
+          <tekmax-badge>نص الشارة</tekmax-badge>
+          <tekmax-badge color="blue">تقنية</tekmax-badge>
           <tekmax-badge color="green">إصدار مستقر</tekmax-badge>
           <tekmax-badge color="orange">تحديث تجريبي</tekmax-badge>
         </div>
       </div>
-      <div class="tm-sc-code-box">
-        <code>&lt;<span class="tm-tag">tekmax-badge</span> <span class="tm-attr">color</span>=<span class="tm-val">"blue"</span>&gt;نص الشارة&lt;/<span class="tm-tag">tekmax-badge</span>&gt;</code>
-        <button type="button" class="tm-copy-btn" data-code='<tekmax-badge>نص الشارة</tekmax-badge>'>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span>نسخ الكود</span>
-        </button>
-      </div>
-    </article>
-
-    <!-- 12 عمودان متساويان -->
-    <article class="tm-sc-card" data-category="structure" data-keywords="عمودان تقسيم المحتوى أعمدة columns">
-      <header class="tm-sc-header">
-        <div class="tm-sc-title-wrap">
-          <span class="tm-sc-num">12</span>
-          <div>
-            <h3 class="tm-sc-title">عمودان متساويان</h3>
-            <p class="tm-sc-desc">تقسيم المحتوى إلى عمودين متجانسين على الشاشات الكبيرة ويتحول لعمود واحد على الجوال.</p>
-          </div>
+      <div class="shortcode-box">
+        <div class="shortcode-box-header">
+          <span class="shortcode-box-label">CODE</span>
+          <button class="shortcode-box-quick-copy" type="button">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>نسخ</span>
+          </button>
         </div>
-        <span class="tm-sc-cat-badge">هيكلة</span>
-      </header>
-      <div class="tm-sc-preview-box">
-        <span class="tm-sc-preview-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> المعاينة المباشرة:</span>
-        <tekmax-columns>
-          <tekmax-column><strong>العمود الأيمن:</strong> استعراض المزايا والفوائد الإيجابية للتقنية.</tekmax-column>
-          <tekmax-column><strong>العمود الأيسر:</strong> استعراض المتطلبات والشروط اللازمة للتطبيق.</tekmax-column>
-        </tekmax-columns>
+        <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-badge</span>&gt;<span class="c-txt">نص الشارة</span>&lt;/<span class="c-tag">tekmax-badge</span>&gt;</div>
       </div>
-      <div class="tm-sc-code-box">
-        <code>&lt;<span class="tm-tag">tekmax-columns</span>&gt;&lt;<span class="tm-tag">tekmax-column</span>&gt;محتوى 1&lt;/<span class="tm-tag">tekmax-column</span>&gt;&lt;<span class="tm-tag">tekmax-column</span>&gt;محتوى 2&lt;/<span class="tm-tag">tekmax-column</span>&gt;&lt;/<span class="tm-tag">tekmax-columns</span>&gt;</code>
-        <button type="button" class="tm-copy-btn" data-code='<tekmax-columns><tekmax-column>محتوى العمود الأول</tekmax-column><tekmax-column>محتوى العمود الثاني</tekmax-column></tekmax-columns>'>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span>نسخ الكود</span>
-        </button>
-      </div>
-    </article>
-
-    <!-- 13 قائمة قابلة للفتح (أكورديون) -->
-    <article class="tm-sc-card" data-category="interactive" data-keywords="قائمة قابلة للفتح اكورديون اسئلة شائعة accordion faq">
-      <header class="tm-sc-header">
-        <div class="tm-sc-title-wrap">
-          <span class="tm-sc-num">13</span>
-          <div>
-            <h3 class="tm-sc-title">قائمة قابلة للفتح (أكورديون)</h3>
-            <p class="tm-sc-desc">أسئلة شائعة (FAQ) أو نصوص وتفاصيل قابلة للطي والفتح بنقرة زر بدون جافاسكريبت ثقيل.</p>
-          </div>
-        </div>
-        <span class="tm-sc-cat-badge">تفاعلية</span>
-      </header>
-      <div class="tm-sc-preview-box">
-        <span class="tm-sc-preview-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> المعاينة المباشرة:</span>
-        <tekmax-accordion title="هل يؤثر هذا الكود على سرعة تحميل المقال؟">
-          لا على الإطلاق! تم بناء هذا المكون بالكامل باستخدام عنصر HTML5 الأصلي details/summary بدون الاعتماد على أي مكتبات خارجية ثقيلة، مما يضمن أداء 100/100 في Core Web Vitals.
-        </tekmax-accordion>
-      </div>
-      <div class="tm-sc-code-box">
-        <code>&lt;<span class="tm-tag">tekmax-accordion</span> <span class="tm-attr">title</span>=<span class="tm-val">"عنوان السؤال هنا"</span>&gt;نص الإجابة أو التفاصيل هنا...&lt;/<span class="tm-tag">tekmax-accordion</span>&gt;</code>
-        <button type="button" class="tm-copy-btn" data-code='<tekmax-accordion title="عنوان السؤال هنا">نص الإجابة أو التفاصيل هنا...</tekmax-accordion>'>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span>نسخ الكود</span>
-        </button>
-      </div>
-    </article>
-
-    <!-- 14 محتوى مخفي (سبويلر) -->
-    <article class="tm-sc-card" data-category="interactive" data-keywords="محتوى مخفي سبويلر إخفاء واظهار spoiler hidden">
-      <header class="tm-sc-header">
-        <div class="tm-sc-title-wrap">
-          <span class="tm-sc-num">14</span>
-          <div>
-            <h3 class="tm-sc-title">محتوى مخفي (سبويلر)</h3>
-            <p class="tm-sc-desc">إمكانية إخفاء حلول المسابقات أو حرق الأحداث أو روابط حساسة وإظهارها فقط بنقر القارئ.</p>
-          </div>
-        </div>
-        <span class="tm-sc-cat-badge">تفاعلية</span>
-      </header>
-      <div class="tm-sc-preview-box">
-        <span class="tm-sc-preview-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> المعاينة المباشرة:</span>
-        <tekmax-spoiler title="انقر هنا لعرض الكود السري أو النتيجة">
-          تهانينا! هذا هو المحتوى المخفي الذي تم عرضه بنجاح بمجرد نقرك على العنوان.
-        </tekmax-spoiler>
-      </div>
-      <div class="tm-sc-code-box">
-        <code>&lt;<span class="tm-tag">tekmax-spoiler</span> <span class="tm-attr">title</span>=<span class="tm-val">"انقر لعرض المحتوى"</span>&gt;هذا هو المحتوى المخفي&lt;/<span class="tm-tag">tekmax-spoiler</span>&gt;</code>
-        <button type="button" class="tm-copy-btn" data-code='<tekmax-spoiler title="انقر لعرض المحتوى">هذا هو المحتوى المخفي</tekmax-spoiler>'>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span>نسخ الكود</span>
-        </button>
-      </div>
-    </article>
-
-    <!-- 15 فيديو يوتيوب فائق السرعة -->
-    <article class="tm-sc-card" data-category="interactive" data-keywords="فيديو يوتيوب سريع تضمين lite youtube video">
-      <header class="tm-sc-header">
-        <div class="tm-sc-title-wrap">
-          <span class="tm-sc-num">15</span>
-          <div>
-            <h3 class="tm-sc-title">فيديو يوتيوب فائق السرعة (Lite)</h3>
-            <p class="tm-sc-desc">تضمين فيديو خفيف جداً، لا يحمّل إطار اليوتيوب الثقيل إلا عند نقر الزائر فقط (يوفر 1MB+).</p>
-          </div>
-        </div>
-        <span class="tm-sc-cat-badge">وسائط</span>
-      </header>
-      <div class="tm-sc-preview-box">
-        <span class="tm-sc-preview-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> المعاينة المباشرة:</span>
-        <tekmax-video url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"></tekmax-video>
-      </div>
-      <div class="tm-sc-code-box">
-        <code>&lt;<span class="tm-tag">tekmax-video</span> <span class="tm-attr">url</span>=<span class="tm-val">"https://www.youtube.com/watch?v=VIDEO_ID"</span>&gt;&lt;/<span class="tm-tag">tekmax-video</span>&gt;</code>
-        <button type="button" class="tm-copy-btn" data-code='<tekmax-video url="https://www.youtube.com/watch?v=VIDEO_ID"></tekmax-video>'>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span>نسخ الكود</span>
-        </button>
-      </div>
-    </article>
-
-    <!-- 16 شريط تقدم مئوي -->
-    <article class="tm-sc-card" data-category="interactive" data-keywords="شريط تقدم نسبة انجاز مئوية progress bar">
-      <header class="tm-sc-header">
-        <div class="tm-sc-title-wrap">
-          <span class="tm-sc-num">16</span>
-          <div>
-            <h3 class="tm-sc-title">شريط تقدم رقمي</h3>
-            <p class="tm-sc-desc">عرض نسبة إنجاز مئوية بشكل ديناميكي وجذاب لمتابعة مراجعات الأجهزة والتقييمات والمشاريع.</p>
-          </div>
-        </div>
-        <span class="tm-sc-cat-badge">تفاعلية</span>
-      </header>
-      <div class="tm-sc-preview-box">
-        <span class="tm-sc-preview-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> المعاينة المباشرة:</span>
-        <tekmax-progress value="75" label="نسبة اكتمال المشروع"></tekmax-progress>
-      </div>
-      <div class="tm-sc-code-box">
-        <code>&lt;<span class="tm-tag">tekmax-progress</span> <span class="tm-attr">value</span>=<span class="tm-val">"75"</span> <span class="tm-attr">label</span>=<span class="tm-val">"نسبة الإنجاز"</span>&gt;&lt;/<span class="tm-tag">tekmax-progress</span>&gt;</code>
-        <button type="button" class="tm-copy-btn" data-code='<tekmax-progress value="75" label="نسبة الإنجاز"></tekmax-progress>'>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span>نسخ الكود</span>
-        </button>
-      </div>
-    </article>
-
-    <!-- 17 فاصل النجمة المتوهجة -->
-    <article class="tm-sc-card" data-category="separators" data-keywords="فاصل زخرفي نجمة دياموند star separator divider">
-      <header class="tm-sc-header">
-        <div class="tm-sc-title-wrap">
-          <span class="tm-sc-num">17</span>
-          <div>
-            <h3 class="tm-sc-title">فاصل 1: النجمة المتوهجة (Star Divider)</h3>
-            <p class="tm-sc-desc">فاصل ناعم بأيقونة نجمة رباعية هندسية متوهجة في المنتصف مع خطين متلاشيين على الجانبين.</p>
-          </div>
-        </div>
-        <span class="tm-sc-cat-badge">فواصل</span>
-      </header>
-      <div class="tm-sc-preview-box">
-        <span class="tm-sc-preview-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> المعاينة المباشرة:</span>
-        <tekmax-separator type="star"></tekmax-separator>
-      </div>
-      <div class="tm-sc-code-box">
-        <code>&lt;<span class="tm-tag">tekmax-separator</span> <span class="tm-attr">type</span>=<span class="tm-val">"star"</span>&gt;&lt;/<span class="tm-tag">tekmax-separator</span>&gt;</code>
-        <button type="button" class="tm-copy-btn" data-code='<tekmax-separator type="star"></tekmax-separator>'>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span>نسخ الكود</span>
-        </button>
-      </div>
-    </article>
-
-    <!-- 18 فاصل النقاط التقنية -->
-    <article class="tm-sc-card" data-category="separators" data-keywords="فاصل نقاط نبض dots separator divider">
-      <header class="tm-sc-header">
-        <div class="tm-sc-title-wrap">
-          <span class="tm-sc-num">18</span>
-          <div>
-            <h3 class="tm-sc-title">فاصل 2: النقاط التقنية (Pulse Dots Divider)</h3>
-            <p class="tm-sc-desc">فاصل بثلاث نقاط متناسقة بنمط عصري أنيق، والنقطة المركزية تتوهج بلون القالب الرئيسي.</p>
-          </div>
-        </div>
-        <span class="tm-sc-cat-badge">فواصل</span>
-      </header>
-      <div class="tm-sc-preview-box">
-        <span class="tm-sc-preview-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> المعاينة المباشرة:</span>
-        <tekmax-separator type="dots"></tekmax-separator>
-      </div>
-      <div class="tm-sc-code-box">
-        <code>&lt;<span class="tm-tag">tekmax-separator</span> <span class="tm-attr">type</span>=<span class="tm-val">"dots"</span>&gt;&lt;/<span class="tm-tag">tekmax-separator</span>&gt;</code>
-        <button type="button" class="tm-copy-btn" data-code='<tekmax-separator type="dots"></tekmax-separator>'>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span>نسخ الكود</span>
-        </button>
-      </div>
-    </article>
-
-    <!-- 19 فاصل الخط الهندسي البرمجي -->
-    <article class="tm-sc-card" data-category="separators" data-keywords="فاصل خط هندسي تقني كود tech separator divider">
-      <header class="tm-sc-header">
-        <div class="tm-sc-title-wrap">
-          <span class="tm-sc-num">19</span>
-          <div>
-            <h3 class="tm-sc-title">فاصل 3: الخط الهندسي البرمجي (Tech Code Divider)</h3>
-            <p class="tm-sc-desc">فاصل بتدرج لوني انسيابي مع شارة برمجية أنيقة &lt;/&gt; في المنتصف تمنح المقال طابعاً تقنياً واعداً.</p>
-          </div>
-        </div>
-        <span class="tm-sc-cat-badge">فواصل</span>
-      </header>
-      <div class="tm-sc-preview-box">
-        <span class="tm-sc-preview-label"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg> المعاينة المباشرة:</span>
-        <tekmax-separator type="tech"></tekmax-separator>
-      </div>
-      <div class="tm-sc-code-box">
-        <code>&lt;<span class="tm-tag">tekmax-separator</span> <span class="tm-attr">type</span>=<span class="tm-val">"tech"</span>&gt;&lt;/<span class="tm-tag">tekmax-separator</span>&gt;</code>
-        <button type="button" class="tm-copy-btn" data-code='<tekmax-separator type="tech"></tekmax-separator>'>
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-          <span>نسخ الكود</span>
-        </button>
-      </div>
-    </article>
-
-  </div>
-
-  <!-- صندوق كود توليد الصفحة تلقائياً للمطورين والمدونين -->
-  <section class="tm-sc-meta-box">
-    <div class="tm-meta-header">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m18 16 4-4-4-4"/><path d="m6 8-4 4 4 4"/><path d="m14.5 4-5 16"/></svg>
-      <h4>ميزة التوليد التلقائي لصفحة الأكواد (Auto-Generation Shortcode)</h4>
-    </div>
-    <p>يمكنك أيضاً في أي وقت إنشاء صفحة ثابتة جديدة في بلوجر، ولصق هذا السطر البرمجي الوحيد فقط داخلها في وضع HTML، وسيقوم محرك القالب تلقائياً ببناء هذه المكتبة التفاعلية كاملة بجميع البطاقات وأزرار النسخ والتصفية والبحث:</p>
-    <div class="tm-sc-code-box">
-      <code>&lt;<span class="tm-tag">tekmax-shortcodes-page</span>&gt;&lt;/<span class="tm-tag">tekmax-shortcodes-page</span>&gt;</code>
-      <button type="button" class="tm-copy-btn" data-code="<tekmax-shortcodes-page></tekmax-shortcodes-page>">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
+      <button class="shortcode-copy-btn" type="button">
         <span>نسخ الكود</span>
       </button>
     </div>
-  </section>
-</div>
+
+    <!-- Card 14: عمودان -->
+    <div class="shortcode-card" data-category="structure" data-keywords="عمودان تقسيم المحتوى أعمدة columns" data-code='<tekmax-columns><tekmax-column>محتوى العمود الأول</tekmax-column><tekmax-column>محتوى العمود الثاني</tekmax-column></tekmax-columns>'>
+      <div class="shortcode-card-header">
+        <div class="shortcode-info">
+          <h3 class="shortcode-title">عمودان</h3>
+          <p class="shortcode-desc">تقسيم المحتوى إلى عمودين متساويين</p>
+        </div>
+        <div class="shortcode-num-badge">14</div>
+      </div>
+      <div class="shortcode-preview-box">
+        <tekmax-columns>
+          <tekmax-column><strong>العمود الأول:</strong> استعراض المزايا والفوائد الإيجابية للتقنية.</tekmax-column>
+          <tekmax-column><strong>العمود الثاني:</strong> استعراض المتطلبات والشروط اللازمة للتطبيق.</tekmax-column>
+        </tekmax-columns>
+      </div>
+      <div class="shortcode-box">
+        <div class="shortcode-box-header">
+          <span class="shortcode-box-label">CODE</span>
+          <button class="shortcode-box-quick-copy" type="button">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>نسخ</span>
+          </button>
+        </div>
+        <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-columns</span>&gt;&lt;<span class="c-tag">tekmax-column</span>&gt;<span class="c-txt">محتوى العمود الأول</span>&lt;/<span class="c-tag">tekmax-column</span>&gt;&lt;<span class="c-tag">tekmax-column</span>&gt;<span class="c-txt">محتوى العمود الثاني</span>&lt;/<span class="c-tag">tekmax-column</span>&gt;&lt;/<span class="c-tag">tekmax-columns</span>&gt;</div>
+      </div>
+      <button class="shortcode-copy-btn" type="button">
+        <span>نسخ الكود</span>
+      </button>
+    </div>
+
+    <!-- Card 15: فيديو يوتيوب -->
+    <div class="shortcode-card" data-category="interactive" data-keywords="فيديو يوتيوب سريع تضمين lite youtube video" data-code='<tekmax-video url="https://www.youtube.com/watch?v=VIDEO_ID"></tekmax-video>'>
+      <div class="shortcode-card-header">
+        <div class="shortcode-info">
+          <h3 class="shortcode-title">فيديو يوتيوب</h3>
+          <p class="shortcode-desc">فيديو متجاوب بصندوق أنيق وقابل للتكبير</p>
+        </div>
+        <div class="shortcode-num-badge">15</div>
+      </div>
+      <div class="shortcode-preview-box">
+        <tekmax-video url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"></tekmax-video>
+      </div>
+      <div class="shortcode-box">
+        <div class="shortcode-box-header">
+          <span class="shortcode-box-label">CODE</span>
+          <button class="shortcode-box-quick-copy" type="button">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>نسخ</span>
+          </button>
+        </div>
+        <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-video</span> <span class="c-attr">url</span>=<span class="c-val">"https://www.youtube.com/watch?v=VIDEO_ID"</span>&gt;&lt;/<span class="c-tag">tekmax-video</span>&gt;</div>
+      </div>
+      <button class="shortcode-copy-btn" type="button">
+        <span>نسخ الكود</span>
+      </button>
+    </div>
+
+    <!-- Card 16: شريط تقدم -->
+    <div class="shortcode-card" data-category="interactive" data-keywords="شريط تقدم نسبة انجاز مئوية progress bar" data-code='<tekmax-progress value="75"></tekmax-progress>'>
+      <div class="shortcode-card-header">
+        <div class="shortcode-info">
+          <h3 class="shortcode-title">شريط تقدم</h3>
+          <p class="shortcode-desc">عرض نسبة إنجاز من مئة بشكل جذاب</p>
+        </div>
+        <div class="shortcode-num-badge">16</div>
+      </div>
+      <div class="shortcode-preview-box">
+        <tekmax-progress value="75" label="نسبة اكتمال المشروع"></tekmax-progress>
+      </div>
+      <div class="shortcode-box">
+        <div class="shortcode-box-header">
+          <span class="shortcode-box-label">CODE</span>
+          <button class="shortcode-box-quick-copy" type="button">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>نسخ</span>
+          </button>
+        </div>
+        <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-progress</span> <span class="c-attr">value</span>=<span class="c-val">"75"</span>&gt;&lt;/<span class="c-tag">tekmax-progress</span>&gt;</div>
+      </div>
+      <button class="shortcode-copy-btn" type="button">
+        <span>نسخ الكود</span>
+      </button>
+    </div>
+
+    <!-- Card 17: فاصل 1: النجمة المتوهجة -->
+    <div class="shortcode-card" data-category="separators" data-keywords="فاصل زخرفي نجمة دياموند star separator" data-code='<tekmax-separator type="star"></tekmax-separator>'>
+      <div class="shortcode-card-header">
+        <div class="shortcode-info">
+          <h3 class="shortcode-title">فاصل 1: النجمة المتوهجة (Star)</h3>
+          <p class="shortcode-desc">خطان متلاشيان مع نجمة هندسية في دائرة ناعمة</p>
+        </div>
+        <div class="shortcode-num-badge">17</div>
+      </div>
+      <div class="shortcode-preview-box">
+        <tekmax-separator type="star">
+          <span class="tm-sep-icon">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          </span>
+        </tekmax-separator>
+      </div>
+      <div class="shortcode-box">
+        <div class="shortcode-box-header">
+          <span class="shortcode-box-label">CODE</span>
+          <button class="shortcode-box-quick-copy" type="button">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>نسخ</span>
+          </button>
+        </div>
+        <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-separator</span> <span class="c-attr">type</span>=<span class="c-val">"star"</span>&gt;&lt;/<span class="c-tag">tekmax-separator</span>&gt;</div>
+      </div>
+      <button class="shortcode-copy-btn" type="button">
+        <span>نسخ الكود</span>
+      </button>
+    </div>
+
+    <!-- Card 18: فاصل 2: النقاط الثلاث -->
+    <div class="shortcode-card" data-category="separators" data-keywords="فاصل نقاط نبض dots separator" data-code='<tekmax-separator type="dots"></tekmax-separator>'>
+      <div class="shortcode-card-header">
+        <div class="shortcode-info">
+          <h3 class="shortcode-title">فاصل 2: النقاط الثلاث الحرة (Dots)</h3>
+          <p class="shortcode-desc">بدون خطوط نهائياً — 3 نقاط متباعدة تتوسطها نقطة ملونة متوهجة</p>
+        </div>
+        <div class="shortcode-num-badge">18</div>
+      </div>
+      <div class="shortcode-preview-box">
+        <tekmax-separator type="dots">
+          <span class="tm-sep-dot outer"></span>
+          <span class="tm-sep-dot center"></span>
+          <span class="tm-sep-dot outer"></span>
+        </tekmax-separator>
+      </div>
+      <div class="shortcode-box">
+        <div class="shortcode-box-header">
+          <span class="shortcode-box-label">CODE</span>
+          <button class="shortcode-box-quick-copy" type="button">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>نسخ</span>
+          </button>
+        </div>
+        <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-separator</span> <span class="c-attr">type</span>=<span class="c-val">"dots"</span>&gt;&lt;/<span class="c-tag">tekmax-separator</span>&gt;</div>
+      </div>
+      <button class="shortcode-copy-btn" type="button">
+        <span>نسخ الكود</span>
+      </button>
+    </div>
+
+    <!-- Card 19: فاصل 3: الخط الهندسي التقني -->
+    <div class="shortcode-card" data-category="separators" data-keywords="فاصل تقني خط هندسي متقطع tech separator" data-code='<tekmax-separator type="tech"></tekmax-separator>'>
+      <div class="shortcode-card-header">
+        <div class="shortcode-info">
+          <h3 class="shortcode-title">فاصل 3: الخط الهندسي التقني (Tech)</h3>
+          <p class="shortcode-desc">مسار متقطع بنمط تقني عريض يتوسطه شارة برمجية &lt;/&gt;</p>
+        </div>
+        <div class="shortcode-num-badge">19</div>
+      </div>
+      <div class="shortcode-preview-box">
+        <tekmax-separator type="tech">
+          <span class="tm-sep-badge">&lt;/&gt;</span>
+        </tekmax-separator>
+      </div>
+      <div class="shortcode-box">
+        <div class="shortcode-box-header">
+          <span class="shortcode-box-label">CODE</span>
+          <button class="shortcode-box-quick-copy" type="button">
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>
+            <span>نسخ</span>
+          </button>
+        </div>
+        <div class="shortcode-code-body">&lt;<span class="c-tag">tekmax-separator</span> <span class="c-attr">type</span>=<span class="c-val">"tech"</span>&gt;&lt;/<span class="c-tag">tekmax-separator</span>&gt;</div>
+      </div>
+      <button class="shortcode-copy-btn" type="button">
+        <span>نسخ الكود</span>
+      </button>
+    </div>
+
+  </div><!-- /.shortcodes-grid -->
+
+  <!-- Toast Notification (مطابق لـ shortcodes_library_page.html) -->
+  <div class="shortcode-toast" id="shortcodeToast">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+    <span>تم نسخ الكود بنجاح! الصقه في مقالك.</span>
+  </div>
+
+</div><!-- /#shortcodesApp -->
 
 <!-- ==========================================================================
-     أنماط CSS المضمنة الخاصة بصفحة الأكواد (تصميم راقٍ ومطابق لـ TekMax Pro)
+     أنماط CSS الخاصة بالصفحة (مطابقة 100% لـ shortcodes_library_page.html)
      ========================================================================== -->
 <style>
-.tm-shortcodes-page {
-  max-width: 1040px;
-  margin: 0 auto;
-  padding: 10px 15px 50px;
-  font-family: 'Cairo', system-ui, -apple-system, sans-serif;
-  color: var(--text-color, #111827);
-  line-height: 1.65;
-}
+  :root {
+    --primary: var(--primary-color, #dc1f43);
+    --primary-hover: #b81635;
+    --primary-soft: rgba(220, 31, 67, 0.08);
+    --primary-border: rgba(220, 31, 67, 0.2);
+    --success: #10b981;
+    --bg-page: #f8fafc;
+    --card-bg: #ffffff;
+    --card-border: #e2e8f0;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --terminal-bg: #090d16;
+    --terminal-border: #1e293b;
+    --terminal-text: #f1f5f9;
+    --tag-color: #38bdf8;
+    --attr-color: #fbbf24;
+    --val-color: #34d399;
+    --radius-card: 16px;
+    --radius-code: 10px;
+    --radius-btn: 8px;
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.03);
+    --shadow-hover: 0 10px 25px -5px rgba(220, 31, 67, 0.1);
+    --font-body: 'Cairo', system-ui, -apple-system, sans-serif;
+    --font-mono: 'Fira Code', Consolas, Monaco, monospace;
+  }
 
-/* شريط الإحصائيات في الهيدر */
-.tm-sc-stats-bar {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 20px;
-  margin-top: 24px;
-  padding: 14px 24px;
-  background: var(--card-bg, #ffffff);
-  border: 1px solid var(--border-color, #eaedf1);
-  border-radius: 99px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
-}
-[data-theme="dark"] .tm-sc-stats-bar {
-  background: #171a20;
-  border-color: #242832;
-}
-.tm-sc-stat-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-.tm-sc-stat-num {
-  font-weight: 900;
-  font-size: 1.05rem;
-  color: var(--primary-color, #dc1f43);
-}
-.tm-sc-stat-lbl {
-  font-size: 0.84rem;
-  color: var(--muted-color, #64748b);
-  font-weight: 600;
-}
-[data-theme="dark"] .tm-sc-stat-lbl {
-  color: #94a3b8;
-}
-.tm-sc-stat-divider {
-  width: 1px;
-  height: 18px;
-  background: var(--border-color, #eaedf1);
-}
-[data-theme="dark"] .tm-sc-stat-divider {
-  background: #242832;
-}
+  [data-theme="dark"] {
+    --bg-page: #0b0f19;
+    --card-bg: #131b2e;
+    --card-border: rgba(255, 255, 255, 0.08);
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --primary-soft: rgba(220, 31, 67, 0.15);
+    --primary-border: rgba(220, 31, 67, 0.35);
+    --terminal-bg: #050811;
+    --terminal-border: rgba(255, 255, 255, 0.1);
+  }
 
-/* صندوق الدليل السريع */
-.tm-sc-guide-box {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  margin: 28px 0 32px;
-}
-@media (max-width: 768px) {
-  .tm-sc-guide-box {
-    grid-template-columns: 1fr;
+  .shortcodes-wrap {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 10px 0 40px;
+    font-family: var(--font-body);
+    color: var(--text-main);
+    direction: rtl;
+    text-align: right;
+  }
+
+  /* 1. Header Card */
+  .shortcodes-header-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-card);
+    padding: 36px 24px 28px;
+    text-align: center;
+    margin-bottom: 28px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .shortcodes-pill-badge {
+    display: inline-block;
+    background: var(--primary);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 5px 18px;
+    border-radius: 9999px;
+    margin-bottom: 12px;
+    letter-spacing: 0.3px;
+  }
+
+  .shortcodes-main-title {
+    font-size: 30px;
+    font-weight: 800;
+    color: var(--text-main);
+    margin-bottom: 8px;
+    letter-spacing: -0.5px;
+  }
+
+  .shortcodes-main-subtitle {
+    font-size: 15px;
+    color: var(--text-muted);
+    font-weight: 500;
+    margin-bottom: 20px;
+  }
+
+  /* شريط الفلاتر السريع */
+  .shortcodes-filter-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .sc-filter-btn {
+    padding: 6px 14px;
+    border-radius: 9999px;
+    border: 1px solid var(--card-border);
+    background: rgba(0, 0, 0, 0.02);
+    color: var(--text-muted);
+    font-family: var(--font-body);
+    font-size: 13px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  [data-theme="dark"] .sc-filter-btn {
+    background: rgba(255, 255, 255, 0.03);
+  }
+
+  .sc-filter-btn.active, .sc-filter-btn:hover {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+    box-shadow: 0 4px 10px rgba(220, 31, 67, 0.25);
+  }
+
+  .shortcodes-search-wrap {
+    max-width: 360px;
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  .shortcodes-search-wrap svg {
+    position: absolute;
+    right: 14px;
+    color: var(--text-muted);
+    pointer-events: none;
+  }
+
+  .shortcodes-search-wrap input {
+    width: 100%;
+    padding: 9px 38px 9px 16px;
+    border-radius: 9999px;
+    border: 1px solid var(--card-border);
+    background: var(--bg-page);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    font-size: 13px;
+    outline: none;
+    transition: border-color 0.2s ease;
+  }
+
+  .shortcodes-search-wrap input:focus {
+    border-color: var(--primary);
+  }
+
+  /* 2. Grid of Cards (2 Columns) */
+  .shortcodes-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+  }
+
+  @media (max-width: 768px) {
+    .shortcodes-grid {
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    .shortcodes-main-title {
+      font-size: 24px;
+    }
+    .shortcodes-header-card {
+      padding: 28px 18px;
+    }
+  }
+
+  /* 3. Individual Card */
+  .shortcode-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-card);
+    padding: 22px 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  }
+
+  .shortcode-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(220, 31, 67, 0.3);
+  }
+
+  /* Card Top Row */
+  .shortcode-card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 12px;
     gap: 12px;
   }
-}
-.tm-guide-step {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  background: var(--card-bg, #ffffff);
-  border: 1px solid var(--border-color, #eaedf1);
-  border-radius: 14px;
-  padding: 16px 18px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.02);
-  transition: transform 0.2s ease, border-color 0.2s ease;
-}
-.tm-guide-step:hover {
-  border-color: var(--primary-color, #dc1f43);
-  transform: translateY(-2px);
-}
-[data-theme="dark"] .tm-guide-step {
-  background: #171a20;
-  border-color: #242832;
-}
-.tm-guide-num {
-  width: 32px;
-  height: 32px;
-  background: linear-gradient(135deg, var(--primary-color, #dc1f43), #ff476d);
-  color: #ffffff;
-  border-radius: 50%;
-  font-weight: 800;
-  font-size: 0.95rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  box-shadow: 0 4px 10px rgba(220, 31, 67, 0.35);
-}
-.tm-guide-info strong {
-  display: block;
-  font-size: 0.92rem;
-  margin-bottom: 2px;
-  color: var(--text-color, #111827);
-}
-[data-theme="dark"] .tm-guide-info strong {
-  color: #f1f5f9;
-}
-.tm-guide-info span {
-  font-size: 0.82rem;
-  color: var(--muted-color, #64748b);
-  line-height: 1.5;
-}
 
-/* شريط الأدوات (تصفية + بحث) */
-.tm-sc-toolbar {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-  margin-bottom: 28px;
-  padding: 16px 20px;
-  background: var(--card-bg, #ffffff);
-  border: 1px solid var(--border-color, #eaedf1);
-  border-radius: 18px;
-  box-shadow: 0 2px 12px rgba(0,0,0,0.02);
-}
-[data-theme="dark"] .tm-sc-toolbar {
-  background: #171a20;
-  border-color: #242832;
-}
-.tm-sc-filters {
-  display: flex;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 8px;
-}
-.tm-sc-filter-btn {
-  padding: 8px 16px;
-  border-radius: 99px;
-  border: 1px solid var(--border-color, #e2e8f0);
-  background: var(--bg-color, #f8fafc);
-  color: var(--text-color, #334155);
-  font-family: inherit;
-  font-size: 0.85rem;
-  font-weight: 700;
-  cursor: pointer;
-  transition: all 0.2s ease;
-  user-select: none;
-}
-[data-theme="dark"] .tm-sc-filter-btn {
-  background: #111317;
-  border-color: #242832;
-  color: #cbd5e1;
-}
-.tm-sc-filter-btn.active, .tm-sc-filter-btn:hover {
-  background: var(--primary-color, #dc1f43);
-  color: #ffffff;
-  border-color: var(--primary-color, #dc1f43);
-  box-shadow: 0 4px 12px rgba(220, 31, 67, 0.28);
-}
-.tm-sc-search-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 12px;
-  border-top: 1px solid var(--border-color, #f1f5f9);
-  padding-top: 14px;
-}
-[data-theme="dark"] .tm-sc-search-wrap {
-  border-color: #242832;
-}
-.tm-sc-search {
-  position: relative;
-  min-width: 280px;
-  flex: 1;
-  display: flex;
-  align-items: center;
-}
-.tm-sc-search svg {
-  position: absolute;
-  right: 14px;
-  color: var(--muted-color, #94a3b8);
-  pointer-events: none;
-}
-.tm-sc-search input {
-  width: 100%;
-  padding: 9px 40px 9px 34px;
-  border-radius: 99px;
-  border: 1px solid var(--border-color, #e2e8f0);
-  background: var(--bg-color, #f8fafc);
-  color: var(--text-color, #111827);
-  font-family: inherit;
-  font-size: 0.88rem;
-  outline: none;
-  transition: all 0.2s ease;
-}
-[data-theme="dark"] .tm-sc-search input {
-  background: #111317;
-  border-color: #242832;
-  color: #f1f5f9;
-}
-.tm-sc-search input:focus {
-  border-color: var(--primary-color, #dc1f43);
-  box-shadow: 0 0 0 3px rgba(220, 31, 67, 0.15);
-}
-.tm-sc-clear-btn {
-  position: absolute;
-  left: 12px;
-  background: none;
-  border: none;
-  font-size: 1.2rem;
-  line-height: 1;
-  color: var(--muted-color, #94a3b8);
-  cursor: pointer;
-}
-.tm-sc-count {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: var(--muted-color, #64748b);
-  white-space: nowrap;
-}
-[data-theme="dark"] .tm-sc-count {
-  color: #94a3b8;
-}
+  .shortcode-info {
+    flex: 1;
+  }
 
-/* شبكة البطاقات */
-.tm-sc-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 22px;
-}
-.tm-sc-card {
-  background: var(--card-bg, #ffffff);
-  border: 1px solid var(--border-color, #eaedf1);
-  border-radius: 18px;
-  padding: 24px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
-  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-  position: relative;
-}
-[data-theme="dark"] .tm-sc-card {
-  background: #171a20;
-  border-color: #242832;
-}
-.tm-sc-card:hover {
-  border-color: rgba(220, 31, 67, 0.35);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-}
-.tm-sc-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 16px;
-  border-bottom: 1px solid var(--border-color, #f1f5f9);
-  padding-bottom: 14px;
-}
-[data-theme="dark"] .tm-sc-header {
-  border-color: #242832;
-}
-.tm-sc-title-wrap {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-}
-.tm-sc-num {
-  width: 38px;
-  height: 38px;
-  border-radius: 12px;
-  background: rgba(220, 31, 67, 0.09);
-  color: var(--primary-color, #dc1f43);
-  font-weight: 900;
-  font-size: 0.95rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  box-shadow: inset 0 0 0 1px rgba(220, 31, 67, 0.15);
-}
-.tm-sc-title {
-  margin: 0;
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--text-color, #111827);
-}
-[data-theme="dark"] .tm-sc-title {
-  color: #f8fafc;
-}
-.tm-sc-desc {
-  margin: 3px 0 0;
-  font-size: 0.85rem;
-  color: var(--muted-color, #64748b);
-}
-.tm-sc-cat-badge {
-  padding: 4px 10px;
-  border-radius: 99px;
-  background: var(--bg-color, #f8fafc);
-  border: 1px solid var(--border-color, #eaedf1);
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--muted-color, #64748b);
-}
-[data-theme="dark"] .tm-sc-cat-badge {
-  background: #111317;
-  border-color: #242832;
-  color: #94a3b8;
-}
+  .shortcode-title {
+    font-size: 17px;
+    font-weight: 700;
+    color: var(--text-main);
+    margin-bottom: 4px;
+  }
 
-/* صندوق المعاينة */
-.tm-sc-preview-box {
-  background: var(--bg-color, #f8fafc);
-  border: 1px solid var(--border-color, #eaedf1);
-  border-radius: 14px;
-  padding: 18px 22px;
-  margin-bottom: 14px;
-}
-[data-theme="dark"] .tm-sc-preview-box {
-  background: #0f1115;
-  border-color: #242832;
-}
-.tm-sc-preview-label {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  font-size: 0.76rem;
-  font-weight: 800;
-  color: var(--muted-color, #64748b);
-  margin-bottom: 12px;
-  letter-spacing: 0.5px;
-}
+  .shortcode-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.4;
+  }
 
-/* صندوق الكود وتلوين Syntax */
-.tm-sc-code-box {
-  background: #0d1117;
-  color: #e6edf3;
-  border-radius: 12px;
-  padding: 12px 18px;
-  font-family: 'Fira Code', 'Courier New', Courier, monospace;
-  font-size: 0.88rem;
-  direction: ltr;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  overflow-x: auto;
-  border: 1px solid #21262d;
-  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.4);
-}
-.tm-sc-code-box code {
-  white-space: pre-wrap;
-  word-break: break-all;
-  flex: 1;
-}
-.tm-tag {
-  color: #7ee787;
-  font-weight: 600;
-}
-.tm-attr {
-  color: #79c0ff;
-}
-.tm-val {
-  color: #a5d6ff;
-}
+  .shortcode-num-badge {
+    background: var(--primary-soft);
+    border: 1px solid var(--primary-border);
+    color: var(--primary);
+    width: 34px;
+    height: 34px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: 700;
+    flex-shrink: 0;
+    font-family: var(--font-body);
+  }
 
-/* زر النسخ الفوري */
-.tm-copy-btn {
-  background: rgba(255, 255, 255, 0.08);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.16);
-  border-radius: 8px;
-  padding: 8px 16px;
-  font-family: 'Cairo', sans-serif;
-  font-size: 0.82rem;
-  font-weight: 700;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  transition: all 0.2s ease;
-  flex-shrink: 0;
-  user-select: none;
-}
-.tm-copy-btn:hover {
-  background: var(--primary-color, #dc1f43);
-  border-color: var(--primary-color, #dc1f43);
-  box-shadow: 0 4px 12px rgba(220, 31, 67, 0.35);
-}
-.tm-copy-btn.copied {
-  background: #10b981 !important;
-  border-color: #10b981 !important;
-  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.35) !important;
-}
+  /* Live Preview Box inside card */
+  .shortcode-preview-box {
+    background: rgba(0, 0, 0, 0.02);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-code);
+    padding: 12px 16px;
+    margin-bottom: 12px;
+  }
 
-/* صندوق التوليد التلقائي */
-.tm-sc-meta-box {
-  margin-top: 40px;
-  background: linear-gradient(135deg, rgba(220, 31, 67, 0.04) 0%, rgba(37, 99, 235, 0.04) 100%);
-  border: 1px dashed var(--primary-color, #dc1f43);
-  border-radius: 18px;
-  padding: 24px;
-}
-.tm-meta-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  color: var(--primary-color, #dc1f43);
-  margin-bottom: 8px;
-}
-.tm-meta-header h4 {
-  margin: 0;
-  font-size: 1.1rem;
-  font-weight: 800;
-}
-.tm-sc-meta-box p {
-  font-size: 0.9rem;
-  color: var(--muted-color, #475569);
-  margin: 0 0 14px;
-}
-[data-theme="dark"] .tm-sc-meta-box p {
-  color: #94a3b8;
-}
+  [data-theme="dark"] .shortcode-preview-box {
+    background: rgba(255, 255, 255, 0.02);
+  }
 
-/* إشعار التوست العائم */
-.tm-toast {
-  position: fixed;
-  bottom: 28px;
-  left: 50%;
-  transform: translateX(-50%) translateY(100px);
-  background: #10b981;
-  color: #ffffff;
-  padding: 12px 24px;
-  border-radius: 99px;
-  font-weight: 700;
-  font-size: 0.92rem;
-  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  z-index: 999999;
-  opacity: 0;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  pointer-events: none;
-}
-.tm-toast.show {
-  transform: translateX(-50%) translateY(0);
-  opacity: 1;
-}
+  /* 4. Terminal Code Box */
+  .shortcode-box {
+    background: var(--terminal-bg);
+    border: 1px solid var(--terminal-border);
+    border-radius: var(--radius-code);
+    margin-bottom: 14px;
+    overflow: hidden;
+  }
+
+  .shortcode-box-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 12px;
+    background: rgba(255, 255, 255, 0.03);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    direction: ltr;
+  }
+
+  .shortcode-box-label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.8px;
+    font-family: var(--font-mono);
+    text-transform: uppercase;
+  }
+
+  .shortcode-box-quick-copy {
+    background: transparent;
+    border: none;
+    color: #94a3b8;
+    font-size: 11px;
+    font-family: var(--font-body);
+    font-weight: 600;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    transition: color 0.15s, background 0.15s;
+    direction: rtl;
+  }
+
+  .shortcode-box-quick-copy:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+  }
+
+  .shortcode-code-body {
+    padding: 12px 14px;
+    direction: ltr;
+    text-align: left;
+    font-family: var(--font-mono);
+    font-size: 12.5px;
+    line-height: 1.5;
+    color: var(--terminal-text);
+    overflow-x: auto;
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  /* Syntax Highlighting */
+  .c-tag { color: var(--tag-color); font-weight: 500; }
+  .c-attr { color: var(--attr-color); }
+  .c-val { color: var(--val-color); }
+  .c-txt { color: #f8fafc; }
+
+  /* 5. Copy Button */
+  .shortcode-copy-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 11px 16px;
+    background: var(--primary);
+    color: #ffffff;
+    border: none;
+    border-radius: var(--radius-btn);
+    font-size: 14px;
+    font-weight: 700;
+    font-family: var(--font-body);
+    cursor: pointer;
+    transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 4px rgba(220, 31, 67, 0.15);
+  }
+
+  .shortcode-copy-btn:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(220, 31, 67, 0.3);
+  }
+
+  .shortcode-copy-btn.copied {
+    background: var(--success) !important;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25) !important;
+  }
+
+  /* 6. Toast Notification */
+  .shortcode-toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(100px);
+    background: #0f172a;
+    color: #ffffff;
+    padding: 12px 24px;
+    border-radius: 9999px;
+    font-size: 14px;
+    font-weight: 700;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+    z-index: 99999;
+    font-family: var(--font-body);
+  }
+
+  .shortcode-toast.show {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+  }
 </style>
 
 <!-- ==========================================================================
@@ -1063,125 +970,121 @@
 /*<![CDATA[*/
 (function() {
   'use strict';
-  
-  var filterBtns = document.querySelectorAll('#tmScFilters .tm-sc-filter-btn');
-  var cards = document.querySelectorAll('#tmScGrid .tm-sc-card');
-  var searchInput = document.getElementById('tmScSearchInput');
-  var clearBtn = document.getElementById('tmScClearSearch');
-  var counter = document.getElementById('tmScCounter');
 
-  function filterCards() {
-    var activeBtn = document.querySelector('#tmScFilters .tm-sc-filter-btn.active');
-    var activeCategory = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
-    var query = searchInput ? searchInput.value.trim().toLowerCase() : '';
+  var toast = document.getElementById('shortcodeToast');
+  var toastTimer = null;
 
-    if (clearBtn) {
-      clearBtn.style.display = query ? 'block' : 'none';
+  function showToast(msg) {
+    if (!toast) return;
+    if (msg) {
+      var span = toast.querySelector('span');
+      if (span) span.textContent = msg;
+    }
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function() {
+      toast.classList.remove('show');
+    }, 2200);
+  }
+
+  function copyText(text, btnElement) {
+    if (!text) return;
+
+    function onSuccess() {
+      if (btnElement) {
+        btnElement.classList.add('copied');
+        var origContent = btnElement.innerHTML;
+        btnElement.innerHTML = '<span>تم النسخ! ✓</span>';
+        setTimeout(function() {
+          btnElement.classList.remove('copied');
+          btnElement.innerHTML = origContent;
+        }, 2000);
+      }
+      showToast('تم نسخ الكود بنجاح! الصقه في مقالك.');
     }
 
-    var visibleCount = 0;
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(onSuccess).catch(function() {
+        fallbackCopy(text, onSuccess);
+      });
+    } else {
+      fallbackCopy(text, onSuccess);
+    }
+  }
+
+  function fallbackCopy(text, cb) {
+    var textArea = document.createElement('textarea');
+    textArea.value = text;
+    textArea.style.position = 'fixed';
+    textArea.style.top = '-9999px';
+    textArea.style.left = '-9999px';
+    document.body.appendChild(textArea);
+    textArea.focus();
+    textArea.select();
+    try {
+      var successful = document.execCommand('copy');
+      if (successful && cb) cb();
+    } catch (err) {}
+    document.body.removeChild(textArea);
+  }
+
+  // Bind copy buttons
+  var cards = document.querySelectorAll('.shortcode-card');
+  cards.forEach(function(card) {
+    var rawCode = card.getAttribute('data-code');
+    if (!rawCode) return;
+
+    var copyBtn = card.querySelector('.shortcode-copy-btn');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function() {
+        copyText(rawCode, copyBtn);
+      });
+    }
+
+    var quickBtn = card.querySelector('.shortcode-box-quick-copy');
+    if (quickBtn) {
+      quickBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        copyText(rawCode, quickBtn);
+      });
+    }
+  });
+
+  // Filter tabs
+  var filterBtns = document.querySelectorAll('.sc-filter-btn');
+  var searchInput = document.getElementById('shortcodesSearchInput');
+
+  function applyFilter() {
+    var activeBtn = document.querySelector('.sc-filter-btn.active');
+    var activeCat = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
+    var q = searchInput ? searchInput.value.trim().toLowerCase() : '';
+
     cards.forEach(function(card) {
-      var category = card.getAttribute('data-category');
-      var keywords = (card.getAttribute('data-keywords') || '').toLowerCase();
-      var title = (card.querySelector('.tm-sc-title') ? card.querySelector('.tm-sc-title').innerText : '').toLowerCase();
+      var cat = card.getAttribute('data-category');
+      var kw = (card.getAttribute('data-keywords') || '').toLowerCase();
+      var title = (card.querySelector('.shortcode-title') ? card.querySelector('.shortcode-title').innerText : '').toLowerCase();
 
-      var matchCat = (activeCategory === 'all' || category === activeCategory);
-      var matchQuery = (!query || keywords.indexOf(query) !== -1 || title.indexOf(query) !== -1);
+      var matchCat = (activeCat === 'all' || cat === activeCat);
+      var matchQ = (!q || kw.indexOf(q) !== -1 || title.indexOf(q) !== -1);
 
-      if (matchCat && matchQuery) {
+      if (matchCat && matchQ) {
         card.style.display = '';
-        visibleCount++;
       } else {
         card.style.display = 'none';
       }
     });
-
-    if (counter) {
-      counter.innerText = 'عرض ' + visibleCount + ' من ' + cards.length + ' عنصر';
-    }
   }
 
   filterBtns.forEach(function(btn) {
     btn.addEventListener('click', function() {
       filterBtns.forEach(function(b) { b.classList.remove('active'); });
       btn.classList.add('active');
-      filterCards();
+      applyFilter();
     });
   });
 
   if (searchInput) {
-    searchInput.addEventListener('input', filterCards);
-  }
-
-  if (clearBtn) {
-    clearBtn.addEventListener('click', function() {
-      if (searchInput) {
-        searchInput.value = '';
-        searchInput.focus();
-      }
-      filterCards();
-    });
-  }
-
-  // نسخ الكود للحافظة مع إشعار التوست
-  document.addEventListener('click', function(e) {
-    var btn = e.target.closest('.tm-copy-btn');
-    if (!btn) return;
-
-    var code = btn.getAttribute('data-code');
-    if (!code) {
-      var box = btn.closest('.tm-sc-code-box');
-      if (box && box.querySelector('code')) code = box.querySelector('code').innerText;
-    }
-
-    if (!code) return;
-
-    function onCopied() {
-      var originalHtml = btn.innerHTML;
-      btn.classList.add('copied');
-      btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>تم النسخ ✓</span>';
-      
-      var toast = document.getElementById('tmShortcodesToast');
-      if (!toast) {
-        toast = document.createElement('div');
-        toast.id = 'tmShortcodesToast';
-        toast.className = 'tm-toast';
-        toast.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>تم نسخ كود العنصر بنجاح! الصقه في وضع HTML بمقالك.</span>';
-        document.body.appendChild(toast);
-      }
-      toast.classList.add('show');
-      clearTimeout(toast._timeout);
-      toast._timeout = setTimeout(function() {
-        toast.classList.remove('show');
-      }, 2500);
-
-      setTimeout(function() {
-        btn.classList.remove('copied');
-        btn.innerHTML = originalHtml;
-      }, 2000);
-    }
-
-    if (navigator.clipboard && navigator.clipboard.writeText) {
-      navigator.clipboard.writeText(code).then(onCopied).catch(function() {
-        fallbackCopy(code, onCopied);
-      });
-    } else {
-      fallbackCopy(code, onCopied);
-    }
-  });
-
-  function fallbackCopy(text, callback) {
-    var ta = document.createElement('textarea');
-    ta.value = text;
-    ta.style.position = 'fixed';
-    ta.style.opacity = '0';
-    document.body.appendChild(ta);
-    ta.select();
-    try {
-      document.execCommand('copy');
-      if (callback) callback();
-    } catch(err) {}
-    document.body.removeChild(ta);
+    searchInput.addEventListener('input', applyFilter);
   }
 })();
 /*]]>*/

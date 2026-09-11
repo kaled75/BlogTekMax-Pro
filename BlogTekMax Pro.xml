@@ -6540,196 +6540,377 @@ tekmax-code {
   box-sizing: border-box;
 }
 
-/* 14. Interactive Shortcodes Catalog Page (tekmax-shortcodes-page) */
-.tm-sc-page {
-  max-width: 960px;
+/* 14. Interactive Shortcodes Catalog Page (<tekmax-shortcodes-page> & .shortcodes-wrap) */
+.shortcodes-wrap {
+  max-width: 1100px;
   margin: 0 auto;
+  padding: 10px 0 40px;
+  font-family: var(--font-body, system-ui, -apple-system, sans-serif);
+  color: var(--text-color, #0f172a);
+  direction: rtl;
+  text-align: right;
+  box-sizing: border-box;
 }
-.tm-sc-filters {
+
+/* 1. Header Card */
+.shortcodes-header-card {
+  background: var(--card-bg, #ffffff);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 16px;
+  padding: 36px 24px 28px;
+  text-align: center;
+  margin-bottom: 28px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+[data-theme="dark"] .shortcodes-header-card {
+  background: #131b2e;
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+.shortcodes-pill-badge {
+  display: inline-block;
+  background: var(--primary-color, #dc1f43);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  padding: 5px 18px;
+  border-radius: 9999px;
+  margin-bottom: 12px;
+  letter-spacing: 0.3px;
+}
+
+.shortcodes-main-title {
+  font-size: 30px;
+  font-weight: 800;
+  color: var(--text-color, #0f172a);
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+[data-theme="dark"] .shortcodes-main-title {
+  color: #f8fafc;
+}
+
+.shortcodes-main-subtitle {
+  font-size: 15px;
+  color: var(--muted-color, #64748b);
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+[data-theme="dark"] .shortcodes-main-subtitle {
+  color: #94a3b8;
+}
+
+/* Filter Bar */
+.shortcodes-filter-bar {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 28px;
+  gap: 8px;
+  margin-bottom: 16px;
 }
-.tm-sc-filter-btn {
-  padding: 9px 18px;
-  border-radius: 99px;
+
+.sc-filter-btn {
+  padding: 6px 14px;
+  border-radius: 9999px;
   border: 1px solid var(--border-color, #e2e8f0);
-  background: var(--card-bg, #ffffff);
-  color: var(--text-color, #111827);
+  background: rgba(0, 0, 0, 0.02);
+  color: var(--muted-color, #64748b);
   font-family: inherit;
-  font-size: 0.88rem;
+  font-size: 13px;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.2s ease;
 }
-[data-theme="dark"] .tm-sc-filter-btn {
-  background: #171a20;
-  border-color: #242832;
-  color: #f1f5f9;
+[data-theme="dark"] .sc-filter-btn {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #94a3b8;
 }
-.tm-sc-filter-btn.active, .tm-sc-filter-btn:hover {
-  background: var(--primary-color, #f83a5e);
-  color: #ffffff;
-  border-color: var(--primary-color, #f83a5e);
-  box-shadow: 0 4px 12px rgba(248, 58, 94, 0.25);
+
+.sc-filter-btn.active, .sc-filter-btn:hover {
+  background: var(--primary-color, #dc1f43) !important;
+  color: #ffffff !important;
+  border-color: var(--primary-color, #dc1f43) !important;
+  box-shadow: 0 4px 10px rgba(220, 31, 67, 0.25);
 }
-.tm-sc-grid {
+
+.shortcodes-search-wrap {
+  max-width: 360px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.shortcodes-search-wrap svg {
+  position: absolute;
+  right: 14px;
+  color: var(--muted-color, #64748b);
+  pointer-events: none;
+}
+
+.shortcodes-search-wrap input {
+  width: 100%;
+  padding: 9px 38px 9px 16px;
+  border-radius: 9999px;
+  border: 1px solid var(--border-color, #e2e8f0);
+  background: var(--bg-color, #f8fafc);
+  color: var(--text-color, #0f172a);
+  font-family: inherit;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s ease;
+  box-sizing: border-box;
+}
+[data-theme="dark"] .shortcodes-search-wrap input {
+  background: #0b0f19;
+  border-color: rgba(255, 255, 255, 0.08);
+  color: #f8fafc;
+}
+
+.shortcodes-search-wrap input:focus {
+  border-color: var(--primary-color, #dc1f43);
+}
+
+/* 2. Grid of Cards (2 Columns) */
+.shortcodes-grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 24px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
 }
-.tm-sc-card {
+
+@media (max-width: 768px) {
+  .shortcodes-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+  .shortcodes-main-title {
+    font-size: 24px;
+  }
+  .shortcodes-header-card {
+    padding: 28px 18px;
+  }
+}
+
+/* 3. Individual Card */
+.shortcode-card {
   background: var(--card-bg, #ffffff);
   border: 1px solid var(--border-color, #e2e8f0);
   border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  padding: 22px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
   box-sizing: border-box;
 }
-[data-theme="dark"] .tm-sc-card {
-  background: #171a20;
-  border-color: #242832;
+[data-theme="dark"] .shortcode-card {
+  background: #131b2e;
+  border-color: rgba(255, 255, 255, 0.08);
 }
-.tm-sc-card:hover {
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.05);
+
+.shortcode-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(220, 31, 67, 0.1);
+  border-color: rgba(220, 31, 67, 0.3);
 }
-.tm-sc-header {
+
+.shortcode-card-header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  margin-bottom: 16px;
-  border-bottom: 1px solid var(--border-color, #e2e8f0);
-  padding-bottom: 12px;
-}
-[data-theme="dark"] .tm-sc-header {
-  border-color: #242832;
-}
-.tm-sc-title-wrap {
-  display: flex;
-  align-items: center;
+  align-items: flex-start;
+  margin-bottom: 12px;
   gap: 12px;
 }
-.tm-sc-num {
-  width: 32px;
-  height: 32px;
+
+.shortcode-info {
+  flex: 1;
+}
+
+.shortcode-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: var(--text-color, #0f172a);
+  margin-bottom: 4px;
+}
+[data-theme="dark"] .shortcode-title {
+  color: #f8fafc;
+}
+
+.shortcode-desc {
+  font-size: 13px;
+  color: var(--muted-color, #64748b);
+  line-height: 1.4;
+  margin: 0;
+}
+[data-theme="dark"] .shortcode-desc {
+  color: #94a3b8;
+}
+
+.shortcode-num-badge {
+  background: rgba(220, 31, 67, 0.08);
+  border: 1px solid rgba(220, 31, 67, 0.2);
+  color: var(--primary-color, #dc1f43);
+  width: 34px;
+  height: 34px;
   border-radius: 8px;
-  background: rgba(248, 58, 94, 0.1);
-  color: var(--primary-color, #f83a5e);
-  font-weight: 800;
-  font-size: 0.88rem;
   display: flex;
   align-items: center;
   justify-content: center;
-}
-.tm-sc-title {
-  margin: 0;
-  font-size: 1.15rem;
-  font-weight: 800;
-  color: var(--text-color, #111827);
-}
-[data-theme="dark"] .tm-sc-title {
-  color: #f1f5f9;
-}
-.tm-sc-desc {
-  margin: 2px 0 0;
-  font-size: 0.85rem;
-  color: var(--muted-color, #64748b);
-}
-.tm-sc-preview-box {
-  background: var(--bg-color, #f8fafc);
-  border: 1px solid var(--border-color, #e2e8f0);
-  border-radius: 12px;
-  padding: 18px;
-  margin-bottom: 16px;
-}
-[data-theme="dark"] .tm-sc-preview-box {
-  background: #0f1115;
-  border-color: #242832;
-}
-.tm-sc-preview-label {
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.5px;
-  color: var(--muted-color, #64748b);
-  margin-bottom: 10px;
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-.tm-sc-code-box {
-  position: relative;
-  background: #0f172a;
-  color: #e2e8f0;
-  border-radius: 12px;
-  padding: 14px 18px;
-  font-family: 'Courier New', Courier, monospace;
-  font-size: 0.88rem;
-  direction: ltr;
-  text-align: left;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 14px;
-  overflow-x: auto;
-}
-.tm-sc-code-box code {
-  white-space: pre-wrap;
-  word-break: break-all;
-  flex: 1;
-  color: #38bdf8;
-}
-.tm-copy-btn {
-  background: rgba(255, 255, 255, 0.12);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 8px;
-  padding: 7px 14px;
-  font-family: inherit;
-  font-size: 0.82rem;
+  font-size: 13px;
   font-weight: 700;
+  flex-shrink: 0;
+  font-family: inherit;
+}
+[data-theme="dark"] .shortcode-num-badge {
+  background: rgba(220, 31, 67, 0.15);
+  border-color: rgba(220, 31, 67, 0.35);
+}
+
+/* Live Preview Box inside card */
+.shortcode-preview-box {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid var(--border-color, #e2e8f0);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 12px;
+}
+[data-theme="dark"] .shortcode-preview-box {
+  background: rgba(255, 255, 255, 0.02);
+  border-color: rgba(255, 255, 255, 0.08);
+}
+
+/* 4. Terminal Code Box */
+.shortcode-box {
+  background: #090d16;
+  border: 1px solid #1e293b;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  overflow: hidden;
+}
+[data-theme="dark"] .shortcode-box {
+  background: #050811;
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.shortcode-box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  direction: ltr;
+}
+
+.shortcode-box-label {
+  font-size: 10px;
+  font-weight: 700;
+  color: #64748b;
+  letter-spacing: 0.8px;
+  font-family: 'Fira Code', Consolas, Monaco, monospace;
+  text-transform: uppercase;
+}
+
+.shortcode-box-quick-copy {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 11px;
+  font-family: inherit;
+  font-weight: 600;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  transition: all 0.2s ease;
-  flex-shrink: 0;
-}
-.tm-copy-btn:hover {
-  background: var(--primary-color, #f83a5e);
-  border-color: var(--primary-color, #f83a5e);
-}
-.tm-copy-btn.copied {
-  background: #10b981 !important;
-  border-color: #10b981 !important;
+  gap: 4px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  transition: color 0.15s, background 0.15s;
+  direction: rtl;
 }
 
-/* Toast Notification for Copy */
-.tm-toast {
+.shortcode-box-quick-copy:hover {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.shortcode-code-body {
+  padding: 12px 14px;
+  direction: ltr;
+  text-align: left;
+  font-family: 'Fira Code', Consolas, Monaco, monospace;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: #f1f5f9;
+  overflow-x: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+/* Syntax Highlighting */
+.c-tag { color: #38bdf8; font-weight: 500; }
+.c-attr { color: #fbbf24; }
+.c-val { color: #34d399; }
+.c-txt { color: #f8fafc; }
+
+/* 5. Copy Button */
+.shortcode-copy-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 11px 16px;
+  background: var(--primary-color, #dc1f43);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  font-family: inherit;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  box-shadow: 0 2px 4px rgba(220, 31, 67, 0.15);
+}
+
+.shortcode-copy-btn:hover {
+  filter: brightness(0.92);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(220, 31, 67, 0.3);
+}
+
+.shortcode-copy-btn.copied {
+  background: #10b981 !important;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25) !important;
+}
+
+/* 6. Toast Notification */
+.shortcode-toast {
   position: fixed;
   bottom: 24px;
   left: 50%;
   transform: translateX(-50%) translateY(100px);
-  background: #10b981;
+  background: #0f172a;
   color: #ffffff;
   padding: 12px 24px;
-  border-radius: 99px;
+  border-radius: 9999px;
+  font-size: 14px;
   font-weight: 700;
-  font-size: 0.92rem;
-  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.35);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   align-items: center;
   gap: 8px;
-  z-index: 999999;
   opacity: 0;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  z-index: 99999;
+  font-family: inherit;
 }
-.tm-toast.show {
+
+.shortcode-toast.show {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
 }
@@ -12526,85 +12707,113 @@ if (typeof console !== 'undefined' && console.error) console.error('[TM ADS Init
         for (var c = 0; c < catalogContainers.length; c++) {
             var cat = catalogContainers[c];
             cat.setAttribute('data-ready', 'true');
-            if (!cat.innerHTML.trim()) {
+            if (!cat.querySelector('.shortcodes-wrap')) {
                 generateShortcodesCatalog(cat);
             }
         }
     }
 
+    // Helper: Syntax Highlighting for Terminal Code Box
+    function formatCodeHighlight(str) {
+        var escaped = str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+        // 1. Highlight attributes first so newly injected tags are unaffected
+        escaped = escaped.replace(/([a-zA-Z0-9_-]+)=(&quot;|"|')(.*?)(&quot;|"|')/g, '<span class="c-attr">$1</span>=<span class="c-val">"$3"</span>');
+        // 2. Highlight tag names: &lt;tag or &lt;/tag
+        escaped = escaped.replace(/&lt;(\/?)([a-zA-Z0-9_-]+)/g, '&lt;$1<span class="c-tag">$2</span>');
+        return escaped;
+    }
+
     // Interactive Shortcodes Catalog Builder for <tekmax-shortcodes-page>
     function generateShortcodesCatalog(targetEl) {
         var items = [
-            { num: '01', title: 'تنبيه معلومات', cat: 'alerts', kw: 'info alert تنبيه معلومات ازرق', desc: 'لعرض معلومة مهمة أو لفت انتباه القارئ بتنسيق أزرق هادئ.', code: '<tekmax-alert type="info">نص معلومة مهمة للقارئ</tekmax-alert>' },
-            { num: '02', title: 'رسالة نجاح', cat: 'alerts', kw: 'success alert رسالة نجاح اخضر', desc: 'لتأكيد إنجاز خطوة أو إتمام عملية بنجاح بلون زمردي مريح.', code: '<tekmax-alert type="success">تمت العملية بنجاح!</tekmax-alert>' },
-            { num: '03', title: 'رسالة تحذير', cat: 'alerts', kw: 'warning alert رسالة تحذير اصفر برتقالي', desc: 'لتنبيه القارئ لأخذ الحيطة والحذر قبل الشروع في خطوة معينة.', code: '<tekmax-alert type="warning">انتبه: هذا الإجراء لا يمكن التراجع عنه!</tekmax-alert>' },
-            { num: '04', title: 'رسالة خطأ', cat: 'alerts', kw: 'danger error alert رسالة خطا خطر احمر', desc: 'لتنبيه القارئ إلى أخطاء شائعة أو مشاكل غير متوقعة.', code: '<tekmax-alert type="danger">حدث خطأ غير متوقع، يرجى المحاولة لاحقاً</tekmax-alert>' },
-            { num: '05', title: 'ملاحظة', cat: 'alerts', kw: 'note memo ملاحظة تنبيه', desc: 'صندوق مميز ذو إطار منقط ولون رئيسي للملاحظات الخاصة.', code: '<tekmax-note>ملاحظة مهمة: يرجى مراعاة الشروط قبل البدء</tekmax-note>' },
-            { num: '06', title: 'زر احترافي', cat: 'buttons', kw: 'button link زر توجيه رابط', desc: 'زر أنيق لإعادة التوجيه لرابط خارجي أو داخلي.', code: '<tekmax-button href="https://example.com" target="_blank">انقر هنا</tekmax-button>' },
-            { num: '07', title: 'اقتباس منسق', cat: 'structure', kw: 'quote اقتباس كلام', desc: 'اقتباس مميز بصرياً مع اسم الكاتب أو المصدر.', code: '<tekmax-quote author="اسم الكاتب">نص الاقتباس هنا...</tekmax-quote>' },
-            { num: '08', title: 'زر مفرغ (ثانوي)', cat: 'buttons', kw: 'outline button زر مفرغ ثانوي', desc: 'زر بتصميم Outline أنيق للإجراءات الفرعية.', code: '<tekmax-button variant="outline" href="https://example.com" target="_blank">زر توجيه ثانوي</tekmax-button>' },
-            { num: '09', title: 'زر تحميل', cat: 'buttons', kw: 'download size زر تحميل ملف تنزيل', desc: 'زر تحميل عصري مع حجم الملف وأيقونة تنزيل.', code: '<tekmax-download href="https://example.com/file.zip" size="25 MB">تحميل الملف الآن</tekmax-download>' },
-            { num: '10', title: 'خطوات مرتبة', cat: 'structure', kw: 'steps خطوات ترقيم', desc: 'لعرض خطوات الشروحات والدروس بترقيم تلقائي.', code: '<tekmax-steps><tekmax-step>الخطوة الأولى</tekmax-step><tekmax-step>الخطوة الثانية</tekmax-step></tekmax-steps>' },
-            { num: '11', title: 'قائمة قابلة للفتح (أكورديون)', cat: 'interactive', kw: 'accordion faq اسئلة شائعة اكورديون', desc: 'أسئلة شائعة أو نصوص وتفاصيل قابلة للطي والفتح.', code: '<tekmax-accordion title="عنوان السؤال هنا">نص الإجابة أو التفاصيل هنا...</tekmax-accordion>' },
-            { num: '12', title: 'محتوى مخفي (سبويلر)', cat: 'interactive', kw: 'spoiler hidden محتوى مخفي سبويلر', desc: 'إمكانية إخفاء نص وإظهاره بنقر القارئ.', code: '<tekmax-spoiler title="انقر لعرض المحتوى">هذا هو المحتوى المخفي</tekmax-spoiler>' },
-            { num: '13', title: 'شارة نصية', cat: 'structure', kw: 'badge tag شارة وسم', desc: 'شارة نصية صغيرة ملونة ومناسبة لتمييز الكلمات.', code: '<tekmax-badge>نص الشارة</tekmax-badge>' },
-            { num: '14', title: 'عمودان متساويان', cat: 'structure', kw: 'columns عمودان اعمدة تقسيم', desc: 'تقسيم المحتوى إلى عمودين متساويين.', code: '<tekmax-columns><tekmax-column>محتوى العمود الأول</tekmax-column><tekmax-column>محتوى العمود الثاني</tekmax-column></tekmax-columns>' },
-            { num: '15', title: 'فيديو يوتيوب فائق السرعة', cat: 'interactive', kw: 'youtube video فيديو يوتيوب سريع', desc: 'فيديو متجاوب بصندوق خفيف وقابل للتكبير.', code: '<tekmax-video url="https://www.youtube.com/watch?v=VIDEO_ID"></tekmax-video>' },
-            { num: '16', title: 'شريط تقدم', cat: 'interactive', kw: 'progress شريط تقدم نسبة مئوية', desc: 'عرض نسبة إنجاز من مئة بشكل جذاب.', code: '<tekmax-progress value="75"></tekmax-progress>' },
-            { num: '17', title: 'فاصل النجمة المتوهجة', cat: 'separators', kw: 'separator star فاصل زخرفي نجمة', desc: 'فاصل متلاشٍ بأيقونة نجمة رباعية متوهجة في المنتصف.', code: '<tekmax-separator type="star"></tekmax-separator>' },
-            { num: '18', title: 'فاصل النقاط التقنية', cat: 'separators', kw: 'separator dots فاصل نقاط نبض', desc: 'فاصل بثلاث نقاط عصرية متدرجة مع نقطة مركزية بلون الهوية.', code: '<tekmax-separator type="dots"></tekmax-separator>' },
-            { num: '19', title: 'فاصل الخط الهندسي البرمجي', cat: 'separators', kw: 'separator tech code فاصل تقني خط هندسي', desc: 'فاصل بتدرج لوني انسيابي مع شارة برمجية &lt;/&gt; أنيقة.', code: '<tekmax-separator type="tech"></tekmax-separator>' }
+            { num: '01', title: 'تنبيه معلومات', cat: 'alerts', kw: 'تنبيه معلومات ازرق info alert', desc: 'لعرض معلومة مهمة أو لفت انتباه القارئ', code: '<tekmax-alert type="info">نص معلومة مهمة للقارئ</tekmax-alert>' },
+            { num: '02', title: 'رسالة نجاح', cat: 'alerts', kw: 'رسالة نجاح تاكيد اخضر success alert', desc: 'لتأكيد إنجاز خطوة أو عملية', code: '<tekmax-alert type="success">تمت العملية بنجاح!</tekmax-alert>' },
+            { num: '03', title: 'رسالة تحذير', cat: 'alerts', kw: 'رسالة تحذير تنبيه اصفر برتقالي warning alert', desc: 'لتنبيه القارئ لأخذ الحيطة والحذر', code: '<tekmax-alert type="warning">انتبه: هذا الإجراء لا يمكن التراجع عنه!</tekmax-alert>' },
+            { num: '04', title: 'رسالة خطأ', cat: 'alerts', kw: 'رسالة خطأ احمر خطر danger error alert', desc: 'لتنبيه القارئ إلى أخطاء أو تعليمات خاطئة', code: '<tekmax-alert type="danger">حدث خطأ غير متوقع، يرجى المحاولة لاحقاً</tekmax-alert>' },
+            { num: '05', title: 'ملاحظة', cat: 'alerts', kw: 'ملاحظة صندوق تحريري note memo', desc: 'صندوق مميز للملاحظات داخل المقال', code: '<tekmax-note>ملاحظة مهمة: يرجى مراعاة الشروط قبل البدء</tekmax-note>' },
+            { num: '06', title: 'زر احترافي', cat: 'buttons', kw: 'زر احترافي رابط توجيه button link', desc: 'زر لإعادة التوجيه لرابط خارجي أو داخلي', code: '<tekmax-button href="https://example.com" target="_blank">انقر هنا</tekmax-button>' },
+            { num: '07', title: 'اقتباس', cat: 'structure', kw: 'اقتباس كلام كاتب quote blockquote', desc: 'اقتباس منسق مع اسم المصدر', code: '<tekmax-quote author="اسم الكاتب">نص الاقتباس هنا...</tekmax-quote>', preview: '<tekmax-quote author="اسم الكاتب">نص الاقتباس هنا يعبر عن فكرة جوهرية تستحق التأمل...</tekmax-quote>' },
+            { num: '08', title: 'صندوق كود', cat: 'structure', kw: 'صندوق كود برمجة شاشة syntax code', desc: 'شاشة برمجية منسقة مع تلوين الخطوط', code: '<tekmax-code lang="html">&lt;!-- اكتب كودك هنا --&gt;</tekmax-code>', preview: '<tekmax-code lang="html">&lt;!-- اكتب كودك هنا وسيعرض بشكل منسق --&gt;</tekmax-code>' },
+            { num: '09', title: 'زر تحميل', cat: 'buttons', kw: 'زر تحميل ملف حجم تنزيل download size', desc: 'زر تحميل عصري مع حجم الملف', code: '<tekmax-download href="https://example.com/file.zip" size="25 MB">تحميل الملف الآن</tekmax-download>' },
+            { num: '10', title: 'خطوات مرتبة', cat: 'structure', kw: 'خطوات مرتبة ترقيم خطوات الشرح steps', desc: 'لعرض خطوات الشرح بترقيم تلقائي', code: '<tekmax-steps><tekmax-step>الخطوة الأولى</tekmax-step><tekmax-step>الخطوة الثانية</tekmax-step></tekmax-steps>', preview: '<tekmax-steps><tekmax-step>الخطوة الأولى: تهيئة الإعدادات الأولية.</tekmax-step><tekmax-step>الخطوة الثانية: تشغيل الخادم وتثبيت الحزمة.</tekmax-step></tekmax-steps>' },
+            { num: '11', title: 'قائمة قابلة للفتح', cat: 'interactive', kw: 'قائمة قابلة للفتح اكورديون اسئلة شائعة accordion faq', desc: 'أسئلة شائعة أو نصوص قابلة للطي والفتح', code: '<tekmax-accordion title="عنوان السؤال هنا">نص الإجابة أو التفاصيل هنا...</tekmax-accordion>', preview: '<tekmax-accordion title="هل يؤثر هذا الكود على سرعة تحميل المقال؟">لا على الإطلاق! تم بناء هذا المكون بالكامل باستخدام عنصر HTML5 الأصلي details/summary بدون الاعتماد على أي مكتبات خارجية.</tekmax-accordion>' },
+            { num: '12', title: 'محتوى مخفي', cat: 'interactive', kw: 'محتوى مخفي سبويلر إخفاء واظهار spoiler hidden', desc: 'إمكانية إخفاء نص وإظهاره بنقر القارئ', code: '<tekmax-spoiler title="انقر لعرض المحتوى">هذا هو المحتوى المخفي</tekmax-spoiler>', preview: '<tekmax-spoiler title="انقر لعرض المحتوى المخفي">هذا هو المحتوى المخفي الذي يظهر فقط عند نقر الزائر.</tekmax-spoiler>' },
+            { num: '13', title: 'شارة', cat: 'structure', kw: 'شارة تاج badge tag pill', desc: 'شارة نصية صغيرة ثلاثية الأبعاد أو ملونة', code: '<tekmax-badge>نص الشارة</tekmax-badge>', preview: '<div style="display:flex;gap:8px;flex-wrap:wrap;align-items:center;"><tekmax-badge>نص الشارة</tekmax-badge><tekmax-badge color="blue">تقنية</tekmax-badge><tekmax-badge color="green">إصدار مستقر</tekmax-badge><tekmax-badge color="orange">تحديث تجريبي</tekmax-badge></div>' },
+            { num: '14', title: 'عمودان', cat: 'structure', kw: 'عمودان تقسيم المحتوى أعمدة columns', desc: 'تقسيم المحتوى إلى عمودين متساويين', code: '<tekmax-columns><tekmax-column>محتوى العمود الأول</tekmax-column><tekmax-column>محتوى العمود الثاني</tekmax-column></tekmax-columns>', preview: '<tekmax-columns><tekmax-column><strong>العمود الأول:</strong> استعراض المزايا والفوائد الإيجابية للتقنية.</tekmax-column><tekmax-column><strong>العمود الثاني:</strong> استعراض المتطلبات والشروط اللازمة للتطبيق.</tekmax-column></tekmax-columns>' },
+            { num: '15', title: 'فيديو يوتيوب', cat: 'interactive', kw: 'فيديو يوتيوب سريع تضمين lite youtube video', desc: 'فيديو متجاوب بصندوق أنيق وقابل للتكبير', code: '<tekmax-video url="https://www.youtube.com/watch?v=VIDEO_ID"></tekmax-video>', preview: '<tekmax-video url="https://www.youtube.com/watch?v=dQw4w9WgXcQ"></tekmax-video>' },
+            { num: '16', title: 'شريط تقدم', cat: 'interactive', kw: 'شريط تقدم نسبة انجاز مئوية progress bar', desc: 'عرض نسبة إنجاز من مئة بشكل جذاب', code: '<tekmax-progress value="75"></tekmax-progress>', preview: '<tekmax-progress value="75" label="نسبة اكتمال المشروع"></tekmax-progress>' },
+            { num: '17', title: 'فاصل 1: النجمة المتوهجة (Star)', cat: 'separators', kw: 'فاصل زخرفي نجمة دياموند star separator', desc: 'خطان متلاشيان مع نجمة هندسية في دائرة ناعمة', code: '<tekmax-separator type="star"></tekmax-separator>', preview: '<tekmax-separator type="star"><span class="tm-sep-icon"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span></tekmax-separator>' },
+            { num: '18', title: 'فاصل 2: النقاط الثلاث الحرة (Dots)', cat: 'separators', kw: 'فاصل نقاط نبض dots separator', desc: 'بدون خطوط نهائياً — 3 نقاط متباعدة تتوسطها نقطة ملونة متوهجة', code: '<tekmax-separator type="dots"></tekmax-separator>', preview: '<tekmax-separator type="dots"><span class="tm-sep-dot outer"></span><span class="tm-sep-dot center"></span><span class="tm-sep-dot outer"></span></tekmax-separator>' },
+            { num: '19', title: 'فاصل 3: الخط الهندسي التقني (Tech)', cat: 'separators', kw: 'فاصل تقني خط هندسي متقطع tech separator', desc: 'مسار متقطع بنمط تقني عريض يتوسطه شارة برمجية &lt;/&gt;', code: '<tekmax-separator type="tech"></tekmax-separator>', preview: '<tekmax-separator type="tech"><span class="tm-sep-badge">&lt;/&gt;</span></tekmax-separator>' }
         ];
 
-        var html = '<div class="tm-sc-page">' +
-            '<div class="tm-sc-filters-bar">' +
-                '<div class="tm-sc-filters">' +
-                    '<button type="button" class="tm-sc-filter-btn active" data-filter="all">⚡ الكل (19)</button>' +
-                    '<button type="button" class="tm-sc-filter-btn" data-filter="alerts">🔔 تنبيهات وملاحظات (5)</button>' +
-                    '<button type="button" class="tm-sc-filter-btn" data-filter="buttons">🔘 أزرار وتحميل (3)</button>' +
-                    '<button type="button" class="tm-sc-filter-btn" data-filter="structure">📐 تنظيم وهيكلة (4)</button>' +
-                    '<button type="button" class="tm-sc-filter-btn" data-filter="interactive">🎬 تفاعلية ووسائط (4)</button>' +
-                    '<button type="button" class="tm-sc-filter-btn" data-filter="separators">✨ فواصل زخرفية (3)</button>' +
+        var html = '<div class="shortcodes-wrap" id="shortcodesApp">' +
+            '<header class="shortcodes-header-card">' +
+                '<span class="shortcodes-pill-badge">مكتبة مساعدة</span>' +
+                '<h1 class="shortcodes-main-title">مكتبة الأكواد القصيرة</h1>' +
+                '<p class="shortcodes-main-subtitle">انسخ الكود ثم الصقه في وضع HTML داخل مقالك</p>' +
+                '<div class="shortcodes-filter-bar">' +
+                    '<button type="button" class="sc-filter-btn active" data-filter="all">الكل (19)</button>' +
+                    '<button type="button" class="sc-filter-btn" data-filter="alerts">تنبيهات وملاحظات (5)</button>' +
+                    '<button type="button" class="sc-filter-btn" data-filter="buttons">أزرار وتحميل (3)</button>' +
+                    '<button type="button" class="sc-filter-btn" data-filter="structure">تنظيم وهيكلة (4)</button>' +
+                    '<button type="button" class="sc-filter-btn" data-filter="interactive">تفاعلية ووسائط (4)</button>' +
+                    '<button type="button" class="sc-filter-btn" data-filter="separators">فواصل زخرفية (3)</button>' +
                 '</div>' +
-                '<div class="tm-sc-search">' +
-                    '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>' +
-                    '<input type="text" class="tm-sc-search-dynamic" placeholder="ابحث عن كود..."/>' +
+                '<div class="shortcodes-search-wrap">' +
+                    '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>' +
+                    '<input type="text" id="shortcodesSearchInput" placeholder="ابحث عن كود أو عنصر..." aria-label="ابحث عن كود"/>' +
                 '</div>' +
-            '</div>' +
-            '<div class="tm-sc-grid">';
+            '</header>' +
+            '<div class="shortcodes-grid" id="shortcodesGrid">';
 
         for (var i = 0; i < items.length; i++) {
             var it = items[i];
-            var escCode = it.code.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
-            html += '<article class="tm-sc-card" data-category="' + it.cat + '" data-keywords="' + it.kw + '">' +
-                '<header class="tm-sc-header">' +
-                    '<div class="tm-sc-title-wrap">' +
-                        '<span class="tm-sc-num">' + it.num + '</span>' +
-                        '<div><h3 class="tm-sc-title">' + it.title + '</h3><p class="tm-sc-desc">' + it.desc + '</p></div>' +
+            var previewContent = it.preview || it.code;
+            var highlighted = formatCodeHighlight(it.code);
+            var attrCode = it.code.replace(/"/g, '&quot;');
+
+            html += '<div class="shortcode-card" data-category="' + it.cat + '" data-keywords="' + it.kw + '" data-code="' + attrCode + '">' +
+                '<div class="shortcode-card-header">' +
+                    '<div class="shortcode-info">' +
+                        '<h3 class="shortcode-title">' + it.title + '</h3>' +
+                        '<p class="shortcode-desc">' + it.desc + '</p>' +
                     '</div>' +
-                '</header>' +
-                '<div class="tm-sc-preview-box">' +
-                    '<span class="tm-sc-preview-label">المعاينة المباشرة:</span>' +
-                    it.code +
+                    '<div class="shortcode-num-badge">' + it.num + '</div>' +
                 '</div>' +
-                '<div class="tm-sc-code-box">' +
-                    '<code>' + escCode + '</code>' +
-                    '<button type="button" class="tm-copy-btn" data-code="' + escCode + '">' +
-                        '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>' +
-                        '<span>نسخ الكود</span>' +
-                    '</button>' +
+                '<div class="shortcode-preview-box">' +
+                    previewContent +
                 '</div>' +
-            '</article>';
+                '<div class="shortcode-box">' +
+                    '<div class="shortcode-box-header">' +
+                        '<span class="shortcode-box-label">CODE</span>' +
+                        '<button class="shortcode-box-quick-copy" type="button">' +
+                            '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path></svg>' +
+                            '<span>نسخ</span>' +
+                        '</button>' +
+                    '</div>' +
+                    '<div class="shortcode-code-body">' + highlighted + '</div>' +
+                '</div>' +
+                '<button class="shortcode-copy-btn" type="button">' +
+                    '<span>نسخ الكود</span>' +
+                '</button>' +
+            '</div>';
         }
 
-        html += '</div></div>';
+        html += '</div>' +
+            '<div class="shortcode-toast" id="shortcodeToast">' +
+                '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>' +
+                '<span>تم نسخ الكود بنجاح! الصقه في مقالك.</span>' +
+            '</div>' +
+        '</div>';
+
         targetEl.innerHTML = html;
         initTekMaxShortcodes(targetEl);
     }
 
     // Global Click Delegation (Spoilers, YouTube Facade, Copy Buttons, Filter Tabs)
     document.addEventListener('click', function(e) {
-        // Spoiler toggle
+        // 1. Spoiler toggle
         var spToggle = e.target.closest('.tm-spoiler-toggle');
         if (spToggle) {
             var spBox = spToggle.closest('tekmax-spoiler');
@@ -12614,7 +12823,7 @@ if (typeof console !== 'undefined' && console.error) console.error('[TM ADS Init
             return;
         }
 
-        // Video Play
+        // 2. Video Play
         var vidTarget = e.target.closest('tekmax-video');
         if (vidTarget && !vidTarget.querySelector('iframe')) {
             var id = vidTarget.getAttribute('data-vid-id');
@@ -12624,67 +12833,69 @@ if (typeof console !== 'undefined' && console.error) console.error('[TM ADS Init
             return;
         }
 
-        // Copy Button
-        var copyBtn = e.target.closest('.tm-copy-btn');
+        // 3. Copy Button (both .shortcode-copy-btn and .shortcode-box-quick-copy)
+        var copyBtn = e.target.closest('.shortcode-copy-btn, .shortcode-box-quick-copy');
         if (copyBtn) {
-            var codeAttr = copyBtn.getAttribute('data-code');
-            var codeEl = copyBtn.closest('.tm-sc-code-box');
-            var textToCopy = codeAttr || (codeEl && codeEl.querySelector('code') ? codeEl.querySelector('code').innerText : '');
-            if (textToCopy) {
-                // Decode HTML entities if attribute was encoded
+            var card = copyBtn.closest('.shortcode-card');
+            var rawCode = card ? card.getAttribute('data-code') : '';
+            if (rawCode) {
                 var temp = document.createElement('textarea');
-                temp.innerHTML = textToCopy;
+                temp.innerHTML = rawCode;
                 executeCopy(temp.value, copyBtn);
             }
             return;
         }
 
-        // Dynamic Filter Tabs
-        var filterBtn = e.target.closest('.tm-sc-filter-btn');
+        // 4. Dynamic Filter Tabs (.sc-filter-btn)
+        var filterBtn = e.target.closest('.sc-filter-btn');
         if (filterBtn) {
-            var group = filterBtn.closest('.tm-sc-filters');
-            var page = filterBtn.closest('.tm-sc-page') || filterBtn.closest('.tm-shortcodes-page') || document;
-            if (group) {
-                var allBtns = group.querySelectorAll('.tm-sc-filter-btn');
+            var filterBar = filterBtn.closest('.shortcodes-filter-bar');
+            var wrap = filterBtn.closest('.shortcodes-wrap') || document;
+            if (filterBar) {
+                var allBtns = filterBar.querySelectorAll('.sc-filter-btn');
                 for (var b = 0; b < allBtns.length; b++) allBtns[b].classList.remove('active');
                 filterBtn.classList.add('active');
             }
-            var targetCat = filterBtn.getAttribute('data-filter');
-            var cards = page.querySelectorAll('.tm-sc-card');
-            for (var c = 0; c < cards.length; c++) {
-                var card = cards[c];
-                var cat = card.getAttribute('data-category');
-                if (targetCat === 'all' || cat === targetCat) {
-                    card.style.display = '';
-                } else {
-                    card.style.display = 'none';
-                }
-            }
+            applyShortcodesFilter(wrap);
             return;
         }
     });
 
-    // Dynamic search inputs
+    // Dynamic search input
     document.addEventListener('input', function(e) {
-        if (e.target.classList.contains('tm-sc-search-dynamic')) {
-            var q = e.target.value.trim().toLowerCase();
-            var page = e.target.closest('.tm-sc-page') || document;
-            var cards = page.querySelectorAll('.tm-sc-card');
-            for (var i = 0; i < cards.length; i++) {
-                var card = cards[i];
-                var kw = (card.getAttribute('data-keywords') || '').toLowerCase();
-                var title = (card.querySelector('.tm-sc-title') ? card.querySelector('.tm-sc-title').innerText : '').toLowerCase();
-                if (!q || kw.indexOf(q) !== -1 || title.indexOf(q) !== -1) {
-                    card.style.display = '';
-                } else {
-                    card.style.display = 'none';
-                }
-            }
+        if (e.target.id === 'shortcodesSearchInput' || e.target.classList.contains('shortcodes-search-input')) {
+            var wrap = e.target.closest('.shortcodes-wrap') || document;
+            applyShortcodesFilter(wrap);
         }
     });
 
+    function applyShortcodesFilter(wrap) {
+        var activeBtn = wrap.querySelector('.sc-filter-btn.active');
+        var activeCat = activeBtn ? activeBtn.getAttribute('data-filter') : 'all';
+        var searchInput = wrap.querySelector('#shortcodesSearchInput, .shortcodes-search-input');
+        var q = searchInput ? searchInput.value.trim().toLowerCase() : '';
+
+        var cards = wrap.querySelectorAll('.shortcode-card');
+        for (var c = 0; c < cards.length; c++) {
+            var card = cards[c];
+            var cat = card.getAttribute('data-category');
+            var kw = (card.getAttribute('data-keywords') || '').toLowerCase();
+            var titleEl = card.querySelector('.shortcode-title');
+            var title = (titleEl ? titleEl.innerText : '').toLowerCase();
+
+            var matchCat = (activeCat === 'all' || cat === activeCat);
+            var matchQ = (!q || kw.indexOf(q) !== -1 || title.indexOf(q) !== -1);
+
+            if (matchCat && matchQ) {
+                card.style.display = '';
+            } else {
+                card.style.display = 'none';
+            }
+        }
+    }
+
     function executeCopy(text, btn) {
-        if (navigator.clipboard && navigator.clipboard.writeText) {
+        if (navigator.clipboard && window.isSecureContext) {
             navigator.clipboard.writeText(text).then(function() {
                 notifyCopied(btn);
             }).catch(function() {
@@ -12699,8 +12910,10 @@ if (typeof console !== 'undefined' && console.error) console.error('[TM ADS Init
         var ta = document.createElement('textarea');
         ta.value = text;
         ta.style.position = 'fixed';
-        ta.style.opacity = '0';
+        ta.style.top = '-9999px';
+        ta.style.left = '-9999px';
         document.body.appendChild(ta);
+        ta.focus();
         ta.select();
         try {
             document.execCommand('copy');
@@ -12713,26 +12926,30 @@ if (typeof console !== 'undefined' && console.error) console.error('[TM ADS Init
         if (btn) {
             var orig = btn.innerHTML;
             btn.classList.add('copied');
-            btn.innerHTML = '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>تم النسخ ✓</span>';
+            if (btn.classList.contains('shortcode-box-quick-copy')) {
+                btn.innerHTML = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>تم!</span>';
+            } else {
+                btn.innerHTML = '<span>تم النسخ! ✓</span>';
+            }
             setTimeout(function() {
                 btn.classList.remove('copied');
                 btn.innerHTML = orig;
             }, 2000);
         }
 
-        var toast = document.getElementById('tmShortcodesToast');
+        var toast = document.getElementById('shortcodeToast') || document.querySelector('.shortcode-toast');
         if (!toast) {
             toast = document.createElement('div');
-            toast.id = 'tmShortcodesToast';
-            toast.className = 'tm-toast';
-            toast.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> <span>تم نسخ الكود بنجاح! الصقه في وضع HTML بمقالك.</span>';
+            toast.id = 'shortcodeToast';
+            toast.className = 'shortcode-toast';
+            toast.innerHTML = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> <span>تم نسخ الكود بنجاح! الصقه في مقالك.</span>';
             document.body.appendChild(toast);
         }
         toast.classList.add('show');
         clearTimeout(toast._timeout);
         toast._timeout = setTimeout(function() {
             toast.classList.remove('show');
-        }, 2500);
+        }, 2200);
     }
 
     // Initialize on ready

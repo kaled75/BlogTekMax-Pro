@@ -6539,7 +6539,7 @@ tekmax-code {
   box-sizing: border-box;
 }
 
-/* 14. Interactive Shortcodes Catalog Page (<tekmax-shortcodes-page> & .shortcodes-wrap) */
+/* 14. Interactive Shortcodes Catalog Page (tekmax-shortcodes-page & .shortcodes-wrap) */
 .shortcodes-wrap {
   max-width: 1100px;
   margin: 0 auto;

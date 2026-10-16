@@ -32,7 +32,7 @@
 
 ### 3. ⚡ سرعة وأداء قياسي (100/100 Core Web Vitals)
 * كود نظيف وخفيف بدون مكتبات خارجية ثقيلة (Vanilla JavaScript ES2025).
-* تحميل متقدم وأولوية معالجة للصور (`fetchpriority="high"`, `decoding="async"`, `loading="lazy").
+* تحم��ل متقدم وأولوية معالجة للصور (`fetchpriority="high"`, `decoding="async"`, `loading="lazy").
 * تسريع خطوط جوجل والاتصال المسبق (Preconnect & DNS-Prefetch).
 
 ### 4. 🛠️ ميزات المقال المتطورة (Modular Post Features Engine)
@@ -65,13 +65,11 @@
 
 ## 🔗 معاينة الموقع (Live Preview)
 
-شاهد المعاينة الحية للقالب هنا: [عرض المعاينة](https://your-live-demo-url.example.com)
+شاهد المعاينة الحية للقالب هنا: [عرض المعاينة](https://tek-max.blogspot.com/)
 
 أو أضف صورة معاينة داخل المستودع:
 
-[![معاينة القالب — BlogTekMax Pro](assets/preview.png)](https://your-live-demo-url.example.com)
-
-استبدل https://your-live-demo-url.example.com برابط العرض الحي الفعلي.
+[![معاينة القالب — BlogTekMax Pro](assets/preview.png)](https://tek-max.blogspot.com/)
 
 ---
 
